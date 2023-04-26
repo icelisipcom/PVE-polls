@@ -7,7 +7,7 @@
                 <table class="table  table-striped text-xs font-medium">
                     <thead>
                         <tr class="text-center">
-                            <th>Encuestador</th>
+                            <th>Total de Encuestas realziadas</th>
                             <th>FECHA captura</th>
                             <th>carrera</th>
                             <th>plantel </th>
@@ -15,15 +15,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($encuestas as $e)
                         <tr>
-                         <td> {{$e->aplica}}</td>
-                         <td> {{$e->fec_capt}}</td>
-                         <td> {{$e->nbr2}}</td>
-                         
-                         <td> {{$e->nbr3}}</td>
+                            <td>
+                                {{$encuestas->count()}}
+                            </td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
         </div>
