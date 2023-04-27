@@ -10,9 +10,11 @@ class HomeController extends Controller
     
     public function index()
     {
+        
         $encuestas=DB::table('respuestas2')
         ->whereNotNull('ngr11f')
         ->get();
-        return view('home',compact('encuestas'));
+        $Telefonicas=$encuestas->whereNotNull('aplica')->count();
+        return view('home',compact('encuestas','Telefonicas'));
     }
 }

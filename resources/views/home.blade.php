@@ -8,7 +8,7 @@
                     <thead>
                         <tr class="text-center">
                             <th>Total de Encuestas realziadas</th>
-                            <th>FECHA captura</th>
+                            <th>Solo telefonicas</th>
                             <th>carrera</th>
                             <th>plantel </th>
                             
@@ -18,6 +18,9 @@
                         <tr>
                             <td>
                                 {{$encuestas->count()}}
+                            </td>
+                            <td>
+                                {{$Telefonicas}}
                             </td>
                         </tr>
                     </tbody>
