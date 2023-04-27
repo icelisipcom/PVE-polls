@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//nmms no esta cambiando
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
