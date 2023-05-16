@@ -4,24 +4,24 @@
     <div class="container-fluid">
         <h1 class="text-black-50">You are logged in!</h1>
         <div class="col-6 col-sm-12 table-responsive">
-                <table class="table  table-striped text-xs font-medium">
+                <table class="table  table-striped text-lg font-medium">
                     <thead>
                         <tr class="text-center">
-                            <th>Encuestador</th>
-                            <th>FECHA captura</th>
-                            <th>carrera</th>
-                            <th>plantel </th>
+                            <th>Plantel</th>
+                            <th>Carrera</th>
+                            <th>encuestas Realizadas</th>
+                            <th>uwu</th>
                             
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($encuestas as $e)
-                        <tr>
-                         <td> {{$e->aplica}}</td>
-                         <td> {{$e->fec_capt}}</td>
-                         <td> {{$e->nbr2}}</td>
+                        @foreach($carreras  as $c)
+                        <tr class="text-center">
+                         <td> {{$c->plantel}}</td>
+                         <td> {{$c->carrera}}</td>
+                         <td> {{$encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
                          
-                         <td> {{$e->nbr3}}</td>
+                         <td> </td>
                         </tr>
                         @endforeach
                     </tbody>
