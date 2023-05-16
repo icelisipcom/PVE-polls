@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="text-black-50">You are logged in!</h1>
+        <h1 class="text-black-50">Estado del Estudio 2019</h1>
         <div class="col-6 col-sm-12 table-responsive">
                 <table class="table  table-striped text-lg font-medium">
                     <thead>
@@ -23,7 +23,6 @@
                          
                          <td> </td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
         </div>
