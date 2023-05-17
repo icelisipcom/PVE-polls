@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\respuestas2;
 use App\Models\Carrera;
 use DB;
+use App\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
 class HomeController extends Controller
 {
     
@@ -19,5 +22,15 @@ class HomeController extends Controller
         ->get();
         $carreras=Carrera::all();
         return view('home',compact('encuestas19','carreras'));
+    }
+
+    public function create_user($name, $email,$password){
+      
+        return User::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => Hash::make($password),
+        ]);
+    
     }
 }

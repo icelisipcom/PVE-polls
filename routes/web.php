@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect(route('login'));
 });
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/create_user/{name}/{email}/{password}',[App\Http\Controllers\HomeController::class, 'create_user'])->name('create_user');
 
