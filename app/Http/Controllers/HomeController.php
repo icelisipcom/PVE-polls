@@ -7,6 +7,8 @@ use App\Models\respuestas2;
 use App\Models\Carrera;
 use DB;
 use App\Models\User;
+use App\Models\Estudio;
+use App\Models\Muestra;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 class HomeController extends Controller
@@ -20,7 +22,16 @@ class HomeController extends Controller
         ->where('egresados.anio_egreso','=',2019)
         ->whereNotNull('respuestas2.ngr11f')
         ->get();
-        $carreras=Carrera::all();
+        $carreras=DB::table('muestras')
+        ->leftJoin('carreras', function($join)
+                         {
+                             $join->on('carreras.clave_carrera', '=', 'muestras.carrera_id');
+                             $join->on('carreras.clave_plantel', '=', 'muestras.plantel_id');                             
+                         })
+       // ->rightJoin('carreras as c','c.clave_carrera','=','muestras.carrera_id')
+        //->where('carreras.clave_plantel','=','muestras.clave_plantel')
+        ->get();
+     
         return view('home',compact('encuestas19','carreras'));
     }
 

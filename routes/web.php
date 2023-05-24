@@ -18,6 +18,9 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 Auth::routes();
+Route::group(['middleware' => ['auth']], function()
+{
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create_user/{name}/{email}/{password}',[App\Http\Controllers\HomeController::class, 'create_user'])->name('create_user');
 
+});

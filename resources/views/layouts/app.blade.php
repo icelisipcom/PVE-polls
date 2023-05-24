@@ -1,6 +1,10 @@
 <x-laravel-ui-adminlte::adminlte-layout>
+<head>
+     <!-- DataTables -->
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.3.1/dt-1.10.25/af-2.3.7/b-1.7.1/b-print-1.7.1/cr-1.5.4/date-1.1.0/fc-3.3.3/fh-3.1.9/kt-2.6.2/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.4/sb-1.1.0/sp-1.3.0/sl-1.3.3/datatables.min.css"/>
 
-    <body class="hold-transition sidebar-mini layout-fixed">
+</head>
+    <body class="hold-transition sidebar-mini layout-fixed" background="{{asset('img/Fondo2.jpg')}}">
         <div class="wrapper">
             <!-- Main Header -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -19,12 +23,13 @@
                                 class="user-image img-circle elevation-2" alt="User Image">
                             <span class="d-none d-md-inline"> 
                                 <!-- aki iba el nombre de usuario pero lo quite  -->
+                                {{ Auth::user()->name }}
 
                             </span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <!-- User image -->
-                            <li class="user-header bg-primary">
+                            <li class="user-header ">
                                 <img src="{{asset('img/logoPVE.png')}}"
                                     class="img-circle elevation-2" alt="User Image">
                                 <p>
@@ -69,4 +74,20 @@
 </x-laravel-ui-adminlte::adminlte-layout>
 @section('css')
 <link rel="stylesheet" href="{{asset('css/estiloEncuesta.css')}}"  />
+
+@stop
+@stack('modals')
+
+
+<!-- DataTables  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.3.1/jszip-2.5.0/dt-1.10.25/af-2.3.7/b-1.7.1/b-colvis-1.7.1/b-html5-1.7.1/b-print-1.7.1/cr-1.5.4/date-1.1.0/fc-3.3.3/fh-3.1.9/kt-2.6.2/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.4/sb-1.1.0/sp-1.3.0/sl-1.3.3/datatables.min.js"></script>
+
+@section('js')
+<!-- DataTables  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.3.1/jszip-2.5.0/dt-1.10.25/af-2.3.7/b-1.7.1/b-colvis-1.7.1/b-html5-1.7.1/b-print-1.7.1/cr-1.5.4/date-1.1.0/fc-3.3.3/fh-3.1.9/kt-2.6.2/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.4/sb-1.1.0/sp-1.3.0/sl-1.3.3/datatables.min.js"></script>
+
 @stop
