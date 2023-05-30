@@ -13,6 +13,9 @@ use App\Models\Muestra;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use ArielMejiaDev\LarapexCharts\Facades\LarapexChart;
+
+use Symfony\Component\Process\Process; 
+use Symfony\Component\Process\Exception\ProcessFailedException; 
 class HomeController extends Controller
 {
     
@@ -94,13 +97,22 @@ class HomeController extends Controller
         return view('encuesta_2019',compact('encuestas19','carreras'));
     }
 
-    public function create_user($name, $email,$password){
+    public function aviso(){
       
-        return User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => Hash::make($password),
-        ]);
+        return view('aviso');
+    
+    }
+    public function enviar_aviso(Request $request){
+      
+           $caminoalpoder=public_path();
+           $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$request->nombre,$request->correo]);
+           $process->run();
+           if (!$process->isSuccessful()) {
+               throw new ProcessFailedException($process);
+           }
+           $data = $process->getOutput();
+           return redirect()->route('aviso');
     
     }
 }
+

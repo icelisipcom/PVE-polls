@@ -8,8 +8,8 @@
 </li>
 <li class="nav-item">
     <a href="{{ route('2019') }}" class="nav-link {{ Request::is('2019') ? 'active' : '' }}">
-        <i class="fa-pie-chart "></i>
-        <p>2019 </p>
+    <i class="fa-sharp fa-solid fa-square-poll-horizontal"></i>
+        <p> Encuesta 2019 </p>
     </a>
 </li>
 <li class="nav-item">
@@ -18,4 +18,15 @@
         <p>Actualizacion 2014 </p>
     </a>
 </li>
-
+<li class="nav-item">
+    <a href="{{ route('muestras') }}" class="nav-link {{ Request::is('muestras') ? 'active' : '' }}">
+    <i class="nav-icon fas fa-table"></i>
+        <p>Muestras</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('aviso') }}" class="nav-link {{ Request::is('aviso') ? 'active' : '' }}">
+    <i class="nav-icon fas fa-paper-plane"></i>
+        <p>Enviar aviso </p>
+    </a>
+</li>

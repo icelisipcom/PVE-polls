@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: transparent;">
         
     <h1 class="text-black-50">Binenvenid@!!  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
         <h1 class="text-black-50"></h1>
