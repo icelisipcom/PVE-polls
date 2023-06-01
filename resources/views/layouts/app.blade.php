@@ -7,17 +7,30 @@
             background-color: {{ Auth::user()->color }};
             color: white;
         }
+        .content-wrapper {
+   
+   background: url("{{asset('img/Fondo2.jpg')}}") 50% 0 no-repeat fixed;
+    background-size: cover;
+    font-weight: bold;
+  size: 60px;
+  color: #cdc8d8;
+}
+.wrapper {
+   
+   background: #343A40;
+    
+}
      </style>
 </head>
-    <body class="hold-transition sidebar-mini layout-fixed" background="{{asset('img/Fondo2.jpg')}}">
+    <body class="hold-transition sidebar-mini layout-fixed"  >
         <div class="wrapper">
             <!-- Main Header -->
-            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background:#343A40; color:white;">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                                class="fas fa-bars"></i></a>
+                                class="fas fa-bars" style="color:white"></i></a>
                     </li>
                 </ul>
 
@@ -26,7 +39,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <img src="{{asset('img/logoPVE.png')}}"
                                 class="user-image img-circle elevation-2" alt="User Image">
-                            <span class="d-none d-md-inline"> 
+                            <span class="d-none d-md-inline" style="color:white;"> 
                                 <!-- aki iba el nombre de usuario pero lo quite  -->
                                 {{ Auth::user()->name }}
 
@@ -67,8 +80,8 @@
             </div>
 
             <!-- Main Footer -->
-            <footer class="main-footer">
-                <div class="float-right d-none d-sm-block">
+            <footer class="main-footer" style="background:#343A40">
+                <div class="float-right d-none d-sm-block" >
                     <b>Version</b> 3.1.0
                 </div>
                 <strong>Copyright &copy; 2022-2023 <a href="https://www.pveu.unam.mx/">PVE-UNAM</a>.</strong> All rights

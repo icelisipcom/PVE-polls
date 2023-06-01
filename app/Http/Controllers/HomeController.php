@@ -46,6 +46,7 @@ class HomeController extends Controller
         $internet=$encuestas19->whereNull('aplica')->count();
         $telefonicas=$encuestas19->whereNotNull('aplica')->count();
         $chart = LarapexChart::setTitle('Encuestas realizadas')
+        ->setColors(['#D1690E', '#D1330E','#D19914'])
             ->setLabels(['Realizadas por Internet','Realizadas Telefonica', 'Por hacer'])
             ->setDataset([$internet,$telefonicas, $requeridas]);
         
@@ -68,11 +69,15 @@ class HomeController extends Controller
         $aplica_chart = LarapexChart::barChart()
         ->setTitle('Conteo por encuestador')
         ->setSubtitle('enc2019 vs enc2014 actualizacion')
+      
          ->addData('2019', [$moni, $ere,$cesar,$eli,$ivon])
-         
          ->addData('2014', [$moni14, $ere14,$cesar14,$eli14,$ivon14])
-         //->addData('Boston', [7, 3, 8, 2, 6, 4])
-         ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne']);
+         ->setColors(['#D1690E', '#EB572F'])
+         
+         ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne'])
+         ->setFontFamily('DM Sans')
+         ->setFontColors('#ff6384');
+         
         return view('home',compact('encuestas19','carreras','chart','aplica_chart'));
         
     }

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid" style="background-color: transparent;">
-        
-    <h1 class="text-black-50">Binenvenid@!!  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
-        <h1 class="text-black-50"></h1>
+    <div class="container-fluid">
+        <div style="padding:30px;">
+    <h1 class="text-white-50">Binenvenid@!!  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
+    </div>
         
         {!! $chart->container() !!}
         {!! $aplica_chart->container() !!}
