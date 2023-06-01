@@ -74,9 +74,8 @@ class HomeController extends Controller
          ->addData('2014', [$moni14, $ere14,$cesar14,$eli14,$ivon14])
          ->setColors(['#D1690E', '#EB572F'])
          
-         ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne'])
-         ->setFontFamily('DM Sans')
-         ->setFontColors('#ff6384');
+         ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne']);
+    
          
         return view('home',compact('encuestas19','carreras','chart','aplica_chart'));
         
