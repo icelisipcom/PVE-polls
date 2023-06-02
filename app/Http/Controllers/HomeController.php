@@ -78,7 +78,6 @@ class HomeController extends Controller
     
          
         return view('home',compact('encuestas19','carreras','chart','aplica_chart'));
-        
     }
 
     public function encuesta_2019(){
