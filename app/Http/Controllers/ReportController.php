@@ -12,7 +12,7 @@ class ReportController extends Controller
     public function rep_individual()
        {
            $caminoalpoder=public_path();
-           $process = new Process(['python3',$caminoalpoder.'/reporte_individual.py']);
+           $process = new Process(['python3', 'reporte_individual.py'],$caminoalpoder);
            $process->run();
            if (!$process->isSuccessful()) {
                throw new ProcessFailedException($process);
