@@ -1,19 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<script>
-  console.log('script jalando ¿?');
-  $(document).ready(function() {
-    $('#myTable').DataTable();
-} );
- </script>
+
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
     <div style="padding:30px;">
     <h1 class="text-white-50">  </h1>
         <h1 class="text-white-50"> </h1>
     </div>
-    <div class="padding-conteiner" style="padding: 30px">
-        <table class="table text-lg font-large" id='myTable'>
+    <div class="col-6 col-lg-12 table-responsive">
+        <table class="table text-xl " id='myTable'>
           <thead>
             <tr>
             <th>Nombre</th>
@@ -34,4 +29,19 @@
         </table>
     </div>
 </div>
-@endsection 
+@stop
+
+@section('css')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+@stop
+
+@push('js')
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+ 
+  console.log('script jalando ¿?');
+  $(document).ready(function() {
+    $('#myTable').DataTable();
+} );
+ </script>
+@endpush

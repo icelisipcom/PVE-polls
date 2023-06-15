@@ -1,5 +1,6 @@
 <x-laravel-ui-adminlte::adminlte-layout>
 <head>
+<link rel="shortcut icon" type="image/png" href="{{ asset('img/logoPVE.png') }}">
 <script src="//code.jquery.com/jquery-1.12.3.js"></script>
 <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script
@@ -27,6 +28,7 @@
     
 }
      </style>
+     @stack('css')
 </head>
     <body class="hold-transition sidebar-mini layout-fixed"  >
         <div class="wrapper">
@@ -94,9 +96,12 @@
                 reserved.
             </footer>
         </div>
+
+        
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+  
+
+        @stack('js')
     </body>
 </x-laravel-ui-adminlte::adminlte-layout>
-@section('css')
-<link rel="stylesheet" href="{{asset('css/estiloEncuesta.css')}}"  />
 
-@stop
