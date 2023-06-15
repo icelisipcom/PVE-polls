@@ -4,7 +4,13 @@
     <div class="container-fluid">
         <div style="padding:30px;">
     <h1 class="text-white-50">Bienvenid@!!  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
+    <div>-----------------------------------------
+    <a href="{{ route('reporte')}}" class="btn btn-green">
+    <i class="fa-solid fa-file-excel"></i>&nbsp; Nuevo
+                </a>
     </div>
+<br>
+</div>
         
         {!! $chart->container() !!}
         {!! $aplica_chart->container() !!}
