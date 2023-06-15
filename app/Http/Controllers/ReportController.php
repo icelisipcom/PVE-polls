@@ -18,5 +18,5 @@ class ReportController extends Controller
            
                return response()->download(public_path('storage/reporte_individual.xlsx'));
           
-       }}
+       }
 }
