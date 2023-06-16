@@ -44,8 +44,8 @@ def mapeo(x):
 encuestas['aplica'] = encuestas['aplica'].map(lambda x:mapeo(x))
 
 # Convert datetime from datetime64[ns] to string type
-encuestas['fec_capt']=pd.to_datetime(encuestas['fec_capt'].astype(str), format='%Y/%m/%d')
-
+#encuestas['fec_capt']=pd.to_datetime(encuestas['fec_capt'].astype(str), format='%Y/%m/%d')
+print(encuestas['fec_capt'])
 print(encuestas[0:10])
 print(encuestas['aplica'].unique())
 
