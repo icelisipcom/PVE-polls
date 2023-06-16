@@ -1,5 +1,4 @@
 import sys
-import mysql.connector
 import xlsxwriter
 import pandas as pd
 import sys
