@@ -5,11 +5,12 @@
         <div style="padding:30px;">
     <h1 class="text-white-50">Bienvenid@!!  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
     <div>-----------------------------------------
+        <br><br><br> 
     <a href="{{ route('reporte')}}"  > <button class="btn btn-green">
     <i class="fa-solid fa-file-excel"></i>&nbsp;Reporte Individual
     </button></a>
     </div>
-<br>
+<br><br><br>
 </div>
         
         {!! $chart->container() !!}
