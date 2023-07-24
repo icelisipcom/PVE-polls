@@ -14,7 +14,9 @@
             <th>Nombre</th>
             <th>Num. Cuenta</th>
             <th>Telefono</th>
-            <th>Correp</th></tr>
+            <th>Correp</th>
+            <th> </th>
+          </tr>
           </thead>
           <tbody>
             @foreach($Egresados as $e)
@@ -23,6 +25,7 @@
                 <td>{{$e->cuenta}} </td>
                 <td>{{$e->telefono}} </td>
                 <td>{{$e->correo}} </td>
+                <td><a href="{{route('encuestas.make19',$e->cuenta)}}"></a> <button class="btn primary-button" >Hacer encuesta </button></td>
             </tr>
             @endforeach
           </tbody>

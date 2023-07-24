@@ -5,7 +5,6 @@
     <div style="padding:30px;">
     <h1 class="text-white-50">Hola  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
         <h1 class="text-white-50"> Deseas Enviar un aviso de privacidad?</h1>
-        
     </div>
     <center >
     <br><br>
@@ -26,4 +25,3 @@
    </center>
     </div>
 @endsection
- 

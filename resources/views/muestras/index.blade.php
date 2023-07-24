@@ -39,10 +39,10 @@
         </div>
         </div>
     </div>
-    
     <div class="padding-conteiner"style="padding:30px" >
         <h1 class="text-white-50"> ACTUALIZACION 2014</h1>
     </div>
 </div>
 @endsection
  
+
