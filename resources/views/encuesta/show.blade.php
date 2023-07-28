@@ -4,33 +4,35 @@
 
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
     <div style="padding:30px;">
-    <h1 class="text-white-50">  </h1>
+    <h1 class="text-white-50">
+                 @if($Encuesta)
+                 COMPLETAR ENCUESTA @else
+                 HACER NUEVA ENCUESTA @endif </h1>
         <h1 class="text-white-50"> </h1>
-    </div>
-    <div class="col-6 col-lg-12 table-responsive">
-        <table class="table text-xl " id='myTable'>
-          <thead>
-            <tr>
-            <th>Nombre</th>
-            <th>Num. Cuenta</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th> </th>
+        <div >
+        
+        <table class="table text-xl">
+          <TR>
+            <td>Egresad@: </td>
+            <td> {{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}} </td>
+          </TR>
+          <tr>
+            <td>Promedio:</td> <td>{{$Egresado->promedio}}</td>
           </tr>
-          </thead>
-          <tbody>
-            @foreach($Egresados as $e)
-            <tr>
-                <td>{{$e->nombre}} {{$e->paterno}} {{$e->materno}}</td>
-                <td>{{$e->cuenta}} </td>
-                <td>{{$e->telefono}} </td>
-                <td>{{$e->correo}} </td>
-                <td><a href="{{route('encuestas.make19',$e->cuenta)}}"> <button class="btn btn-primary" >Hacer encuesta </button></a></td>
-            </tr>
-            @endforeach
-          </tbody>
+          <tr><td>Carrera:</td><td> {{$Carrera}}</td> </tr>
+          <tr><td>Plantel:</td><td> {{$Plantel}}</td> </tr>
         </table>
+        <br>
+        @if($Encuesta)
+        Numeros de telefono ingresados en la encuesta:
+        {{$Encuesta->telcel}}
+        {{$Encuesta->telcasa}}
+        {{$Encuesta->teltra}}
+        @endif
+        </div>
     </div>
+   
+    
 </div>
 @stop
 
