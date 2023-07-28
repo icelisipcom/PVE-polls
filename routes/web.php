@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MuestrasController;
+
+use App\Http\Controllers\EncuestasController;
 /*
 |--------------------------------------------------------------------------|
 | Web Routes                                                               |
