@@ -25,7 +25,7 @@
         <br>
         @if($Encuesta)
         Numeros de telefono ingresados en la encuesta:
-        {{$Encuesta->telcel}}
+        {{$Encuesta->TELCEL}}
         {{$Encuesta->telcasa}}
         {{$Encuesta->teltra}}
         @endif
