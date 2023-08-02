@@ -6,24 +6,18 @@
     <h1 class="text-black-50"></h1>
         <h1 class="text-white-50">Estado del Estudio 2019</h1>
         <div class="col-6 col-sm-12 table-responsive">
-                <table class="table  table-striped text-lg font-medium" id="tabla">
+                <table class="table table-striped text-xl" id="myTable">
                     <thead>
-                        <tr class="text-center">
-                            <th> </th>
-                            <th></th>
-                            <th colspan="3">Realizadas</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                       
                         <tr class="text-center">
                             
-                            <th rowspan="2">Plantel</th>
-                            <th rowspan="2">Carrera</th>
+                            <th>Plantel</th>
+                            <th >Carrera</th>
                             <th>Telefonicas</th>
                             <th>Internet</th>
                             <th>Total</th>
-                            <th rowspan="2" >Requeridas</th>
-                            <th rowspan="2">Faltan</th>
+                            <th >Requeridas</th>
+                            <th >Faltan</th>
                             
                         </tr>
                     </thead>
@@ -31,7 +25,10 @@
                       
 
                         @foreach($carreras  as $c)
-                        <tr class="text-center" @if( $c->requeridas_5 - $encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()<=0) style="color:#22B14C" @endif>
+                        <tr class="text-center" @if( $c->requeridas_5 - $encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()<=0)
+                         style="color:#22B14C" 
+                         @else style="color:#b0a46f" 
+                         @endif>
                         
                          <td> {{$c->plantel}}</td>
                          <td> {{$c->carrera}}</td>
@@ -40,9 +37,6 @@
                          <td> {{$encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
                          <td> {{$c->requeridas_5}}</td>
                          <td> {{$c->requeridas_5 - $encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
-                         
-                         
-                         <td> </td>
                         </tr>
                        
                         @endforeach
@@ -52,10 +46,19 @@
         
     </div>
 @endsection
- @section('js')
- <script>
-    $(document).ready(function() {
-$('#tabla').dataTable();
+
+@section('css')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+@stop
+
+
+@push('js')
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+ 
+  console.log('script jalando ¿?');
+  $(document).ready(function() {
+    $('#myTable').DataTable();
 } );
  </script>
- @stop
+@endpush

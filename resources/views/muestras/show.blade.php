@@ -8,7 +8,7 @@
         <h1 class="text-white-50"> </h1>
     </div>
     <div class="col-6 col-lg-12 table-responsive">
-        <table class="table text-xl " id='myTable'>
+        <table class="table text-xl " id="myTable">
           <thead>
             <tr>
             <th>Nombre</th>
