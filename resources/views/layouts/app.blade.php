@@ -16,7 +16,7 @@
         }
         .content-wrapper {
    
-   background: url("{{asset('img/Fondo2.jpg')}}") 50% 0 no-repeat fixed;
+   background: url("{{asset('img/'.Auth::user()->image )}}") 50% 0 no-repeat fixed;
     background-size: cover;
     font-weight: bold;
   size: 60px;
