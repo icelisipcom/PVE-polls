@@ -25,7 +25,7 @@
                 <td>{{$e->cuenta}} </td>
                 <td>{{$e->telefono}} </td>
                 <td>{{$e->correo}} </td>
-                <td><a href="{{route('encuestas.show',$e->cuenta)}}"> <button class="btn btn-primary" >Hacer encuesta </button></a></td>
+                <td><a href="{{route('encuestas.show',$e->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Hacer encuesta </button></a></td>
             </tr>
             @endforeach
           </tbody>

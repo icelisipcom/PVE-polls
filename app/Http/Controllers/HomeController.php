@@ -35,6 +35,7 @@ class HomeController extends Controller
                          })
        
         ->get();
+        
         $requeridas=0;
         foreach($carreras as $c){
             $faltan=($c->requeridas_5 -$encuestas19->where('carrera','=',$c->clave_carrera)->where('plantel','=',$c->clave_plantel)->count());
@@ -96,7 +97,9 @@ class HomeController extends Controller
                          })
        // ->rightJoin('carreras as c','c.clave_carrera','=','muestras.carrera_id')
         //->where('carreras.clave_plantel','=','muestras.clave_plantel')
+        ->select('muestras.*','carreras.carrera','carreras.plantel','carreras.clave_carrera','carreras.clave_plantel')
         ->get();
+       
         return view('encuesta_2019',compact('encuestas19','carreras'));
     }
 

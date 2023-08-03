@@ -18,6 +18,7 @@
                             <th>Total</th>
                             <th >Requeridas</th>
                             <th >Faltan</th>
+                            <th> </th>
                             
                         </tr>
                     </thead>
@@ -37,6 +38,7 @@
                          <td> {{$encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
                          <td> {{$c->requeridas_5}}</td>
                          <td> {{$c->requeridas_5 - $encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
+                         <td><a href="{{route('muestras.show',$c->id)}}" ><button class="btn"style="background-color:{{Auth::user()->color}} ; color:white;"><i class="fa-solid fa-eye"></i> Ver muestra</button></a></td>
                         </tr>
                        
                         @endforeach

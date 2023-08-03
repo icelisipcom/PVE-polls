@@ -33,13 +33,13 @@
     </div>
    <!-- aqui se va a mostrar la encuesta -->
     <div> <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#" onClick="unhide('A')" id='Abtn'>Seccion A</a>
-  <a class="navbar-brand" href="#" onClick="unhide('B')" id='Bbtn'>Seccion B</a>
-  <a class="navbar-brand" href="#" onClick="unhide('C')" id='Cbtn'>Seccion C</a>
-  <a class="navbar-brand" href="#" onClick="unhide('D')" id='Dbtn'>Seccion D</a>
-  <a class="navbar-brand" href="#" onClick="unhide('E')" id='Ebtn'>Seccion E</a>
-  <a class="navbar-brand" href="#" onClick="unhide('F')" id='Fbtn'>Seccion F</a>
-  <a class="navbar-brand" href="#" onClick="unhide('G')" id='Gbtn'>Seccion G</a>
+  <a class="navbar-brand" href="#" onClick="unhide('A')" id='Abtn'> <p id='Atxt'>Seccion A</p></a>
+  <a class="navbar-brand" href="#" onClick="unhide('B')" id='Bbtn'><p id='Btxt'>Seccion B</p></a>
+  <a class="navbar-brand" href="#" onClick="unhide('C')" id='Cbtn'><p id='Ctxt'>Seccion C</p></a>
+  <a class="navbar-brand" href="#" onClick="unhide('D')" id='Dbtn'><p id='Dtxt'>Seccion D</p></a>
+  <a class="navbar-brand" href="#" onClick="unhide('E')" id='Ebtn'><p id='Etxt'>Seccion E</p></a>
+  <a class="navbar-brand" href="#" onClick="unhide('F')" id='Fbtn'><p id='Ftxt'>Seccion F</p></a>
+  <a class="navbar-brand" href="#" onClick="unhide('G')" id='Gbtn'><p id='Gtxt'>Seccion G</p></a>
 </nav></div>
     <div class='Scroll'> 
       <div class='col' id='A'>
@@ -546,6 +546,7 @@ Otra:<input  type="text" class="texto" ID="13_OTRA" name="nar16otra" size="80" m
      console.log(sections[i])   
      document.getElementById(sections[i]).style.display='none';
      document.getElementById(sections[i]+'btn').style.backgroundColor="#ffffff";
+     document.getElementById(sections[i]+'txt').style.color="rgb(23,23,23)";
     }
   
   }
@@ -553,6 +554,8 @@ Otra:<input  type="text" class="texto" ID="13_OTRA" name="nar16otra" size="80" m
     hide_all();
     document.getElementById(sec).style.display='block';
     document.getElementById(sec+'btn').style.backgroundColor="{{Auth::user()->color}}";
+    console.log(document.getElementById(sec+'btn').style.color)
+    document.getElementById(sec+'txt').style.color="white";
   }
   unhide('A');
 
