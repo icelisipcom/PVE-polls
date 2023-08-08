@@ -472,7 +472,6 @@ Otra:<input  type="text" class="texto" ID="13_OTRA" name="nar16otra" size="80" m
         <input type="text">
         <br> pregunta x
         <input type="text">
-
       </div>
 
       <div class='col' id='G'>
