@@ -28,6 +28,7 @@
         {{$Encuesta->TELCEL}}
         {{$Encuesta->telcasa}}
         {{$Encuesta->teltra}}
+        {{$Encuesta->nar1_a}}
         @endif
         </div>
     </div>
