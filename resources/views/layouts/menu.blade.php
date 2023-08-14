@@ -30,3 +30,9 @@
         <p>Enviar aviso </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('buscar') }}" class="nav-link {{ Request::is('buscar') ? 'active' : '' }}">
+    <i class="fas fa-eye"></i>
+        <p>Buscar numero de cuenta </p>
+    </a>
+</li>

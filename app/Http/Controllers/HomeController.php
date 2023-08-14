@@ -108,6 +108,24 @@ class HomeController extends Controller
         return view('aviso');
     
     }
+    public function buscar(){
+        return view('buscar');
+    
+    }
+    
+    public function resultado(Request $request){
+        $encuestas19=DB::table('respuestas2')
+        ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
+        ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->where('egresados.anio_egreso','=',2019)
+        ->where('respuestas2.cuenta','=',$request->nc)
+        ->get(); 
+        $encuestas14=DB::table('respuestas14')
+        ->where('respuestas14.cuenta','=',$request->nc)
+        ->get();      
+        return view('resultado',compact('encuestas19','encuestas14'));
+    
+    }
     public function enviar_aviso(Request $request){
       
            $caminoalpoder=public_path();

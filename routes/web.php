@@ -31,6 +31,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/2014_act', [App\Http\Controllers\HomeController::class, '2014_act'])->name('2014_act');
 Route::get('/2019', [App\Http\Controllers\HomeController::class, 'encuesta_2019'])->name('2019');
 Route::get('/aviso', [App\Http\Controllers\HomeController::class, 'aviso'])->name('aviso');
+Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');
+Route::post('/resultado', [App\Http\Controllers\HomeController::class, 'resultado'])->name('resultado');
 Route::post('/enviar_aviso', [App\Http\Controllers\HomeController::class, 'enviar_aviso'])->name('enviar_aviso');
 Route::get('/reporte', [App\Http\Controllers\ReportController::class, 'rep_individual'])->name('reporte');
 
