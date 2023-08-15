@@ -51,6 +51,7 @@
             <tr>
             <th>Egresado</th>
             <th>Aplicador</th>
+            <th>fecha</th>
             <th>Carrera</th>
             <th>Plantel</th>
             </tr>
@@ -60,6 +61,7 @@
             <tr style="color:#b0a46f" >
                 <td>{{  $e->nombre}}  {{  $e->PATERNO}}  {{  $e->materno }}   </td>
                 <td> @if($e->APLICA ){{$e->APLICA}} @else INTERNET @endif </td>
+                <td>{{$e->fec_capt}}</td>
                 <td>{{$e->carrera}}</td>     
                 <td>{{$e->plantel}}</td> 
             
