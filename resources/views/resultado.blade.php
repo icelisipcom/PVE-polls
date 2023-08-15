@@ -29,7 +29,7 @@
                 <td> @if($e->aplica ){{$e->aplica}} @else INTERNET @endif </td>
                 <td>{{$e->nbr3}}</td>
                 <td>{{$e->nbr2}}</td>
-                <td>@if($e->ngr11f) Completa @else Incompleta @endif</td>
+                <td>@if($e->ngr11f>=0) Completa @else Incompleta @endif</td>
             </tr>
             @endforeach
         </tbody>
