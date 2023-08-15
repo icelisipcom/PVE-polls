@@ -16,10 +16,11 @@
         <thead>
             <tr>
             <th>Egresado</th>
-            <th>aplicador</th>
+            <th>Aplicador</th>
+            <th>Fecha</th>
             <th>Carrera</th>
             <th>Plantel</th>
-            <th>status</th>
+            <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
             <tr style="color:#b0a46f" >
                 <td>{{  $e->nombre}}   {{  $e->paterno}}  {{  $e->materno }}  </td>
                 <td> @if($e->aplica ){{$e->aplica}} @else INTERNET @endif </td>
+                <td>{{$e->fec_capt}}</td>
                 <td>{{$e->nbr3}}</td>
                 <td>{{$e->nbr2}}</td>
                 <td>@if($e->ngr11f>=0) Completa @else Incompleta @endif</td>
@@ -35,6 +37,8 @@
         </tbody>
     </table>
     </div>
+    @else
+    No hay encuestas 2019 para mostrar unu
     @endif
 
     @if($encuestas14->count()>0)
@@ -64,6 +68,9 @@
         </tbody>
     </table>
     </div>
+    @else
+    <br>
+    No hay encuestas 2014 para mostrar unu
     @endif
    </center>
     </div>
