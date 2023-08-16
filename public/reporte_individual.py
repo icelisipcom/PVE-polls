@@ -89,11 +89,19 @@ date_content = workbook.add_format({
     'font_size':10,
     'border_color':a_color,
     'num_format': 'dd/mm/yy'})
+date_content_bold = workbook.add_format({
+    'border': 1,
+    'align': 'center',
+    'valign': 'vcenter',
+    'font_color': 'black',
+    'font_size':12,
+    'bold': True,
+    'num_format': 'dd/mm/yy'})
 worksheet = workbook.add_worksheet()
 worksheet.merge_range('C2:H3', 'PROGRAMA DE VINCULACION A EGRESADOS UNAM', negro_b)
 worksheet.merge_range('C4:H4', 'CONSECUTIVO ENCUESTAS 2019', negro_b)
 worksheet.insert_image("A1", "img/logoPVE.png",{"x_scale": 0.2, "y_scale": 0.2})
-worksheet.merge_range('G6:H6',today, negro_b)
+worksheet.merge_range('G6:H6',today, date_content_bold)
 worksheet.write('B8','Numero de cuenta',header_format)
 worksheet.write('C8','Fecha en que realizó',header_format)
 worksheet.write('D8','Aplicador',header_format)
