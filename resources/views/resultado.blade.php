@@ -31,7 +31,7 @@
                 <td>{{$e->fec_capt}}</td>
                 <td>{{$e->nbr3}}</td>
                 <td>{{$e->nbr2}}</td>
-                <td>@if($e->ngr11f>=0) Completa @else Incompleta @endif</td>
+                <td>@if(is_null($e->ngr11f)) Inompleta @else Completa @endif</td>
             </tr>
             @endforeach
         </tbody>

@@ -120,6 +120,7 @@ class HomeController extends Controller
         ->where('egresados.anio_egreso','=',2019)
         ->where('respuestas2.cuenta','=',$request->nc)
         ->get(); 
+        
         $encuestas14=DB::table('respuestas14')
         ->where('respuestas14.cuenta','=',$request->nc)
         ->get();      
