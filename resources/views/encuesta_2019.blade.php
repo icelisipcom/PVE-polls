@@ -27,7 +27,12 @@
 
                         @foreach($carreras  as $c)
                         <tr class="text-center" @if( $c->requeridas_5 - $encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()<=0)
-                         style="color:#22B14C" 
+                         
+                           @if($encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->whereNotNull('aplica')->count()>=$c->requeridas_5/2 )
+                           style="color:#22B14C" 
+                           @else
+                           style="color:#bdb706" 
+                           @endif
                          @else style="color:#b0a46f" 
                          @endif>
                         

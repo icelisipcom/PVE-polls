@@ -186,12 +186,12 @@ Otra:<input type="text" class="texto" ID="9_OTRA" name="nar14otra" size="80" max
 10a).-¿Si su madre es profesionista 
       cursó sus estudios en la UNAM?
       <select class="select" id="10a_ESTUDIOS UNAM MADRE" name="nrx"  >
-       <option value="" selected></option>
-       <option value=1>SI</option>
-       <option value=2>No</option;n>
+       <option value="" ></option>
+       <option value=1 @if($Encuesta->nrx==1) selected @endif >SI</option>
+       <option value=2 @if($Encuesta->nrx==2) selected @endif >No</option;n>
     </select>
 
-    
+
     <h2 class="reactivo">11.- La ocupación de su madre (cuando cursaba la carrera )</h2>   
 
   <select class="select" id="11_OCUPACIÓN MADRE" name="nar15"  onchange="bloquear(nar11,[1,2,3,4,5,6,7,8,9,11,10,12],[nar])" >
@@ -249,9 +249,9 @@ Otra:
 12a).-¿Si su padre es profesionista 
 cursó sus estudios en la UNAM?
       <select class="select" id="12_ESTUDIOS UNAM PADRE" name="nrxx"  >
-       <option value="" selected></option>
-       <option value=1>SI</option>
-       <option value=2>No</option;n>
+       <option value=""></option>
+       <option value=1 @if($Encuesta->nrxx==1) selected @endif >SI</option>
+       <option value=2  @if($Encuesta->nrxx==2) selected @endif >No</option;n>
     </select>
   
     <h2 class="reactivo">13.- La ocupación de su padre (cuando cursaba la carrera )</h2> 

@@ -90,7 +90,6 @@ date_content = workbook.add_format({
     'border_color':a_color,
     'num_format': 'dd/mm/yy'})
 date_content_bold = workbook.add_format({
-    'border': 1,
     'align': 'center',
     'valign': 'vcenter',
     'font_color': 'black',
@@ -115,9 +114,7 @@ for i in range(0,len(encuestas)):
     worksheet.write('E'+str(i+9),encuestas['carrera'].values[i],blue_content)
     worksheet.write('F'+str(i+9),encuestas['plantel'].values[i],blue_content)
 worksheet.set_column('J:J',15)
-
 worksheet.set_column('B:C',17)
-
 worksheet.set_column('E:F',28)
 worksheet.set_landscape()
 worksheet.set_paper(9)
