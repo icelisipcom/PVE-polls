@@ -291,78 +291,291 @@ Otra:<input  type="text" class="texto" ID="13_OTRA" name="nar16otra" size="80" m
 
       </div>
       <div class='col' id='B'>
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
+      <h2 class="reactivo">14).-¿Tipo de bachillerato que cursó?   </h2>
+    
+    <select class="select" id="14_bachillerato" name="nbr1" >
+ <option value="" selected></option>
+            <option value=1>CCH</option>
+            <option value=2>ENP</option>
+            <option value=3>BACH_PUB.</option>
+            <option value=4>BACH_PRIV.</option>
+            <option value=5>Sin BACH.</option>
+                         </select>
+    <h2 class="reactivo">15).- ¿Tiene una segunda Licenciatura?</h2>
+ 
+      
+ <select class="select" id= "15_SEGUNDA CARRERA"  name="ner20"  onchange=bloqueo20(e20) >
+   <option selected="selected" value="">
+   <option value=1>No </option>
+   <option value=2>Si, la estoy cursando</option>
+   <option value=3>Si, ya la concluí</option>
+    </select>
+ <h2 class="reactivo">15a).- ¿Cuál? </h2>
+ <INPUT class="texto" ID="15a_cuál" NAME="ner20txt" TYPE=TEXT SIZE=35 MAXLENGTH=35>
+ 
+ <h2 class="reactivo">15b).¿La ejerce?  </h2>
+   <select class="select" id="15b_La ejerce" name="ner20a" >
+   <option selected="selected" value="">
+   <option value=1>No</option>
+   <option value=2>Si</option>
+    </select>
+ <h2 class="reactivo">16).-¿Bajo qué sistema de enseñanza realizó sus estudios de licenciatura? </h2>
+ 
+ <select class="select" id="16_Sistema" name="nar1" >
+ <option value="" selected="selected"></option>
+ <option value=1>Abierto</option>
+ <option value=2>A distancia</option>
+ <option value=3>Presencial</option>
+ </select>
+ 
+ </TD>
+  </TR>
+ 
+  <TR>
+ <TD width='55%'>
+ 
+     <h2 class="reactivo">17).-¿Durante sus estudios de bachillerato fue becario?    </h2>
+   
+ 
+ <select class="select" id="17_BECA BACHILLERATO" name="nar2"  onchange=bloqueoab(a2)  >
+ <option value="" selected></option>
+ <option value=1>No</option>
+ <option value=2>Sí, del Programa de Fundación UNAM</option>
+ <option value=3>Sí, de otro programa</option>
+ </select>
+ 
+ <h2 class="reactivo">18).- ¿Durante sus estudios de licenciatura fue becario?   </h2>
+ 
+ <select class="select" id="18_BECA LICENCIATURA" name="nar3"  onchange=bloqueoab(a3) >
+ <option value="" selected></option>
+    <option value=1>No</option>
+    <option value=2>Sí, del Programa de Fundación UNAM</option>
+                 <option value=3>Sí, del Programa de Alta Exigencia Académica</option >
+    <option value=4>Sí, de otro programa</option>
+               </select>
+ <br>
+ 
+ 
+ <B><center> En qué medida la beca o becas que recibió contribuyeron a apoyar:</center></B>
+ 
+ <h2 class="reactivo">19).- Su desempeño académico </h2>
+ 
+ 
+ 
+   <select class="select" id="19_APOYO BECA" name="nar4" >
+ <option value="" selected></option>
+ <option value=1>Muchisimo</option>
+ <option value=2>Mucho</option>
+ <option value=3>Regular</option>
+ <option value=4>Poco</option>
+ <option value=5>Nada</option>
+ </select>
+ 
+ 
+ <br>
+ <h2 class="reactivo">20).- La conclusión de sus estudios </h2>
+ 
+ &nbsp;   <select class="select" id="20_APOYO ESTUDIOS" name="nar5" >
+ <option value="" selected></option>
+ <option value=1>Muchisimo</option>
+ <option value=2>Mucho</option>
+ <option value=3>Regular</option>
+ <option value=4>Poco</option>
+ <option value=5>Nada</option>
+   </select>
+ 
+ 
 
       </div>
 
       <div class='col' id='C'>
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta xb
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
-        <br> pregunta x
-        <input type="text">
+      <h2 class="reactivo">  21.- ¿Actualmente está trabajando? </h2> 
+ 
+    
+ <select class="select" id="21_Trabajando" name="ncr1"  onchange='seccionc2(c1)'>
+<option selected  value="">Seleccione...</option>
+<option value=1>Sí (permanente)</option>
+<option value=2>Sí (eventual)</option>
+<option value=3>No (Sin buscar trabajo), (pase a la 42)</option>
+<option value=4>No (En búsqueda de trabajo), (pase a la 42)</option>
+<option value=5>Residente (Médico) (conteste  la 2)</option>
+<option value=6>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
+</select>
+ <h2 class="reactivo"> 22.- Nombre de la empresa o institución donde trabaja </h2>
+ <INPUT type="text" class="texto" id="22_empresa" name="ncr2" value=" " size="110" maxlength="110"  >
+    
+    <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
+
+
+<select class="select" id="22a Estado"  name="ncr2a" > 
+<option selected  value=""></option>
+<option value=1>CDMX</option>
+<option value=2>EXTRANJERO</option>
+<option value=3>Aguascalientes</option>
+<option value=4>Baja California</option>
+<option value=5>Baja California Sur</option>
+<option value=6>Campeche</option>
+<option value=7>Chiapas</option>
+<option value=8>Chihuahua</option>
+<option value=9>Coahuila</option>
+<option value=10>Colima</option>
+<option value=11>Durango</option>
+<option value=12>Guanajuato</option>
+<option value=13>Guerrero</option>
+<option value=14>Hidalgo</option>
+<option value=15>Jalisco</option>
+<option value=16>Estado de México</option>
+<option value=17>Michoacán</option>
+<option value=18>Morelos</option>
+<option value=19>Nayarit</option>
+<option value=20>Nuevo León</option>
+<option value=21>Oaxaca</option>
+<option value=22>Puebla</option>
+<option value=23>Querétaro</option>
+<option value=24>Quintana Roo</option>
+<option value=25>San Luis Potosí</option>
+<option value=26>Sinaloa</option>
+<option value=27>Sonora</option>
+<option value=28>Tabasco</option>
+<option value=29>Tamaulipas</option>
+<option value=30>Tlaxcala</option>
+<option value=31>Veracruz</option>
+<option value=32>Yucatán</option>
+<option value=33>Zacatecas</option>
+</select>
+
+<h2 class="reactivo"> 23.- La empresa o institución donde trabaja es: 
+</h2>
+
+
+<select class="select" id="Pregunta 23"  name="ncr3" > 
+<option selected  value=""></option>
+<option value=1>Pública</option>
+<option value=2>Privada</option>
+<option value=3>Social</option>
+</select>
+<h2 class="reactivo">  24.- ¿En qué sector se ubica? </h2>
+
+
+<select class="select" id="Pregunta 24" name="ncr4"   onchange=sector(c4)>
+<option selected="selected" value="">
+<option value=1> Agricultura, ganadería, aprovechamiento forestal, caza y pesca</option>
+<option value=19>Asociaciones y agrupaciones</option>
+<option value=20>Actividades de gobierno, organismos internacionales y extraterritoriales</option>
+<option value=4>Construcción</option>
+<option value=6>Comercio al por mayor</option>
+<option value=7>Comercio al por menor</option> 
+<option value=13>Dirección de corporativos y empresas</option>
+<option value=23>Editorial</option>
+<option value=3>Electricidad, agua y suministro de gas</option>
+<option value=5>Industrias manufactureras o de la transformación</option>
+<option value=9>Información en medios masivos</option>
+<option value=2>Minería</option>
+<option value=10>Servicios financieros y de seguros</option>
+<option value=11>Servicio inmobiliario y de alquiler de bienes muebles e intangibles</option>
+<option value=12>Servicios profesionales, científicos y técnicos</option>
+<option value=14>Servicios de apoyo a los negocios, manejo de desecho y servicios de remediación</option>
+<option value=15>Servicios de salud</option>
+<option value=16>Servicios educativos</option>
+<option value=17>Servicios de esparcimiento, cultural, deportivos y otros centros recreativos</option>
+<option value=18>Servicios de alojamiento temporal, de preparación de alimentos y bebidas (hotel, restaurant, bar) </option>
+<option value=8>Transporte, correos y almacenamiento</option>
+<option value=22>Telecomunicaciones </option>
+<option value=21>Otro (Especifíque)</option>
+</select><br>
+
+<h2 class="reactivo">  </h2>
+
+24a).- Otra:<input type="text" class="texto" ID="24_OTRA" name="ncr4a" size="65" maxlength="65" value=" " > 
+<h2 class="reactivo"> 25.-Aproximadamente, ¿cuántas personas laboran en la empresa?  </h2>
+
+<select class="select" id="Pregunta 25" name="ncr5"  >
+  <option selected="selected" value="">
+  <option value=1> Hasta 15 empleados</option>
+  <option value=2>Entre 16 y 100 empleados </option>
+  <option value=3>Entre 101 y 250 empleados</option>
+  <option value=4>Más de 251 empleados</option>
+</select>
+
+<h2 class="reactivo"> 26.- ¿Cuál es su condición en el trabajo? </h2>
+
+<select class="select" id="Pregunta 26"  name="ncr6"  onchange="bloqueo6(c6)" >
+    <option selected="selected" value="">
+    <option value=1>Autoempleo</option>
+    <option value=4>Empleado </option>
+    <option value=5>Otro (Especifíque)</option></select>
+    
+    <h2 class="reactivo"> 26a.-¿Tipo de autoempleo? </h2>
+<select class="select" id="Pregunta 26a" name="ncr6a"  >
+<option selected="selected" value="">
+<option value=2>Propietario</option>
+    <option value=3>Profesional independiente</option>
+</select>
+<br>
+ Otra:<input type="text" class="texto" ID="26_OTRA2" name="ncr6_a" size="65" maxlength="65" value=" " > 
+
+ <h2 class="reactivo">  27.- ¿Cuál es su puesto? </h2>
+
+
+ <INPUT type="text" class="texto" id="Pregunta 27" name="ncr7a" value="" size="110" maxlength="110"  >
+
+<h2 class="reactivo">28.- ¿Requiere tener título profesional para el puesto que ocupa? </h2>
+
+
+<select class="select" id="Pregunta 28" name="ncr7b"  >
+    <option selected="selected" value="">
+    <option value=1>Sí</option>
+    <option value=2>No</option> </select>
+
+    <h2 class="reactivo"> 29.- En su trabajo,¿tiene personal a su cargo? </h2>
+
+<select class="select" id="Pregunta 29" name="ncr8"  onchange=bloqueo(c8) >
+    <option selected="selected" value="">
+    <option value=1>Sí</option>
+    <option value=2>No</option> </select>
+    
+    <h2 class="reactivo"> 30.- ¿Cuántas personas trabajan con usted? </h2>
+
+
+<select class="select" id="Pregunta 30" name="ncr9"  >
+    <option selected="selected" value="">
+    <option value=1>1 a 5 </option>
+    <option value=2>6 a 10</option> 
+    <option value=3>11 a 20</option> 
+    <option value=4>21 a 30</option> 
+    <option value=5>31 o más</option> 
+</select>
+
+<h2 class="reactivo">  31.- ¿Su trabajo es de tiempo completo?</h2> 
+<select class="select" id="Pregunta 31" name="ncr10"  >
+    <option selected="selected" value="">
+    <option value=1>Sí</option>
+    <option value=2>No</option> </select>
+
+    <h2 class="reactivo"> 32.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
+
+<select class="select" id="Pregunta 32" name="ncr11"   onchange=bloqueo11(c11) >
+  <option selected="selected" value="">
+  <option value=1>Muy relacionado</option>
+  <option value=2>Medianamente relacionado</option> 
+  <option value=3>No está relacionado</option> 
+</select>
+<h2 class="reactivo">  33.- ¿Que actividades realiza? </h2>
+
+</TD>
+<TD>
+
+Especifique:
+<INPUT type="text" class="texto" id="Pregunta 33" name="ncr12a" value=" " size="110" maxlength="110"  >
+
+<h2 class="reactivo"> 34.- ¿Si su trabajo no está relacionado con su carrera
+         es porque usted asílo decidió? </h2>
+
+<select class="select" id="Pregunta 34" name="ncr15"  >
+<option selected="selected" value="">
+    <option value=1>Sí</OPTION>
+    <option value=2>No</OPTION> 
+</select>
 
       </div>
 
