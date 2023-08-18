@@ -6,7 +6,7 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 from datetime import date
-import EncuestasSQL
+
 today = date.today()
 load_dotenv()
 

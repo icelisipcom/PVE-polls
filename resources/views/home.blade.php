@@ -6,16 +6,16 @@
     <h1 class="text-white-50">Bienvenid@!!  {{Auth::user()->name }} {{Auth::user()->emojis }}</h1>
     <div>-----------------------------------------
         <br><br><br> 
-    <a href="{{ route('reporte')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <a href="{{ route('report','reporte_individual')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte Individual
     </button></a>
     
-    <a href="{{ route('reporte')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <a href="{{ route('report','correos_inconclusas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte por encuestador
     </button></a>
 
     
-    <a href="{{ route('reporte')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <a href="{{ route('report','correos_inconclusas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas inconclusas
     </button></a>
     </div>
