@@ -34,6 +34,6 @@ Route::get('/aviso', [App\Http\Controllers\HomeController::class, 'aviso'])->nam
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');
 Route::post('/resultado', [App\Http\Controllers\HomeController::class, 'resultado'])->name('resultado');
 Route::post('/enviar_aviso', [App\Http\Controllers\HomeController::class, 'enviar_aviso'])->name('enviar_aviso');
-Route::get('/reporte', [App\Http\Controllers\ReportController::class, 'rep_individual'])->name('reporte');
+Route::get('/reporte/{report}', [App\Http\Controllers\ReportController::class, 'generate'])->name('report');
 
 });
