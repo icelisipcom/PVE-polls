@@ -87,7 +87,7 @@ inconclusos['fec_capt'] = pd.to_datetime(inconclusos['fec_capt'])
 df=inconclusos.groupby('cuenta', as_index=False)['fec_capt'].max().merge(egresados,on='cuenta',how='inner')
 df=df.rename(columns={"carrera":"clave_carrera","plantel":"clave_plantel"})
 df = pd.merge(df, carreras, on=['clave_carrera','clave_plantel'], how='inner', suffixes=['_and', '_or'])
-writer = pd.ExcelWriter('storage/correos_inconclusas.xlsx', engine='xlsxwriter')
+writer = pd.ExcelWriter('correos_inconclusas.xlsx', engine='xlsxwriter')
 
 workbook = writer.book
 a_color='#173d83'
