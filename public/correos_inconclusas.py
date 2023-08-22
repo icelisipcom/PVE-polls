@@ -151,12 +151,12 @@ worksheet.write('K8','Correo UNAM',header_format)
 worksheet.write('L8','Telefono 1',header_format)
 worksheet.write('M8','Telefono 2',header_format)
 
-for i in range(0,len(inconclusos)):
+for i in range(0,len(df)):
     worksheet.write('B'+str(i+9),df['nombre'].values[i],blue_content)
     worksheet.write('C'+str(i+9),df['paterno'].values[i],blue_content)
     worksheet.write('D'+str(i+9),df['materno'].values[i],blue_content)
     worksheet.write('E'+str(i+9),df['cuenta'].values[i],blue_content)
-    worksheet.write('F'+str(i+9),df['fec_capt'].values[i],blue_content)
+    worksheet.write('F'+str(i+9),str(df['fec_capt'].values[i])[0:10],blue_content)
     worksheet.write('G'+str(i+9),df['carrera'].values[i],blue_content)
     worksheet.write('H'+str(i+9),df['plantel'].values[i],blue_content)
     worksheet.write('I'+str(i+9),df['correo'].values[i],blue_content)
@@ -167,8 +167,7 @@ for i in range(0,len(inconclusos)):
    
 
 
-worksheet.set_column('J:J',15)
-worksheet.set_column('B:C',17)
+worksheet.set_column('B:D',17)
 worksheet.set_column('H:M',28)
 worksheet.set_landscape()
 worksheet.set_paper(9)
