@@ -37,7 +37,7 @@ encuestas_incompletas=pd.read_sql("""select respuestas2.aplica, egresados.cuenta
                         inner join carreras  on carreras.clave_carrera=egresados.carrera and carreras.clave_plantel=egresados.plantel)
                         where respuestas2.ngr11f is  null and egresados.anio_egreso=2019""",cnx)
 egresados=pd.read_sql("""select * from egresados where egresados.anio_egreso=2019""",cnx)
-
+carreras=pd.read_sql("select * from carreras",cnx)
 def formatear_cuenta(columna):
         """ Formatea los números de cuenta para que tengan un formato consistente y comparable
 
@@ -65,11 +65,10 @@ def formatear_cuenta(columna):
         return columna  
 
 egresados['cuenta']=formatear_cuenta(egresados['cuenta'])
+encuestas_incompletas['cuenta']=formatear_cuenta(encuestas_incompletas['cuenta'])
+encuestas_completas['cuenta']=formatear_cuenta(encuestas_completas['cuenta'])
 
-inconclusos=encuestas_incompletas[['cuenta','fec_capt']].merge(egresados,how='inner',on='cuenta')
-index_for_drop=inconclusos[inconclusos['cuenta'].isin(encuestas_completas['cuenta'].unique())].index
-inconclusos.drop(index_for_drop , inplace=True)
-print('columnas df',inconclusos.columns)
+
 ClavesNombres = {'17': 'Erendira', '12':'Mónica', '15':'César', '20':'María', '21':'Ivonne',
                              '14':'Alberto','18':'Daniela','19':'Elvira','13':'Carolina','22':'Elizabeth'}
 def mapeo(x):
@@ -81,7 +80,13 @@ def mapeo(x):
         except:
             return 'Encuestador Desconocido'
 #     return x/100
-
+inconclusos=encuestas_incompletas[['cuenta','fec_capt']]
+index_for_drop=inconclusos[inconclusos['cuenta'].isin(encuestas_completas['cuenta'].unique())].index
+inconclusos.drop(index_for_drop , inplace=True)
+inconclusos['fec_capt'] = pd.to_datetime(inconclusos['fec_capt'])
+df=inconclusos.groupby('cuenta', as_index=False)['fec_capt'].max().merge(egresados,on='cuenta',how='inner')
+df=df.rename(columns={"carrera":"clave_carrera","plantel":"clave_plantel"})
+df = pd.merge(df, carreras, on=['clave_carrera','clave_plantel'], how='inner', suffixes=['_and', '_or'])
 writer = pd.ExcelWriter('storage/correos_inconclusas.xlsx', engine='xlsxwriter')
 
 workbook = writer.book
@@ -145,17 +150,26 @@ worksheet.write('J8','Correo 2',header_format)
 worksheet.write('K8','Correo UNAM',header_format)
 worksheet.write('L8','Telefono 1',header_format)
 worksheet.write('M8','Telefono 2',header_format)
-worksheet.write('N8','Telefono encuesta',header_format)
 
 for i in range(0,len(inconclusos)):
-    worksheet.write('B'+str(i+9),encuestas['cuenta'].values[i],blue_content)
-    worksheet.write('C'+str(i+9),str(encuestas['fec_capt'].values[i]),date_content)
-    worksheet.write('D'+str(i+9),encuestas['aplica'].values[i],blue_content)
-    worksheet.write('E'+str(i+9),encuestas['carrera'].values[i],blue_content)
-    worksheet.write('F'+str(i+9),encuestas['plantel'].values[i],blue_content)
+    worksheet.write('B'+str(i+9),df['nombre'].values[i],blue_content)
+    worksheet.write('C'+str(i+9),df['paterno'].values[i],blue_content)
+    worksheet.write('D'+str(i+9),df['materno'].values[i],blue_content)
+    worksheet.write('E'+str(i+9),df['cuenta'].values[i],blue_content)
+    worksheet.write('F'+str(i+9),df['fec_capt'].values[i],blue_content)
+    worksheet.write('G'+str(i+9),df['carrera'].values[i],blue_content)
+    worksheet.write('H'+str(i+9),df['plantel'].values[i],blue_content)
+    worksheet.write('I'+str(i+9),df['correo'].values[i],blue_content)
+    worksheet.write('J'+str(i+9),df['correo2'].values[i],blue_content)
+    worksheet.write('K'+str(i+9),df['correo_unam'].values[i],blue_content)
+    worksheet.write('L'+str(i+9),df['telefono'].values[i],blue_content)
+    worksheet.write('M'+str(i+9),df['telefono2'].values[i],blue_content)
+   
+
+
 worksheet.set_column('J:J',15)
 worksheet.set_column('B:C',17)
-worksheet.set_column('E:F',28)
+worksheet.set_column('H:M',28)
 worksheet.set_landscape()
 worksheet.set_paper(9)
 worksheet.fit_to_pages(1, 1)  
