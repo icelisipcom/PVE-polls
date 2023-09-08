@@ -9,6 +9,7 @@ use App\Models\Carrera;
 use DB;
 use App\Models\User;
 use App\Models\Estudio;
+use App\Models\Egresado;
 use App\Models\Muestra;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -118,13 +119,15 @@ class HomeController extends Controller
         ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
         ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
         ->where('egresados.anio_egreso','=',2019)
-        ->where('respuestas2.cuenta','=',$request->nc)
+        ->where('respuestas2.cuenta','=',(int)$request->nc)
         ->get(); 
-        
+        $eg=Egresado::where('cuenta',(int)$request->nc)->first();
         $encuestas14=DB::table('respuestas14')
         ->where('respuestas14.cuenta','=',$request->nc)
+        ->whereNotNull('respuestas14.NGR11')
         ->get();      
-        return view('resultado',compact('encuestas19','encuestas14'));
+        return view('resultado',compact('encuestas19','encuestas14','eg'));
+
     
     }
     public function enviar_aviso(Request $request){
