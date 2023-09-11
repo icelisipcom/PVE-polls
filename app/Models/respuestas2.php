@@ -9,4 +9,5 @@ class respuestas2 extends Model
 {
     use HasFactory;
     protected $table = 'respuestas2';
+    protected $primaryKey = 'registro';
 }

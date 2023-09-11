@@ -39,14 +39,9 @@
   <a class="navbar-brand" href="#" onClick="unhide('G')" id='Gbtn'><p id='Gtxt'>Seccion G</p></a>
 </nav>
 </div>
-<form action="">
-
-<a href="#">
-<div class="fixed">
-<button class="btn fixed"  type="submit" style="background-color:{{Auth::user()->color}} ; color:white;">
-    <i class="fas fa-save fa-lg"></i> &nbsp; Guardar
-  </button>
-</div></a>
+<form action="{{ url('encuestas/real_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='formasagrada'>
+@csrf
+<input type="text" value='{{$Encuesta->cuenta}}' name='cuenta' hidden>
     <div class='Scroll'> 
      
     
@@ -651,7 +646,7 @@ Especifique:
         <option value=3>Medianamente importante</option> 
         <option value=4>Poco importante</option> 
         <option value=5>Nada importante </option> 
-        </select>
+  </select>
 
         <h2 class="reactivo">   	48.- Sus conocimientos sobre la carrera </h2>
 
@@ -2094,6 +2089,12 @@ ambiente
       </div>
     </div>
     
+</div>
+
+<div class="fixed">
+<button class="btn fixed"  type="submit" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
+    <i class="fas fa-save fa-lg"></i> &nbsp; Guardar
+  </button>
 </div>
 </form>
 </div>

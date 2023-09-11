@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth']], function()
 
 Route::resource('muestras', MuestrasController::class);
 Route::resource('encuestas', EncuestasController::class);
+Route::post('/encuestas/real_update/{id}', [App\Http\Controllers\EncuestasController::class, 'update2'])->name('encuestas.real_update');
+
 Route::get('/enc2019_make', [App\Http\Controllers\EncuestasController::class, 'index'])->name('encuestas.make19');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
