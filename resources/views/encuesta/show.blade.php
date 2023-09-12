@@ -79,7 +79,7 @@
         <option value='2'@if($Encuesta->nar9==2) selected @endif>No</option> 
 </select>
 <div name = "nar9adiv" id="nar9adiv">
-a).- ¿Cuántos?:</div><input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" value="{{$Encuesta->nar10}}"> 
+a).- ¿Cuántos?:</div><input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" @if(strlen($Encuesta->nar10)>1) value="{{$Encuesta->nar10}}" @else value="0" @endif> 
 
 <h2 class="reactivo">5.-  Teléfono de casa</h2> 
  <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->telcasa}}">
@@ -2347,11 +2347,14 @@ document.getElementById(item.id).value="";
   for (var i = 0, element; element = elements[i++];) {
       if (element.value == ""){
           console.log("falta "+element.id+"  "+element.value);
-          alert("falta respuesta"+element.name)
-          document.getElementById(element.id).focus();
+          if(confirm("Seguro que deseas guardar una encuesta incompleta?")==true){
+            forma.submit();
+          }
+          /* document.getElementById(element.id).focus(); */
           return;
       }
   }
+  forma.submit();
  }
  </script>
 @endpush

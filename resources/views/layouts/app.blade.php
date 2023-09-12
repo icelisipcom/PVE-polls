@@ -28,10 +28,30 @@
     
 }
      </style>
+     <style>
+.panel-fullscreen {
+display: block;
+z-index: 9999;
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+overflow: auto;
+}
+</style>
      @stack('css')
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    function expandir() {
+        console.log(' a chikita');
+  $(this).closest('.box.box-warning').toggleClass('panel-fullscreen');
+}
+</script>
 </head>
     <body class="hold-transition sidebar-mini layout-fixed"  >
         <div class="wrapper">
@@ -44,8 +64,11 @@
                                 class="fas fa-bars" style="color:white"></i></a>
                     </li>
                 </ul>
-
+                
                 <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item">
+                    <button type="button" style="color:white" class="toggle-expand-btn btn  btn-sm" onclick="expandir()"><i class="fa fa-expand"></i></button>
+                </li> -->
                     <li class="nav-item dropdown user-menu">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <img src="{{asset('img/logoPVE.png')}}"
