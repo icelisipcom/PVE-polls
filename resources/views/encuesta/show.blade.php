@@ -39,7 +39,7 @@
   <a class="navbar-brand" href="#" onClick="unhide('G')" id='Gbtn'><p id='Gtxt'>Seccion G</p></a>
 </nav>
 </div>
-<form action="{{ url('encuestas/real_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='formasagrada'>
+<form action="{{ url('encuestas/real_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
 <input type="text" value='{{$Encuesta->cuenta}}' name='cuenta' hidden>
     <div class='Scroll'> 
@@ -73,14 +73,14 @@
              </select>
              <h2 class="reactivo"> 4.- ¿Tiene hijos?</h2>
          
-         <select class="select" id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar9adiv])" >
+         <select class="select" id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar9adiv,nar10])" >
          <option value="" selected></option>
         <option value='1' @if($Encuesta->nar9==1) selected @endif>Sí</option>
         <option value='2'@if($Encuesta->nar9==2) selected @endif>No</option> 
 </select>
 <div name = "nar9adiv" id="nar9adiv">
-a).- ¿Cuántos?:<input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" value="{{$Encuesta->nar10}}"> 
-</div>
+a).- ¿Cuántos?:</div><input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" value="{{$Encuesta->nar10}}"> 
+
 <h2 class="reactivo">5.-  Teléfono de casa</h2> 
  <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->telcasa}}">
 
@@ -133,7 +133,7 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxl
 
 <select class="select" id="nar14" name="nar14" onchange="bloquear('nar14',[1,2,3,4,5,6,7,8,9,10,11,12],[nar14otra])"  >
        <option value="" ></option>
-<option value=28 @if($Encuesta->nar14==28) selected @endif >Artesanos y obrero</option>
+<option value=28 z>Artesanos y obrero</option>
 <option value=25 @if($Encuesta->nar14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
 <option value=41 @if($Encuesta->nar14==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
 <option value=21 @if($Encuesta->nar14==21) selected @endif >Funcionario y directivo</option>
@@ -225,7 +225,7 @@ Otra:<input type="text" class="texto" ID="nar14otra" name="nar14otra" size="80" 
 </select>
 <br>(Especifíque)
 Otra:
-<input type="text" class="texto" ID="nar15otra" name="nar15otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar15otra)>2) value="{{$Encuesta->nar15otra}}" @else value=" " @endif  > 
+<input type="text" class="texto" ID="nar15otra" name="nar15otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar15otra)>2) value="{{$Encuesta->nar15otra}}" @else value="0" hidden @endif  > 
 
 <h2 class="reactivo">12.- Nivel de estudios de su padre  </h2>
         
@@ -288,7 +288,7 @@ cursó sus estudios en la UNAM?
 
 </select>
 <br>(Especifíque)
-Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar16otra)>2) value="{{$Encuesta->nar16otra}}" @else value=" " @endif >   
+Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar16otra)>2) value="{{$Encuesta->nar16otra}}" @else value="0" hidden @endif >   
 
       </div>
       <div class='col' id='B'>
@@ -296,20 +296,20 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
     
     <select class="select" id="nbr1" name="nbr1" >
  <option value="" selected></option>
-            <option value=1>CCH</option>
-            <option value=2>ENP</option>
-            <option value=3>BACH_PUB.</option>
-            <option value=4>BACH_PRIV.</option>
-            <option value=5>Sin BACH.</option>
+            <option @if($Encuesta->nbr1==1) selected @endif  value=1>CCH</option>
+            <option @if($Encuesta->nbr1==2) selected @endif value=2>ENP</option>
+            <option @if($Encuesta->nbr1==3) selected @endif value=3>BACH_PUB.</option>
+            <option @if($Encuesta->nbr1==4) selected @endif value=4>BACH_PRIV.</option>
+            <option @if($Encuesta->nbr1==5) selected @endif value=5>Sin BACH.</option>
                          </select>
     <h2 class="reactivo">15).- ¿Tiene una segunda Licenciatura?</h2>
  
       
  <select class="select" id= "ner20"  name="ner20"  onchange=bloqueo20(e20) >
    <option selected="selected" value="">
-   <option value=1>No </option>
-   <option value=2>Si, la estoy cursando</option>
-   <option value=3>Si, ya la concluí</option>
+   <option value=1 @if($Encuesta->ner20==1) selected @endif >No </option>
+   <option value=2 @if($Encuesta->ner20==2) selected @endif >Si, la estoy cursando</option>
+   <option value=3 @if($Encuesta->ner20==3) selected @endif >Si, ya la concluí</option>
     </select>
  <h2 class="reactivo">15a).- ¿Cuál? </h2>
  <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT SIZE=35 MAXLENGTH=35>
@@ -578,10 +578,131 @@ Especifique:
     <option value=2>No</OPTION> 
 </select>
 
+<h2 class="reactivo"> 35.- ¿Cómo considera qué lo prepar&oacute el estudio de la carrera para el desempeño de su trabajo actual? </h2>
+    
+    <select class="select" id="Pregunta 35" name="ncr16"   > 
+           <option selected="selected" value="">
+          <option value=1>Muy Bien</option>
+          <option value=2>Bien</option>
+          <option value=3>Medianamente</option>
+          <option value=4>Mal</option>
+          <option value=5>Muy mal</option>
+         </select>
+    
+         <h2 class="reactivo">  36.¿Cuál es su grado de satisfacción con su trabajo actual? </h2>
+         <select class="select" id="Pregunta 36" name="ncr17" >  
+       <option selected="selected" value="">
+       <option value=1>Muy satisfecho(a)</option>
+       <option value=2>Satisfecho(a)</option>
+       <option value=3>Medianamente satisfecho(a)</option>
+       <option value=4>Poco satisfecho(a)</option>
+       <option value=5>Nada satisfecho(a)</option>
+         </select>
+         <h2 class="reactivo">37.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
+        </h2>
+    
+       <select class="select" id="Pregunta 37" name="ncr18">  
+       <option selected="selected" value="">
+       <option value=1>Totalmente de acuerdo</option>
+       <option value=2>De acuerdo</option>
+       <option value=3>Medianamente de acuerdo</option>
+       <option value=4>En desacuerdo</option>
+       <option value=5>Totalmente en desacuerdo</option>
+       </select>
+    
+       <h2 class="reactivo">38.- ¿Considera que las actividades y responsabilidades que tiene 
+        en su trabajo, corresponden a su nivel educativo?  </h2>
+    
+       <select class="select" id="Pregunta 38" name="ncr19" > 
+       <option selected="selected" value="">
+       <option value=5>Totalmente de acuerdo</option>   
+       <option value=4>De acuerdo</option>
+       <option value=3>Medianamente de acuerdo</option>
+       <option value=2>En desacuerdo</option>   
+       <option value=1>Totalmente  en desacuerdo</option>
+    </select>
+    <h2 class="reactivo">39.- ¿Cuantos trabajos tiene actualmente?  </h2>
+    
+    
+          <select class="select" id="Pregunta 39" name="ncr20"  > 
+          <option selected="selected" value="">
+          <option value=1>Uno</option>
+          <option value=2>Dos</option>
+          <option value=3>Tres o más</option>
+           </select>
+    
+           <h2 class="reactivo"> 40.- ¿Cuáles son sus ingresos mensuales promedio en su o sus trabajos?  </h2>
+    
+    <INPUT type="text" class="texto"  id="Pregunta 40" name="ncr21a" size="10" maxlength="6" value="0"  onKeyPress="return acceptNum(event)" > 
+    (solo enteros, sin centavos, comas, ni puntos) 
+    <h2 class="reactivo"> 41.- Desde que terminó sus estudios de licenciatura,
+        ¿ha dejado de trabajar? </h2>
+    
+    
+    <select class="select" id="Pregunta 41" name="ncr22"  onchange=bloqueo22(c22) > 
+    <option value="" selected="selected"></option>
+    <option value=1>Sí</option>
+    <option value=2>No</option>
+    </select>
+    
+    <h2 class="reactivo"> 42.-¿Cuá es la razón principal por la que usted no está trabajando o 
+        ha dejado de trabajar? </h2>
+     <select class="select" id="Pregunta 42" name="ncr24" onchange=bloqueo24(c24) >
+      <option value=0> -</option>
+      <option value=1> Estar estudiando</option>
+      <option value=13>Embarazo </option>
+      <option value=11>Razones de salud </option>
+      <option value=4> Obligaciones familiares</option>
+      <option value=10>No le interesaba trabajar </option>
+      <option value=5>Las ofertas eran poco atractivas con relación al salario </option>
+      <option value=6>Las ofertas eran poco atractivas con relación a las actividades profesionales </option>
+      <option value=2>Falta de ofertas de trabajo </option>
+      <option value=7> Falta de experiencia laboral</option>
+      <option value=3>No tenía las competencias necesarias para el trabajo al que aspiraba </option>
+      <option value=8> No tener el título de licenciatura</option>
+      <option value=9>No tener estudios de posgrado </option>
+      <option value=12> Perdió o dejó su trabajo (¿por qué?)</option>
+      <option value=13>Embarazo</option> 
+      <option value=15>Hacer la tesis o trámites de titulación </option> 
+      <option value=16>Servicio social o prácticas profesionales</option> 
+      <option value=17>Cambio de residencia</option> 
+      <option value=18>Emprender un negocio o empresa propios</option> 
+      <option value=19>Motivos personales</option> 
+      <option value=20>Derivado de la pandemia</option> 
+      <option value=14>Otra </option>
+    </select>
+    <br>(Especifíque)
+    Otra:
+    <input type="text" class="texto" ID="42_OTRA" name="ncr24a" size="55" maxlength="55" value=" "  > 
+    
+    
+    <h2 class="reactivo">   42a):-Perdió o dejó su trabajo, ¿por qué? </h2>
+  
+     <select class="select" id="Pregunta 42a" name="ncr24porque" >
+              <option  value="" selected></option>
+     <option value=1>Cerró la empresa</option> 
+     <option value=2>Liquidación</option> 
+     <option value=3>Término de contrato o proyecto</option> 
+     <option value=4>Renuncia</option> 
+         <option value=15>Renuncia debido a la  pandemia</option>
+        <option value=16>Despido debido a la pandemia</option>
+        <option value=17>Cerro la empresa debido a la pandemia</option>
+     <option value=5>Otra</option> 
+     </select>
+       
+     <h2 class="reactivo"> 43.- ¿Ciál es el periodo más largo que ha permanecido sin laborar? </h2>
+    
+    
+    <select class="select" id="Pregunta 43" name="ncr23" >
+            <option selected="selected" value="">
+            <option value=1>De 1 a 3 meses</option>
+            <option value=2>Más de 3 y hasta 6 meses</option> 
+            <option value=3>Más de 6 y hasta un año</option> 
+            <option value=4>Más de un año</option> 
+            </select>
       </div>
 
       <div class='col' id='D'>
-       
     <h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
 
 
@@ -2092,7 +2213,7 @@ ambiente
 </div>
 
 <div class="fixed">
-<button class="btn fixed"  type="submit" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
+<button class="btn fixed"  type="button" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
     <i class="fas fa-save fa-lg"></i> &nbsp; Guardar
   </button>
 </div>
@@ -2157,11 +2278,12 @@ ambiente
     document.getElementById(sec+'btn').style.backgroundColor="{{Auth::user()->color}}";
     console.log(document.getElementById(sec+'btn').style.color)
     document.getElementById(sec+'txt').style.color="white";
-
-    window.scrollTo(888, 1000); 
+    var el = document.querySelector('#cuerpo');
+    window.scrollTo(888, 1000);
+    el.scrollTo(88, 100); 
     document.body.scrollTop=200;
     console.log('scroleado¿?');
-    var el = document.querySelector('#cuerpo');
+   
 
 // get scroll position in px
 console.log(el.scrollLeft, el.scrollTop);
@@ -2211,6 +2333,25 @@ document.getElementById(item.id).value=0;
 
 function visibilizar(item){
 document.getElementById(item.id).hidden="";
+document.getElementById(item.id).value="";
 }
+ </script>
+
+ <script>
+ function post_data(){
+  console.log('ey k once :v');
+  forma=document.querySelector('#forma_sagrada');
+  console.log(forma.name);
+  var elements = document.getElementById("forma_sagrada").elements;
+
+  for (var i = 0, element; element = elements[i++];) {
+      if (element.value == ""){
+          console.log("falta "+element.id+"  "+element.value);
+          alert("falta respuesta"+element.name)
+          document.getElementById(element.id).focus();
+          return;
+      }
+  }
+ }
  </script>
 @endpush

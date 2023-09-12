@@ -312,9 +312,10 @@ $Encuesta-> ngr11c  = $request-> ngr11c ;
 $Encuesta-> ngr11d  = $request-> ngr11d ;
 $Encuesta-> ngr11e  = $request-> ngr11e ;
 $Encuesta-> ngr11f  = $request-> ngr11f ;
+// dd(strlen((str)$request->ngr11f));
 $Encuesta->save();
-$fileName = time().$Encuesta->cuenta.'.json';
-$fileStorePath = public_path('storage/'.$fileName);
+$fileName = now().$Encuesta->cuenta.'.json';
+$fileStorePath = public_path('storage/json/'.$fileName);
 
 File::put($fileStorePath, json_encode($request->all()));
 
