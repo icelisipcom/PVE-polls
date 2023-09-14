@@ -565,9 +565,14 @@ $fileStorePath = public_path('storage/json/'.$fileName);
 
 File::put($fileStorePath, json_encode($request->all()));
 
-return response()->download($fileStorePath);
-return response()->json($request->all());
-return redirect()->route('encuestas.show',);
+return view('encuesta.saved',compact('Encuesta'));
 
+
+}
+
+public function json($id){
+    $fileName = $id.'.json';
+    $fileStorePath = public_path('storage/json/'.$fileName);
+return response()->download($fileStorePath);
 }
 }
