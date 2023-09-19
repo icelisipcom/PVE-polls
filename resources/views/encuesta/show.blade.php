@@ -554,7 +554,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 
     <h2 class="reactivo"> 32.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
 
-<select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[3],[ncr15])" >
+<select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15])" >
   <option selected="selected" value="">
   <option value=1 @if($Encuesta->ncr11==1) selected @endif>Muy relacionado</option>
   <option value=2 @if($Encuesta->ncr11==2) selected @endif>Medianamente relacionado</option> 
@@ -750,7 +750,7 @@ Especifique:
   
 
 	<select class="select" id="ndr3" name="ndr3" >
-        <option selected="selected" value="">
+        <option value="">
         <option value=1  @if($Encuesta->ndr3==1) selected @endif>Muy importante</option>
         <option value=2  @if($Encuesta->ndr3==2) selected @endif>Importante</option> 
         <option value=3  @if($Encuesta->ndr3==3) selected @endif>Medianamente importante</option> 
