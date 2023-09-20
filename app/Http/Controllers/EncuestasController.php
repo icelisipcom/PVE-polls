@@ -73,8 +73,14 @@ $fileStorePath = public_path('storage/'.$fileName);
 File::put($fileStorePath, json_encode($request->all()));
 
 $Encuesta-> aplica  = Auth::user()->clave;
-$Encuesta-> fec_capt  = now() ;
+if($request->fec_capt=="2023-01-01"){
+    $Encuesta-> fec_capt  = now() ;
+}else{
+    $Encuesta-> fec_capt  = $request-> fec_capt ;
+}
+
 $Encuesta-> telcasa  = $request-> telcasa ;
+
 $Encuesta-> TELCEL  = $request-> TELCEL ;
 $Encuesta-> teltra  = $request-> teltra ;
 $Encuesta-> exttra  = $request-> exttra ;

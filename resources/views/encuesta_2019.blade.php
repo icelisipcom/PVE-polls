@@ -43,7 +43,7 @@
                          <td> {{$encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
                          <td> {{$c->requeridas_5}}</td>
                          <td> {{$c->requeridas_5 - $encuestas19->where('plantel','=',$c->clave_plantel)->where('carrera','=',$c->clave_carrera)->count()}}</td>
-                         <td><a href="{{route('muestras.show',$c->id)}}" ><button class="btn"style="background-color:{{Auth::user()->color}} ; color:white;"><i class="fa-solid fa-eye"></i> Ver muestra</button></a></td>
+                         <td><a href="{{route('muestras.show',$c->id)}}" ><button class="btn"style="background-color:{{Auth::user()->color}} ; color:white;"><i class="fas fa-eye"></i> Ver muestra</button></a></td>
                         </tr>
                        
                         @endforeach
@@ -62,7 +62,6 @@
 @push('js')
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 <script>
- 
   console.log('script jalando ¿?');
   $(document).ready(function() {
     $('#myTable').DataTable();

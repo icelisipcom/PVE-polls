@@ -44,7 +44,19 @@
 <input type="text" value='{{$Encuesta->cuenta}}' name='cuenta' hidden>
     <div class='Scroll'> 
      
+    <h2 class="reactivo">FECHA EN QUE SE CAPTURA </h2>             <!--   -------FECHA DE NACIMIENTO-->
     
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradioa" autocomplete="off" checked onclick="automatico();">
+        <label class="btn btn-outline-danger" for="btnradioa">fecha<br> actual</label>
+        <input type="radio" class="btn-check" name="btnradio" id="btnradiob" autocomplete="off" onclick="manual();">
+        <label class="btn btn-outline-danger" for="btnradiob">fecha <br> anterior </label>
+        </div>
+        <br><br>
+        <div class="form-group" id="fecha-group" style="display:none;">
+          <h2 class="reactivo">Fecha en que fue realizada la encuesta</h2>
+          <input type="date"  class="fecha" name="fec_capt" id="fec_capt"  value="2023-01-01" style="width : 70%;"/> 
+          </div>
       <div class='col' id='A'>
       <h1 class="seccion">DATOS PERSONALES</h1>
     <hr>
@@ -95,7 +107,7 @@ Extensión:
 
 <h2 class="reactivo">7.- ¿Tiene correo electrónico?</h2>  
 
-<select class="select" id="ncrcc" name="ncrcc"  onchange="bloquear('ncrcc',[2],[correo])" >
+<select class="select" id="ncrcc" name="ncrcc"  onchange="bloquear('ncrcc',[2],[correo,nar1_a])" >
 <option value="" ></option>
         <option  selected  value='1'>Sí</option>
         <option value='2'  >No</option> 
@@ -105,7 +117,7 @@ Extensión:
 
 <INPUT type="text" class="texto"  id="nar1_a" name="nar1_a" size="39" maxlength="39" value="{{$Encuesta->nar1_a}}"  >
 </div>
-  <div name="nar11div" @if($Encuesta->nar8==1) hidden  @endif  id="nar11div">
+  <div name="nar11div" id="nar11div" @if($Encuesta->nar8==1) hidden  @endif  >
 
     <h2 class="reactivo"> 8.- Nivel de estudios de su esposo(a)</h2>
  
@@ -126,7 +138,6 @@ Extensión:
       <option value=13  @if($Encuesta->nar11==13) selected @endif >Otro (Especifíque)</option>
     </select>
 Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxlength="50" @if(strlen($Encuesta->nar11a)>2) value="{{$Encuesta->nar11a}}" @else value="" hidden @endif > 
-
 
   
 <h2 class="reactivo">9.-Ocupación de su esposo(a)</h2>
@@ -186,7 +197,7 @@ Otra:<input type="text" class="texto" ID="nar14otra" name="nar14otra" size="80" 
 
 10a).-¿Si su madre es profesionista 
       cursó sus estudios en la UNAM?
-      <select class="select" id="nrx" name="nrx"  >
+    <select class="select" id="nrx" name="nrx"  >
        <option value="" ></option>
        <option value=1 @if($Encuesta->nrx==1) selected @endif >SI</option>
        <option value=2 @if($Encuesta->nrx==2) selected @endif >No</option;n>
@@ -304,13 +315,12 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
                          </select>
     <h2 class="reactivo">15).- ¿Tiene una segunda Licenciatura?</h2>
  
-      
- <select class="select" id= "ner20"  name="ner20"  onchange=bloqueo20(e20) >
+ <select class="select" id= "ner20"  name="ner20"  onchange="bloquear('ner20',[1],[ner20a,ner20txt])" >
    <option selected="selected" value="">
    <option value=1 @if($Encuesta->ner20==1) selected @endif >No </option>
    <option value=2 @if($Encuesta->ner20==2) selected @endif >Si, la estoy cursando</option>
    <option value=3 @if($Encuesta->ner20==3) selected @endif >Si, ya la concluí</option>
-    </select>
+ </select>
  <h2 class="reactivo">15a).- ¿Cuál? </h2>
  <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT SIZE=35 MAXLENGTH=35 @if($Encuesta->ner20==1) hidden value=" " @endif>
  
@@ -338,7 +348,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
      <h2 class="reactivo">17).-¿Durante sus estudios de bachillerato fue becario?    </h2>
    
  
- <select class="select" id="nar2a" name="nar2a"  onchange=bloqueoab(a2)  >
+ <select class="select" id="nar2a" name="nar2a"  onchange=check_beca()   >
  <option value="" selected></option>
  <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>
  <option value=2 @if($Encuesta->nar2a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
@@ -347,7 +357,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
  
  <h2 class="reactivo">18).- ¿Durante sus estudios de licenciatura fue becario?   </h2>
  
- <select class="select" id="nar3a" name="nar3a"  onchange=bloqueoab(a3) >
+ <select class="select" id="nar3a" name="nar3a"  onchange=check_beca() >
  <option value="" selected></option>
     <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
     <option value=2 @if($Encuesta->nar3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
@@ -393,7 +403,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
       <h2 class="reactivo">  21.- ¿Actualmente está trabajando? </h2> 
  
     
- <select class="select" id="ncr1" name="ncr1"  onchange='seccionc2(c1)'>
+ <select class="select" id="ncr1" name="ncr1"  onchange='seccionc2()'>
 <option selected  value="">Seleccione...</option>
 <option value=1 @if($Encuesta->ncr1==1) selected @endif>Sí (permanente)</option>
 <option value=2 @if($Encuesta->ncr1==2) selected @endif>Sí (eventual)</option>
@@ -500,7 +510,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 
 <h2 class="reactivo"> 26.- ¿Cuál es su condición en el trabajo? </h2>
 
-<select class="select" id="ncr6"  name="ncr6_a"  onchange="bloqueo6(c6)" >
+<select class="select" id="ncr6_a"  name="ncr6_a"  onchange="bloqueo6(c6)" >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr6==2) selected @endif @if($Encuesta->ncr6==3) selected @endif>Autoempleo</option>
     <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
@@ -579,7 +589,7 @@ Especifique:
 
 <h2 class="reactivo"> 35.- ¿Cómo considera qué lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
     
-    <select class="select" id="Pregunta 35" name="ncr16"   > 
+    <select class="select" id="ncr16" name="ncr16"   > 
            <option selected="selected" value="">
           <option value=1 @if($Encuesta->ncr16==1) selected @endif>Muy Bien</option>
           <option value=2 @if($Encuesta->ncr16==2) selected @endif>Bien</option>
@@ -589,7 +599,7 @@ Especifique:
          </select>
     
          <h2 class="reactivo">  36.¿Cuál es su grado de satisfacción con su trabajo actual? </h2>
-         <select class="select" id="Pregunta 36" name="ncr17" >  
+         <select class="select" id="ncr17" name="ncr17" >  
        <option selected="selected" value="">
        <option value=1 @if($Encuesta->ncr17==1) selected @endif>Muy satisfecho(a)</option>
        <option value=2 @if($Encuesta->ncr17==2) selected @endif>Satisfecho(a)</option>
@@ -600,7 +610,7 @@ Especifique:
          <h2 class="reactivo">37.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
         </h2>
     
-       <select class="select" id="Pregunta 37" name="ncr18">  
+       <select class="select" id="ncr18" name="ncr18">  
        <option selected="selected" value="">
        <option value=1 @if($Encuesta->ncr18==1) selected @endif>Totalmente de acuerdo</option>
        <option value=2 @if($Encuesta->ncr18==2) selected @endif>De acuerdo</option>
@@ -612,7 +622,7 @@ Especifique:
        <h2 class="reactivo">38.- ¿Considera que las actividades y responsabilidades que tiene 
         en su trabajo, corresponden a su nivel educativo?  </h2>
     
-       <select class="select" id="Pregunta 38" name="ncr19" > 
+       <select class="select" id="ncr19" name="ncr19" > 
        <option selected="selected" value="">
        <option value=5 @if($Encuesta->ncr19==5) selected @endif>Totalmente de acuerdo</option>   
        <option value=4 @if($Encuesta->ncr19==4) selected @endif>De acuerdo</option>
@@ -622,8 +632,7 @@ Especifique:
     </select>
     <h2 class="reactivo">39.- ¿Cuantos trabajos tiene actualmente?  </h2>
     
-    
-          <select class="select" id="Pregunta 39" name="ncr20"  > 
+          <select class="select" id="ncr20" name="ncr20"  > 
           <option selected="selected" value="">
           <option value=1 @if($Encuesta->ncr20==1) selected @endif>Uno</option>
           <option value=2 @if($Encuesta->ncr20==2) selected @endif>Dos</option>
@@ -692,7 +701,7 @@ Especifique:
      <h2 class="reactivo"> 43.- ¿Ciál es el periodo más largo que ha permanecido sin laborar? </h2>
     
     
-    <select class="select" id="ncr233" name="ncr23" >
+    <select class="select" id="ncr23" name="ncr23" >
         <option selected="selected" value="">
         <option value=1 @if($Encuesta->ncr23==1) selected @endif>De 1 a 3 meses</option>
         <option value=2 @if($Encuesta->ncr23==2) selected @endif>Más de 3 y hasta 6 meses</option> 
@@ -742,9 +751,7 @@ Especifique:
 <br>Especifíque:
 <INPUT id="ndr2a" class="texto"  NAME="ndr2a"  TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 
-
-  <h2 class="reactivo">  ¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </h2>
-
+<h2 class="reactivo">  ¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </h2>
 
 <h2 class="reactivo">    46).- El prestigio de la UNAM </h2>
   
@@ -2358,7 +2365,7 @@ ambiente
 </div>
 
 <div class="fixed">
- <button class="btn fixed"  type="button" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
+ <button class="btn fixed" name='boton1'  type="button" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
     <i class="fas fa-save fa-lg"></i> &nbsp; Guardar
   </button>
 </div>
@@ -2433,6 +2440,11 @@ body {
   padding-top: 102px;
 }
 </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
 @endpush
 
 @push('js')
@@ -2501,14 +2513,61 @@ if(options.includes(parseInt(val.value))){
 
 
 function ocultar(item){
+console.log('ocultandaa');
 document.getElementById(item.id).hidden="hidden";
 document.getElementById(item.id).value=0;
+
 
 }
 
 function visibilizar(item){
 document.getElementById(item.id).hidden="";
 document.getElementById(item.id).value="";
+}
+
+function check_beca(){
+  console.log('executing function beca');
+  nar2a=document.getElementById("nar2a").value;
+  nar3a=document.getElementById("nar3a").value;
+  console.log(nar3a);
+  if(nar2a==1 && nar3a==1){
+   console.log('hay que cerrar la beca xd');
+   ocultar(document.getElementById("nar4a"));
+   ocultar(document.getElementById("nar5a"));
+  }
+  else{
+  if(document.getElementById("nar4a").value==0){
+   visibilizar(document.getElementById("nar4a"));
+   visibilizar(document.getElementById("nar5a"));}
+  }
+  
+}
+
+function seccionc2(){
+  c1_value=document.getElementById("ncr1").value;
+  console.log(c1_value);
+  switch(c1_value){
+    case '1':
+     console.log('caso1');
+    break;
+    case '2':
+      
+     console.log('caso2');
+    break;
+    case '3':
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6_a,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar.forEach(ocultar);
+    break;
+    case '4':
+     console.log('caso4');
+    break;
+    case '5':
+     console.log('caso5');
+    break;
+    case '6':
+     console.log('caso6');
+    break;
+  }
 }
  </script>
 
@@ -2532,6 +2591,19 @@ document.getElementById(item.id).value="";
   forma.submit();
  }
  </script>
+  <script>
+      function manual(myRadio) {
+    var folio = document.getElementById("fecha-group");
+    folio.style.display="block";
+}
+function automatico(myRadio) {
+    var group = document.getElementById("fecha-group");
+    var fecha = document.getElementById("fec_capt");
+    group.style.display="none";
+    fecha.value="2023-01-01";
+}
+    </script>
+
 
 
 @endpush
