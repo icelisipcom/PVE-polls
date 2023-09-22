@@ -19,7 +19,7 @@ class ReportController extends Controller
            }
            $data = $process->getOutput();
            
-               return response()->download(public_path($report.'.xlsx'));
+               return response()->download(public_path('storage/'.$report.'.xlsx'));
           
        }
 }

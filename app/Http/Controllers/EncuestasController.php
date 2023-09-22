@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\respuestas2;
+use App\Models\respuestas3;
 use App\Models\Egresado;
 use App\Models\Carrera;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +45,6 @@ class EncuestasController extends Controller
         return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel'));
 }
 public function edit($id){
-    
     
     $Encuesta=respuestas2::where('registro','=',$id)->first();
     if(!$Encuesta){
@@ -176,6 +176,11 @@ if(strlen(strval($request-> ncr5 ))>0){
     $Encuesta-> ncr5  = $request-> ncr5 ;}
 if(strlen(strval($request-> ncr6 ))>0){
     $Encuesta-> ncr6  = $request-> ncr6 ;}
+    else{
+        if(strval($request-> ncr6t)>0){
+            $Encuesta-> ncr6  = $request-> ncr6t ;
+        }
+    }
 if(strlen(strval($request-> ncr6_a ))>0){
     $Encuesta-> ncr6_a  = $request-> ncr6_a ;}
 if(strlen(strval($request-> ncr7_a ))>0){
@@ -571,8 +576,10 @@ $fileStorePath = public_path('storage/json/'.$fileName);
 
 File::put($fileStorePath, json_encode($request->all()));
 
+// $r3=respuestas3::where('cuenta',$Encuesta->cuenta)->first;
+// $r3->APLICA='TELEFONICA';
+// $r3->save();
 return view('encuesta.saved',compact('Encuesta'));
-
 
 }
 
@@ -580,5 +587,31 @@ public function json($id){
     $fileName = $id.'.json';
     $fileStorePath = public_path('storage/json/'.$fileName);
 return response()->download($fileStorePath);
+}
+
+public function verificar($id){
+    $Encuesta=respuestas2::where('registro',$id)->first();
+    //dd($Encuesta);
+    foreach ($Encuesta->toArray() as $key => $value) {
+    
+    //     $unserialize_obj_check = @unserialize($value);
+
+    //     if($value === '' || is_null($value) || $value === FALSE || $value === '0' || $value === 'b:0;')
+    //     {
+    //         $obj->{$key} = FALSE;
+    //     }
+    //     elseif ($unserialize_obj_check  !== false) {
+
+    //         //unserialize for php use 
+    //         $obj->{$key} = unserialize($value);
+    //     } 
+    // }
+   
+    if(is_null($value)){
+        echo($key.' ,  ');
+        
+    }
+    
+}
 }
 }

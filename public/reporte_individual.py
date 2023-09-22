@@ -51,7 +51,7 @@ print(encuestas['fec_capt'])
 print(encuestas[0:10])
 print(encuestas['aplica'].unique())
 
-writer = pd.ExcelWriter('reporte_individual.xlsx', engine='xlsxwriter')
+writer = pd.ExcelWriter('storage/reporte_individual.xlsx', engine='xlsxwriter')
 
 workbook = writer.book
 a_color='#173d83'

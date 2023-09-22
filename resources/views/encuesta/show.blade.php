@@ -203,8 +203,7 @@ Otra:<input type="text" class="texto" ID="nar14otra" name="nar14otra" size="80" 
        <option value=2 @if($Encuesta->nrx==2) selected @endif >No</option;n>
     </select>
 
-
-    <h2 class="reactivo">11.- La ocupación de su madre (cuando cursaba la carrera )</h2>   
+  <h2 class="reactivo">11.- La ocupación de su madre (cuando cursaba la carrera )</h2>   
 
   <select class="select" id="nar115" name="nar15"  onchange="bloquear('nar15',[1,2,3,4,5,6,7,8,9,11,10,12],[nar15otra])" >
   <option value="" ></option>
@@ -238,7 +237,7 @@ Otra:<input type="text" class="texto" ID="nar14otra" name="nar14otra" size="80" 
 Otra:
 <input type="text" class="texto" ID="nar15otra" name="nar15otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar15otra)>2) value="{{$Encuesta->nar15otra}}" @else value="0" hidden @endif  > 
 
-<h2 class="reactivo">12.- Nivel de estudios de su padre  </h2>
+<h2 class="reactivo">12.- Nivel de estudios de su padre </h2>
         
        <select class="select" id="nar13" name="nar13"   onchange="bloquear('nar13',[1,2,3,4,5,6,7,8,9,12,13],[nrxx])" >
        <option value=""></option>
@@ -255,7 +254,6 @@ Otra:
       <option value=11 @if($Encuesta->nar13==11) selected @endif >Posgrado</option>
       <option value=12 @if($Encuesta->nar13==12) selected @endif >Lo desconoce</option>
       <option value=13  @if($Encuesta->nar13==13) selected @endif >Otro (Especifíque)</option>
-    
 </select>
 
 12a).-¿Si su padre es profesionista 
@@ -510,20 +508,21 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 
 <h2 class="reactivo"> 26.- ¿Cuál es su condición en el trabajo? </h2>
 
-<select class="select" id="ncr6_a"  name="ncr6_a"  onchange="bloqueo6(c6)" >
+<select class="select" id="ncr6a2"  name="ncr6" onchange="bloquear('ncr6a2',[4],[ncr6a,ncr6otra])">
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr6==2) selected @endif @if($Encuesta->ncr6==3) selected @endif>Autoempleo</option>
     <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
     <option value=5 @if($Encuesta->ncr6==5) selected @endif>Otro (Especifíque)</option></select>
+
     
     <h2 class="reactivo"> 26a.-¿Tipo de autoempleo? </h2>
-<select class="select" id="ncr6a" name="ncr6a"  >
+<select class="select" id="ncr6a" name="ncr6t"  >
 <option selected="selected" value="">
 <option value=2 @if($Encuesta->ncr6==2) selected @endif>Propietario</option>
     <option value=3 @if($Encuesta->ncr6==3) selected @endif>Profesional independiente</option>
 </select>
 <br>
- Otra:<input type="text" class="texto" ID="ncr6_a" name="ncr6_a" size="65" maxlength="65" value=" " > 
+ Otra:<input type="text" class="texto" id="ncr6otra" name="ncr6_a" size="65" maxlength="65" value=" " > 
 
  <h2 class="reactivo">  27.- ¿Cuál es su puesto? </h2>
 
@@ -653,7 +652,7 @@ Especifique:
     <option value=2 @if($Encuesta->ncr22==2) selected @endif>No</option>
     </select>
     
-    <h2 class="reactivo"> 42.-¿Cuá es la razón principal por la que usted no está trabajando o 
+    <h2 class="reactivo"> 42.-¿Cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
      <select class="select" id="ncr24" name="ncr24" onchange=bloqueo24(c24) >
       <option value=0 @if($Encuesta->ncr24==0) selected @endif> -</option>
@@ -895,7 +894,7 @@ Especifique:
 
   <h2 class="reactivo">  56.- Otro factor para su contratación, ¿Cuál? </h2>
 
-<INPUT id="Pregunta 56" class="ndr13a"  NAME="ndr13a" value=" " TYPE=TEXT SIZE="60" MAXLENGTH="60" >
+<INPUT id="ndr13a"class="ndr13a"  NAME="ndr13a" value=" " TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 
   <h2 class="reactivo">  57.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
 <select class="select" id="ndr14" name="ndr14"  onchange='bloqueod14(d14)'>
@@ -906,7 +905,7 @@ Especifique:
   </select>
 
   <h2 class="reactivo">   58.- ¿rCuánto tiempo después  de  egresar  de  la licenciatura obtuvo su primer trabajo? </h2>
-<select class="select" id="nd15" name="nd15" >
+<select class="select" id="ndr15" name="ndr15" >
 <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr15==1) selected @endif>6 meses o menos</option>
    <option value=2  @if($Encuesta->ndr15==2) selected @endif>de 6 meses a un año </option>
@@ -1332,7 +1331,7 @@ Especifique:
  <h2 class="reactivo">  </h2>
 94.-¿Con qué frecuencia interactuó con sus profesores  dentro  del aula?
 
-<select class="select" id="Pregunta 94" name="nfr13" >
+<select class="select" id="nfr13" name="nfr13" >
 <option selected="selected" value="">
  <option value=1 @if($Encuesta->nfr13==1) selected @endif>Muy frecuentemente</option>
  <option value=2 @if($Encuesta->nfr13==2) selected @endif>Frecuentemente</option>
@@ -1518,7 +1517,7 @@ servicio social?
 
   <h2 class="reactivo">  </h2>
 111).- Su trabajo
-  <select class="select" id="Pregunta 111" name="ngr5" >
+  <select class="select" id="ngr5" name="ngr5" >
     <option value="" selected="selected"></option>
     <option value=1 @if($Encuesta->ngr5==1) selected @endif>Sí</option>
     <option value=2 @if($Encuesta->ngr5==2) selected @endif>No</option>
@@ -1559,7 +1558,7 @@ su desempeño laboral?
 
              <h2 class="reactivo">  </h2>
 114a).-
-  <select class="select" id="Pregunta 114a" name="ngr7a" >
+  <select class="select" id="ngr7a" name="ngr7a" >
     <option value="" selected="selected"></option>
     <option value=11 @if($Encuesta->ngr7a==11) selected @endif>Sí</option>
     <option value=12 @if($Encuesta->ngr7a==12) selected @endif>No</option>
@@ -1580,7 +1579,7 @@ su desempeño laboral?
 
 
    114b).-
-  <select class="select" id="Pregunta 114b" name="ngr7b" >
+  <select class="select" id="ngr7b" name="ngr7b" >
     <option value="" selected="selected"></option>
     <option value=11 @if($Encuesta->ngr7b==11) selected @endif>Sí</option>
     <option value=12 @if($Encuesta->ngr7b==12) selected @endif>No</option>
@@ -1622,7 +1621,7 @@ su desempeño laboral?
 
              <h2 class="reactivo">  </h2>
 114d).-
-<select class="select" id="Pregunta 114d" name="ngr7d" >
+<select class="select" id="ngr7d" name="ngr7d" >
     <option value="" selected="selected"></option>
     <option value=11 @if($Encuesta->ngr7d==11) selected @endif>Sí</option>
     <option value=12 @if($Encuesta->ngr7d==12) selected @endif>No</option>
@@ -1771,7 +1770,7 @@ Comprensión de lectura<br>
 
      <h2 class="reactivo">  </h2>
    Expresión oral<br>
-     <select class="select" id="ngr13a"  name="ngr13c" >
+     <select class="select" id="ngr13c"  name="ngr13c" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr13a==11) selected @endif>Básico</option>
         <option value=12 @if($Encuesta->ngr13a==12) selected @endif>Intermedio </option>
@@ -1903,7 +1902,7 @@ a).-<select class="select" id="ngr16"  name="ngr16">
  </select>
 
 
-b).-<select class="select" id="Pregunta 121b"  name="ngr17">
+b).-<select class="select" id="ngr17"  name="ngr17">
 <option value="" selected="selected"></option>
   <option value=1 @if($Encuesta->ngr17==1) selected @endif >Muchísimo</option>
   <option value=2 @if($Encuesta->ngr17==2) selected @endif >Mucho</option>
@@ -2318,7 +2317,6 @@ ambiente
 <option value=7 @if($Encuesta->ngr41_a==7) selected @endif >OTRA</option>
 </select>
 
-
 <h2 class="reactivo">141b).-Otra:  </h2>
 
 <INPUT  id="Pregunta 141b" name="ngr45a" TYPE=TEXT  class="texto"  SIZE=60 MAXLENGTH=60 >
@@ -2501,28 +2499,20 @@ if(options.includes(parseInt(val.value))){
 }else{
   reactivosPorCerrar.forEach(visibilizar);
 }
-// for (i = 0; i < options.length; i++) {
-//     console.log(options[i]);
-//     if(val.value==options[i]){
-//         console.log("opcion") 
-//         reactivosPorCerrar.forEach(ocultar);
-//         }
-//   } 
 
 }
 
 
 function ocultar(item){
-console.log('ocultandaa');
+console.log(item.id);
 document.getElementById(item.id).hidden="hidden";
 document.getElementById(item.id).value=0;
-
-
 }
 
 function visibilizar(item){
+  if(document.getElementById(item.id).hidden=="hidden"){
 document.getElementById(item.id).hidden="";
-document.getElementById(item.id).value="";
+document.getElementById(item.id).value="";}
 }
 
 function check_beca(){
@@ -2548,24 +2538,28 @@ function seccionc2(){
   console.log(c1_value);
   switch(c1_value){
     case '1':
-     console.log('caso1');
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr15,ndr16,ndr17,ndr18,ndr19,ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13a,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35];
+      reactivosPorCerrar.forEach(visibilizar);
     break;
     case '2':
-      
-     console.log('caso2');
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr15,ndr16,ndr17,ndr18,ndr19,ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13a,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35];
+      reactivosPorCerrar.forEach(visibilizar);
     break;
     case '3':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6_a,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '4':
-     console.log('caso4');
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar.forEach(ocultar);
     break;
     case '5':
-     console.log('caso5');
+      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar.forEach(ocultar);
     break;
     case '6':
-     console.log('caso6');
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr15,ndr16,ndr17,ndr18,ndr19,ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13a,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35];
+      reactivosPorCerrar.forEach(ocultar);
     break;
   }
 }
