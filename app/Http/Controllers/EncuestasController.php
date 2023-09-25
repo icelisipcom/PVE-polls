@@ -34,7 +34,7 @@ class EncuestasController extends Controller
             $Encuesta->materno=$Egresado->materno;
             $Encuesta->nombre=$Egresado->nombre;
             $Encuesta->nombre=$Egresado->nombre;
-            $Encuesta->nbr3=$Egresado->carrera;
+            $Encuesta->nbr2=$Egresado->carrera;
             $Encuesta->nbr3=$Egresado->plantel;
             $Encuesta->save();
             
@@ -80,7 +80,6 @@ if($request->fec_capt=="2023-01-01"){
 }
 
 $Encuesta-> telcasa  = $request-> telcasa ;
-
 $Encuesta-> TELCEL  = $request-> TELCEL ;
 $Encuesta-> teltra  = $request-> teltra ;
 $Encuesta-> exttra  = $request-> exttra ;
