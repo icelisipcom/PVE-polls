@@ -33,8 +33,8 @@
                 <td>{{$e->nbr3}}</td>
                 <td>{{$e->nbr2}}</td>
                 <td>@if(is_null($e->ngr11f)) Inompleta @else Completa @endif</td>
-                <td>@if(is_null($e->ngr11f))  <a href="{{ route('encuestas.edit', $e->registro)}}">
-                                            <i class="fas fa-edit btn btn-blue ">Completar</i></span>
+                <td>@if(is_null($e->ngr11f))  <a href="{{ route('encuestas.edit', $e->registro)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+                                            <i class="fas fa-edit  "></i> Completar</button>
                                         </a>@endif</td>
             </tr>
             @endforeach
