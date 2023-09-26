@@ -44,7 +44,8 @@
 <input type="text" value='{{$Encuesta->cuenta}}' name='cuenta' hidden>
     <div class='Scroll'> 
      
-    <h2 class="reactivo">FECHA EN QUE SE CAPTURA </h2>             <!--   -------FECHA DE NACIMIENTO-->
+    <h2 class="reactivo">FECHA EN QUE SE CAPTURA </h2> 
+    <!--   -------FECHA DE NACIMIENTO-->
     <center>
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradioa" autocomplete="off" checked onclick="automatico();">
@@ -64,10 +65,10 @@
     <h2 class="reactivo">1.-Fecha de Nacimiento </h2>             <!--   -------FECHA DE NACIMIENTO-->
     
     <input class="fecha" type="date" id="start" name="fechaNac"
-      value="{{sprintf('%02d',$Encuesta->yernac).'-'.sprintf('%02d',$Encuesta->mesnac).'-'.sprintf('%02d',$Encuesta->dianac)}}"
-      min="1950-01-01" max="2001-12-31">
-    
-    
+    @if($Encuesta->yernac)
+      value="{{sprintf('%02d',$Encuesta->yernac).'-'.sprintf('%02d',$Encuesta->mesnac).'-'.sprintf('%02d',$Encuesta->dianac)}}" else value="2001-12-31"
+      @endif min="1950-01-01" max="2001-12-31">
+
       <h2 class="reactivo">2.-Genero </h2>             <!--   -------FECHA DE NACIMIENTO-->
     <select class="select" id= "nar7"  name="nar7" >
             <option value=""></option>
