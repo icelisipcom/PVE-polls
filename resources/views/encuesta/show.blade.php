@@ -148,7 +148,7 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxl
 
 <select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[1,2,3,4,5,6,7,8,9,10,11,12],[nar14otra])"  >
        <option value="" ></option>
-<option value=28  @if($Encuesta->nar14==28) selected @endif >Artesanos y obrero</option>
+<option value=28 @if($Encuesta->nar14==28) selected @endif >Artesanos y obrero</option>
 <option value=25 @if($Encuesta->nar14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
 <option value=41 @if($Encuesta->nar14==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
 <option value=21 @if($Encuesta->nar14==21) selected @endif >Funcionario y directivo</option>
@@ -1703,8 +1703,8 @@ g).-Hoja de cálculo
 <div class="pantalla" id="pantalla10" >
     <h1 class="seccion">DURANTE SUS ESTUDIOS EN LICENCIATURA UNAM</h1>
 
-    <h2 class="reactivo">  </h2>
-115.-¿Adquirió o mejoró el dominio del idioma inglés?
+    <h2 class="reactivo"> 
+115.-¿Adquirió o mejoró el dominio del idioma inglés? </h2>
 <select class="select" id="ngr8"  name="ngr8"  onchange=bloq8(g8)>
     <option value="" selected="selected"></option>
       <option value=1 @if($Encuesta->ngr8==1) selected @endif>No</option>
@@ -1713,9 +1713,9 @@ g).-Hoja de cálculo
       <option value=4 @if($Encuesta->ngr8==4) selected @endif>Sí, por autoaprendizaje </option>
      </select>
 
-     <h2 class="reactivo">  </h2>
+     <h2 class="reactivo"> 
 116.- ¿Cuál es el nivel de dominio del idioma Inglés que tiene sobre las siguientes habilidades?  
-<h2 class="reactivo">  </h2>
+<h2 class="reactivo">  </h2> </h2>
 Comprensión auditiva<br>
      <select class="select" id="ngr9a"  name="ngr9a" >
 	<option value="" selected="selected"></option>
@@ -1724,8 +1724,8 @@ Comprensión auditiva<br>
         <option value=13 @if($Encuesta->ngr9a==13) selected @endif>Avanzado</option>
      </select>
      
-     <h2 class="reactivo">  </h2>b).-
-Comprensión de lectura<br>
+     <h2 class="reactivo">  b).-
+Comprensión de lectura<br></h2>
      <select class="select" id="ngr9b"  name="ngr9b" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr9b==11) selected @endif>Básico</option>
@@ -1733,8 +1733,8 @@ Comprensión de lectura<br>
         <option value=13 @if($Encuesta->ngr9b==13) selected @endif>Avanzado</option>
      </select>
 
-     <h2 class="reactivo">  </h2>     c).-
-   Expresión oral<br>
+     <h2 class="reactivo">      c).-
+   Expresión oral<br></h2> 
      <select class="select" id="ngr9c"  name="ngr9c" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr9c==11) selected @endif>Básico</option>
@@ -1743,8 +1743,8 @@ Comprensión de lectura<br>
      </select>
 
 
-     <h2 class="reactivo">  </h2>d).-
-        Expresión escrita<br>
+     <h2 class="reactivo">  d).-
+        Expresión escrita<br></h2>
      <select class="select" id="ngr9d"  name="ngr9d" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr9d==11) selected @endif>Básico</option>
@@ -1753,12 +1753,12 @@ Comprensión de lectura<br>
      </select>
 
 
-  <h2 class="reactivo">  </h2>
+  <h2 class="reactivo">  
 117.- Para el desempeño de su o sus trabajo ¿Qué nivel de dominio del idioma inglés requiere de las siguientes habilidades?
-<br>
+<br></h2>
 
-<h2 class="reactivo">  </h2>
-Comprensión auditiva<br>
+<h2 class="reactivo">  
+Comprensión auditiva<br></h2>
      <select class="select" id="ngr13a"  name="ngr13a" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr13a==11) selected @endif>Básico</option>
@@ -1767,8 +1767,8 @@ Comprensión auditiva<br>
         <option value=14 @if($Encuesta->ngr13a==14) selected @endif>No es necesario</option>
      </select>
 
-     <h2 class="reactivo">  </h2>
-Comprensión de lectura<br>
+     <h2 class="reactivo">
+Comprensión de lectura<br>  </h2>
      <select class="select" id="ngr13b"  name="ngr13b" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr13b==11) selected @endif>Básico</option>
@@ -1777,8 +1777,8 @@ Comprensión de lectura<br>
         <option value=14 @if($Encuesta->ngr13b==14) selected @endif>No es necesario</option>
      </select>
 
-     <h2 class="reactivo">  </h2>
-   Expresión oral<br>
+     <h2 class="reactivo">  
+   Expresión oral<br></h2>
      <select class="select" id="ngr13c"  name="ngr13c" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr13a==11) selected @endif>Básico</option>
@@ -1787,8 +1787,8 @@ Comprensión de lectura<br>
         <option value=14 @if($Encuesta->ngr13a==14) selected @endif>No es necesario</option>
      </select>
 
-     <h2 class="reactivo">  </h2>
-        Expresión escrita<br>
+     <h2 class="reactivo">  
+        Expresión escrita<br></h2>
      <select class="select" id="ngr13d"  name="ngr13d" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr13d==11) selected @endif>Básico</option>
@@ -1798,8 +1798,8 @@ Comprensión de lectura<br>
      </select>
 
 
-  <h2 class="reactivo">  </h2>
-118.- ¿Adquirió o mejoró el dominio de otro idioma, diferente al inglés? 
+  <h2 class="reactivo">  
+118.- ¿Adquirió o mejoró el dominio de otro idioma, diferente al inglés? </h2>
 <select class="select" id="ngr11a"  name="ngr11a"  onchange=bloq11(g11)>
     <option value="" selected="selected"></option>
       <option value=11 @if($Encuesta->ngr11a==11) selected @endif>No</option>
@@ -1808,8 +1808,8 @@ Comprensión de lectura<br>
       <option value=14 @if($Encuesta->ngr11a==14) selected @endif>Sí, por autoaprendizaje </option>
      </select>
 
-  <h2 class="reactivo">  </h2>
-118a).-¿Cuál?
+  <h2 class="reactivo">  
+118a).-¿Cuál?</h2>
 <select class="select" id="ngr11f"  name="ngr11f"  >
     <option value="" selected="selected"></option>
       <option value=1 @if($Encuesta->ngr11f==1) selected @endif>Francés</option>
@@ -1819,11 +1819,11 @@ Comprensión de lectura<br>
       <option value=7 @if($Encuesta->ngr11f==7) selected @endif>Otro</option>
      </select>
 
-     <h2 class="reactivo">  </h2>
-119.-¿ Qué grado de dominio tiene de otro idioma diferente al inglés? 
+     <h2 class="reactivo">  
+119.-¿ Qué grado de dominio tiene de otro idioma diferente al inglés? </h2>
 
-<h2 class="reactivo">  </h2>
-       a).- Comprensión auditiva<br>
+<h2 class="reactivo"> 
+       a).- Comprensión auditiva<br> </h2>
 	<select class="select" id="ngr11"  name="ngr11" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr11==11) selected @endif>Básico</option>
@@ -1831,8 +1831,8 @@ Comprensión de lectura<br>
         <option value=13 @if($Encuesta->ngr11==13) selected @endif>Avanzado</option>
      	</select>
 
-       <h2 class="reactivo">  </h2>
-        b).-Comprensión de lectura<br>
+       <h2 class="reactivo">  
+        b).-Comprensión de lectura<br></h2>
 	<select class="select" id="ngr11b"  name="ngr11b" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr11b==11) selected @endif>Básico</option>
@@ -1840,8 +1840,8 @@ Comprensión de lectura<br>
         <option value=13 @if($Encuesta->ngr11b==13) selected @endif>Avanzado</option>
      	</select>
 
-       <h2 class="reactivo">  </h2>
-       c).- Expresión oral<br>
+       <h2 class="reactivo">  
+       c).- Expresión oral<br></h2>
 	<select class="select" id="ngr11c"  name="ngr11c" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr11c==11) selected @endif>Básico</option>
@@ -1849,8 +1849,8 @@ Comprensión de lectura<br>
         <option value=13 @if($Encuesta->ngr11c==13) selected @endif>Avanzado</option>
      	</select>
 
-       <h2 class="reactivo">  </h2>
-        d).- Expresión escrita&nbsp;<br>
+       <h2 class="reactivo">  
+        d).- Expresión escrita&nbsp;<br></h2>
 	<select class="select" id="ngr11d"  name="ngr11d" >
 	<option value="" selected="selected"></option>
         <option value=11 @if($Encuesta->ngr11d==11) selected @endif>Básico</option>
@@ -1859,20 +1859,19 @@ Comprensión de lectura<br>
      	</select>
   <h1 class="seccion">HABILIDADES</h1>
 
-<h2 class="reactivo">  </h2>   
+<h2 class="reactivo">  
 A continuación le pedimos que nos indique para cada una de las siguientes habilidades, si las desarrolló o fortaleció durante su formación profesional en la UNAM y que tan necesarias son para su trabajo..
+</h2>   
 
+<h2 class="reactivo"> 
+Cuánto las desarrolló durante su formación profesional? </h2>
+<h2 class="reactivo">  
+Muchísimo<-------------------> Nada </h2>
 
-<h2 class="reactivo">  </h2>
-Cuánto las desarrolló durante su formación profesional?
-<h2 class="reactivo">  </h2>
-Muchísimo<-------------------> Nada 
-
-<h2 class="reactivo">  </h2>
+<h2 class="reactivo">  
 ¿Qué tan necesario es para 
 su desempeño laboral?
-
-Mucho  -------------------- Nada 
+Mucho  -------------------- Nada </h2>
 
 <h2 class="reactivo">  </h2>
 120).- Expresar verbalmente  opiniones o ideas en forma clara y precisa
@@ -2070,8 +2069,8 @@ b).- <select class="select" id="ngr31"  name="ngr31">
   <option value=5 @if($Encuesta->ngr31==5) selected @endif >Nada</option>
  </select>
 
- <h2 class="reactivo">  </h2>
-<BR> 130).-Trabajar en colaboración con otras personas</TD>
+ <h2 class="reactivo">  
+<BR> 130).-Trabajar en colaboración con otras personas</TD></h2>
 a).-<select class="select" id="Pregunta 130a"  name="ngr32">
 <option value="" selected="selected"></option>
   <option value=1 @if($Encuesta->ngr32==1) selected @endif >Muchísimo</option>
@@ -2091,9 +2090,8 @@ b).-<select class="select" id="ngr33"  name="ngr33">
   <option value=5 @if($Encuesta->ngr33==5) selected @endif >Nada</option>
  </select>
 
- <h2 class="reactivo">  </h2>
- <BR>131).-Formular ideas o pensamientos originales o innovadores</TD>
-a).-<select class="select" id="ngr34"  name="ngr34">
+ <h2 class="reactivo">  <BR> 131).-Formular ideas o pensamientos originales o innovadores</TD>
+a).- </h2><select class="select" id="ngr34"  name="ngr34">
 <option value="" selected="selected"></option>
   <option value=1 @if($Encuesta->ngr34==1) selected @endif >Muchísimo</option>
   <option value=2 @if($Encuesta->ngr34==2) selected @endif >Mucho</option>
@@ -2102,7 +2100,7 @@ a).-<select class="select" id="ngr34"  name="ngr34">
   <option value=5 @if($Encuesta->ngr34==5) selected @endif >Nada</option>
  </select>
 
-b).- <select class="select" id="ngr35"  name="ngr35">
+ <h2 class="reactivo">  b).- </h2 > <select class="select" id="ngr35"  name="ngr35">
 <option value="" selected="selected"></option>
   <option value=1 @if($Encuesta->ngr35==1) selected @endif >Muchísimo</option>
   <option value=2 @if($Encuesta->ngr35==2) selected @endif >Mucho</option>
@@ -2113,11 +2111,11 @@ b).- <select class="select" id="ngr35"  name="ngr35">
 
 
 
-<<h2 class="reactivo">  </h2>
-<B><CENTER>Durante sus formación como universitario adquirió o desarrolló:</CENTER></B></FONT></TD>
+<<h2 class="reactivo">  
+<B><CENTER>Durante sus formación como universitario adquirió o desarrolló:</CENTER></B></FONT></TD></h2>
 
-<h2 class="reactivo">  </h2>
-132.- Una cultura general amplia</TD>
+<h2 class="reactivo">  
+132.- Una cultura general amplia</TD></h2>
 <select class="select" id="ngr36" name="ngr36" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr36==1) selected @endif >Totalmente de acuerdo</option>
@@ -2127,8 +2125,8 @@ b).- <select class="select" id="ngr35"  name="ngr35">
 <option value=5 @if($Encuesta->ngr36==5) selected @endif >Totalmente en desacuerdo</option>
 </select></TD>
 
-<h2 class="reactivo">  </h2>
-133.- La capacidad para apreciar diferentes expresiones artísticas (cine, teatro, etc.)
+<h2 class="reactivo">  
+133.- La capacidad para apreciar diferentes expresiones artísticas (cine, teatro, etc.)</h2>
 <select class="select" id="ngr37" name="ngr37"  onchange=bloqueo37(g37)>
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37==11) selected @endif >Sí</option>
@@ -2136,8 +2134,8 @@ b).- <select class="select" id="ngr35"  name="ngr35">
 </select>
 
 
-<h2 class="reactivo">  </h2>
-a).-¿Con qué frecuencia asistió a eventos artísticos?
+<h2 class="reactivo">  
+a).-¿Con qué frecuencia asistió a eventos artísticos?</h2>
 <select class="select" id="ngr37a" name="ngr37_a" >
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37_a==11) selected @endif >2 o 3 veces por semana</option>
@@ -2145,8 +2143,8 @@ a).-¿Con qué frecuencia asistió a eventos artísticos?
 <option value=13 @if($Encuesta->ngr37_a==13) selected @endif >1 vez al mes</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-b).-Motivo por el que no asistió a eventos artísticos
+<h2 class="reactivo">  
+b).-Motivo por el que no asistió a eventos artísticos</h2>
 <select class="select" id="ngr37m" name="ngr37m"  >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr37m==1) selected @endif >Desinterés</option>
@@ -2157,8 +2155,8 @@ b).-Motivo por el que no asistió a eventos artísticos
 <option value=6 @if($Encuesta->ngr37m==6) selected @endif >Otra</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-134.-Una mejor valoración de si mismo
+<h2 class="reactivo">  
+134.-Una mejor valoración de si mismo</h2>
 <select class="select" id="ngr38"  name="ngr38" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr38==1) selected @endif >Totalmente de acuerdo</option>
@@ -2168,8 +2166,8 @@ b).-Motivo por el que no asistió a eventos artísticos
 <option value=5 @if($Encuesta->ngr38==5) selected @endif >Totalmente en desacuerdo</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-135.- Conocimientos e  interés  por el cuidado de su salud
+<h2 class="reactivo">  
+135.- Conocimientos e  interés  por el cuidado de su salud</h2>
 <select class="select" id="ngr39" name="ngr39" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr39==13) selected @endif >Totalmente de acuerdo</option>
@@ -2179,8 +2177,8 @@ b).-Motivo por el que no asistió a eventos artísticos
 <option value=5 @if($Encuesta->ngr39==13) selected @endif >Totalmente en desacuerdo</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-136.- ¿Interés por la práctica  de algún deporte?
+<h2 class="reactivo">  
+136.- ¿Interés por la práctica  de algún deporte?</h2>
 <select class="select" id="ngr40" name="ngr40"  onchange=bloqueo40(g40)>
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>
@@ -2189,8 +2187,8 @@ b).-Motivo por el que no asistió a eventos artísticos
 <BR>
 
 
-<h2 class="reactivo">  </h2>
-a).-¿Cuál? 
+<h2 class="reactivo">  
+a).-¿Cuál? </h2>
 <select class="select" id="ngr40_a" name="ngr40_a"  >
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr40_a==11) selected @endif >Acondicionamiento físico</option>
@@ -2228,8 +2226,8 @@ a).-¿Cuál?
 <option value=43 @if($Encuesta->ngr40_a==43) selected @endif >Otros</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-b).- ¿Con qué frecuencia lo practicó?
+<h2 class="reactivo">  
+b).- ¿Con qué frecuencia lo practicó?</h2>
 <select class="select" id="ngr40a" name="ngr40a" >
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr40a==11) selected @endif >Diario</option>
@@ -2237,8 +2235,8 @@ b).- ¿Con qué frecuencia lo practicó?
 <option value=13 @if($Encuesta->ngr40a==13) selected @endif >1 vez a la semana</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-c).- Motivo
+<h2 class="reactivo">  
+c).- Motivo</h2>
 <select class="select" id="ngr40b" name="ngr40b"  >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr40b==1) selected @endif >Desinterés</option>
@@ -2256,12 +2254,12 @@ c).- Motivo
 <div class="pantalla" id="pantalla12" >
 <h1 class="seccion">HABILIDADES</h1>
 
-<h2 class="reactivo">  </h2> 
+<h2 class="reactivo">   
 <b>Desde su punto de vista, sus experiencias en la UNAM contribuyeron a:
-</b>
-<h2 class="reactivo">  </h2>
+</h2></b>
+<h2 class="reactivo">  
 137.- Desarrollar en usted una actitud de tolerancia y aceptación por las
-demás  personas</TD>
+demás  personas</TD></h2>
 <TD><select class="select" id="ngr41" name="ngr41" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr41==1) selected @endif >Totalmente de acuerdo</option>
@@ -2271,8 +2269,8 @@ demás  personas</TD>
 <option value=5 @if($Encuesta->ngr41==5) selected @endif >Totalmente en desacuerdo</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-138.- Fortalecer sus valores como ciudadano 
+<h2 class="reactivo">  
+138.- Fortalecer sus valores como ciudadano </h2>
 <select class="select" id="ngr42" name="ngr42" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr42==1) selected @endif >Totalmente de acuerdo</option>
@@ -2282,8 +2280,8 @@ demás  personas</TD>
 <option value=5 @if($Encuesta->ngr42==5) selected @endif >Totalmente en desacuerdo</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-139.-Incrementar  su  interés por promover y participar  en  programas de beneficio social </TD>
+<h2 class="reactivo">  
+139.-Incrementar  su  interés por promover y participar  en  programas de beneficio social </TD></h2>
 <TD><select class="select" id="ngr43" name="ngr43" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr43==1) selected @endif >Totalmente de acuerdo</option>
@@ -2293,9 +2291,9 @@ demás  personas</TD>
 <option value=5 @if($Encuesta->ngr43==5) selected @endif >Totalmente en desacuerdo</option>
 </select>
 
-<h2 class="reactivo">  </h2>
+<h2 class="reactivo">  
 140.- Incrementar su concientización e interés por los problemas del medio
-ambiente 
+ambiente </h2>
 <select class="select" id="ngr44" name="ngr44" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr44==1) selected @endif >Totalmente de acuerdo</option>
@@ -2305,16 +2303,16 @@ ambiente
 <option value=5>Totalmente en desacuerdo</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-141.- ¿Actualmente es miembro de alguna organización o asociación? -
+<h2 class="reactivo"> 
+141.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>
 <select class="select" id="ngr45"  name="ngr45" onchange=bloqueo45(g45)>
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->ngr45==1) selected @endif >Sí</option>
 <option value=2 @if($Encuesta->ngr45==2) selected @endif >No</option>
 </select>
 
-<h2 class="reactivo">  </h2>
-141a).-¿Cuál?
+<h2 class="reactivo">  
+141a).-¿Cuál?</h2>
 <select class="select" id="Pregunta 141a" name="ngr45_a" onchange=bloqueo141(g45_a)>
 <option selected="selected" value="">
 <option value=4 @if($Encuesta->ngr45_a==4) selected @endif >Afiliado a un grupo religioso</option>
@@ -2340,14 +2338,13 @@ ambiente
 
 <h2 class="reactivo">  
 143.-¿Ya cuenta con su credencial de Exalumnos?</h2>
-<select class="select" id="CUE_CRE"  name="CUE_CRE"  onchange=bloqueo143(cue)>
+<select class="select" id="CUE_CRE"  name="CUE_CRE"  onchange="bloquear('CUE_CRE',[2],[UTILIZA])">
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->CUE_CRE==1) selected @endif >Sí</option>
 <option value=2 @if($Encuesta->CUE_CRE==2) selected @endif >No</option>
 </select>
 
 <h2 class="reactivo">  144.-¿Ha utilizado los Beneficios que le otorga el Programa de Vinculación con los Egresados de la UNAM?  </h2>
-144.-¿Ha utilizado los Beneficios que le otorga el Programa de Vinculación con los Egresados de la UNAM?
 <select class="select" id="UTILIZA"  name="UTILIZA" >
 <option selected="selected" value="">
     <option value=1 @if($Encuesta->UTILIZA==1) selected @endif >Sí</option>
@@ -2356,7 +2353,7 @@ ambiente
 
 
 <h2 class="reactivo"> ¿Desea hacer algun comentario? </h2>
-<select class="select" id="comen" name="ncro2"  onchange=com(co) >
+<select class="select" id="comen" name="ncro2"  >
 <option value="" selected></option>
     <option value='1' >Sí</option>
     <option value='2' >No</option> 
@@ -2534,12 +2531,14 @@ if(options.includes(parseInt(val.value))){
 
 function ocultar(item){
 console.log(item.id);
+document.getElementById(item.id).value=0;
 document.getElementById(item.id).hidden="hidden";
-document.getElementById(item.id).value='0';
+
 }
 
 function visibilizar(item){
-  if(document.getElementById(item.id).value=="0"){
+  console.log(document.getElementById(item.id).value);
+  if(document.getElementById(item.id).value==0){
     console.log('xd');
 document.getElementById(item.id).hidden="";
 document.getElementById(item.id).value="";}
