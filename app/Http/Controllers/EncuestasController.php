@@ -8,6 +8,7 @@ use App\Models\respuestas2;
 use App\Models\respuestas3;
 use App\Models\Egresado;
 use App\Models\Carrera;
+use App\Models\Comentario;
 use Illuminate\Support\Facades\Auth;
 use File;
 class EncuestasController extends Controller
@@ -574,6 +575,16 @@ $fileName = $Encuesta->cuenta.'.json';
 $fileStorePath = public_path('storage/json/'.$fileName);
 
 File::put($fileStorePath, json_encode($request->all()));
+$comentario=comentario::where('cuenta',$Encuesta->cuenta)->first();
+if($comentario){
+    $comentario->comentario=$request->comentario;
+    $comentario->save();
+}else{
+    $comentario=new comentario();
+    $comentario->cuenta=$Encuesta->cuenta;
+    $comentario->comentario=$request->comentario;
+    $comentario->save();
+}
 
 // $r3=respuestas3::where('cuenta',$Encuesta->cuenta)->first;
 // $r3->APLICA='TELEFONICA';

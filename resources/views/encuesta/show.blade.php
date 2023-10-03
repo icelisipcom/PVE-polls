@@ -2404,11 +2404,11 @@ ambiente </h2>
 <br>
 <h2 class="reactivo"> ¿Comentario? </h2>
 <br>
-<input type="text" class="texto"   name="txtcom" size="140" value=" " maxlength="140"  >
-
+<textarea type="text" class="texto"   name="comentario" size="140" value=" " rows="5" cols="50" >
+</textarea>
       </div>
     </div>
-  
+  <br><br>
 </div>
 
 <div class="fixed">
