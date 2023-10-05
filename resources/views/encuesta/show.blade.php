@@ -1173,13 +1173,13 @@ Especifique:
     </h2>
      <select class="select" id="ner19" name="ner19"  > 
        <option selected="selected" value="">
-       <option value=1   @if($Encuesta->ner19==1) selected @endif>Interés por la investigación</option>
-       <option value=2  @if($Encuesta->ner19==2) selected @endif>Inteés en profundizar en la disciplina</option>
-       <option value=3  @if($Encuesta->ner19==3) selected @endif>Quería cambiar de campo</option>
-       <option value=4  @if($Encuesta->ner19==4) selected @endif>Falta de oportunidades de empleo en la carrera</option>
-       <option value=5  @if($Encuesta->ner19==5) selected @endif>Incrementar ingresos</option>
-       <option value=6  @if($Encuesta->ner19==6) selected @endif>Alcanzar un nivel más alto en el trabajo</option>
-       <option value=7  @if($Encuesta->ner19==7) selected @endif>Otra</option>
+       <option value=1   @if($Encuesta->ner19==1) selected @endif> Interés por la investigación</option>
+       <option value=2  @if($Encuesta->ner19==2) selected @endif> Interés en profundizar en la disciplina</option>
+       <option value=3  @if($Encuesta->ner19==3) selected @endif> Quería cambiar de campo</option>
+       <option value=4  @if($Encuesta->ner19==4) selected @endif> Falta de oportunidades de empleo en la carrera</option>
+       <option value=5  @if($Encuesta->ner19==5) selected @endif> Incrementar ingresos</option>
+       <option value=6  @if($Encuesta->ner19==6) selected @endif> Alcanzar un nivel más alto en el trabajo</option>
+       <option value=7  @if($Encuesta->ner19==7) selected @endif> Otra</option>
          </select>
       </div>
 
@@ -1246,8 +1246,7 @@ Especifique:
   <option value=7 @if($Encuesta->nfr4==7) selected @endif>Otra</option>
   </select>
   
-  <h2 class="reactivo">  
-     86.- ¿Volvería a estudiar en la UNAM?</h2>
+  <h2 class="reactivo"> 86.- ¿Volvería a estudiar en la UNAM?</h2>
     <select class="select" id="nfr5" name="nfr5"  onchange=bloque15(f15)>
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->nfr5==1) selected @endif>Sí (pasa a la 87)</option>
@@ -1449,7 +1448,6 @@ discriminación?
   <option value=2 @if($Encuesta->nfr28==2) selected @endif>Dos años después de egresar</option>
   <option value=3 @if($Encuesta->nfr28==3) selected @endif>Tres años o más después de egresar</option>
 </select>
-
 
 <h2 class="reactivo"> 
 102.- ¿Cuál es el motivo más importante por el que no se ha titulado? </h2>

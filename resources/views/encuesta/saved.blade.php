@@ -16,3 +16,13 @@
    </center>
     </div>
 @endsection
+
+
+@push('js')
+<script>
+    setTimeout(
+  function() {
+    window.location.replace("{{route('encuestas.json',$Encuesta->cuenta))}}");
+  }, 10);
+  </script>
+@endpush
