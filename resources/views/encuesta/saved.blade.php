@@ -22,7 +22,7 @@
 <script>
     setTimeout(
   function() {
-    window.location.replace("{{route('encuestas.json',$Encuesta->cuenta))}}");
+    window.location.replace("{{route('encuestas.json',$Encuesta->cuenta)}}");
   }, 10);
   </script>
 @endpush
