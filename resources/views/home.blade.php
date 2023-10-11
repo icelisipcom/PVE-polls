@@ -31,8 +31,9 @@
 
 
     <script src="{{ $aplica_chart->cdn() }}"></script>
+   <div style='color: black'>
     {!! $aplica_chart->script() !!}
-    
+    </div>
     </div>
 @endsection
  @section('js')

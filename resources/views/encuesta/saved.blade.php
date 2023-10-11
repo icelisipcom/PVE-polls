@@ -17,7 +17,6 @@
     </div>
 @endsection
 
-
 @push('js')
 <script>
     setTimeout(
