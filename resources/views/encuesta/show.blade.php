@@ -2183,7 +2183,7 @@ a).- </h2><select class="select" id="ngr34"  name="ngr34">
 
 <h2 class="reactivo">  
 133.- La capacidad para apreciar diferentes expresiones artísticas (cine, teatro, etc.)</h2>
-<select class="select" id="ngr37" name="ngr37"  onchange=bloqueo37(g37)>
+<select class="select" id="ngr37" name="ngr37"  onchange="bloquear('ngr37',[12],[ngr37a])">
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr37==12) selected @endif >No</option>
@@ -2235,7 +2235,7 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 <h2 class="reactivo">  
 136.- ¿Interés por la práctica  de algún deporte?</h2>
-<select class="select" id="ngr40" name="ngr40"  onchange="bloquear('ngr40',[12],[ngr40_a,ngr40a]">
+<select class="select" id="ngr40" name="ngr40"  onchange="bloquear('ngr40',[12],[ngr40_a,ngr40a])">
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr40==12) selected @endif >No</option>
@@ -2367,7 +2367,7 @@ ambiente </h2>
 
 <h2 class="reactivo">  
 141a).-¿Cuál?</h2>
-<select class="select" id="ngr45_a" name="ngr45_a" onchange="bloquear('ngr45',[1,2,3,4,5,6],[ngr45a])">
+<select class="select" id="ngr45_a" name="ngr45_a" onchange="bloquear('ngr45_a',[1,2,3,4,5,6],[ngr45a])">
 <option selected="selected" value="">
 <option value=4 @if($Encuesta->ngr45_a==4) selected @endif >Afiliado a un grupo religioso</option>
 <option value=3 @if($Encuesta->ngr41_a==3) selected @endif >Cultural, educativa, recreativa o deportiva</option>
@@ -2407,7 +2407,7 @@ ambiente </h2>
 
 
 <h2 class="reactivo"> ¿Desea hacer algun comentario? </h2>
-<select class="select" id="comen" name="ncro2"  >
+<select class="select" id="comen" name="ncro2" onchange="bloquear('comen',[2],[comentarioz])"  >
 <option value="" selected></option>
     <option value='1' >Sí</option>
     <option value='2' >No</option> 
@@ -2415,7 +2415,7 @@ ambiente </h2>
 <br>
 <h2 class="reactivo"> ¿Comentario? </h2>
 <br>
-<textarea type="text" class="texto"   name="comentario" size="140" value=" " rows="5" cols="50" >
+<textarea type="text" class="texto"   name="comentario" size="140" value=" " id="comentario" rows="5" cols="50" >
 </textarea>
       </div>
     </div>
@@ -2717,5 +2717,6 @@ function automatico(myRadio) {
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
   bloquear('ngr45',[2],[ngr45a,ngr45_a]);
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
+  bloquear('ngr37',[12],[ngr37a]);
 </script>
 @endpush
