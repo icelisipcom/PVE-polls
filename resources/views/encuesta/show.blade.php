@@ -275,7 +275,7 @@ cursó sus estudios en la UNAM? </h2>
     <h2 class="reactivo">13.- La ocupación de su padre (cuando cursaba la carrera )</h2> 
     
 
- <select class="select" id="nar16" name="nar16"  onchange="bloquear('nar16',[1,2,3,4,5,6,7,8,9,11,12,10],[nar16otra])">
+ <select class="select" id="nar16" name="nar16"  onchange="bloquear('nar16',[19,20,23,24,27,30,31,26,36,37,28,25,41,21,35,34,22,29,16,39,17,18],[nar16otra])">
  <option value="" ></option>
 <option value=28 @if($Encuesta->nar16==28) selected @endif >Artesanos y obrero</option>
 <option value=25 @if($Encuesta->nar16==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
@@ -305,7 +305,7 @@ cursó sus estudios en la UNAM? </h2>
 
 </select>
 <br>(Especifíque)
-Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar16otra)>2) value="{{$Encuesta->nar16otra}}" @else value="0" hidden @endif >   
+Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar16otra)>2) value="{{$Encuesta->nar16otra}}" @else value=0 hidden @endif >   
 
 <br><br>
 <div class="container" style=" padding: 14px;
@@ -557,7 +557,6 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
     <option value=2 @if($Encuesta->ncr7b==2) selected @endif>No</option> </select>
 
     <h2 class="reactivo"> 29.- En su trabajo,¿tiene personal a su cargo? </h2>
-
 <select class="select" id="ncr8" name="ncr8"  onchange="bloquear('ncr8',[2],[ncr9])" >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr8==1) selected @endif>Sí</option>
@@ -726,7 +725,8 @@ Especifique:</h2>
         <option value=3 @if($Encuesta->ncr23==3) selected @endif>Más de 6 y hasta un año</option> 
         <option value=4 @if($Encuesta->ncr23==4) selected @endif>Más de un año</option> 
     </select>
-      </div>
+      
+  </div>
 
       <div class='col' id='D' style='text-align: center;'>
     <h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
@@ -746,7 +746,7 @@ Especifique:</h2>
 
 
 <h2 class="reactivo"> 45.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
-<select class="select" id="ndr2" name="ndr2" onchange="bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17],[ndr2a])">
+<select class="select" id="ndr2" name="ndr2" onchange="bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a])">
 <option selected="selected" value="">
 <option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
 <option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 57)</option>
@@ -767,9 +767,9 @@ Especifique:</h2>
 <option value=15  @if($Encuesta->ndr2==15) selected @endif>Otra forma (especifíque)</option>
           </select>
 <br>Especifíque:
-<INPUT id="ndr2a" class="texto"  NAME="ndr2a"  TYPE=TEXT SIZE="60" MAXLENGTH="60" >
+<INPUT id="ndr2a" class="texto"  NAME="ndr2a"  TYPE=TEXT SIZE="60" MAXLENGTH="60" value="{{$Encuesta->ndr2_a}}">
 
-<h2 class="reactivo">  ¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </h2>
+<h2 class="reactivo">¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </h2>
 
 <h2 class="reactivo">    46).- El prestigio de la UNAM </h2>
   
@@ -867,7 +867,6 @@ Especifique:</h2>
         <option value=5  @if($Encuesta->ndr7==5) selected @endif>Nada importante </option> 
         </select>
 
-
         <h2 class="reactivo">   55.- Su estado civil       </h2>
 	<select class="select" id="ndr12" name="ndr12" >
         <option selected="selected" value="">
@@ -883,32 +882,32 @@ Especifique:</h2>
         <h2 class="reactivo">  55.1 - Cercania al domicilio.  </h2>
 	<select class="select" id="ndr12a" name="NDR12A" >
         <option selected="selected" value="">
-        <option value=1  @if($Encuesta->ndr12a==1) selected @endif>Muy importante</option>
-        <option value=2  @if($Encuesta->ndr12a==2) selected @endif>Importante</option> 
-        <option value=3  @if($Encuesta->ndr12a==3) selected @endif>Medianamente importante</option> 
-        <option value=4  @if($Encuesta->ndr12a==4) selected @endif>Poco importante</option> 
-        <option value=5  @if($Encuesta->ndr12a==5) selected @endif>Nada importante </option> 
+        <option value=1  @if($Encuesta->NDR12A==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->NDR12A==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->NDR12A==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->NDR12A==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->NDR12A==5) selected @endif>Nada importante </option> 
         </select>
 
 
         <h2 class="reactivo">55.2 - Experiencia profesional    </h2>
 	<select class="select" id="ndr12b" name="NDR12B" >
         <option selected="selected" value="">
-        <option value=1  @if($Encuesta->ndr12b==1) selected @endif>Muy importante</option>
-        <option value=2  @if($Encuesta->ndr12b==2) selected @endif>Importante</option> 
-        <option value=3  @if($Encuesta->ndr12b==3) selected @endif>Medianamente importante</option> 
-        <option value=4  @if($Encuesta->ndr12b==4) selected @endif>Poco importante</option> 
-        <option value=5  @if($Encuesta->ndr12b==5) selected @endif>Nada importante </option> 
+        <option value=1  @if($Encuesta->NDR12B==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->NDR12B==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->NDR12B==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->NDR12B==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->NDR12B==5) selected @endif>Nada importante </option> 
         </select>
 
         <h2 class="reactivo"> 55.3 - Título profesional.   </h2>
-	      <select class="select" id="ndr12c" name="NDR12B" >
+	      <select class="select" id="ndr12c" name="NDR12C" >
           <option selected="selected" value="">
-          <option value=1  @if($Encuesta->ndr12c==1) selected @endif>Muy importante</option>
-          <option value=2  @if($Encuesta->ndr12c==2) selected @endif>Importante</option> 
-          <option value=3  @if($Encuesta->ndr12c==3) selected @endif>Medianamente importante</option> 
-          <option value=4  @if($Encuesta->ndr12c==4) selected @endif>Poco importante</option> 
-          <option value=5  @if($Encuesta->ndr12c==5) selected @endif>Nada importante </option> 
+          <option value=1  @if($Encuesta->NDR12C==1) selected @endif>Muy importante</option>
+          <option value=2  @if($Encuesta->NDR12C==2) selected @endif>Importante</option> 
+          <option value=3  @if($Encuesta->NDR12C==3) selected @endif>Medianamente importante</option> 
+          <option value=4  @if($Encuesta->NDR12C==4) selected @endif>Poco importante</option> 
+          <option value=5  @if($Encuesta->NDR12C==5) selected @endif>Nada importante </option> 
         </select>
 
   <h2 class="reactivo">  56.- Otro factor para su contratación, ¿Cuál? </h2>
@@ -947,9 +946,6 @@ Especifique:</h2>
  <option value=4  @if($Encuesta->ndr17==4) selected @endif>Más de seis</option>
  <option value=5  @if($Encuesta->ndr17==5) selected @endif>Ninguno</option>
  </select>
-
-
-
 
  <h2 class="reactivo">  Desde su inserción al campo laboral a la fecha, considera que su situación, con relación a el:</h2>
 
@@ -1023,10 +1019,10 @@ Especifique:</h2>
        <h2 class="reactivo">  
 67.- En otra institución privada</h2>
     <select class="select" id="ner5" name="ner5" >
-    <option value="" selected="selected"></option>
-        <option value=1  @if($Encuesta->ner5==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner5==2) selected @endif>No</option>
-       </select>
+      <option value="" selected="selected"></option>
+      <option value=1  @if($Encuesta->ner5==1) selected @endif>Sí</option>
+      <option value=2  @if($Encuesta->ner5==2) selected @endif>No</option>
+    </select>
 
        <h2 class="reactivo">  
     68.-En la empresa o institución en la que trabaja</h2>
@@ -1047,9 +1043,9 @@ Especifique:</h2>
     <h2 class="reactivo">  
     70.-En Internet</h2>
     <select class="select" id="ner7int" name="ner7int" >
-    <option value="" selected="selected"></option>
-    <option value=1  @if($Encuesta->ner7int==1) selected @endif>Sí</option>
-    <option value=2  @if($Encuesta->ner7int==2) selected @endif>No</option>
+      <option value="" selected="selected"></option>
+      <option value=1  @if($Encuesta->ner7int==1) selected @endif>Sí</option>
+      <option value=2  @if($Encuesta->ner7int==2) selected @endif>No</option>
     </select>
   
     <h2 class="reactivo">  
@@ -1082,10 +1078,10 @@ Especifique:</h2>
     <h2 class="reactivo"> 
     73.- <B>¿Especialización?</B> </h2>
     <select class="select" id="ner10" name="ner10"  onchange="bloquear('ner10',[2],[ner10a,ner11,ner12])" >
-    <option selected="selected" value="">
-    <option value=1  @if($Encuesta->ner10==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner10==2) selected @endif>No</option>
-      </select>
+      <option selected="selected" value="">
+      <option value=1  @if($Encuesta->ner10==1) selected @endif>Sí</option>
+      <option value=2  @if($Encuesta->ner10==2) selected @endif>No</option>
+    </select>
 
 
     <h2 class="reactivo">  
@@ -1095,15 +1091,15 @@ Especifique:</h2>
     <h2 class="reactivo"> 
     <TD width=30%>73a).- ¿Ya se graduó? </h2>
     <select class="select" id="ner11" name="ner11" >
-    <option selected="selected" value="">
+      <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner11==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner11==2) selected @endif>No</option>
-      </select>
+      <option value=2  @if($Encuesta->ner11==2) selected @endif>No</option>
+    </select>
     
       <h2 class="reactivo"> 
     74.- ¿En dónde los hizo? </h2>
-    <select class="select" id="ner12" name="ner12" >
-    <option selected="selected" value="">
+     <select class="select" id="ner12" name="ner12" >
+       <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner12==1) selected @endif>En la UNAM</option>
        <option value=2  @if($Encuesta->ner12==2) selected @endif>En otra institución pública</option>
        <option value=3  @if($Encuesta->ner12==3) selected @endif>En otra institución privada</option>
@@ -1113,23 +1109,23 @@ Especifique:</h2>
       <h2 class="reactivo">  
     75.- <b>¿Maestría?</b></h2>
     <select class="select" id="ner13" name="ner13"  onchange=bloqueos13(e13) >
-    <option selected="selected" value="">
+        <option selected="selected" value="">
         <option value=1  @if($Encuesta->ner13==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner13==2) selected @endif>No</option>
+        <option value=2  @if($Encuesta->ner13==2) selected @endif>No</option>
      </select>
   
      <h2 class="reactivo">  
     75a).- ¿Ya se graduó?</h2>
     <select class="select" id="ner14" name="ner14" >
-    <option selected="selected" value="">
-      <option value=1  @if($Encuesta->ner14==1) selected @endif>Sí</option>
+       <option selected="selected" value="">
+       <option value=1  @if($Encuesta->ner14==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->ner14==2) selected @endif>No</option>
       </select>
    
       <h2 class="reactivo"> 
     76.- ¿En dónde los hizo? </h2>
     <select class="select" id="ner15"  name="ner15" >
-    <option selected="selected" value="">
+       <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner15==1) selected @endif>En la UNAM</option>
        <option value=2  @if($Encuesta->ner15==2) selected @endif>En otra institución pública</option>
        <option value=3  @if($Encuesta->ner15==3) selected @endif>En otra institución privada</option>
@@ -1141,10 +1137,10 @@ Especifique:</h2>
       <h2 class="reactivo">
     77.-¿Subespecialización? (solo médicos)  </h2>
     <select class="select" id="ner12a" name="ner12a" onchange="bloquear('ner12a',[2],[ner12b])" @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202)) hidden value=0 @endif>
-    <option value=0 >-</option>
+      <option value=0 >-</option>
       <option value=1  @if($Encuesta->ner12a==1) selected @endif>Sí</option>
-    <option value=2  @if($Encuesta->ner12a==2) selected @endif>No</option>
-      </select>
+      <option value=2  @if($Encuesta->ner12a==2) selected @endif>No</option>
+    </select>
     
       <h2 class="reactivo">  
     77a).-¿En qué área? </h2>
@@ -1154,10 +1150,10 @@ Especifique:</h2>
       <h2 class="reactivo">  
     78.-¿Ha realizado estudios de Doctorado?</h2>
     <select class="select" id="ner16" name="ner16"  onchange="bloquear('ner16',[2],[ner17,ner18])" >
-     <option selected="selected" value="">
-        <option value=1  @if($Encuesta->ner16==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner16==2) selected @endif>No (Pase a la 81)</option>
-     </select>
+      <option selected="selected" value="">
+      <option value=1  @if($Encuesta->ner16==1) selected @endif>Sí</option>
+      <option value=2  @if($Encuesta->ner16==2) selected @endif>No (Pase a la 81)</option>
+    </select>
    
      <h2 class="reactivo">  
     79.- ¿Ya se graduó?</h2>
@@ -1430,12 +1426,12 @@ discriminación?
     </TD>
     <TD>
  <select class="select" id="Pregunta 99"  name="nfr26" >
-     <option selected="selected" value="">
-  <option value=1 @if($Encuesta->nfr26==1) selected @endif>Excelente</option>
-  <option value=2 @if($Encuesta->nfr26==2) selected @endif>Bueno</option>
-  <option value=3 @if($Encuesta->nfr26==3) selected @endif>Regular</option>
-  <option value=4 @if($Encuesta->nfr26==4) selected @endif>Malo</option>
-  <option value=5 @if($Encuesta->nfr26==5) selected @endif>Deficiente</option>
+    <option selected="selected" value="">
+    <option value=1 @if($Encuesta->nfr26==1) selected @endif>Excelente</option>
+    <option value=2 @if($Encuesta->nfr26==2) selected @endif>Bueno</option>
+    <option value=3 @if($Encuesta->nfr26==3) selected @endif>Regular</option>
+    <option value=4 @if($Encuesta->nfr26==4) selected @endif>Malo</option>
+    <option value=5 @if($Encuesta->nfr26==5) selected @endif>Deficiente</option>
    </select>
     </TD>
 </TR>
@@ -2718,5 +2714,8 @@ function automatico(myRadio) {
   bloquear('ngr45',[2],[ngr45a,ngr45_a]);
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
   bloquear('ngr37',[12],[ngr37a]);
+  bloquear('nar15',[35,34,33,22,29,16,39,17,18,19,20,23,24,27,30,31,32,26,36,37],[nar15otra]);
+  bloquear('nar13',[1,2,3,4,5,6,7,8,9,12,13],[nrxx])
+  bloquear('nar12',[1,2,3,4,5,6,7,8,9,12,13],[nrx])
 </script>
 @endpush
