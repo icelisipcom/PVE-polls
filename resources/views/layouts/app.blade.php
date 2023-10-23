@@ -47,9 +47,15 @@ overflow: auto;
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-    function expandir() {
-        console.log(' a chikita');
-  $(this).closest('.box.box-warning').toggleClass('panel-fullscreen');
+    var elem = document.documentElement;
+  function openFullScreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
 }
 </script>
 </head>
@@ -66,9 +72,9 @@ overflow: auto;
                 </ul>
                 
                 <ul class="navbar-nav ml-auto">
-                <!-- <li class="nav-item">
-                    <button type="button" style="color:white" class="toggle-expand-btn btn  btn-sm" onclick="expandir()"><i class="fa fa-expand"></i></button>
-                </li> -->
+                 <li class="nav-item">
+                    <button type="button" style="color:white" class="toggle-expand-btn btn  btn-sm" onclick="openFullScreen()"><i class="fa fa-expand"></i></button>
+                </li> 
                     <li class="nav-item dropdown user-menu">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <img src="{{asset('img/logoPVE.png')}}"
