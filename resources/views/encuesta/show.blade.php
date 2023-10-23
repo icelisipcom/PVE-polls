@@ -1450,11 +1450,11 @@ Especifique:</h2>
  <h2 class="reactivo">  
 96.- ¿Durante sus estudios profesionales recibió o percibió que 
 otros estudiantes recibieran algún tipo de 
-discriminación? 
+discriminación?
 </h2>
 <select class="select" id="nfr23a" name="nfr23a"   onchange="bloquear('nfr23a',[2],[nfr23,nfr24])">
 <option selected="selected" value="">
- <option value=1 @if($Encuesta->nfr23 != 7) selected @endif>Sí (Especifíque)</option>
+ <option value=1 @if($Encuesta->nfr23!=7) selected @endif>Sí (Especifíque)</option>
  <option value=2 @if($Encuesta->nfr23==7) selected @endif>No (Pase a la 98)</option>
   </select>
     </TD>
@@ -1463,7 +1463,7 @@ discriminación?
   <TD> 
   <h2 class="reactivo"> 
 97.-Especifíque:----  </h2>
-<select class="select" id="nfr23" name="nfr23"  @if($Encuesta->nfr23==7) hidden value=0 @endif>
+<select class="select" id="nfr23" name="nfr23" onchange="bloquear('nfr23',[1,2,3,4,5,7],[nfr24])">
 <option selected="selected" value="">
  <option value=1 @if($Encuesta->nfr23==1) selected @endif>Sexo</option>
  <option value=2 @if($Encuesta->nfr23==2) selected @endif>Nivel socioeconómico </option>
@@ -1471,13 +1471,13 @@ discriminación?
  <option value=4 @if($Encuesta->nfr23==4) selected @endif>Religión </option>
  <option value=5 @if($Encuesta->nfr23==5) selected @endif>Posición política </option>
  <option value=6 @if($Encuesta->nfr23==6) selected @endif>Otra  </option> 
- <option value=0 @if($Encuesta->nfr23==7)selected  @endif hidden></option>  
+ <option value=7 @if($Encuesta->nfr23==7)selected  @endif hidden></option>  
 
   </select>
     </TD>     
 <TD> <h2 class="reactivo"> 
 97a) Otra-
-<INPUT id="nfr24" name="nfr24" TYPE=TEXT  class="texto" @if($Encuesta->nfr23==7) hidden value=0  @else value="{{$Encuesta->nfr24}}" @endif SIZE=50 MAXLENGTH=80 >
+<INPUT id="nfr24" name="nfr24" TYPE=TEXT  class="texto"  SIZE=50 MAXLENGTH=80 >
 </h2></TD>
 </TR>
 
@@ -2782,7 +2782,7 @@ function titulado(){
           console.log("falta "+element.name+"  "+element.value);
           Swal.fire({
   title: 'GUARDAR ENCUESTA',
-  text: 'Estas a punto de guardar una encuesta incompleta, ¿deseas guardarla aun así?',
+  text: 'Estas a punto de guardar una encuesta incompleta, falta'+element.name+' ¿deseas guardarla aun así?',
   showDenyButton: true,
   showCancelButton: true,
   confirmButtonText: 'Sí, guardar',
@@ -2800,6 +2800,7 @@ function titulado(){
     forma.submit();
   } else if (result.isDenied) {
     Swal.fire('Changes are not saved', '', 'info')
+    document.getElementById(element.id).focus();
   }
 })
           // if(confirm("Seguro que deseas guardar una encuesta incompleta?")==true){
@@ -2826,7 +2827,7 @@ function automatico(myRadio) {
     </script>
 
 <script>
-  console.log(document.getElementById("nfr29a").value);
+  console.log('nfr23: '+document.getElementById("nfr23a").value);
 
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
   seccionc2();
@@ -2846,6 +2847,7 @@ function automatico(myRadio) {
   bloquear('nar13',[1,2,3,4,5,6,7,8,9,12,13],[nrxx]);
   bloquear('nar12',[1,2,3,4,5,6,7,8,9,12,13],[nrx]);
   titulado();
-  bloquear('CUE_CRE',[2],[UTILIZA])
+  bloquear('CUE_CRE',[2],[UTILIZA]);
+  bloquear('nfr23a',[2],[nfr23,nfr24]);
 </script>
 @endpush
