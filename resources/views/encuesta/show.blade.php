@@ -79,7 +79,7 @@
            </select> 
            <h2 class="reactivo">3.- Estado civil:</h2>
            
-            <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])" > 
+            <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar14])" > 
             <option value="" selected></option>
 			<option value=1  @if($Encuesta->nar8==1) selected @endif>Soltero(a)</option>
 			<option value=2 @if($Encuesta->nar8==2) selected @endif>Casado(a)</option>
@@ -149,7 +149,7 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxl
   
 <h2 class="reactivo">9.-Ocupación de su esposo(a)</h2>
 
-<select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[1,2,3,4,5,6,7,8,9,10,11,12],[nar14otra])"  >
+<select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[18,19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17],[nar14otra])"  >
        <option value="" ></option>
 <option value=28 @if($Encuesta->nar14==28) selected @endif >Artesanos y obrero</option>
 <option value=25 @if($Encuesta->nar14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
@@ -216,7 +216,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
   <h2 class="reactivo">11.- La ocupación de su madre (cuando cursaba la carrera )</h2>   
 
-  <select class="select" id="nar15" name="nar15"  onchange="bloquear('nar15',[35,34,33,22,29,16,39,17,18,19,20,23,24,27,30,31,32,26,36,37],[nar15otra])" >
+  <select class="select" id="nar15" name="nar15"  onchange="bloquear('nar15',[28,25,41,21,35,34,33,22,29,16,39,17,18,19,20,23,24,27,30,31,32,26,36,37],[nar15otra])" >
   <option value="" ></option>
 <option value=28 @if($Encuesta->nar15==28) selected @endif >Artesanos y obrero</option>
 <option value=25 @if($Encuesta->nar15==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
@@ -279,7 +279,7 @@ cursó sus estudios en la UNAM? </h2>
     <h2 class="reactivo">13.- La ocupación de su padre (cuando cursaba la carrera )</h2> 
     
 
- <select class="select" id="nar16" name="nar16"  onchange="bloquear('nar16',[19,20,23,24,27,30,31,26,36,37,28,25,41,21,35,34,22,29,16,39,17,18],[nar16otra])">
+ <select class="select" id="nar16" name="nar16"  onchange="bloquear('nar16',[19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17,18],[nar16otra])">
  <option value="" ></option>
 <option value=28 @if($Encuesta->nar16==28) selected @endif >Artesanos y obrero</option>
 <option value=25 @if($Encuesta->nar16==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
@@ -306,7 +306,6 @@ cursó sus estudios en la UNAM? </h2>
 <option value=36 @if($Encuesta->nar16==36) selected @endif >No trabaja</option>
 <option value=37 @if($Encuesta->nar16==37) selected @endif >No lo sabe</option>
 <option value=38 @if($Encuesta->nar16==38) selected @endif >Otra(Especifíque)</option>
-
 </select>
 <br>(Especifíque)
 Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar16otra)>2) value="{{$Encuesta->nar16otra}}" @else value=0 hidden @endif >   
@@ -433,7 +432,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 <option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
 </select>
  <h2 class="reactivo"> 22.- Nombre de la empresa o institución donde trabaja </h2>
- <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->ncr2}}" size="110" maxlength="110"  >
+ <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->ncr2}}" size="220" maxlength="220"  >
     
     <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
 
@@ -694,7 +693,7 @@ Especifique:</h2>
         ¿ha dejado de trabajar? </h2>
     
     
-    <select class="select" id="ncr22" name="ncr22"  onchange="bloquear(ncr22,[2],[ncr24,ncr23]) "> 
+    <select class="select" id="ncr22" name="ncr22"  onchange="bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23]) "> 
     <option value="" selected="selected"></option>
     <option value=1 @if($Encuesta->ncr22==1) selected @endif>Sí</option>
     <option value=2 @if($Encuesta->ncr22==2) selected @endif>No</option>
@@ -704,7 +703,7 @@ Especifique:</h2>
     
     <h2 class="reactivo"> 42.-¿Cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
-     <select class="select" id="ncr24" name="ncr24" onchange="bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,29],[ncr24porque])" >
+     <select class="select" id="ncr24" name="ncr24" onchange="funcion_ncr24()" >
       <option value=0 @if($Encuesta->ncr24==0) selected @endif> -</option>
       <option value=1 @if($Encuesta->ncr24==1) selected @endif> Estar estudiando</option>
       <option value=13 @if($Encuesta->ncr24==13) selected @endif>Embarazo </option>
@@ -727,11 +726,11 @@ Especifique:</h2>
       <option value=19 @if($Encuesta->ncr24==19) selected @endif>Motivos personales</option> 
       <option value=20 @if($Encuesta->ncr24==29) selected @endif>Derivado de la pandemia</option> 
       <option value=14 @if($Encuesta->ncr24==14) selected @endif>Otra </option>
-      <option value=0  hidden></option>   
+       
 </select>
     <br>(Especifíque)
     Otra:
-    <input type="text" class="texto" ID="ncr24a" name="ncr24a" size="55" maxlength="55"  @if($Encuesta->ncr24!=14) hidden  value=0 @endif> 
+    <input type="text" class="texto" id="ncr24a" name="ncr24a" size="55" maxlength="55"  @if($Encuesta->ncr24!=14) hidden  value=0 @endif> 
     
     
     <h2 class="reactivo">   42a):-Perdió o dejó su trabajo, ¿por qué? </h2>
@@ -767,7 +766,7 @@ Especifique:</h2>
     <h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
 
 
-<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
+<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
         <option value="" selected></option>
         <option value=1  @if($Encuesta->ndr1==1) selected @endif>Muy fácil</option>
         <option value=2  @if($Encuesta->ndr1==2) selected @endif>Fácil</option> 
@@ -782,7 +781,7 @@ Especifique:</h2>
 
 
 <h2 class="reactivo"> 45.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
-<select class="select" id="ndr2" name="ndr2" onchange="bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a])">
+<select class="select" id="ndr2" name="ndr2" onchange="funcion_ndr2()">
 <option selected="selected" value="">
 <option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
 <option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 57)</option>
@@ -964,7 +963,7 @@ Especifique:</h2>
 <INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" " TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 
   <h2 class="reactivo">  57.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
-<select class="select" id="ndr14" name="ndr14"  onchange='bloqueod14(d14)'>
+<select class="select" id="ndr14" name="ndr14"  onchange="bloquear('ndr14',[1],[ndr15])">
    <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr14==1) selected @endif>Desde que estaba estudiando (Pase a la 58)</option>
    <option value=2  @if($Encuesta->ndr14==2) selected @endif>Después de egresar de la carrera </option>
@@ -1273,7 +1272,7 @@ Especifique:</h2>
  
     <h2 class="reactivo">  
 82.-La carrera que estudió </h2>
-<select class="select" id="nfr0"  name="nfr0"  onchange=bloqueof(f)>
+<select class="select" id="nfr0"  name="nfr0"  onchange="bloquear('nfr0',[2],[nfr1])">
  <option selected="selected" value=""></option>
    <option value=1 @if($Encuesta->nfr0==1) selected @endif>La eligió </option>
   <option value=2 @if($Encuesta->nfr0==2) selected @endif>Se la asignaron (Pase a la 84)</option>
@@ -1333,7 +1332,7 @@ Especifique:</h2>
 </select>
   
   <h2 class="reactivo"> 86.- ¿Volvería a estudiar en la UNAM?</h2>
-    <select class="select" id="nfr5" name="nfr5"  onchange="bloquear('nfr5',[1],[nfr5_a)">
+    <select class="select" id="nfr5" name="nfr5"  onchange="bloquear('nfr5',[1],[nfr5_a])">
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->nfr5==1) selected @endif>Sí (pasa a la 87)</option>
     <option value=2 @if($Encuesta->nfr5==2) selected @endif>No</option>
@@ -1454,7 +1453,7 @@ discriminación?
 </h2>
 <select class="select" id="nfr23a" name="nfr23a"   onchange="bloquear('nfr23a',[2],[nfr23,nfr24])">
 <option selected="selected" value="">
- <option value=1 @if($Encuesta->nfr23!=7) selected @endif>Sí (Especifíque)</option>
+ <option value=1 @if($Encuesta->nfr23<7) selected @endif>Sí (Especifíque)</option>
  <option value=2 @if($Encuesta->nfr23==7) selected @endif>No (Pase a la 98)</option>
   </select>
     </TD>
@@ -1566,7 +1565,7 @@ discriminación?
 
   <h2 class="reactivo">  
 103.- ¿Ya realizó el servicio social?</h2>
- <select class="select" id="Pregunta 103" name="nfr30"  onchange=bloqueo30(f30)>
+ <select class="select" id="nfr30" name="nfr30"  onchange="bloquear('nfr30',[2],[nfr31,nfr32])">
   <option selected="selected" value="">
   <option value=1 @if($Encuesta->nfr30==1) selected @endif>Sí</option>
   <option value=2 @if($Encuesta->nfr30==2) selected @endif>No</option>
@@ -2473,7 +2472,7 @@ ambiente </h2>
 
 <h2 class="reactivo"> 
 141.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>
-<select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45a,ngr45_a])">
+<select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45_a])">
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->ngr45==1) selected @endif >Sí</option>
 <option value=2 @if($Encuesta->ngr45==2) selected @endif >No</option>
@@ -2645,6 +2644,10 @@ body {
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+  function pageScroll() {
+    window.scrollBy(0,200);
+    scrolldelay = setTimeout(pageScroll,10);
+}
   function hide_all(){
     sections=['A','B','C','D','E','F','G'];
    for (let i = 0; i < sections.length; i++) {
@@ -2660,24 +2663,25 @@ body {
     document.getElementById(sec+'btn').style.backgroundColor="{{Auth::user()->color}}";
     console.log(document.getElementById(sec+'btn').style.color)
     document.getElementById(sec+'txt').style.color="white";
-    var el = document.querySelector('#cuerpo');
-    window.scrollTo(888, 1000);
-    el.scrollTo(88, 100); 
-    document.body.scrollTop=200;
-    console.log('scroleado¿?');
+//     var el = document.querySelector('#cuerpo');
+//     window.scrollTo(888, 1000);
+//     el.scrollTo(88, 100); 
+//     document.body.scrollTop=200;
+//     console.log('scroleado¿?');
    
 
-// get scroll position in px
-console.log(el.scrollLeft, el.scrollTop);
+// // get scroll position in px
+// console.log(el.scrollLeft, el.scrollTop);
 
-// set scroll position in px
-el.scrollLeft = 500;
-el.scrollTop = 1000;
-var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    document.documentElement.scrollTop = document.body.scrollTop = 1000;
-document.documentElement.scrollLeft = document.body.scrollLeft = 500;
-  }
+// // set scroll position in px
+// el.scrollLeft = 500;
+// el.scrollTop = 1000;
+// var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     document.documentElement.scrollTop = document.body.scrollTop = 1000;
+// document.documentElement.scrollLeft = document.body.scrollLeft = 500;
+pageScroll();  
+}
   unhide('A');
 
  </script>
@@ -2685,7 +2689,7 @@ document.documentElement.scrollLeft = document.body.scrollLeft = 500;
  <script>
 function bloquear(reactivo,options,reactivosPorCerrar){
 
-
+console.log('reactivo: '+reactivo)
 var val=document.getElementById(reactivo);
 console.log (val.value);
 console.log(options);
@@ -2701,7 +2705,7 @@ if(options.includes(parseInt(val.value))){
 
 
 function ocultar(item){
-console.log(item.id);
+console.log('reactivo a ocultar: '+item);
 document.getElementById(item.id).value=0;
 document.getElementById(item.id).hidden="hidden";
 console.log(document.getElementById(item.id).value);
@@ -2768,6 +2772,14 @@ function titulado(){
   bloquear('nfr27',[1],[nfr29,nfr29a]);
   bloquear('nfr29',[1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
 }
+function funcion_ncr24(){
+  bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,29],[ncr24porque]);
+  bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,29],[ncr24a])
+} 
+function funcion_ndr2(){
+  bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a]);
+  bloquear('ndr2',[9],[ndr3,ndr4,ndr5,ndr6,ndr7,ndr8,ndr9,ndr10,ndr11,ndr13a,ndr12,ndr12a,ndr12b,ndr12c]);
+}
  </script>
 
  <script>
@@ -2828,15 +2840,20 @@ function automatico(myRadio) {
 
 <script>
   console.log('nfr23: '+document.getElementById("nfr23a").value);
-
+  bloquear('nar16',[19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17,18],[nar16otra]);
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
   seccionc2();
-  bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])
+  bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra]);
   bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
   bloquear('ner16',[2],[ner17,ner18]);
+  bloquear('ndr14',[1],[ndr15])
+  funcion_ncr24();
+  funcion_ndr2();
+  bloquear('nfr0',[2],[nfr1])
+  bloquear('nfr23a',[2],[nfr23,nfr24]);
   bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
   bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
   bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
