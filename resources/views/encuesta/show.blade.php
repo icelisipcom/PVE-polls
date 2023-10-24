@@ -1476,7 +1476,7 @@ discriminación?
     </TD>     
 <TD> <h2 class="reactivo"> 
 97a) Otra-
-<INPUT id="nfr24" name="nfr24" TYPE=TEXT  class="texto"  SIZE=50 MAXLENGTH=80 >
+<INPUT id="nfr24" name="nfr24" TYPE=TEXT  class="texto"  SIZE=50 MAXLENGTH=80 value="{{$Encuesta->nfr24}}" >
 </h2></TD>
 </TR>
 
@@ -1620,9 +1620,7 @@ servicio social? </h2>
     <option value=1 @if($Encuesta->ngr5==1) selected @endif>Sí</option>
     <option value=2 @if($Encuesta->ngr5==2) selected @endif>No</option>
     <option value=3 @if($Encuesta->ngr5==3) selected @endif>Sin trabajo</option>
-    <option value=0 hidden > </option>
-      
-       
+    <option value=0 hidden > </option>     
    </select>
 
    <h2 class="reactivo">   
@@ -2291,7 +2289,7 @@ a).- </h2><select class="select" id="ngr34"  name="ngr34">
 
 <h2 class="reactivo">  
 133.- La capacidad para apreciar diferentes expresiones artísticas (cine, teatro, etc.)</h2>
-<select class="select" id="ngr37" name="ngr37"  onchange="bloquear('ngr37',[12],[ngr37a])">
+<select class="select" id="ngr37" name="ngr37"  onchange="artisticos()">
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr37==12) selected @endif >No</option>
@@ -2300,7 +2298,7 @@ a).- </h2><select class="select" id="ngr34"  name="ngr34">
 
 <h2 class="reactivo">  
 a).-¿Con qué frecuencia asistió a eventos artísticos?</h2>
-<select class="select" id="ngr37a" name="ngr37_a" >
+<select class="select" id="ngr37a" name="ngr37_a"  >
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37_a==11) selected @endif >2 o 3 veces por semana</option>
 <option value=12 @if($Encuesta->ngr37_a==12) selected @endif >1 vez a la semana</option>
@@ -2472,7 +2470,7 @@ ambiente </h2>
 
 <h2 class="reactivo"> 
 141.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>
-<select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45_a])">
+<select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45_a,ngr45a])">
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->ngr45==1) selected @endif >Sí</option>
 <option value=2 @if($Encuesta->ngr45==2) selected @endif >No</option>
@@ -2494,7 +2492,7 @@ ambiente </h2>
 
 <h2 class="reactivo">141b).-Otra:  </h2>
 
-<INPUT  id="ngr45a" name="ngr45a" TYPE=TEXT  class="texto"  SIZE=60 MAXLENGTH=60 >
+<INPUT  id="ngr45a" name="ngr45a" TYPE=TEXT  class="texto"  SIZE=60 MAXLENGTH=60 value="{{$Encuesta->ngr45a}}">
 
 <h2 class="reactivo"> 
 142.-¿Conoce usted la Credencial de Egresados y sus beneficios? </h2>
@@ -2780,6 +2778,10 @@ function funcion_ndr2(){
   bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a]);
   bloquear('ndr2',[9],[ndr3,ndr4,ndr5,ndr6,ndr7,ndr8,ndr9,ndr10,ndr11,ndr13a,ndr12,ndr12a,ndr12b,ndr12c]);
 }
+function artisticos(){
+  bloquear('ngr37',[12],[ngr37a]);
+  bloquear('ngr37',[11],[ngr37m]);
+}
  </script>
 
  <script>
@@ -2866,5 +2868,7 @@ function automatico(myRadio) {
   titulado();
   bloquear('CUE_CRE',[2],[UTILIZA]);
   bloquear('nfr23a',[2],[nfr23,nfr24]);
+  check_beca();
+  artisticos();
 </script>
 @endpush
