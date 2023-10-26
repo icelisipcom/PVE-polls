@@ -745,6 +745,7 @@ Especifique:</h2>
      <option value=16 @if($Encuesta->ncr24porque==16) selected @endif>Despido debido a la pandemia</option>
      <option value=17 @if($Encuesta->ncr24porque==17) selected @endif>Cerro la empresa debido a la pandemia</option>
      <option value=5  @if($Encuesta->ncr24porque==5) selected @endif>Otra</option> 
+     <option value=9  @if($Encuesta->ncr24porque==9) selected @endif>Jubilarse o Pensionarse</option> 
      <option value=0   @if($Encuesta->ncr24!=12) selected @endif hidden></option>   
 </select>
        
@@ -765,7 +766,7 @@ Especifique:</h2>
       <div class='col' id='D' style='text-align: center;'>
     <h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
 
-
+ 
 <select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
         <option value="" selected></option>
         <option value=1  @if($Encuesta->ndr1==1) selected @endif>Muy fácil</option>
