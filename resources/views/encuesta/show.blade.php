@@ -2846,7 +2846,8 @@ function automatico(myRadio) {
   bloquear('nar16',[19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17,18],[nar16otra]);
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
   seccionc2();
-  bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra]);
+  
+  bloquear('nar8',[1],[nar11,nar14])
   bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
