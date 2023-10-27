@@ -56,7 +56,12 @@ public function edit($id){
     $Egresado=Egresado::where('cuenta','=',$Encuesta->cuenta)->first();
     $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
     $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
-    $Comentario=comentario::where('cuenta','=',$Encuesta->cuenta)->first()->cometario;  
+    $Coment=comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+    if($Coment){
+$Comentario=$Coment->comentario;
+    }  else{
+        $Comentario='';
+    }
     // dd($Comentario);
     return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel','Comentario'));
 
