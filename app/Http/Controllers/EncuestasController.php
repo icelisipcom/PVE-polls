@@ -43,7 +43,9 @@ class EncuestasController extends Controller
         $Egresado=Egresado::where('cuenta','=',$id)->first();
         $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
         $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
-        return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel'));
+        $Comentario=''.comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+        
+        return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel','Comentario'));
 }
 public function edit($id){
     
@@ -54,7 +56,9 @@ public function edit($id){
     $Egresado=Egresado::where('cuenta','=',$Encuesta->cuenta)->first();
     $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
     $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
-    return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel'));
+    $Comentario=comentario::where('cuenta','=',$Encuesta->cuenta)->first()->cometario;  
+    // dd($Comentario);
+    return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel','Comentario'));
 
 }
 public function create(){

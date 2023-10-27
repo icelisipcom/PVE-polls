@@ -144,7 +144,7 @@ Extensión:
       <option value=13  @if($Encuesta->nar11==13) selected @endif >Otro (Especifíque)</option>
       <option value=0  hidden></option> 
     </select>
-Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxlength="50" @if(strlen($Encuesta->nar11a)>2) value="{{$Encuesta->nar11a}}" @else value="" hidden @endif > 
+Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxlength="50" @if(strlen($Encuesta->nar11a)>2) value="{{$Encuesta->nar11a}}" @else value=0 hidden @endif > 
 
   
 <h2 class="reactivo">9.-Ocupación de su esposo(a)</h2>
@@ -749,7 +749,7 @@ Especifique:</h2>
      <option value=0   @if($Encuesta->ncr24!=12) selected @endif hidden></option>   
 </select>
        
-     <h2 class="reactivo"> 43.- ¿Ciál es el periodo más largo que ha permanecido sin laborar? </h2>
+     <h2 class="reactivo"> 43.- ¿Cuál es el periodo más largo que ha permanecido sin laborar? </h2>
     
     
     <select class="select" id="ncr23" name="ncr23" >
@@ -972,9 +972,9 @@ Especifique:</h2>
    <option value=0  hidden></option>   
 </select>
 
-  <h2 class="reactivo">   58.- ¿Cuánto tiempo después  de  egresar  de  la licenciatura obtuvo su primer trabajo? </h2>
+  <h2 class="reactivo">   58.- ¿Cuánto tiempo después  de  egresar  de  la licenciatura obtuvo su primer trabajo? {{$Encuesta->ndr15==1}}</h2>
 <select class="select" id="ndr15" name="ndr15" >
-<option selected="selected" value="">
+<option selected="selected" value=0></option>
    <option value=1  @if($Encuesta->ndr15==1) selected @endif>6 meses o menos</option>
    <option value=2  @if($Encuesta->ndr15==2) selected @endif>de 6 meses a un año </option>
    <option value=3  @if($Encuesta->ndr15==3) selected @endif> más de un año</option>
@@ -1471,7 +1471,8 @@ discriminación?
  <option value=4 @if($Encuesta->nfr23==4) selected @endif>Religión </option>
  <option value=5 @if($Encuesta->nfr23==5) selected @endif>Posición política </option>
  <option value=6 @if($Encuesta->nfr23==6) selected @endif>Otra  </option> 
- <option value=7 @if($Encuesta->nfr23==7)selected  @endif hidden></option>  
+ <option value=7 @if($Encuesta->nfr23==0)selected  @endif hidden></option>  
+ <option value=0 ></option>  
 
   </select>
     </TD>     
@@ -2344,7 +2345,7 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 <h2 class="reactivo">  
 136.- ¿Interés por la práctica  de algún deporte?</h2>
-<select class="select" id="ngr40" name="ngr40"  onchange="bloquear('ngr40',[12],[ngr40_a,ngr40a])">
+<select class="select" id="ngr40" name="ngr40"  onchange="deportes()">
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr40==12) selected @endif >No</option>
@@ -2402,8 +2403,8 @@ b).- ¿Con qué frecuencia lo practicó?</h2>
 <option value=0 hidden > </option>
       </select>
 
-<h2 class="reactivo">  
-c).- Motivo</h2>
+<h2 class="reactivo" >  
+c).- Motivo por el que no lo practico </h2>
 <select class="select" id="ngr40_b" name="ngr40_b"  >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr40_b==1) selected @endif >Desinterés</option>
@@ -2524,13 +2525,13 @@ ambiente </h2>
 <h2 class="reactivo"> ¿Desea hacer algun comentario? </h2>
 <select class="select" id="comen" name="ncro2" onchange="bloquear('comen',[2],[comentario])"  >
 <option value="" selected></option>
-    <option value='1' >Sí</option>
-    <option value='2' >No</option> 
+    <option value='1' @if(strlen($Comentario)>2) selected @endif >Sí</option>
+    <option value='2' @if(strlen($Comentario)<=1) selected @endif >No</option> 
 </select>
 <br>
 <h2 class="reactivo"> ¿Comentario? </h2>
 <br>
-<textarea type="text" class="texto"   name="comentario" size="140" value=" " id="comentario" rows="5" cols="50" >
+<textarea type="text" class="texto"   name="comentario" size="140"  id="comentario" rows="5" cols="50" value="{{$Comentario}}">
 </textarea>
       </div>
     </div>
@@ -2686,7 +2687,8 @@ pageScroll();
  </script>
 
  <script>
-function bloquear(reactivo,options,reactivosPorCerrar){
+
+ function bloquear(reactivo,options,reactivosPorCerrar){
 
 console.log('reactivo: '+reactivo)
 var val=document.getElementById(reactivo);
@@ -2769,7 +2771,7 @@ function seccionc2(){
 function titulado(){
   bloquear('nfr27',[2,3],[nfr28]);
   bloquear('nfr27',[1],[nfr29,nfr29a]);
-  bloquear('nfr29',[1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
+  // bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,""],[nfr29a]);
 }
 function funcion_ncr24(){
   bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,29],[ncr24porque]);
@@ -2777,11 +2779,17 @@ function funcion_ncr24(){
 } 
 function funcion_ndr2(){
   bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a]);
-  bloquear('ndr2',[9],[ndr3,ndr4,ndr5,ndr6,ndr7,ndr8,ndr9,ndr10,ndr11,ndr13a,ndr12,ndr12a,ndr12b,ndr12c]);
+  bloquear('ndr2',[9],[ndr2a,ndr3,ndr4,ndr5,ndr6,ndr7,ndr8,ndr9,ndr10,ndr11,ndr13a,ndr12,ndr12a,ndr12b,ndr12c]);
+  
+  
 }
 function artisticos(){
   bloquear('ngr37',[12],[ngr37a]);
   bloquear('ngr37',[11],[ngr37m]);
+}
+function deportes(){
+  bloquear('ngr40',[12],[ngr40_a,ngr40a]);
+  bloquear('ngr40',[11],[ngr40_b]);
 }
  </script>
 
@@ -2797,7 +2805,7 @@ function artisticos(){
           console.log("falta "+element.name+"  "+element.value);
           Swal.fire({
   title: 'GUARDAR ENCUESTA',
-  text: 'Estas a punto de guardar una encuesta incompleta, falta'+element.name+' ¿deseas guardarla aun así?',
+  text: 'Estas a punto de guardar una encuesta incompleta, falta:  '+element.name+"  "+element.value+' ¿deseas guardarla aun así?',
   showDenyButton: true,
   showCancelButton: true,
   confirmButtonText: 'Sí, guardar',
@@ -2811,10 +2819,10 @@ function artisticos(){
   }
 }).then((result) => {
   if (result.isConfirmed) {
-    Swal.fire('Saved!', '', 'success')
+    Swal.fire('Encuesta guardada!', '', 'success')
     forma.submit();
   } else if (result.isDenied) {
-    Swal.fire('Changes are not saved', '', 'info')
+    Swal.fire('No se guardo la encuesta', '', 'info')
     document.getElementById(element.id).focus();
   }
 })
@@ -2848,14 +2856,31 @@ function automatico(myRadio) {
   seccionc2();
   
   bloquear('nar8',[1],[nar11,nar14])
+  funcion_ndr2();
   bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
+  var d15={{$Encuesta->ndr15}};
+  //Get select object
+var selectObj = document.getElementById("ndr15");
+
+
+console.log('!!!!!!!!-------------------ndr15: {{$Encuesta->ndr15}}');
+console.log(selectObj.options.length);
+    for (var i = 0; i < selectObj.options.length; i++) {
+          
+        if (selectObj.options[i].value== d15) {
+           selectObj.options[i].selected = true;
+           selectObj.selectedIndex=i;
+           console.log('valor de la opcion '+i+selectObj.options[i].value);
+       
+        }
+      }
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
   bloquear('ner16',[2],[ner17,ner18]);
   bloquear('ndr14',[1],[ndr15])
   funcion_ncr24();
-  funcion_ndr2();
+  
   bloquear('nfr0',[2],[nfr1])
   bloquear('nfr23a',[2],[nfr23,nfr24]);
   bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
@@ -2867,10 +2892,14 @@ function automatico(myRadio) {
   bloquear('nar15',[35,34,33,22,29,16,39,17,18,19,20,23,24,27,30,31,32,26,36,37],[nar15otra]);
   bloquear('nar13',[1,2,3,4,5,6,7,8,9,12,13],[nrxx]);
   bloquear('nar12',[1,2,3,4,5,6,7,8,9,12,13],[nrx]);
-  titulado();
+  
   bloquear('CUE_CRE',[2],[UTILIZA]);
   bloquear('nfr23a',[2],[nfr23,nfr24]);
   check_beca();
   artisticos();
+  deportes();
+  titulado();
+  bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
+  bloquear('comen',[2],[comentario]);
 </script>
 @endpush
