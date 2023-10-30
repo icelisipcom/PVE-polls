@@ -964,7 +964,7 @@ Especifique:</h2>
 <INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" " TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 
   <h2 class="reactivo">  57.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
-<select class="select" id="ndr14" name="ndr14"  onchange="bloquear('ndr14',[1],[ndr15])">
+<select class="select" id="ndr14" name="ndr14"  onchange="bloquear('ndr14',[1,3],[ndr15])">
    <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr14==1) selected @endif>Desde que estaba estudiando (Pase a la 58)</option>
    <option value=2  @if($Encuesta->ndr14==2) selected @endif>Después de egresar de la carrera </option>
@@ -1178,7 +1178,7 @@ Especifique:</h2>
    
       <h2 class="reactivo">  
     75.- <b>¿Maestría?</b></h2>
-    <select class="select" id="ner13" name="ner13"  onchange=bloqueos13(e13) >
+    <select class="select" id="ner13" name="ner13"  onchange="bloquear('ner13',[2],[ner14,ner15])" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ner13==1) selected @endif>Sí</option>
         <option value=2  @if($Encuesta->ner13==2) selected @endif>No</option>
@@ -2877,8 +2877,9 @@ console.log(selectObj.options.length);
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
+  bloquear('ner13',[2],[ner14,ner15]);
   bloquear('ner16',[2],[ner17,ner18]);
-  bloquear('ndr14',[1],[ndr15])
+  bloquear('ndr14',[1,3],[ndr15])
   funcion_ncr24();
   
   bloquear('nfr0',[2],[nfr1])
