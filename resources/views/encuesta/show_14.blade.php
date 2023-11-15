@@ -37,7 +37,7 @@
   <a class="navbar-brand" href="#" onClick="unhide('G')" id='Gbtn'><p id='Gtxt'>Seccion G</p></a>
 </nav>
 </div>
-<form action="{{ url('encuestas/real_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
+<form action="{{ route('encuestas14.real_update', $Encuesta->REGISTRO) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
 <input type="text" value='{{$Encuesta->cuenta}}' name='cuenta' hidden>
     <div class='Scroll'> 
@@ -82,9 +82,7 @@
 <h2 class="reactivo">5.-  Teléfono de casa</h2> 
  <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->telcasa}}">
 
- <h2 class="reactivo">5a.-  Teléfono celular</h2>
- <INPUT type="text" class="texto" id="telcel" name="TELCEL"  size="15" maxlength="15" value="{{$Encuesta->TELCEL}}"  >
-    
+ 
 <h2 class="reactivo">6.-Teléfono  del trabajo: </h2>
 <INPUT type="text" class="texto"  id="teltra"   size="12" maxlength="13"  name="teltra" value="{{$Encuesta->teltra}}">
 
@@ -500,7 +498,7 @@ Especifique:</h2>
         ¿ha dejado de trabajar? </h2>
     
     
-    <select class="select" id="ncr22" name="ncr22"  onchange="bloquear(ncr22,[2],[ncr24,ncr23]) "> 
+    <select class="select" id="ncr22" name="ncr22"  onchange="bloquear('ncr22',[2],[ncr24,ncr23]) "> 
     <option value="" selected="selected"></option>
     <option value=1 @if($Encuesta->ncr22==1) selected @endif>Sí</option>
     <option value=2 @if($Encuesta->ncr22==2) selected @endif>No</option>
@@ -867,7 +865,7 @@ Especifique:</h2>
 101.- ¿Cuánto tiempo después de egresar se tituló? </h2>
 
 <select class="select" id="nfr28" name="nfr28" @if($Encuesta->nfr27!=1) hidden value=0 @else value={{$Encuesta->nfr28}} @endif>Sí>
-<option value="" selected="selected"></option>
+  <option value="" selected="selected"></option>
   <option value=1 @if($Encuesta->nfr28==1) selected @endif>Durante el primer año después de egresar</option>
   <option value=2 @if($Encuesta->nfr28==2) selected @endif>Dos años después de egresar</option>
   <option value=3 @if($Encuesta->nfr28==3) selected @endif>Tres años o más después de egresar</option>
@@ -1270,12 +1268,15 @@ function automatico(myRadio) {
     </script>
 
 <script>
-  console.log('nfr23: '+document.getElementById("nfr23a").value);
-
+//   var elements = document.getElementById("forma_sagrada").elements;
+//  var macalacarray="'"; 
+//   for (var i = 0, element; element = elements[i++];) {
+//         macalacarray=macalacarray+element.name+"', '"
+//         }
+//         console.log(macalacarray);
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
   seccionc2();
   bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])
-  bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Encuesta->NBR2==208) || ($Encuesta->NBR2 ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);

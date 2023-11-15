@@ -638,13 +638,9 @@ public function verificar($id){
 
 public function show_14($id){
 
-    if(strlen(strval($id))<9){
-        $cuenta='0'.strval($id);
-    }else{
-        $cuenta=strval($id);
-    }
+  
     
-    $Encuesta=respuestas14::where('cuenta','=',$cuenta)->first();
+    $Encuesta=respuestas14::where('REGISTRO','=',$id)->first();
     if(!$Encuesta){
         dd('o_o');
         return Redirect::back();
@@ -656,4 +652,188 @@ public function show_14($id){
     
     return view('encuesta.show_14',compact('Encuesta','Carrera','Plantel','Comentario'));
 }
+function update14(Request $request,$id){
+    $Encuesta=respuestas14::where('registro',$id)->first();
+    
+    $Encuesta-> aplica  = Auth::user()->clave;
+    if($request->fec_capt=="2023-01-01"){
+        $Encuesta-> fec_capt  = now() ;
+    }else{
+        $Encuesta-> fec_capt  = $request-> fec_capt ;
+    }
+
+    $Encuesta-> telcasa  = $request-> telcasa ;
+    $Encuesta-> teltra  = $request-> teltra ;
+    $Encuesta-> exttra  = $request-> exttra ;
+
+    if(strlen(strval($request-> nar8 ))>0){
+        $Encuesta-> NAR8  = $request-> nar8 ;}
+  if(strlen(strval($request-> nar9 ))>0){
+        $Encuesta-> NAR9  = $request-> nar9 ;}
+  if(strlen(strval($request-> nar10 ))>0){
+        $Encuesta-> NAR10  = $request-> nar10 ;}
+  if(strlen(strval($request-> nar1_a ))>0){
+        $Encuesta-> NAR1_A  = $request-> nar1_a ;}
+  if(strlen(strval($request-> nar11 ))>0){
+        $Encuesta-> NAR11  = $request-> nar11 ;}
+  if(strlen(strval($request-> nar11a ))>0){
+        $Encuesta-> NAR11A  = $request-> nar11a ;}
+  if(strlen(strval($request-> nar14 ))>0){
+        $Encuesta-> NAR14  = $request-> nar14 ;}
+  if(strlen(strval($request-> nar14otra ))>0){
+        $Encuesta-> NAR14OTRA  = $request-> nar14otra ;}
+  if(strlen(strval($request-> ner20 ))>0){
+        $Encuesta-> NER20  = $request-> ner20 ;}
+  if(strlen(strval($request-> ner20txt ))>0){
+        $Encuesta-> NER20TXT  = $request-> ner20txt ;}
+  if(strlen(strval($request-> ner20a ))>0){
+        $Encuesta-> NER20A  = $request-> ner20a ;}
+  if(strlen(strval($request-> nar1 ))>0){
+        $Encuesta-> NAR1  = $request-> nar1 ;}
+  if(strlen(strval($request-> ncr1 ))>0){
+        $Encuesta-> NCR1  = $request-> ncr1 ;}
+  if(strlen(strval($request-> ncr2 ))>0){
+        $Encuesta-> NCR2  = $request-> ncr2 ;}
+  if(strlen(strval($request-> ncr2a ))>0){
+        $Encuesta-> NCR2A  = $request-> ncr2a ;}
+  if(strlen(strval($request-> ncr3 ))>0){
+        $Encuesta-> NCR3  = $request-> ncr3 ;}
+  if(strlen(strval($request-> ncr4 ))>0){
+        $Encuesta-> NCR4  = $request-> ncr4 ;}
+  if(strlen(strval($request-> ncr4a ))>0){
+        $Encuesta-> NCR4A  = $request-> ncr4a ;}
+  if(strlen(strval($request-> ncr5 ))>0){
+        $Encuesta-> NCR5  = $request-> ncr5 ;}
+  if(strlen(strval($request-> ncr6 ))>0){
+        $Encuesta-> NCR6  = $request-> ncr6 ;}
+  if(strlen(strval($request-> ncr6t ))>0){
+        $Encuesta-> NCR6T  = $request-> ncr6t ;}
+  if(strlen(strval($request-> ncr6_a ))>0){
+        $Encuesta-> NCR6_A  = $request-> ncr6_a ;}
+  if(strlen(strval($request-> ncr7a ))>0){
+        $Encuesta-> NCR7A  = $request-> ncr7a ;}
+  if(strlen(strval($request-> ncr7b ))>0){
+        $Encuesta-> NCR7B  = $request-> ncr7b ;}
+  if(strlen(strval($request-> ncr8 ))>0){
+        $Encuesta-> NCR8  = $request-> ncr8 ;}
+  if(strlen(strval($request-> ncr9 ))>0){
+        $Encuesta-> NCR9  = $request-> ncr9 ;}
+  if(strlen(strval($request-> ncr10 ))>0){
+        $Encuesta-> NCR10  = $request-> ncr10 ;}
+  if(strlen(strval($request-> ncr11 ))>0){
+        $Encuesta-> NCR11  = $request-> ncr11 ;}
+  if(strlen(strval($request-> ncr12_a ))>0){
+        $Encuesta-> NCR12_A  = $request-> ncr12_a ;}
+  if(strlen(strval($request-> ncr15 ))>0){
+        $Encuesta-> NCR15  = $request-> ncr15 ;}
+  if(strlen(strval($request-> ncr16 ))>0){
+        $Encuesta-> NCR16  = $request-> ncr16 ;}
+  if(strlen(strval($request-> ncr17 ))>0){
+        $Encuesta-> NCR17  = $request-> ncr17 ;}
+  if(strlen(strval($request-> ncr18 ))>0){
+        $Encuesta-> NCR18  = $request-> ncr18 ;}
+  if(strlen(strval($request-> ncr19 ))>0){
+        $Encuesta-> NCR19  = $request-> ncr19 ;}
+  if(strlen(strval($request-> ncra20 ))>0){
+        $Encuesta-> NCRA20  = $request-> ncra20 ;}
+  if(strlen(strval($request-> ncr20 ))>0){
+        $Encuesta-> NCR20  = $request-> ncr20 ;}
+  if(strlen(strval($request-> ncr21_a ))>0){
+        $Encuesta-> NCR21_A  = $request-> ncr21_a ;}
+  if(strlen(strval($request-> ncr22 ))>0){
+        $Encuesta-> NCR22  = $request-> ncr22 ;}
+  if(strlen(strval($request-> ncr24 ))>0){
+        $Encuesta-> NCR24  = $request-> ncr24 ;}
+  if(strlen(strval($request-> ncr24a ))>0){
+        $Encuesta-> NCR24_A  = $request-> ncr24a ;}
+  if(strlen(strval($request-> ncr24porque ))>0){
+        $Encuesta-> NCR24PORQUE  = $request-> ncr24porque ;}
+  if(strlen(strval($request-> ncr23 ))>0){
+        $Encuesta-> NCR23  = $request-> ncr23 ;}
+  if(strlen(strval($request-> ndr17 ))>0){
+        $Encuesta-> NDR17  = $request-> ndr17 ;}
+  if(strlen(strval($request-> ndr18 ))>0){
+        $Encuesta-> NDR18  = $request-> ndr18 ;}
+  if(strlen(strval($request-> ndr19 ))>0){
+        $Encuesta-> NDR19  = $request-> ndr19 ;}
+  if(strlen(strval($request-> ner1 ))>0){
+        $Encuesta-> NER1  = $request-> ner1 ;}
+  if(strlen(strval($request-> ner2 ))>0){
+        $Encuesta-> NER2  = $request-> ner2 ;}
+  if(strlen(strval($request-> ner1a ))>0){
+        $Encuesta-> NER1A  = $request-> ner1a ;}
+  if(strlen(strval($request-> ner3 ))>0){
+        $Encuesta-> NER3  = $request-> ner3 ;}
+  if(strlen(strval($request-> ner4 ))>0){
+        $Encuesta-> NER4  = $request-> ner4 ;}
+  if(strlen(strval($request-> ner5 ))>0){
+        $Encuesta-> NER5  = $request-> ner5 ;}
+  if(strlen(strval($request-> ner6 ))>0){
+        $Encuesta-> NER6  = $request-> ner6 ;}
+  if(strlen(strval($request-> ner7 ))>0){
+        $Encuesta-> NER7  = $request-> ner7 ;}
+  if(strlen(strval($request-> ner7int ))>0){
+        $Encuesta-> NER7INT  = $request-> ner7int ;}
+  if(strlen(strval($request-> ner7a ))>0){
+        $Encuesta-> NER7A  = $request-> ner7a ;}
+  if(strlen(strval($request-> ner8 ))>0){
+        $Encuesta-> NER8  = $request-> ner8 ;}
+  if(strlen(strval($request-> ner9 ))>0){
+        $Encuesta-> NER9  = $request-> ner9 ;}
+  if(strlen(strval($request-> ner10 ))>0){
+        $Encuesta-> NER10  = $request-> ner10 ;}
+  if(strlen(strval($request-> ner10a ))>0){
+        $Encuesta-> NER10A  = $request-> ner10a ;}
+  if(strlen(strval($request-> ner11 ))>0){
+        $Encuesta-> NER11  = $request-> ner11 ;}
+  if(strlen(strval($request-> ner12 ))>0){
+        $Encuesta-> NER12  = $request-> ner12 ;}
+  if(strlen(strval($request-> ner13 ))>0){
+        $Encuesta-> NER13  = $request-> ner13 ;}
+  if(strlen(strval($request-> ner14 ))>0){
+        $Encuesta-> NER14  = $request-> ner14 ;}
+  if(strlen(strval($request-> ner15 ))>0){
+        $Encuesta-> NER15  = $request-> ner15 ;}
+  if(strlen(strval($request-> ner12a ))>0){
+        $Encuesta-> NER12A  = $request-> ner12a ;}
+  if(strlen(strval($request-> ner12b ))>0){
+        $Encuesta-> NER12B  = $request-> ner12b ;}
+  if(strlen(strval($request-> ner16 ))>0){
+        $Encuesta-> NER16  = $request-> ner16 ;}
+  if(strlen(strval($request-> ner17 ))>0){
+        $Encuesta-> NER17  = $request-> ner17 ;}
+  if(strlen(strval($request-> ner18 ))>0){
+        $Encuesta-> NER18  = $request-> ner18 ;}
+  if(strlen(strval($request-> ner19 ))>0){
+        $Encuesta-> NER19  = $request-> ner19 ;}
+  if(strlen(strval($request-> nfr27 ))>0){
+        $Encuesta-> NFR27  = $request-> nfr27 ;}
+  if(strlen(strval($request-> nfr28 ))>0){
+        $Encuesta-> NFR28  = $request-> nfr28 ;}
+  if(strlen(strval($request-> nfr29 ))>0){
+        $Encuesta-> NFR29  = $request-> nfr29 ;}
+  if(strlen(strval($request-> nfr29a ))>0){
+        $Encuesta-> NFR29A  = $request-> nfr29a ;}
+  if(strlen(strval($request-> ngr13 ))>0){
+        $Encuesta-> NGR13  = $request-> ngr13 ;}
+  if(strlen(strval($request-> ngr13b ))>0){
+        $Encuesta-> NGR13B  = $request-> ngr13b ;}
+  if(strlen(strval($request-> ngr13c ))>0){
+        $Encuesta-> NGR13C  = $request-> ngr13c ;}
+  if(strlen(strval($request-> ngr13d ))>0){
+        $Encuesta-> NGR13D  = $request-> ngr13d ;}
+  if(strlen(strval($request-> ngr11a ))>0){
+        $Encuesta-> NGR11A  = $request-> ngr11a ;}
+  if(strlen(strval($request-> ngr11f ))>0){
+        $Encuesta-> NGR11F  = $request-> ngr11f ;}
+  
+        $Encuesta->save();
+        $fileName = $Encuesta->CUENTA.'.json';
+        $fileStorePath = public_path('storage/json/'.$fileName);
+        
+        File::put($fileStorePath, json_encode($request->all()));
+        
+        return view('encuesta.saved',compact('Encuesta'));
+        
+ }
 }

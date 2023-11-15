@@ -127,7 +127,7 @@
                 <td> </td>
                 <td>{{$eg14->carrera}}</td>     
                 <td>{{$eg14->plantel}}</td> 
-                <td><a href="{{route('encuestas.show_14',$eg14->CUENTA)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Hacer encuesta </button></a></td>
+                <td><a href="{{route('encuestas.show_14',$eg14->REGISTRO)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Hacer encuesta </button></a></td>
             
             </tr> 
            
