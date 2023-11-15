@@ -211,7 +211,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
       </div>
 
       <div class='col' id='C' style='text-align: center;'>
-      <h2 class="reactivo">  21.- ¿Actualmente está trabajando? </h2> 
+      <h2 class="reactivo">  21.- ¿Actualmente se encuentra laborando? </h2> 
  
     
  <select class="select" id="ncr1" name="ncr1"  onchange='seccionc2()'>
@@ -223,7 +223,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 <option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 2)</option>
 <option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
 </select>
- <h2 class="reactivo"> 22.- Nombre de la empresa o institución donde trabaja </h2>
+ <h2 class="reactivo"> 22.- ¿Cuál es el Nombre de la empresa o institución donde trabaja ?</h2>
  <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->ncr2}}" size="110" maxlength="110"  >
     
     <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
@@ -494,7 +494,7 @@ Especifique:</h2>
     
     <INPUT type="text" class="texto"  id="ncr21_a" name="ncr21_a" size="10" maxlength="6" value="{{$Encuesta->ncr21_a}}"  onKeyPress="return acceptNum(event)" > 
     (solo enteros, sin centavos, comas, ni puntos) 
-    <h2 class="reactivo"> 41.- Desde que terminó sus estudios de licenciatura,
+    <h2 class="reactivo"> 41.- Durante los años que han transcurrido desde que contesto la encuesta ,
         ¿ha dejado de trabajar? </h2>
     
     
