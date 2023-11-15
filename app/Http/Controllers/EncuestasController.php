@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\respuestas2;
 use App\Models\respuestas3;
+
+use App\Models\respuestas14;
 use App\Models\Egresado;
 use App\Models\Carrera;
 use App\Models\Comentario;
@@ -632,5 +634,26 @@ public function verificar($id){
     }
     
 }
+}
+
+public function show_14($id){
+
+    if(strlen(strval($id))<9){
+        $cuenta='0'.strval($id);
+    }else{
+        $cuenta=strval($id);
+    }
+    
+    $Encuesta=respuestas14::where('cuenta','=',$cuenta)->first();
+    if(!$Encuesta){
+        dd('o_o');
+        return Redirect::back();
+        
+    }
+    $Carrera=Carrera::where('clave_carrera','=',$Encuesta->NBR2)->first()->carrera;
+    $Plantel=Carrera::where('clave_plantel','=',$Encuesta->NBR1)->first()->plantel;
+    $Comentario=''.comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+    
+    return view('encuesta.show_14',compact('Encuesta','Carrera','Plantel','Comentario'));
 }
 }

@@ -125,8 +125,12 @@ class HomeController extends Controller
         $encuestas14=DB::table('respuestas14')
         ->where('respuestas14.cuenta','=',$request->nc)
         ->whereNotNull('respuestas14.NGR11')
-        ->get();      
-        return view('resultado',compact('encuestas19','encuestas14','eg'));
+        ->get(); 
+        $eg14=DB::table('respuestas14')
+        ->where('respuestas14.cuenta','=',$request->nc)
+        ->whereNull('respuestas14.NGR11')
+        ->first();       
+        return view('resultado',compact('encuestas19','encuestas14','eg','eg14'));
 
     
     }

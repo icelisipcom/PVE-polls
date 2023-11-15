@@ -202,12 +202,12 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
       <option value=12 @if($Encuesta->nar12==12) selected @endif >Lo desconoce</option>
       <option value=13  @if($Encuesta->nar12==13) selected @endif >Otro (Especifíque)</option>
     
-    </select>
+    </select>/
 <br>
 <h2 class='reactivo'> 
 10a).-¿Si su madre es profesionista 
       cursó sus estudios en la UNAM? </h2>
-    <select class="select" id="nrx" name="nrx"  >
+       <select class="select" id="nrx" name="nrx"  >
        <option value="" ></option>
        <option value=1 @if($Encuesta->nrx==1) selected @endif >SI</option>
        <option value=2 @if($Encuesta->nrx==2) selected @endif >No</option;n>
@@ -536,7 +536,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 
 <h2 class="reactivo"> 26.- ¿Cuál es su condición en el trabajo? </h2>
 
-<select class="select" id="ncr6a2"  name="ncr6" onchange="bloquear('ncr6a2',[4],[ncr6a,ncr6otra])">
+<select class="select" id="ncr6a2"  name="ncr6" onchange="autoempleo()">
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr6==2) selected @endif @if($Encuesta->ncr6==3) selected @endif>Autoempleo</option>
     <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
@@ -546,7 +546,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 
     
     <h2 class="reactivo"> 26a.-¿Tipo de autoempleo? </h2>
-<select class="select" id="ncr6a" name="ncr6t"  >
+<select class="select" id="ncr6a" name="ncr6t" >
 <option selected="selected" value="">
 <option value=2 @if($Encuesta->ncr6==2) selected @endif>Propietario</option>
     <option value=3 @if($Encuesta->ncr6==3) selected @endif>Profesional independiente</option>
@@ -767,7 +767,7 @@ Especifique:</h2>
     <h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
 
  
-<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
+<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
         <option value="" selected></option>
         <option value=1  @if($Encuesta->ndr1==1) selected @endif>Muy fácil</option>
         <option value=2  @if($Encuesta->ndr1==2) selected @endif>Fácil</option> 
@@ -1242,7 +1242,7 @@ Especifique:</h2>
       <h2 class="reactivo">  
     80).- ¿En dónde los hizo?-</h2>
     <select class="select" id="ner18" name="ner18" @if($Encuesta->ner16==2) hidden value=0 @endif>
-    <option selected="selected" value="">
+       <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner18==1) selected @endif>En la UNAM</option>
        <option value=2  @if($Encuesta->ner18==2) selected @endif>En otra institución pública</option>
        <option value=3  @if($Encuesta->ner18==3) selected @endif>En otra institución privada</option>
@@ -2791,6 +2791,10 @@ function deportes(){
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
   bloquear('ngr40',[11],[ngr40_b]);
 }
+function autoempleo(){
+  bloquear('ncr6a2',[4],[ncr6a,ncr6otra]);
+  bloquear('ncr6a2',[2],[ncr6otra]);
+}
  </script>
 
  <script>
@@ -2854,7 +2858,7 @@ function automatico(myRadio) {
   bloquear('nar16',[19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17,18],[nar16otra]);
   bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
   seccionc2();
-  
+  autoempleo();
   bloquear('nar8',[1],[nar11,nar14])
   funcion_ndr2();
   bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);

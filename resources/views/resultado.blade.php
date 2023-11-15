@@ -104,7 +104,38 @@
     </div>
     @else
     <br>
-    No hay encuestas 2014 para mostrar unu
+    No hay encuestas 2014 para mostrar unu 
+     @if($eg14) 
+    deseas hacer una nueva encuesta¿?
+    <div class="col-6 col-sm-12 table-responsive">
+                <table class="table  text-xl">
+        <thead>
+            <tr>
+            <th>Egresado</th>
+            <th>cuenta</th>
+            <th> </th>
+            <th>Carrera</th>
+            <th>Plantel</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          
+            <tr style="color:#b0a46f" >
+                <td>{{  $eg14->nombre}}  {{  $eg14->PATERNO}}  {{  $eg14->materno }}   </td>
+                <td> {{$eg14->CUENTA}} </td>
+                <td> </td>
+                <td>{{$eg14->carrera}}</td>     
+                <td>{{$eg14->plantel}}</td> 
+                <td><a href="{{route('encuestas.show_14',$eg14->CUENTA)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Hacer encuesta </button></a></td>
+            
+            </tr> 
+           
+        </tbody>
+    </table>
+    </div>
+    
+    @endif
     @endif
    </center>
     </div>
