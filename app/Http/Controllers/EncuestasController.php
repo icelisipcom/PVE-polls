@@ -707,11 +707,11 @@ function update14(Request $request,$id){
   if(strlen(strval($request-> ncr6 ))>0){
         $Encuesta-> NCR6  = $request-> ncr6 ;}
   if(strlen(strval($request-> ncr6t ))>0){
-        $Encuesta-> NCR6T  = $request-> ncr6t ;}
+        $Encuesta-> NCR6  = $request-> ncr6t ;}
   if(strlen(strval($request-> ncr6_a ))>0){
         $Encuesta-> NCR6_A  = $request-> ncr6_a ;}
   if(strlen(strval($request-> ncr7a ))>0){
-        $Encuesta-> NCR7A  = $request-> ncr7a ;}
+        $Encuesta-> NCR7_A  = $request-> ncr7a ;}
   if(strlen(strval($request-> ncr7b ))>0){
         $Encuesta-> NCR7B  = $request-> ncr7b ;}
   if(strlen(strval($request-> ncr8 ))>0){
