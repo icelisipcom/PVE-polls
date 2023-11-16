@@ -956,10 +956,10 @@ Comprensión de lectura<br>  </h2>
 118.- ¿Adquirió o mejoró el dominio de otro idioma, diferente al inglés? </h2>
 <select class="select" id="ngr11a"  name="ngr11a"  onchange="bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d])">
     <option value="" selected="selected"></option>
-      <option value=11 @if($Encuesta->NGR11A==11) selected @endif>No</option>
-      <option value=12 @if($Encuesta->NGR11A==12) selected @endif>Sí, en la UNAM </option>
-      <option value=13 @if($Encuesta->NGR11A==13) selected @endif>Sí, en instituciones externas (distinta) a la UNAM </option>
-      <option value=14 @if($Encuesta->NGR11A==14) selected @endif>Sí, por autoaprendizaje </option>
+      <option value=11 @if($Encuesta->NGR11==11) selected @endif>No</option>
+      <option value=12 @if($Encuesta->NGR11==12) selected @endif>Sí, en la UNAM </option>
+      <option value=13 @if($Encuesta->NGR11==13) selected @endif>Sí, en instituciones externas (distinta) a la UNAM </option>
+      <option value=14 @if($Encuesta->NGR11==14) selected @endif>Sí, por autoaprendizaje </option>
       <option value=0 hidden > </option>
       </select>
 
@@ -967,11 +967,11 @@ Comprensión de lectura<br>  </h2>
 118a).-¿Cuál?</h2>
 <select class="select" id="ngr11f"  name="ngr11f"  >
     <option value="" selected="selected"></option>
-      <option value=1 @if($Encuesta->NGR11F==1) selected @endif>Francés</option>
-      <option value=2 @if($Encuesta->NGR11F==2) selected @endif>Alemán</option>
-      <option value=3 @if($Encuesta->NGR11F==3) selected @endif>Italiano</option>
-      <option value=4 @if($Encuesta->NGR11F==4) selected @endif>Portugués</option>
-      <option value=7 @if($Encuesta->NGR11F==7) selected @endif>Otro</option>
+      <option value=1 @if($Encuesta->NGR11_A==1) selected @endif>Francés</option>
+      <option value=2 @if($Encuesta->NGR11_A==2) selected @endif>Alemán</option>
+      <option value=3 @if($Encuesta->NGR11_A==3) selected @endif>Italiano</option>
+      <option value=4 @if($Encuesta->NGR11_A==4) selected @endif>Portugués</option>
+      <option value=7 @if($Encuesta->NGR11_A==7) selected @endif>Otro</option>
       <option value=0 hidden > </option>
       </select>
 

@@ -652,6 +652,8 @@ public function show_14($id){
     
     return view('encuesta.show_14',compact('Encuesta','Carrera','Plantel','Comentario'));
 }
+
+
 function update14(Request $request,$id){
     $Encuesta=respuestas14::where('registro',$id)->first();
     
@@ -662,9 +664,9 @@ function update14(Request $request,$id){
         $Encuesta-> fec_capt  = $request-> fec_capt ;
     }
 
-    $Encuesta-> telcasa  = $request-> telcasa ;
-    $Encuesta-> teltra  = $request-> teltra ;
-    $Encuesta-> exttra  = $request-> exttra ;
+    $Encuesta-> TELCASA = $request-> telcasa ;
+    $Encuesta-> TELTRA  = $request-> teltra ;
+    $Encuesta-> EXTTRA  = $request-> exttra ;
 
     if(strlen(strval($request-> nar8 ))>0){
         $Encuesta-> NAR8  = $request-> nar8 ;}
@@ -774,8 +776,8 @@ function update14(Request $request,$id){
         $Encuesta-> NER7  = $request-> ner7 ;}
   if(strlen(strval($request-> ner7int ))>0){
         $Encuesta-> NER7INT  = $request-> ner7int ;}
-//   if(strlen(strval($request-> ner7a ))>0){
-//         $Encuesta-> NER7A  = $request-> ner7a ;}
+  if(strlen(strval($request-> ner7a ))>0){
+         $Encuesta-> NER7_A  = $request-> ner7a ;}
   if(strlen(strval($request-> ner8 ))>0){
         $Encuesta-> NER8  = $request-> ner8 ;}
   if(strlen(strval($request-> ner9 ))>0){
@@ -823,9 +825,9 @@ function update14(Request $request,$id){
   if(strlen(strval($request-> ngr13d ))>0){
         $Encuesta-> NGR13D  = $request-> ngr13d ;}
   if(strlen(strval($request-> ngr11a ))>0){
-        $Encuesta-> NGR11A  = $request-> ngr11a ;}
+        $Encuesta-> NGR11  = $request-> ngr11a ;}
   if(strlen(strval($request-> ngr11f ))>0){
-        $Encuesta-> NGR11F  = $request-> ngr11f ;}
+        $Encuesta-> NGR11_A  = $request-> ngr11f ;}
   
         $Encuesta->save();
         $fileName = $Encuesta->CUENTA.'.json';
