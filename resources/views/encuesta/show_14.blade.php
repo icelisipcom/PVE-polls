@@ -234,39 +234,39 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
 <select class="select" id="ncr2a"  name="ncr2a" > 
 <option selected  value=""></option>
-<option value=1 @if($Encuesta->NCR2a==1) selected @endif>CDMX</option>
-<option value=2 @if($Encuesta->NCR2a==2) selected @endif>EXTRANJERO</option>
-<option value=3 @if($Encuesta->NCR2a==3) selected @endif>Aguascalientes</option>
-<option value=4 @if($Encuesta->NCR2a==4) selected @endif>Baja California</option>
-<option value=5 @if($Encuesta->NCR2a==5) selected @endif>Baja California Sur</option>
-<option value=6 @if($Encuesta->NCR2a==6) selected @endif>Campeche</option>
-<option value=7 @if($Encuesta->NCR2a==7) selected @endif>Chiapas</option>
-<option value=8 @if($Encuesta->NCR2a==8) selected @endif>Chihuahua</option>
-<option value=9 @if($Encuesta->NCR2a==9) selected @endif>Coahuila</option>
-<option value=10 @if($Encuesta->NCR2a==10) selected @endif>Colima</option>
-<option value=11 @if($Encuesta->NCR2a==11) selected @endif>Durango</option>
-<option value=12 @if($Encuesta->NCR2a==12) selected @endif>Guanajuato</option>
-<option value=13 @if($Encuesta->NCR2a==13) selected @endif>Guerrero</option>
-<option value=14 @if($Encuesta->NCR2a==14) selected @endif>Hidalgo</option>
-<option value=15 @if($Encuesta->NCR2a==15) selected @endif>Jalisco</option>
-<option value=16 @if($Encuesta->NCR2a==16) selected @endif>Estado de México</option>
-<option value=17 @if($Encuesta->NCR2a==17) selected @endif>Michoacán</option>
-<option value=18 @if($Encuesta->NCR2a==18) selected @endif>Morelos</option>
-<option value=19 @if($Encuesta->NCR2a==19) selected @endif>Nayarit</option>
-<option value=20 @if($Encuesta->NCR2a==20) selected @endif>Nuevo León</option>
-<option value=21 @if($Encuesta->NCR2a==21) selected @endif>Oaxaca</option>
-<option value=22 @if($Encuesta->NCR2a==22) selected @endif>Puebla</option>
-<option value=23 @if($Encuesta->NCR2a==23) selected @endif>Querétaro</option>
-<option value=24 @if($Encuesta->NCR2a==24) selected @endif>Quintana Roo</option>
-<option value=25 @if($Encuesta->NCR2a==25) selected @endif>San Luis Potosí</option>
-<option value=26 @if($Encuesta->NCR2a==26) selected @endif>Sinaloa</option>
-<option value=27 @if($Encuesta->NCR2a==27) selected @endif>Sonora</option>
-<option value=28 @if($Encuesta->NCR2a==28) selected @endif>Tabasco</option>
-<option value=29 @if($Encuesta->NCR2a==29) selected @endif>Tamaulipas</option>
-<option value=30 @if($Encuesta->NCR2a==30) selected @endif>Tlaxcala</option>
-<option value=31 @if($Encuesta->NCR2a==31) selected @endif>Veracruz</option>
-<option value=32 @if($Encuesta->NCR2a==32) selected @endif>Yucatán</option>
-<option value=33 @if($Encuesta->NCR2a==33) selected @endif>Zacatecas</option>
+<option value=1 @if($Encuesta->NCR2A==1) selected @endif>CDMX</option>
+<option value=2 @if($Encuesta->NCR2A==2) selected @endif>EXTRANJERO</option>
+<option value=3 @if($Encuesta->NCR2A==3) selected @endif>Aguascalientes</option>
+<option value=4 @if($Encuesta->NCR2A==4) selected @endif>Baja California</option>
+<option value=5 @if($Encuesta->NCR2A==5) selected @endif>Baja California Sur</option>
+<option value=6 @if($Encuesta->NCR2A==6) selected @endif>Campeche</option>
+<option value=7 @if($Encuesta->NCR2A==7) selected @endif>Chiapas</option>
+<option value=8 @if($Encuesta->NCR2A==8) selected @endif>Chihuahua</option>
+<option value=9 @if($Encuesta->NCR2A==9) selected @endif>Coahuila</option>
+<option value=10 @if($Encuesta->NCR2A==10) selected @endif>Colima</option>
+<option value=11 @if($Encuesta->NCR2A==11) selected @endif>Durango</option>
+<option value=12 @if($Encuesta->NCR2A==12) selected @endif>Guanajuato</option>
+<option value=13 @if($Encuesta->NCR2A==13) selected @endif>Guerrero</option>
+<option value=14 @if($Encuesta->NCR2A==14) selected @endif>Hidalgo</option>
+<option value=15 @if($Encuesta->NCR2A==15) selected @endif>Jalisco</option>
+<option value=16 @if($Encuesta->NCR2A==16) selected @endif>Estado de México</option>
+<option value=17 @if($Encuesta->NCR2A==17) selected @endif>Michoacán</option>
+<option value=18 @if($Encuesta->NCR2A==18) selected @endif>Morelos</option>
+<option value=19 @if($Encuesta->NCR2A==19) selected @endif>Nayarit</option>
+<option value=20 @if($Encuesta->NCR2A==20) selected @endif>Nuevo León</option>
+<option value=21 @if($Encuesta->NCR2A==21) selected @endif>Oaxaca</option>
+<option value=22 @if($Encuesta->NCR2A==22) selected @endif>Puebla</option>
+<option value=23 @if($Encuesta->NCR2A==23) selected @endif>Querétaro</option>
+<option value=24 @if($Encuesta->NCR2A==24) selected @endif>Quintana Roo</option>
+<option value=25 @if($Encuesta->NCR2A==25) selected @endif>San Luis Potosí</option>
+<option value=26 @if($Encuesta->NCR2A==26) selected @endif>Sinaloa</option>
+<option value=27 @if($Encuesta->NCR2A==27) selected @endif>Sonora</option>
+<option value=28 @if($Encuesta->NCR2A==28) selected @endif>Tabasco</option>
+<option value=29 @if($Encuesta->NCR2A==29) selected @endif>Tamaulipas</option>
+<option value=30 @if($Encuesta->NCR2A==30) selected @endif>Tlaxcala</option>
+<option value=31 @if($Encuesta->NCR2A==31) selected @endif>Veracruz</option>
+<option value=32 @if($Encuesta->NCR2A==32) selected @endif>Yucatán</option>
+<option value=33 @if($Encuesta->NCR2A==33) selected @endif>Zacatecas</option>
 <option value=0  hidden></option>   
 </select>
 
@@ -276,9 +276,9 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
 <select class="select" id="ncr3"  name="ncr3" > 
 <option selected  value=""></option>
-<option value=1 @if($Encuesta->ncr3==1) selected @endif>Pública</option>
-<option value=2 @if($Encuesta->ncr3==2) selected @endif>Privada</option>
-<option value=3 @if($Encuesta->ncr3==3) selected @endif>Social</option>
+<option value=1 @if($Encuesta->NCR3==1) selected @endif>Pública</option>
+<option value=2 @if($Encuesta->NCR3==2) selected @endif>Privada</option>
+<option value=3 @if($Encuesta->NCR3==3) selected @endif>Social</option>
 <option value=0  hidden></option>   
 </select>
 <h2 class="reactivo">  24.- ¿En qué sector se ubica? </h2>
@@ -286,29 +286,29 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
 <select class="select" id="ncr4" name="ncr4"   onchange="bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a])">
 <option selected="selected" value="">
-<option value=1 @if($Encuesta->ncr4==1) selected @endif> Agricultura, ganadería, aprovechamiento forestal, caza y pesca</option>
-<option value=19 @if($Encuesta->ncr4==19) selected @endif>Asociaciones y agrupaciones</option>
-<option value=20 @if($Encuesta->ncr4==20) selected @endif>Actividades de gobierno, organismos internacionales y extraterritoriales</option>
-<option value=4 @if($Encuesta->ncr4==4) selected @endif>Construcción</option>
-<option value=6 @if($Encuesta->ncr4==6) selected @endif>Comercio al por mayor</option>
-<option value=7 @if($Encuesta->ncr4==7) selected @endif>Comercio al por menor</option> 
-<option value=13 @if($Encuesta->ncr4==13) selected @endif>Dirección de corporativos y empresas</option>
-<option value=23 @if($Encuesta->ncr4==23) selected @endif>Editorial</option>
-<option value=3 @if($Encuesta->ncr4==3) selected @endif>Electricidad, agua y suministro de gas</option>
-<option value=5 @if($Encuesta->ncr4==5) selected @endif>Industrias manufactureras o de la transformación</option>
-<option value=9 @if($Encuesta->ncr4==9) selected @endif>Información en medios masivos</option>
-<option value=2 @if($Encuesta->ncr4==2) selected @endif>Minería</option>
-<option value=10 @if($Encuesta->ncr4==10) selected @endif>Servicios financieros y de seguros</option>
-<option value=11 @if($Encuesta->ncr4==11) selected @endif>Servicio inmobiliario y de alquiler de bienes muebles e intangibles</option>
-<option value=12 @if($Encuesta->ncr4==12) selected @endif>Servicios profesionales, científicos y técnicos</option>
-<option value=14 @if($Encuesta->ncr4==14) selected @endif>Servicios de apoyo a los negocios, manejo de desecho y servicios de remediación</option>
-<option value=15 @if($Encuesta->ncr4==15) selected @endif>Servicios de salud</option>
-<option value=16 @if($Encuesta->ncr4==16) selected @endif>Servicios educativos</option>
-<option value=17 @if($Encuesta->ncr4==17) selected @endif>Servicios de esparcimiento, cultural, deportivos y otros centros recreativos</option>
-<option value=18 @if($Encuesta->ncr4==18) selected @endif>Servicios de alojamiento temporal, de preparación de alimentos y bebidas (hotel, restaurant, bar) </option>
-<option value=8 @if($Encuesta->ncr4==8) selected @endif>Transporte, correos y almacenamiento</option>
-<option value=22 @if($Encuesta->ncr4==22) selected @endif>Telecomunicaciones </option>
-<option value=21 @if($Encuesta->ncr4==21) selected @endif>Otro (Especifíque)</option>
+<option value=1 @if($Encuesta->NCR4==1) selected @endif> Agricultura, ganadería, aprovechamiento forestal, caza y pesca</option>
+<option value=19 @if($Encuesta->NCR4==19) selected @endif>Asociaciones y agrupaciones</option>
+<option value=20 @if($Encuesta->NCR4==20) selected @endif>Actividades de gobierno, organismos internacionales y extraterritoriales</option>
+<option value=4 @if($Encuesta->NCR4==4) selected @endif>Construcción</option>
+<option value=6 @if($Encuesta->NCR4==6) selected @endif>Comercio al por mayor</option>
+<option value=7 @if($Encuesta->NCR4==7) selected @endif>Comercio al por menor</option> 
+<option value=13 @if($Encuesta->NCR4==13) selected @endif>Dirección de corporativos y empresas</option>
+<option value=23 @if($Encuesta->NCR4==23) selected @endif>Editorial</option>
+<option value=3 @if($Encuesta->NCR4==3) selected @endif>Electricidad, agua y suministro de gas</option>
+<option value=5 @if($Encuesta->NCR4==5) selected @endif>Industrias manufactureras o de la transformación</option>
+<option value=9 @if($Encuesta->NCR4==9) selected @endif>Información en medios masivos</option>
+<option value=2 @if($Encuesta->NCR4==2) selected @endif>Minería</option>
+<option value=10 @if($Encuesta->NCR4==10) selected @endif>Servicios financieros y de seguros</option>
+<option value=11 @if($Encuesta->NCR4==11) selected @endif>Servicio inmobiliario y de alquiler de bienes muebles e intangibles</option>
+<option value=12 @if($Encuesta->NCR4==12) selected @endif>Servicios profesionales, científicos y técnicos</option>
+<option value=14 @if($Encuesta->NCR4==14) selected @endif>Servicios de apoyo a los negocios, manejo de desecho y servicios de remediación</option>
+<option value=15 @if($Encuesta->NCR4==15) selected @endif>Servicios de salud</option>
+<option value=16 @if($Encuesta->NCR4==16) selected @endif>Servicios educativos</option>
+<option value=17 @if($Encuesta->NCR4==17) selected @endif>Servicios de esparcimiento, cultural, deportivos y otros centros recreativos</option>
+<option value=18 @if($Encuesta->NCR4==18) selected @endif>Servicios de alojamiento temporal, de preparación de alimentos y bebidas (hotel, restaurant, bar) </option>
+<option value=8 @if($Encuesta->NCR4==8) selected @endif>Transporte, correos y almacenamiento</option>
+<option value=22 @if($Encuesta->NCR4==22) selected @endif>Telecomunicaciones </option>
+<option value=21 @if($Encuesta->NCR4==21) selected @endif>Otro (Especifíque)</option>
 <option value=0  hidden></option>   
 </select><br>
 
@@ -322,10 +322,10 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
 <select class="select" id="ncr5" name="ncr5"  >
   <option selected="selected" value="">
-  <option value=1 @if($Encuesta->ncr5==1) selected @endif> Hasta 15 empleados</option>
-  <option value=2 @if($Encuesta->ncr5==2) selected @endif>Entre 16 y 100 empleados </option>
-  <option value=3 @if($Encuesta->ncr5==3) selected @endif>Entre 101 y 250 empleados</option>
-  <option value=4 @if($Encuesta->ncr5==4) selected @endif>Más de 251 empleados</option>
+  <option value=1 @if($Encuesta->NCR5==1) selected @endif> Hasta 15 empleados</option>
+  <option value=2 @if($Encuesta->NCR5==2) selected @endif>Entre 16 y 100 empleados </option>
+  <option value=3 @if($Encuesta->NCR5==3) selected @endif>Entre 101 y 250 empleados</option>
+  <option value=4 @if($Encuesta->NCR5==4) selected @endif>Más de 251 empleados</option>
   <option value=0  hidden></option>   
 </select>
 
@@ -333,9 +333,9 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
 <select class="select" id="ncr6a2"  name="ncr6" onchange="bloquear('ncr6a2',[4],[ncr6a,ncr6otra])">
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr6==2) selected @endif @if($Encuesta->ncr6==3) selected @endif>Autoempleo</option>
-    <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
-    <option value=5 @if($Encuesta->ncr6==5) selected @endif>Otro (Especifíque)</option>
+    <option value=1 @if($Encuesta->NCR6==2) selected @endif @if($Encuesta->NCR6==3) selected @endif>Autoempleo</option>
+    <option value=4 @if($Encuesta->NCR6==4) selected @endif>Empleado </option>
+    <option value=5 @if($Encuesta->NCR6==5) selected @endif>Otro (Especifíque)</option>
     <option value=0  hidden></option>   
 </select>
 
@@ -343,8 +343,8 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
     <h2 class="reactivo"> 26a.-¿Tipo de autoempleo? </h2>
 <select class="select" id="ncr6a" name="ncr6t"  >
 <option selected="selected" value="">
-<option value=2 @if($Encuesta->ncr6==2) selected @endif>Propietario</option>
-    <option value=3 @if($Encuesta->ncr6==3) selected @endif>Profesional independiente</option>
+<option value=2 @if($Encuesta->NCR6==2) selected @endif>Propietario</option>
+    <option value=3 @if($Encuesta->NCR6==3) selected @endif>Profesional independiente</option>
     <option value=0  hidden></option>   
 </select>
 <br>
@@ -354,35 +354,35 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
  <h2 class="reactivo">  27.- ¿Cuál es su puesto? </h2>
 
 
- <INPUT type="text" class="texto" id="ncr7a" name="ncr7a" value="{{$Encuesta->ncr7_a}}" size="110" maxlength="110"  >
+ <INPUT type="text" class="texto" id="ncr7a" name="ncr7a" value="{{$Encuesta->NCR7_A}}" size="110" maxlength="110"  >
 
 <h2 class="reactivo">28.- ¿Requiere tener título profesional para el puesto que ocupa? </h2>
 
 
 <select class="select" id="ncr7b" name="ncr7b"  >
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr7b==1) selected @endif>Sí</option>
-    <option value=2 @if($Encuesta->ncr7b==2) selected @endif>No</option> 
+    <option value=1 @if($Encuesta->NCR7B==1) selected @endif>Sí</option>
+    <option value=2 @if($Encuesta->NCR7B==2) selected @endif>No</option> 
     <option value=0  hidden></option>   
 </select>
 
     <h2 class="reactivo"> 29.- En su trabajo,¿tiene personal a su cargo? </h2>
 <select class="select" id="ncr8" name="ncr8"  onchange="bloquear('ncr8',[2],[ncr9])" >
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr8==1) selected @endif>Sí</option>
-    <option value=2 @if($Encuesta->ncr8==2) selected @endif>No</option>
+    <option value=1 @if($Encuesta->NCR8==1) selected @endif>Sí</option>
+    <option value=2 @if($Encuesta->NCR8==2) selected @endif>No</option>
     <option value=0  hidden></option>   
  </select>
     <h2 class="reactivo"> 30.- ¿Cuántas personas trabajan con usted? </h2>
 
 
-<select class="select" id="ncr9" @if($Encuesta->ncr8==2) hidden @endif name="ncr9"  >
+<select class="select" id="ncr9"  >
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr9==1) selected @endif>1 a 5 </option>
-    <option value=2 @if($Encuesta->ncr9==2) selected @endif>6 a 10</option> 
-    <option value=3 @if($Encuesta->ncr9==3) selected @endif>11 a 20</option> 
-    <option value=4 @if($Encuesta->ncr9==4) selected @endif>21 a 30</option> 
-    <option value=5 @if($Encuesta->ncr9==5) selected @endif>31 o más</option> 
+    <option value=1 @if($Encuesta->NCR9==1) selected @endif>1 a 5 </option>
+    <option value=2 @if($Encuesta->NCR9==2) selected @endif>6 a 10</option> 
+    <option value=3 @if($Encuesta->NCR9==3) selected @endif>11 a 20</option> 
+    <option value=4 @if($Encuesta->NCR9==4) selected @endif>21 a 30</option> 
+    <option value=5 @if($Encuesta->NCR9==5) selected @endif>31 o más</option> 
     <option value=0  hidden></option>   
 </select>
 
@@ -411,7 +411,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 <TD>
 
 Especifique:</h2>
-<INPUT type="text" class="texto" id="ncr12_a" name="ncr12_a" value="{{$Encuesta->NCR12_a}}" size="110" maxlength="110"  >
+<INPUT type="text" class="texto" id="ncr12_a" name="ncr12_a" value="{{$Encuesta->NCR12_A}}" size="110" maxlength="110"  >
 
 <h2 class="reactivo"> 34.- ¿Si su trabajo no está relacionado con su carrera
          es porque usted asílo decidió? </h2>
@@ -495,7 +495,7 @@ Especifique:</h2>
     
            <h2 class="reactivo"> 40.- ¿Cuáles son sus ingresos mensuales promedio en su o sus trabajos?  </h2>
     
-    <INPUT type="text" class="texto"  id="ncr21_a" name="ncr21_a" size="10" maxlength="6" value="{{$Encuesta->NCR21_a}}"  onKeyPress="return acceptNum(event)" > 
+    <INPUT type="text" class="texto"  id="ncr21_a" name="ncr21_a" size="10" maxlength="6" value="{{$Encuesta->NCR21_A}}"  onKeyPress="return acceptNum(event)" > 
     (solo enteros, sin centavos, comas, ni puntos) 
     <h2 class="reactivo"> 41.- Durante los años que han transcurrido desde que contesto la encuesta ,
         ¿ha dejado de trabajar? </h2>
@@ -545,14 +545,14 @@ Especifique:</h2>
   
      <select class="select" id="ncr24porque" name="ncr24porque" @if($Encuesta->NCR24!=12) hidden value=0 @endif>
               <option  value="" selected></option>
-     <option value=1 @if($Encuesta->NCR24porque==1) selected @endif>Cerró la empresa</option> 
-     <option value=2 @if($Encuesta->NCR24porque==2) selected @endif>Liquidación</option> 
-     <option value=3 @if($Encuesta->NCR24porque==3) selected @endif>Término de contrato o proyecto</option> 
-     <option value=4 @if($Encuesta->NCR24porque==4) selected @endif>Renuncia</option> 
-     <option value=15 @if($Encuesta->NCR24porque==15) selected @endif>Renuncia debido a la  pandemia</option>
-     <option value=16 @if($Encuesta->NCR24porque==16) selected @endif>Despido debido a la pandemia</option>
-     <option value=17 @if($Encuesta->NCR24porque==17) selected @endif>Cerro la empresa debido a la pandemia</option>
-     <option value=5  @if($Encuesta->NCR24porque==5) selected @endif>Otra</option> 
+     <option value=1 @if($Encuesta->NCR24PORQUE==1) selected @endif>Cerró la empresa</option> 
+     <option value=2 @if($Encuesta->NCR24PORQUE==2) selected @endif>Liquidación</option> 
+     <option value=3 @if($Encuesta->NCR24PORQUE==3) selected @endif>Término de contrato o proyecto</option> 
+     <option value=4 @if($Encuesta->NCR24PORQUE==4) selected @endif>Renuncia</option> 
+     <option value=15 @if($Encuesta->NCR24PORQUE==15) selected @endif>Renuncia debido a la  pandemia</option>
+     <option value=16 @if($Encuesta->NCR24PORQUE==16) selected @endif>Despido debido a la pandemia</option>
+     <option value=17 @if($Encuesta->NCR24PORQUE==17) selected @endif>Cerro la empresa debido a la pandemia</option>
+     <option value=5  @if($Encuesta->NCR24PORQUE==5) selected @endif>Otra</option> 
      <option value=0   @if($Encuesta->NCR24!=12) selected @endif hidden></option>   
 </select>
        
@@ -612,7 +612,7 @@ Especifique:</h2>
     <h2 class="reactivo">  
     63.- ¿Desde que egresó de la licenciatura ha realizado actividades formales de actualización en su campo profesional?
     (cursos, diplomados,seminarios, etc.)</h2>
-         <select class="select" id="ner1" name="ner1"  onchange="bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a])" > 
+         <select class="select" id="ner1" name="ner1"  onchange="bloquear('ner1',[2],[ner2,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a])" > 
         <option  value="" selected></option>
        <option value=1  @if($Encuesta->NER1==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->NER1==2) selected @endif>No (pase a la 72)</option>
@@ -954,7 +954,7 @@ Comprensión de lectura<br>  </h2>
 
   <h2 class="reactivo">  
 118.- ¿Adquirió o mejoró el dominio de otro idioma, diferente al inglés? </h2>
-<select class="select" id="ngr11a"  name="ngr11a"  onchange="bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d])">
+<select class="select" id="ngr11a"  name="ngr11a"  onchange="bloquear('ngr11a',[11],[ngr11f, ngr11a])">
     <option value="" selected="selected"></option>
       <option value=11 @if($Encuesta->NGR11==11) selected @endif>No</option>
       <option value=12 @if($Encuesta->NGR11==12) selected @endif>Sí, en la UNAM </option>
@@ -1179,27 +1179,27 @@ function seccionc2(){
   console.log(c1_value);
   switch(c1_value){
     case '1':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19,ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13,ngr13b,ngr13c,ngr13d,ngr5,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19,ngr13,ngr13b,ngr13c,ngr13d, ngr11a];
       reactivosPorCerrar.forEach(visibilizar);
     break;
     case '2':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19,ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13,ngr13b,ngr13c,ngr13d,ngr5,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19, ngr13,ngr13b,ngr13c,ngr13d, ngr11];
       reactivosPorCerrar.forEach(visibilizar);
     break;
     case '3':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ngr5];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '4':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ngr5];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '5':
-      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ngr5];
+      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '6':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19,ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19,ngr13,ngr13b,ngr13c,ngr13d ,ngr11a];
       reactivosPorCerrar.forEach(ocultar);
     break;
   }
@@ -1274,25 +1274,22 @@ function automatico(myRadio) {
 //         macalacarray=macalacarray+element.name+"', '"
 //         }
 //         console.log(macalacarray);
-  bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
+  
   seccionc2();
+  bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
+  bloquear('ncr6a2',[4],[ncr6a,ncr6otra]);
+  bloquear('ncr8',[2],[ncr9]);
+  bloquear('ncr11',[1,2],[ncr15]);
+  bloquear('ncr22',[2],[ncr24,ncr23]);
   bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])
-  bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
+  bloquear('ner1',[2],[ner2,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Encuesta->NBR2==208) || ($Encuesta->NBR2 ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
   bloquear('ner16',[2],[ner17,ner18]);
   // bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
   // bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
-  bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
-  bloquear('ngr40',[12],[ngr40_a,ngr40a]);
-  bloquear('ngr45',[2],[ngr45a,ngr45_a]);
-  bloquear('ngr37',[12],[ngr37a]);
-  bloquear('nar15',[35,34,33,22,29,16,39,17,18,19,20,23,24,27,30,31,32,26,36,37],[nar15otra]);
-  bloquear('nar13',[1,2,3,4,5,6,7,8,9,12,13],[nrxx]);
-  bloquear('nar12',[1,2,3,4,5,6,7,8,9,12,13],[nrx]);
+  bloquear('ngr11a',[11],[ngr11f, ngr11a,]);
   titulado();
-  bloquear('CUE_CRE',[2],[UTILIZA]);
-  bloquear('nfr23a',[2],[nfr23,nfr24]);
 </script>
 
 @endpush
