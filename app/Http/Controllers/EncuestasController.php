@@ -815,7 +815,7 @@ function update14(Request $request,$id){
   if(strlen(strval($request-> nfr29a ))>0){
         $Encuesta-> NFR29A  = $request-> nfr29a ;}
   if(strlen(strval($request-> ngr13 ))>0){
-        $Encuesta-> NGR13  = $request-> ngr13 ;}
+        $Encuesta-> NGR13A  = $request-> ngr13a ;}
   if(strlen(strval($request-> ngr13b ))>0){
         $Encuesta-> NGR13B  = $request-> ngr13b ;}
   if(strlen(strval($request-> ngr13c ))>0){
