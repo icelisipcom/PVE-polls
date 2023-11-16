@@ -56,38 +56,41 @@
         <label class="btn btn-outline-danger" for="btnradiob">fecha <br> anterior </label>
         </div>
         </center> <br>
-        <center> 
-   
+        <center> <div class="form-group" id="fecha-group" style="display:none;">
+       
+          
+          <input type="date"  class="fecha" name="fec_capt" id="fec_capt"  value="2023-01-01" style="width : 30%;"/> 
+          </div></center>
            <h2 class="reactivo">3.- Estado civil:</h2>
            
             <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])" > 
             <option value="" selected></option>
-			<option value=1  @if($Encuesta->nar8==1) selected @endif>Soltero(a)</option>
-			<option value=2 @if($Encuesta->nar8==2) selected @endif>Casado(a)</option>
-			<option value=3 @if($Encuesta->nar8==3) selected @endif>Divorciado(a)</option>
-			<option value=4 @if($Encuesta->nar8==4) selected @endif>Unión Libre</option>
-			<option value=5 @if($Encuesta->nar8==5) selected @endif>Viudo(a)</option>
+			<option value=1  @if($Encuesta->NAR8==1) selected @endif>Soltero(a)</option>
+			<option value=2 @if($Encuesta->NAR8==2) selected @endif>Casado(a)</option>
+			<option value=3 @if($Encuesta->NAR8==3) selected @endif>Divorciado(a)</option>
+			<option value=4 @if($Encuesta->NAR8==4) selected @endif>Unión Libre</option>
+			<option value=5 @if($Encuesta->NAR8==5) selected @endif>Viudo(a)</option>
              </select>
              <h2 class="reactivo"> 4.- ¿Tiene hijos?</h2>
          
          <select class="select" id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar9adiv,nar10])" >
          <option value="" selected></option>
-        <option value='1' @if($Encuesta->nar9==1) selected @endif>Sí</option>
-        <option value='2'@if($Encuesta->nar9==2) selected @endif>No</option> 
+        <option value='1' @if($Encuesta->NAR9==1) selected @endif>Sí</option>
+        <option value='2'@if($Encuesta->NAR9==2) selected @endif>No</option> 
 </select>
 <div name = "nar9adiv" id="nar9adiv">
 <h2 class="reactivo">a).- ¿Cuántos?: </h2></div>
-<input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" @if(strlen($Encuesta->nar10)>1) value="{{$Encuesta->nar10}}" @else value="0" hidden @endif> 
+<input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" @if(strlen($Encuesta->NAR10)>1) value="{{$Encuesta->NAR10}}" @else value="0" hidden @endif> 
 
 <h2 class="reactivo">5.-  Teléfono de casa</h2> 
- <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->telcasa}}">
+ <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->TELCASA}}">
 
  
 <h2 class="reactivo">6.-Teléfono  del trabajo: </h2>
-<INPUT type="text" class="texto"  id="teltra"   size="12" maxlength="13"  name="teltra" value="{{$Encuesta->teltra}}">
+<INPUT type="text" class="texto"  id="teltra"   size="12" maxlength="13"  name="teltra" value="{{$Encuesta->TELTRA}}">
 
 Extensión: 
- <INPUT type="text" class="texto" id="exttra" size="5" maxlength="5" name="exttra"  value="{{$Encuesta->exttra}}" >
+ <INPUT type="text" class="texto" id="exttra" size="5" maxlength="5" name="exttra"  value="{{$Encuesta->EXTTRA}}" >
 
 <h2 class="reactivo">7.- ¿Tiene correo electrónico?</h2>  
 
@@ -100,7 +103,7 @@ Extensión:
   <br>
   <h2 class="reactivo">7a).-Cúal es su correo : </h2>
 
-<INPUT type="text" class="texto"  id="nar1_a" name="nar1_a" size="39" maxlength="39" value="{{$Encuesta->nar1_a}}"  >
+<INPUT type="text" class="texto"  id="nar1_a" name="nar1_a" size="39" maxlength="39" value="{{$Encuesta->NAR1_A}}"  >
 </div>
   <div name="nar11div" id="nar11div"  >
 
@@ -108,19 +111,19 @@ Extensión:
  
       <select class="select" id="nar11" name="nar11"   onchange="bloquear('nar11',[1,2,3,4,5,6,7,8,9,10,11,12],[nar11a])"  >
      <option value=""></option>
-      <option value=1 @if($Encuesta->nar11==1) selected @endif >Sin instrucción</option>
-      <option value=2 @if($Encuesta->nar11==2) selected @endif >Primaria</option;n>
-      <option value=3 @if($Encuesta->nar11==3) selected @endif >Carrera técnica o comercial después de primaria</option>
-      <option value=4 @if($Encuesta->nar11==4) selected @endif >Secundaria</option>
-      <option value=5 @if($Encuesta->nar11==5) selected @endif >Escuela Normal</option>
-      <option value=6 @if($Encuesta->nar11==6) selected @endif >Carrera técnica o comercial después de secundaria</option>
-      <option value=7 @if($Encuesta->nar11==7) selected @endif >Bachillerato o vocacional</option>
-      <option value=8 @if($Encuesta->nar11==8) selected @endif >Esc. Normal Superior</option>
-      <option value=9 @if($Encuesta->nar11==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
-      <option value=10 @if($Encuesta->nar11==10) selected @endif >Licenciatura</option>
-      <option value=11 @if($Encuesta->nar11==11) selected @endif >Posgrado</option>
-      <option value=12 @if($Encuesta->nar11==12) selected @endif >Lo desconoce</option>
-      <option value=13  @if($Encuesta->nar11==13) selected @endif >Otro (Especifíque)</option>
+      <option value=1 @if($Encuesta->NAR11==1) selected @endif >Sin instrucción</option>
+      <option value=2 @if($Encuesta->NAR11==2) selected @endif >Primaria</option;n>
+      <option value=3 @if($Encuesta->NAR11==3) selected @endif >Carrera técnica o comercial después de primaria</option>
+      <option value=4 @if($Encuesta->NAR11==4) selected @endif >Secundaria</option>
+      <option value=5 @if($Encuesta->NAR11==5) selected @endif >Escuela Normal</option>
+      <option value=6 @if($Encuesta->NAR11==6) selected @endif >Carrera técnica o comercial después de secundaria</option>
+      <option value=7 @if($Encuesta->NAR11==7) selected @endif >Bachillerato o vocacional</option>
+      <option value=8 @if($Encuesta->NAR11==8) selected @endif >Esc. Normal Superior</option>
+      <option value=9 @if($Encuesta->NAR11==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
+      <option value=10 @if($Encuesta->NAR11==10) selected @endif >Licenciatura</option>
+      <option value=11 @if($Encuesta->NAR11==11) selected @endif >Posgrado</option>
+      <option value=12 @if($Encuesta->NAR11==12) selected @endif >Lo desconoce</option>
+      <option value=13  @if($Encuesta->NAR11==13) selected @endif >Otro (Especifíque)</option>
       <option value=0  hidden></option> 
     </select>
 Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxlength="50" @if(strlen($Encuesta->nar11a)>2) value="{{$Encuesta->nar11a}}" @else value="" hidden @endif > 
@@ -130,31 +133,31 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxl
 
 <select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[1,2,3,4,5,6,7,8,9,10,11,12],[nar14otra])"  >
        <option value="" ></option>
-<option value=28 @if($Encuesta->nar14==28) selected @endif >Artesanos y obrero</option>
-<option value=25 @if($Encuesta->nar14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
-<option value=41 @if($Encuesta->nar14==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
-<option value=21 @if($Encuesta->nar14==21) selected @endif >Funcionario y directivo</option>
-<option value=35 @if($Encuesta->nar14==35) selected @endif >Finado</option>
-<option value=34 @if($Encuesta->nar14==34) selected @endif >Jubilado</option>
-<option value=33 @if($Encuesta->nar14==33) selected @endif >Labores del Hogar</option>
-<option value=22 @if($Encuesta->nar14==22) selected @endif >Mando medio</option>
-<option value=29 @if($Encuesta->nar14==29) selected @endif >Obreros especializados</option>
-<option value=16 @if($Encuesta->nar14==16) selected @endif >Profesionista</option>
-<option value=39 @if($Encuesta->nar14==39) selected @endif >Profesor Enseñanza Superior</option>
-<option value=17 @if($Encuesta->nar14==17) selected @endif >Profesor Enseñanza Media Superior</option>
-<option value=18 @if($Encuesta->nar14==18) selected @endif >Profesor Enseñanza Media</option>
-<option value=19 @if($Encuesta->nar14==19) selected @endif >Profesor Enseñanza Básica</option>
-<option value=20 @if($Encuesta->nar14==20) selected @endif >Trabajador del arte, espectáculos y deportes</option>
-<option value=23 @if($Encuesta->nar14==23) selected @endif >Técnico</option>
-<option value=24 @if($Encuesta->nar14==24) selected @endif >Trabajador de apoyo actividades administrativas</option>
-<option value=27 @if($Encuesta->nar14==27) selected @endif >Trabajadores en actividades agricolas, ganaderias, silvícolas y de caza y pesca</option>
-<option value=30 @if($Encuesta->nar14==30) selected @endif >Trabajador en servicios personales</option>
-<option value=31 @if($Encuesta->nar14==31) selected @endif >Trabajador en servicios doméstico</option>
-<option value=32 @if($Encuesta->nar14==32) selected @endif >Trabajador de servicios vigilancia y protección y fuerzas armadas</option>
-<option value=26 @if($Encuesta->nar14==26) selected @endif >Vendedores ambulantes</option>
-<option value=36 @if($Encuesta->nar14==36) selected @endif >No trabaja</option>
-<option value=37 @if($Encuesta->nar14==37) selected @endif >No lo sabe</option>
-<option value=38 @if($Encuesta->nar14==38) selected @endif >Otra(Especifíque)</option>
+<option value=28 @if($Encuesta->NAR14==28) selected @endif >Artesanos y obrero</option>
+<option value=25 @if($Encuesta->NAR14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
+<option value=41 @if($Encuesta->NAR14==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
+<option value=21 @if($Encuesta->NAR14==21) selected @endif >Funcionario y directivo</option>
+<option value=35 @if($Encuesta->NAR14==35) selected @endif >Finado</option>
+<option value=34 @if($Encuesta->NAR14==34) selected @endif >Jubilado</option>
+<option value=33 @if($Encuesta->NAR14==33) selected @endif >Labores del Hogar</option>
+<option value=22 @if($Encuesta->NAR14==22) selected @endif >Mando medio</option>
+<option value=29 @if($Encuesta->NAR14==29) selected @endif >Obreros especializados</option>
+<option value=16 @if($Encuesta->NAR14==16) selected @endif >Profesionista</option>
+<option value=39 @if($Encuesta->NAR14==39) selected @endif >Profesor Enseñanza Superior</option>
+<option value=17 @if($Encuesta->NAR14==17) selected @endif >Profesor Enseñanza Media Superior</option>
+<option value=18 @if($Encuesta->NAR14==18) selected @endif >Profesor Enseñanza Media</option>
+<option value=19 @if($Encuesta->NAR14==19) selected @endif >Profesor Enseñanza Básica</option>
+<option value=20 @if($Encuesta->NAR14==20) selected @endif >Trabajador del arte, espectáculos y deportes</option>
+<option value=23 @if($Encuesta->NAR14==23) selected @endif >Técnico</option>
+<option value=24 @if($Encuesta->NAR14==24) selected @endif >Trabajador de apoyo actividades administrativas</option>
+<option value=27 @if($Encuesta->NAR14==27) selected @endif >Trabajadores en actividades agricolas, ganaderias, silvícolas y de caza y pesca</option>
+<option value=30 @if($Encuesta->NAR14==30) selected @endif >Trabajador en servicios personales</option>
+<option value=31 @if($Encuesta->NAR14==31) selected @endif >Trabajador en servicios doméstico</option>
+<option value=32 @if($Encuesta->NAR14==32) selected @endif >Trabajador de servicios vigilancia y protección y fuerzas armadas</option>
+<option value=26 @if($Encuesta->NAR14==26) selected @endif >Vendedores ambulantes</option>
+<option value=36 @if($Encuesta->NAR14==36) selected @endif >No trabaja</option>
+<option value=37 @if($Encuesta->NAR14==37) selected @endif >No lo sabe</option>
+<option value=38 @if($Encuesta->NAR14==38) selected @endif >Otra(Especifíque)</option>
 <option value=0  hidden></option>     
 </select>
     <br>
@@ -177,15 +180,15 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
  
  <select class="select" id= "ner20"  name="ner20"  onchange="bloquear('ner20',[1],[ner20a,ner20txt])" >
    <option selected="selected" value="">
-   <option value=1 @if($Encuesta->ner20==1) selected @endif >No </option>
-   <option value=2 @if($Encuesta->ner20==2) selected @endif >Si, la estoy cursando</option>
-   <option value=3 @if($Encuesta->ner20==3) selected @endif >Si, ya la concluí</option>
+   <option value=1 @if($Encuesta->NER20==1) selected @endif >No </option>
+   <option value=2 @if($Encuesta->NER20==2) selected @endif >Si, la estoy cursando</option>
+   <option value=3 @if($Encuesta->NER20==3) selected @endif >Si, ya la concluí</option>
  </select>
  <h2 class="reactivo">15a).- ¿Cuál? </h2>
- <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT value="{{$Encuesta->ner20txt}}" SIZE=35 MAXLENGTH=35 @if($Encuesta->ner20==1) hidden value=" " @endif>
+ <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT value="{{$Encuesta->ner20txt}}" SIZE=35 MAXLENGTH=35 @if($Encuesta->NER20==1) hidden value=" " @endif>
  
  <h2 class="reactivo">15b).¿La ejerce?  </h2>
-   <select class="select" id="ner20a" name="ner20a" @if($Encuesta->ner20==1) hidden  @endif>
+   <select class="select" id="ner20a" name="ner20a" @if($Encuesta->NER20==1) hidden  @endif>
    <option  value="">
    <option value=1 @if($Encuesta->ner20a==1) selected @endif >No</option>
    <option value=2 @if($Encuesta->ner20a==2) selected @endif >Si</option>
@@ -1281,8 +1284,8 @@ function automatico(myRadio) {
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Encuesta->NBR2==208) || ($Encuesta->NBR2 ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
   bloquear('ner16',[2],[ner17,ner18]);
-  bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
-  bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
+  // bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
+  // bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
   bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
   bloquear('ngr45',[2],[ngr45a,ngr45_a]);
