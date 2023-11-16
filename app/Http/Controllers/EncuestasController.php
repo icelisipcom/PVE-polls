@@ -760,8 +760,8 @@ function update14(Request $request,$id){
         $Encuesta-> NER1  = $request-> ner1 ;}
   if(strlen(strval($request-> ner2 ))>0){
         $Encuesta-> NER2  = $request-> ner2 ;}
-  if(strlen(strval($request-> ner1a ))>0){
-        $Encuesta-> NER1A  = $request-> ner1a ;}
+//   if(strlen(strval($request-> ner1a ))>0){
+//         $Encuesta-> NER1A  = $request-> ner1a ;}
   if(strlen(strval($request-> ner3 ))>0){
         $Encuesta-> NER3  = $request-> ner3 ;}
   if(strlen(strval($request-> ner4 ))>0){

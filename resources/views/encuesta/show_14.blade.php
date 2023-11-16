@@ -630,15 +630,7 @@ Especifique:</h2>
        <option value=0  hidden></option>   
  </select>
   
-        <h2 class="reactivo">  
-    a).-¿Para su actualización ha requerido el idioma Inglés o algún otro idioma?</h2>
-         <select class="select" id="ner1a" name="ner1a"  > 
-        <option  value="" selected></option>
-       <option value=1  @if($Encuesta->ner1a==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner1a==2) selected @endif>No </option>
-       <option value=0  hidden></option>   
-</select>
-    
+
          <h2 class="reactivo">  
     <b>¿Dónde las ha realizado?</b></h2>
     
