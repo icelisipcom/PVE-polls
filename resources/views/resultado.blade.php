@@ -58,7 +58,7 @@
         <tbody>
           
             <tr style="color:#b0a46f" >
-                <td>{{  $eg->nombre}}  {{  $eg->paterno}}  {{  $eg->materno }}   </td>
+                <td>{{$eg->nombre}}  {{  $eg->paterno}}  {{  $eg->materno }}   </td>
                 <td> {{$eg->cuenta}} </td>
                 <td> </td>
                 <td>{{$eg->carrera}}</td>     

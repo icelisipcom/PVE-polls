@@ -816,7 +816,9 @@ function update14(Request $request,$id){
         $Encuesta-> NFR29  = $request-> nfr29 ;}
   if(strlen(strval($request-> nfr29a ))>0){
         $Encuesta-> NFR29A  = $request-> nfr29a ;}
-  if(strlen(strval($request-> ngr13 ))>0){
+if(strlen(strval($request-> ngr13 ))>0){
+        $Encuesta-> NGR13  = $request-> ngr13 ;}
+  if(strlen(strval($request-> ngr13a ))>0){
         $Encuesta-> NGR13A  = $request-> ngr13a ;}
   if(strlen(strval($request-> ngr13b ))>0){
         $Encuesta-> NGR13B  = $request-> ngr13b ;}
@@ -826,8 +828,6 @@ function update14(Request $request,$id){
         $Encuesta-> NGR13D  = $request-> ngr13d ;}
   if(strlen(strval($request-> ngr11a ))>0){
         $Encuesta-> NGR11  = $request-> ngr11a ;}
-  if(strlen(strval($request-> ngr11f ))>0){
-        $Encuesta-> NGR11_A  = $request-> ngr11f ;}
   
         $Encuesta->save();
         $fileName = $Encuesta->CUENTA.'.json';

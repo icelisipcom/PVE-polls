@@ -754,7 +754,7 @@ Especifique:</h2>
    
       <h2 class="reactivo">  
     75.- <b>¿Maestría?</b></h2>
-    <select class="select" id="ner13" name="ner13"  onchange=bloqueos13(e13) >
+    <select class="select" id="ner13" name="ner13"  onchange="bloquear('ner13',[2],[ner14,ner15])" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->NER13==1) selected @endif>Sí</option>
         <option value=2  @if($Encuesta->NER13==2) selected @endif>No</option>
@@ -794,7 +794,7 @@ Especifique:</h2>
     
       <h2 class="reactivo">  
     77a).-¿En qué área? </h2>
-    <INPUT   id="ner12b" name="ner12b" TYPE=TEXT  class="texto" value=" " SIZE=60 MAXLENGTH=60 @if(($Encuesta->NBR2!=208) && ($Encuesta->NBR2 !=202)) hidden value=0 @endif>
+    <INPUT   id="ner12b" name="ner12b" TYPE=TEXT  class="texto" value=" " SIZE=120 MAXLENGTH=120 @if(($Encuesta->NBR2!=208) && ($Encuesta->NBR2 !=202)) hidden value=0 @endif>
     
  
       <h2 class="reactivo">  
@@ -855,6 +855,7 @@ Especifique:</h2>
      <option value=1 @if($Encuesta->NFR27==1) selected @endif>Sí</option>
      <option value=2 @if($Encuesta->NFR27==2) selected @endif>No</option>
      <OPTION VALUE=3 @if($Encuesta->NFR27==3) selected @endif>No, estoy en trámite</OPTION>
+     <option value=0 hidden> </option>
     </select>
     <h2 class="reactivo"> 
 101.- ¿Cuánto tiempo después de egresar se tituló? </h2>
@@ -888,7 +889,9 @@ Especifique:</h2>
   <option value=16 @if($Encuesta->NFR29==16) selected @endif>Motivos de salud</option>
   <option value=8 @if($Encuesta->NFR29==8) selected @endif>No deseo contestar</option>
   <option value=9 @if($Encuesta->NFR29==9) selected @endif>Otra (especifíque)</option>
-  </select> 
+  <option value=0 hidden ></option>
+    
+</select> 
   <h2 class="reactivo">  
 102a).- Otra (especifíque):</h2>
 <INPUT  id="nfr29a" name="nfr29a" TYPE=TEXT  class="texto"  SIZE=47 MAXLENGTH=47 > 
@@ -901,12 +904,12 @@ Especifique:</h2>
   <h2 class="reactivo">  
 117.- Para el desempeño de su o sus trabajo ¿Qué nivel de dominio del idioma inglés requiere de las siguientes habilidades?
 <br></h2>
-<select class="select" id="g13"  name="g13" onchange="bloquear('g13',[2],[ngr13a,ngr13b,ngr13c,ngr13d])" >
-	<option value="" selected="selected"></option>
-        <option value=1 @if($Encuesta->NGR13A>0) selected @endif>Sí</option>
-        <option value=2 @if($Encuesta->NGR13A==0) selected @endif>No</option>
-     
-      </select>
+<select class="select" id="g13"  name="ngr13" onchange="bloquear('g13',[2],[ngr13a,ngr13b,ngr13c,ngr13d])" >
+	      <option value="" selected="selected"></option>
+        <option value=12 @if($Encuesta->NGR13==12) selected @endif>Sí</option>
+        <option value=11 @if($Encuesta->NGR13==11) selected @endif>No</option>
+
+  </select>
 <h2 class="reactivo">  
 Comprensión auditiva<br></h2>
      <select class="select" id="ngr13"  name="ngr13a" >
@@ -951,30 +954,16 @@ Comprensión de lectura<br>  </h2>
         <option value=0 hidden > </option>
       </select>
 
-
   <h2 class="reactivo">  
 118.- ¿Adquirió o mejoró el dominio de otro idioma, diferente al inglés? </h2>
 <select class="select" id="ngr11a"  name="ngr11a"  onchange="bloquear('ngr11a',[11],[ngr11f, ngr11a])">
     <option value="" selected="selected"></option>
       <option value=11 @if($Encuesta->NGR11==11) selected @endif>No</option>
       <option value=12 @if($Encuesta->NGR11==12) selected @endif>Sí, en la UNAM </option>
-      <option value=13 @if($Encuesta->NGR11==13) selected @endif>Sí, en instituciones externas (distinta) a la UNAM </option>
-      <option value=14 @if($Encuesta->NGR11==14) selected @endif>Sí, por autoaprendizaje </option>
       <option value=0 hidden > </option>
       </select>
 
-  <h2 class="reactivo">  
-118a).-¿Cuál?</h2>
-<select class="select" id="ngr11f"  name="ngr11f"  >
-    <option value="" selected="selected"></option>
-      <option value=1 @if($Encuesta->NGR11_A==1) selected @endif>Francés</option>
-      <option value=2 @if($Encuesta->NGR11_A==2) selected @endif>Alemán</option>
-      <option value=3 @if($Encuesta->NGR11_A==3) selected @endif>Italiano</option>
-      <option value=4 @if($Encuesta->NGR11_A==4) selected @endif>Portugués</option>
-      <option value=7 @if($Encuesta->NGR11_A==7) selected @endif>Otro</option>
-      <option value=0 hidden > </option>
-      </select>
-
+ 
       </div>
     </div>
   <br><br>
@@ -1128,7 +1117,7 @@ function bloquear(reactivo,options,reactivosPorCerrar){
 
 
 var val=document.getElementById(reactivo);
-console.log (val.value);
+console.log ('entrando a bloqueo '+reactivo+', opciones:'+val.value);
 console.log(options);
 console.log(options.includes(parseInt(val.value)));
 if(options.includes(parseInt(val.value))){
@@ -1142,14 +1131,14 @@ if(options.includes(parseInt(val.value))){
 
 
 function ocultar(item){
-console.log(item.id);
+console.log('ocultando'+item.id);
 document.getElementById(item.id).value=0;
 document.getElementById(item.id).hidden="hidden";
 console.log(document.getElementById(item.id).value);
 }
 
 function visibilizar(item){
-  console.log(document.getElementById(item.id).value);
+  console.log('visibilizando'+document.getElementById(item.id).name);
   if(document.getElementById(item.id).value==0){
     console.log('xd');
 document.getElementById(item.id).hidden="";
@@ -1205,9 +1194,11 @@ function seccionc2(){
   }
 }
 function titulado(){
-  bloquear('nfr27',[2,3],[nfr28]);
+  console.log('cerrando titulado');
+  console.log(document.getElementById('nfr27').value);
   bloquear('nfr27',[1],[nfr29,nfr29a]);
-  bloquear('nfr29',[1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
+  bloquear('nfr27',[2,3],[nfr28]);
+  bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
 }
  </script>
 
@@ -1244,10 +1235,7 @@ function titulado(){
     document.getElementById(element.id).focus();
   }
 })
-          // if(confirm("Seguro que deseas guardar una encuesta incompleta?")==true){
-          //   forma.submit();
-          // }
-          /* document.getElementById(element.id).focus(); */
+          
           return;
       }
   }
@@ -1282,13 +1270,14 @@ function automatico(myRadio) {
   bloquear('ncr11',[1,2],[ncr15]);
   bloquear('ncr22',[2],[ncr24,ncr23]);
   bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])
-  bloquear('ner1',[2],[ner2,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
+  bloquear('ner1',[2],[ner2,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a,]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Encuesta->NBR2==208) || ($Encuesta->NBR2 ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
+  bloquear('ner13',[2],[ner14,ner15])
   bloquear('ner16',[2],[ner17,ner18]);
   // bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
   // bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
-  bloquear('ngr11a',[11],[ngr11f, ngr11a,]);
+  bloquear('ngr11a',[11],[ ngr11a,]);
   titulado();
 </script>
 
