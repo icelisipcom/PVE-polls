@@ -16,7 +16,7 @@ def AvisoPrivacidad(nombre,you):
    # Create the body of the message (a plain-text and an HTML version).
     text = ""
     html = """\
-<html><head><title>Registro al Programa de Vinculacion con los Egresados</title>
+<html><head><title>Registro al Programa de Vinculacion con los Egresados y Academicos Jubilados</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=0.5, maximum-scale=1" />
 <style>
@@ -37,12 +37,12 @@ a img {    width:95%;    height:auto;    margin:0;    }
 <img src="http://www.pve.unam.mx/imagenes/pve.jpg" height="60" align="right"> &nbsp;<img src="http://www.pve.unam.mx/imagenes/unam.jpg" width="79" height="80" align="texttop">
 </div>
 <p>&nbsp;</p>
-<h2 align="center" style="font-size:1.5em;font-weight:bold;color:#006 !important;">PROGRAMA DE VINCULACI&Oacute;N CON LOS EGRESADOS</h2><p>&nbsp;</p>
+<h2 align="center" style="font-size:1.5em;font-weight:bold;color:#006 !important;">PROGRAMA DE VINCULACI&Oacute;N CON LOS EGRESADOS Y ACADEMICOS JUBILADOS</h2><p>&nbsp;</p>
 <p><b>Estimad@ """+nombre+"""</b></p>
 <p ALIGN="justify">
 <H2><STRONG>AVISO DE  PRIVACIDAD </STRONG></H2>
 <P>&nbsp;</P>
-<P align="justify">El Programa  de Vinculaci&oacute;n con los Egresados de la Universidad Nacional 
+<P align="justify">El Programa  de Vinculaci&oacute;n con los Egresados y Academicos Jubilados de la Universidad Nacional 
 Aut&oacute;noma de M&eacute;xico  (UNAM), con domicilio en Zona Cultural de  Ciudad 
 Universitaria, Edificio "D", planta baja, Alcald&iacute;a Coyoac&aacute;n, C.P.  04510, en la 
 Ciudad de M&eacute;xico, recaba datos personales y es responsable del  tratamiento que 
@@ -89,7 +89,7 @@ Tales datos son: </P>
   acad&eacute;mica, as&iacute; como su raz&oacute;n o denominaci&oacute;n  social; y</LI>
   <LI>Nombre y datos de contacto de un familiar  o amigo para localizaci&oacute;n en 
   caso de emergencia.</LI></UL>
-<P ALIGN="justify">Asimismo, el Programa de Vinculaci&oacute;n  con los Egresados de la UNAM realiza la 
+<P ALIGN="justify">Asimismo, el Programa de Vinculaci&oacute;n  con los Egresados y Academicos Jubilados de la UNAM realiza la 
 "Encuesta de Egresados" en la que  solicita los siguientes datos: </P>
 <UL>
   <LI><STRONG>Identificativos:</STRONG> fecha de  nacimiento, g&eacute;nero, estado 
