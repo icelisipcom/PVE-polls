@@ -39,7 +39,7 @@
 </div>
 <form action="{{ route('encuestas14.real_update', $Encuesta->REGISTRO) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
-<input type="text" value='{{$Encuesta->cuenta}}' name='cuenta' hidden>
+<input type="text" value='{{$Encuesta->CUENTA}}' name='cuenta' hidden>
     <div class='Scroll'> 
      
    
@@ -61,7 +61,31 @@
           
           <input type="date"  class="fecha" name="fec_capt" id="fec_capt"  value="2023-01-01" style="width : 30%;"/> 
           </div></center>
-           <h2 class="reactivo">3.- Estado civil:</h2>
+          
+          <h2 class="reactivo">1.-  Teléfono de casa</h2> 
+ <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->TELCASA}}">
+
+ 
+<h2 class="reactivo">2.-Teléfono  Celular: </h2>
+<INPUT type="text" class="texto"  id="teltra"   size="12" maxlength="13"  name="teltra" value="{{$Encuesta->TELTRA}}">
+
+Extensión: 
+ <INPUT type="text" class="texto" id="exttra" size="5" maxlength="5" name="exttra"  value="{{$Encuesta->EXTTRA}}" >
+
+<h2 class="reactivo">3.- ¿Tiene correo electrónico?</h2>  
+
+<select class="select" id="ncrcc" name="ncrcc"  onchange="bloquear('ncrcc',[2],[correo,nar1_a])" >
+<option value="" ></option>
+        <option  selected  value='1'>Sí</option>
+        <option value='2'  >No</option> 
+</select>
+<div name="correo" id="correo">
+  <br>
+  <h2 class="reactivo">3a).-Cúal es su correo : </h2>
+
+<INPUT type="text" class="texto"  id="nar1_a" name="nar1_a" size="39" maxlength="39" value="{{$Encuesta->NAR1_A}}"  >
+</div>
+          <h2 class="reactivo">4.- Estado civil:</h2>
            
             <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar11a,nar14,nar14otra])" > 
             <option value="" selected></option>
@@ -71,7 +95,7 @@
 			<option value=4 @if($Encuesta->NAR8==4) selected @endif>Unión Libre</option>
 			<option value=5 @if($Encuesta->NAR8==5) selected @endif>Viudo(a)</option>
              </select>
-             <h2 class="reactivo"> 4.- ¿Tiene hijos?</h2>
+             <h2 class="reactivo"> 5.- ¿Tiene hijos?</h2>
          
          <select class="select" id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar9adiv,nar10])" >
          <option value="" selected></option>
@@ -82,32 +106,9 @@
 <h2 class="reactivo">a).- ¿Cuántos?: </h2></div>
 <input class="texto" type="text"  id="nar10" name="nar10" size="2" maxlength="2" @if(strlen($Encuesta->NAR10)>1) value="{{$Encuesta->NAR10}}" @else value="0" hidden @endif> 
 
-<h2 class="reactivo">5.-  Teléfono de casa</h2> 
- <INPUT type="text" class="texto"   id="telcasa" size="12" maxlength="15"  name="telcasa" value="{{$Encuesta->TELCASA}}">
 
- 
-<h2 class="reactivo">6.-Teléfono  del trabajo: </h2>
-<INPUT type="text" class="texto"  id="teltra"   size="12" maxlength="13"  name="teltra" value="{{$Encuesta->TELTRA}}">
-
-Extensión: 
- <INPUT type="text" class="texto" id="exttra" size="5" maxlength="5" name="exttra"  value="{{$Encuesta->EXTTRA}}" >
-
-<h2 class="reactivo">7.- ¿Tiene correo electrónico?</h2>  
-
-<select class="select" id="ncrcc" name="ncrcc"  onchange="bloquear('ncrcc',[2],[correo,nar1_a])" >
-<option value="" ></option>
-        <option  selected  value='1'>Sí</option>
-        <option value='2'  >No</option> 
-</select>
-<div name="correo" id="correo">
-  <br>
-  <h2 class="reactivo">7a).-Cúal es su correo : </h2>
-
-<INPUT type="text" class="texto"  id="nar1_a" name="nar1_a" size="39" maxlength="39" value="{{$Encuesta->NAR1_A}}"  >
-</div>
   <div name="nar11div" id="nar11div"  >
-
-    <h2 class="reactivo"> 8.- Nivel de estudios de su esposo(a)</h2>
+    <h2 class="reactivo"> 6.- Nivel de estudios de su esposo(a)</h2>
  
       <select class="select" id="nar11" name="nar11"   onchange="bloquear('nar11',[1,2,3,4,5,6,7,8,9,10,11,12],[nar11a])"  >
      <option value=""></option>
@@ -129,7 +130,7 @@ Extensión:
 Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxlength="50" @if(strlen($Encuesta->NAR11a)>2) value="{{$Encuesta->NAR11a}}" @else value="" hidden @endif > 
 
   
-<h2 class="reactivo">9.-Ocupación de su esposo(a)</h2>
+<h2 class="reactivo">7.-Ocupación de su esposo(a)</h2>
 
 <select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[1,2,3,4,5,6,7,8,9,10,11,12],[nar14otra])"  >
        <option value="" ></option>
@@ -176,7 +177,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
       <div class='col' id='B' style='text-align: center;'>
       
-    <h2 class="reactivo">15).- ¿Tiene una segunda Licenciatura?</h2>
+    <h2 class="reactivo">53.-).- ¿Tiene una segunda Licenciatura?</h2>
  
  <select class="select" id= "ner20"  name="ner20"  onchange="bloquear('ner20',[1],[ner20a,ner20txt])" >
    <option selected="selected" value="">
@@ -184,9 +185,9 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
    <option value=2 @if($Encuesta->NER20==2) selected @endif >Si, la estoy cursando</option>
    <option value=3 @if($Encuesta->NER20==3) selected @endif >Si, ya la concluí</option>
  </select>
- <h2 class="reactivo">15a).- ¿Cuál? </h2>
+ <h2 class="reactivo">54.-).- ¿Cuál? </h2>
  <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT value="{{$Encuesta->ner20txt}}" SIZE=35 MAXLENGTH=35 @if($Encuesta->NER20==1) hidden value=" " @endif>
- 
+
  <h2 class="reactivo">15b).¿La ejerce?  </h2>
    <select class="select" id="ner20a" name="ner20a" @if($Encuesta->NER20==1) hidden  @endif>
    <option  value="">
@@ -194,7 +195,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
    <option value=2 @if($Encuesta->NER20A==2) selected @endif >Si</option>
    <option value=0  hidden></option>   
   </select>
- <h2 class="reactivo">16).-¿Bajo qué sistema de enseñanza realizó sus estudios de licenciatura? </h2>
+ <h2 class="reactivo">8).-¿Bajo qué sistema de enseñanza realizó sus estudios de licenciatura? </h2>
  
  <select class="select" id="nar1" name="nar1" >
  <option value="" ></option>
@@ -214,7 +215,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
       </div>
 
       <div class='col' id='C' style='text-align: center;'>
-      <h2 class="reactivo">  21.- ¿Actualmente se encuentra laborando? </h2> 
+      <h2 class="reactivo">  9.- ¿Actualmente se encuentra laborando? </h2> 
  
     
  <select class="select" id="ncr1" name="ncr1"  onchange='seccionc2()'>
@@ -226,10 +227,10 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 <option value=5 @if($Encuesta->NCR1==5) selected @endif>Residente (Médico) (conteste  la 2)</option>
 <option value=6 @if($Encuesta->NCR1==6) selected @endif>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
 </select>
- <h2 class="reactivo"> 22.- ¿Cuál es el Nombre de la empresa o institución donde trabaja ?</h2>
+ <h2 class="reactivo"> 10.- ¿Cuál es el Nombre de la empresa o institución donde trabaja ?</h2>
  <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->NCR2}}" size="110" maxlength="110"  >
     
-    <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
+    <h2 class="reactivo"> 10a.-Estado donde se ubica </h2> 
 
 
 <select class="select" id="ncr2a"  name="ncr2a" > 
@@ -270,7 +271,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 <option value=0  hidden></option>   
 </select>
 
-<h2 class="reactivo"> 23.- La empresa o institución donde trabaja es: 
+<h2 class="reactivo"> 11.- La empresa o institución donde trabaja es: 
 </h2>
 
 
@@ -281,7 +282,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 <option value=3 @if($Encuesta->NCR3==3) selected @endif>Social</option>
 <option value=0  hidden></option>   
 </select>
-<h2 class="reactivo">  24.- ¿En qué sector se ubica? </h2>
+<h2 class="reactivo">  12.- ¿En qué sector se ubica? </h2>
 
 
 <select class="select" id="ncr4" name="ncr4"   onchange="bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a])">
@@ -314,11 +315,11 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
 <h2 class="reactivo">  
 
-24a).- Otra:</h2> 
+12a).- Otra:</h2> 
 <input  class="texto" id="ncr4a" name="ncr4a" size="65" maxlength="65" value=0 > 
 
 
-<h2 class="reactivo"> 25.-Aproximadamente, ¿cuántas personas laboran en la empresa?  </h2>
+<h2 class="reactivo"> 13.-Aproximadamente, ¿cuántas personas laboran en la empresa?  </h2>
 
 <select class="select" id="ncr5" name="ncr5"  >
   <option selected="selected" value="">
@@ -329,7 +330,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
   <option value=0  hidden></option>   
 </select>
 
-<h2 class="reactivo"> 26.- ¿Cuál es su condición en el trabajo? </h2>
+<h2 class="reactivo"> 14.- ¿Cuál es su condición en el trabajo? </h2>
 
 <select class="select" id="ncr6a2"  name="ncr6" onchange="bloquear('ncr6a2',[4],[ncr6a,ncr6otra])">
     <option selected="selected" value="">
@@ -340,7 +341,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 </select>
 
     
-    <h2 class="reactivo"> 26a.-¿Tipo de autoempleo? </h2>
+    <h2 class="reactivo"> 14a.-¿Tipo de autoempleo? </h2>
 <select class="select" id="ncr6a" name="ncr6t"  >
 <option selected="selected" value="">
 <option value=2 @if($Encuesta->NCR6==2) selected @endif>Propietario</option>
@@ -351,12 +352,12 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 <h2 class="reactivo">
  Otra: </h2><input type="text" class="texto" id="ncr6otra" name="ncr6_a" size="65" maxlength="65" value=" " > 
 
- <h2 class="reactivo">  27.- ¿Cuál es su puesto? </h2>
+ <h2 class="reactivo">  15.- ¿Cuál es su puesto? </h2>
 
 
  <INPUT type="text" class="texto" id="ncr7a" name="ncr7a" value="{{$Encuesta->NCR7_A}}" size="110" maxlength="110"  >
 
-<h2 class="reactivo">28.- ¿Requiere tener título profesional para el puesto que ocupa? </h2>
+<h2 class="reactivo">16.- ¿Requiere tener título profesional para el puesto que ocupa? </h2>
 
 
 <select class="select" id="ncr7b" name="ncr7b"  >
@@ -366,14 +367,14 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
     <option value=0  hidden></option>   
 </select>
 
-    <h2 class="reactivo"> 29.- En su trabajo,¿tiene personal a su cargo? </h2>
+    <h2 class="reactivo"> 17.- En su trabajo,¿tiene personal a su cargo? </h2>
 <select class="select" id="ncr8" name="ncr8"  onchange="bloquear('ncr8',[2],[ncr9])" >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->NCR8==1) selected @endif>Sí</option>
     <option value=2 @if($Encuesta->NCR8==2) selected @endif>No</option>
     <option value=0  hidden></option>   
  </select>
-    <h2 class="reactivo"> 30.- ¿Cuántas personas trabajan con usted? </h2>
+    <h2 class="reactivo"> 18.- ¿Cuántas personas trabajan con usted? </h2>
 
 
 <select class="select" id="ncr9"  >
@@ -386,7 +387,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
     <option value=0  hidden></option>   
 </select>
 
-<h2 class="reactivo">  31.- ¿Su trabajo es de tiempo completo?</h2> 
+<h2 class="reactivo">  19.- ¿Su trabajo es de tiempo completo?</h2> 
 <select class="select" id="ncr10" name="ncr10"  >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->NCR10==1) selected @endif>Sí</option>
@@ -395,7 +396,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 </select>
 
  
-    <h2 class="reactivo"> 32.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
+    <h2 class="reactivo"> 20.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
 
 <select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15])" >
   <option selected="selected" value="">
@@ -405,15 +406,15 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
   <option value=0  hidden></option>   
 
 </select>
-<h2 class="reactivo">  33.- ¿Que actividades realiza? 
+<h2 class="reactivo">  21.- ¿Que actividades realiza? 
 
 </TD>
 <TD>
 
 Especifique:</h2>
-<INPUT type="text" class="texto" id="ncr12_a" name="ncr12_a" value="{{$Encuesta->NCR12_A}}" size="110" maxlength="110"  >
+<INPUT type="text" class="texto" id="ncr12_a" name="ncr12_a" value="{{$Encuesta->NCR12_A}}" size="200" maxlength="200"  >
 
-<h2 class="reactivo"> 34.- ¿Si su trabajo no está relacionado con su carrera
+<h2 class="reactivo"> 22.- ¿Si su trabajo no está relacionado con su carrera
          es porque usted asílo decidió? </h2>
 
 <select class="select" id="ncr15" name="ncr15"  >
@@ -423,7 +424,7 @@ Especifique:</h2>
     <option value=0  hidden></option>   
 </select>
 
-<h2 class="reactivo"> 35.- ¿Cómo considera qué lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
+<h2 class="reactivo"> 23.- ¿Cómo considera qué lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
     
     <select class="select" id="ncr16" name="ncr16"   > 
            <option selected="selected" value="">
@@ -435,7 +436,7 @@ Especifique:</h2>
           <option value=0  hidden></option>   
  </select>
     
-         <h2 class="reactivo">  36.¿Cuál es su grado de satisfacción con su trabajo actual? </h2>
+         <h2 class="reactivo">  24.¿Cuál es su grado de satisfacción con su trabajo actual? </h2>
          <select class="select" id="ncr17" name="ncr17" >  
        <option selected="selected" value="">
        <option value=1 @if($Encuesta->NCR17==1) selected @endif>Muy satisfecho(a)</option>
@@ -445,7 +446,7 @@ Especifique:</h2>
        <option value=5 @if($Encuesta->NCR17==5) selected @endif>Nada satisfecho(a)</option>
        <option value=0  hidden></option>   
 </select>
-         <h2 class="reactivo">37.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
+         <h2 class="reactivo">25.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
         </h2>
     
        <select class="select" id="ncr18" name="ncr18">  
@@ -474,14 +475,13 @@ Especifique:</h2>
     
     <select class="select" id="ncra20" name="ncra20"  > 
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->NCR20==1) selected @endif>Menos de un año</option>
-    <option value=2 @if($Encuesta->NCR20==2) selected @endif>Un año</option>
-    <option value=3 @if($Encuesta->NCR20==2) selected @endif>Dos</option>
-    <option value=4 @if($Encuesta->NCR20==2) selected @endif>Tres</option>
-    <option value=5 @if($Encuesta->NCR20==2) selected @endif>Cuatro</option>
-    <option value=6 @if($Encuesta->NCR20==2) selected @endif>Cinco</option>
-    <option value=7 @if($Encuesta->NCR20==3) selected @endif>Seis o más</option>
-    
+    <option value=1 @if($Encuesta->NCRA20==1) selected @endif>Menos de un año</option>
+    <option value=2 @if($Encuesta->NCRA20==2) selected @endif>Un año</option>
+    <option value=3 @if($Encuesta->NCRA20==2) selected @endif>Dos</option>
+    <option value=4 @if($Encuesta->NCRA20==2) selected @endif>Tres</option>
+    <option value=5 @if($Encuesta->NCRA20==2) selected @endif>Cuatro</option>
+    <option value=6 @if($Encuesta->NCRA20==2) selected @endif>Cinco</option>
+    <option value=7 @if($Encuesta->NCRA20==3) selected @endif>Seis o más</option>    
 </select>
     <h2 class="reactivo">39.- ¿Cuantos trabajos tiene actualmente?  </h2>
     
@@ -565,8 +565,8 @@ Especifique:</h2>
         <option value=2 @if($Encuesta->NCR23==2) selected @endif>Más de 3 y hasta 6 meses</option> 
         <option value=3 @if($Encuesta->NCR23==3) selected @endif>Más de 6 y hasta un año</option> 
         <option value=4 @if($Encuesta->NCR23==4) selected @endif>Más de un año</option> 
-    <option value=0  hidden></option>   
-</select>
+        <option value=0  hidden></option>   
+    </select>
       
   </div>
 
@@ -582,7 +582,7 @@ Especifique:</h2>
  <option value=4  @if($Encuesta->NDR17==4) selected @endif>Más de seis</option>
  <option value=5  @if($Encuesta->NDR17==5) selected @endif>Ninguno</option>
  <option value=0  hidden></option>   
-</select>
+</select>cd ..
 
  <h2 class="reactivo">  Desde su inserción al campo laboral a la fecha, considera que su situación, con relación a el:</h2>
 
@@ -904,7 +904,7 @@ Especifique:</h2>
   <h2 class="reactivo">  
 117.- Para el desempeño de su o sus trabajo ¿Qué nivel de dominio del idioma inglés requiere de las siguientes habilidades?
 <br></h2>
-<select class="select" id="g13"  name="ngr13" onchange="bloquear('g13',[2],[ngr13a,ngr13b,ngr13c,ngr13d])" >
+<select class="select" id="g13"  name="ngr13" onchange="bloquear('g13',[11],[ngr13,ngr13b,ngr13c,ngr13d])" >
 	      <option value="" selected="selected"></option>
         <option value=12 @if($Encuesta->NGR13==12) selected @endif>Sí</option>
         <option value=11 @if($Encuesta->NGR13==11) selected @endif>No</option>
@@ -956,14 +956,12 @@ Comprensión de lectura<br>  </h2>
 
   <h2 class="reactivo">  
 118.- ¿Adquirió o mejoró el dominio de otro idioma, diferente al inglés? </h2>
-<select class="select" id="ngr11a"  name="ngr11a"  onchange="bloquear('ngr11a',[11],[ngr11f, ngr11a])">
+<select class="select" id="ngr11a"  name="ngr11a"  >
     <option value="" selected="selected"></option>
       <option value=11 @if($Encuesta->NGR11==11) selected @endif>No</option>
-      <option value=12 @if($Encuesta->NGR11==12) selected @endif>Sí, en la UNAM </option>
+      <option value=12 @if($Encuesta->NGR11==12) selected @endif>Sí, </option>
       <option value=0 hidden > </option>
       </select>
-
- 
       </div>
     </div>
   <br><br>
@@ -1168,27 +1166,27 @@ function seccionc2(){
   console.log(c1_value);
   switch(c1_value){
     case '1':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19,ngr13,ngr13b,ngr13c,ngr13d, ngr11a];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncra20,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19,ngr13,ngr13b,ngr13c,ngr13d, ngr11a];
       reactivosPorCerrar.forEach(visibilizar);
     break;
     case '2':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19, ngr13,ngr13b,ngr13c,ngr13d, ngr11];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncra20,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19, ngr13,ngr13b,ngr13c,ngr13d, ngr11a];
       reactivosPorCerrar.forEach(visibilizar);
     break;
     case '3':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncra20,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '4':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncra20,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '5':
-      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncra20,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '6':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19,ngr13,ngr13b,ngr13c,ngr13d ,ngr11a];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncra20,ncr20,ncr21_a,ncr22,ncr23,ndr17,ndr18,ndr19,ngr13,ngr13b,ngr13c,ngr13d ,ngr11a];
       reactivosPorCerrar.forEach(ocultar);
     break;
   }
@@ -1215,7 +1213,7 @@ function titulado(){
           console.log("falta "+element.name+"  "+element.value);
           Swal.fire({
   title: 'GUARDAR ENCUESTA',
-  text: 'Estas a punto de guardar una encuesta incompleta, falta'+element.name+' ¿deseas guardarla aun así?',
+  text: 'Estas a punto de guardar una encuesta incompleta, falta: '+element.name+' ¿deseas guardarla aun así?',
   showDenyButton: true,
   showCancelButton: true,
   confirmButtonText: 'Sí, guardar',
@@ -1278,7 +1276,8 @@ function automatico(myRadio) {
   bloquear('ner16',[2],[ner17,ner18]);
   // bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
   // bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
-  bloquear('ngr11a',[11],[ ngr11a,]);
+  // bloquear('ngr11a',[11],[ ngr11a,]);
+  bloquear('g13',[11],[ngr13,ngr13b,ngr13c,ngr13d])
   titulado();
 </script>
 

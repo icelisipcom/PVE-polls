@@ -7,13 +7,13 @@
     <div>-----------------------------------------
         <br><br><br> 
     <a href="{{ route('report','reporte_individual')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
-    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte Individual
+    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte Individual 2019
     </button></a>
     
-    <a href="{{ route('report','correos_inconclusas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
-    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte por encuestador
+    <a href="{{ route('report','reporte_individual_act2014')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte Individual 2014
     </button></a>
-
+    
     
     <a href="{{ route('report','correos_inconclusas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas inconclusas
