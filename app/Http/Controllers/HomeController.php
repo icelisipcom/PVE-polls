@@ -26,7 +26,7 @@ class HomeController extends Controller
         ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
         ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
         ->where('egresados.anio_egreso','=',2019)
-        ->whereNotNull('respuestas2.ngr11f')
+        ->whereNotNull('respuestas2.UTILIZA')
         ->get();
         $carreras=DB::table('muestras')
         ->leftJoin('carreras', function($join)
