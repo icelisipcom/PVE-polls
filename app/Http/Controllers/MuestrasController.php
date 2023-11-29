@@ -8,6 +8,8 @@ use App\Models\Estudio;
 use App\Models\Muestra;
 use DB;
 use App\Models\Egresado;
+use App\Models\respuestas2;
+use App\Models\respuestas14;
 
 use Illuminate\Support\Facades\Auth;
 class MuestrasController extends Controller
@@ -30,5 +32,17 @@ class MuestrasController extends Controller
     $Muestra=Muestra::find($id);
     $Egresados=Egresado::where('carrera','=',$Muestra->carrera_id)->where('plantel','=',$Muestra->plantel_id)->get();
     return view('muestras.show',compact('Egresados','Muestra'));
+}
+
+
+public function index_14(){
+
+$carreras=respuestas14::select('carrera','plantel')->distinct()->get();
+
+return view('muestras.act14.index',compact('carreras'));
+}
+public function index_20(){
+  return view('muestras.seg20.index');
+
 }
 }

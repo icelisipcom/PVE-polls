@@ -24,7 +24,11 @@ Route::group(['middleware' => ['auth']], function()
 {   
 
 Route::resource('muestras', MuestrasController::class);
+
+Route::get('muestras14/index', [MuestrasController::class,'index_14'])->name('muestras14.index');
+Route::get('muestras20/index', [MuestrasController::class,'index_20'])->name('muestras20.index');
 Route::resource('encuestas', EncuestasController::class);
+
 Route::get('/encuestas/2014/show/{id}', [App\Http\Controllers\EncuestasController::class, 'show_14'])->name('encuestas.show_14');
 
 Route::post('/encuestas/real_update/{id}', [App\Http\Controllers\EncuestasController::class, 'update2'])->name('encuestas.real_update');

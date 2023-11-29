@@ -730,7 +730,7 @@ Especifique:</h2>
 
     <h2 class="reactivo">  
     ¿Cuál? </h2>
-    <INPUT   id="ner10a" name="ner10a" TYPE=TEXT class="texto"  value=" " SIZE=60 MAXLENGTH=60 >
+    <INPUT   id="ner10a" name="ner10a" TYPE=TEXT class="texto"  value=" " SIZE=100 MAXLENGTH=60 >
    
     <h2 class="reactivo"> 
     <TD width=30%>73a).- ¿Ya se graduó? </h2>

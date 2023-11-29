@@ -647,7 +647,7 @@ public function show_14($id){
         
     }
     $Carrera=Carrera::where('clave_carrera','=',$Encuesta->NBR2)->first()->carrera;
-    $Plantel=Carrera::where('clave_plantel','=',$Encuesta->NBR1)->first()->plantel;
+    $Plantel=Carrera::where('clave_plantel','=',$Encuesta->NBR3)->first()->plantel;
     $Comentario=''.comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     
     return view('encuesta.show_14',compact('Encuesta','Carrera','Plantel','Comentario'));
