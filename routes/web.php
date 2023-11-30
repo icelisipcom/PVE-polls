@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth']], function()
 Route::resource('muestras', MuestrasController::class);
 
 Route::get('muestras14/index', [MuestrasController::class,'index_14'])->name('muestras14.index');
+Route::get('muestras14/show/{carrera}/{plantel}', [MuestrasController::class,'show_14'])->name('muestras14.show');
+
 Route::get('muestras20/index', [MuestrasController::class,'index_20'])->name('muestras20.index');
 Route::resource('encuestas', EncuestasController::class);
 
@@ -42,10 +44,14 @@ Route::get('/encuestas/verify/{id}', [App\Http\Controllers\EncuestasController::
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/2014_act', [App\Http\Controllers\HomeController::class, '2014_act'])->name('2014_act');
 Route::get('/2019', [App\Http\Controllers\HomeController::class, 'encuesta_2019'])->name('2019');
-Route::get('/aviso', [App\Http\Controllers\HomeController::class, 'aviso'])->name('aviso');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');
 Route::post('/resultado', [App\Http\Controllers\HomeController::class, 'resultado'])->name('resultado');
+Route::get('/aviso', [App\Http\Controllers\HomeController::class, 'aviso'])->name('aviso');
 Route::post('/enviar_aviso', [App\Http\Controllers\HomeController::class, 'enviar_aviso'])->name('enviar_aviso');
+
+Route::get('/invitacion', [App\Http\Controllers\HomeController::class, 'invitacion'])->name('invitacion');
+Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, 'enviar_invitacion'])->name('enviar_invitacion');
+
 Route::get('/reporte/{report}', [App\Http\Controllers\ReportController::class, 'generate'])->name('report');
 
 });

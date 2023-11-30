@@ -41,6 +41,13 @@ $carreras=respuestas14::select('carrera','plantel')->distinct()->get();
 
 return view('muestras.act14.index',compact('carreras'));
 }
+
+public function show_14($carrera,$plantel){
+  $muestra=respuestas14::where('carrera','=',$carrera)->where('plantel','=',$plantel)->get();
+  // dd($muestra);
+  return view('muestras.act14.show',compact('muestra'));
+}
+
 public function index_20(){
   return view('muestras.seg20.index');
 

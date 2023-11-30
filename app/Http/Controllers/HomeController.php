@@ -109,6 +109,11 @@ class HomeController extends Controller
         return view('aviso');
     
     }
+    public function invitacion(){
+      
+        return view('invitacion');
+    
+    }
     public function buscar(){
         return view('buscar');
     
@@ -146,5 +151,17 @@ class HomeController extends Controller
            return redirect()->route('aviso');
     
     }
+    public function enviar_invitacion(Request $request){
+      
+        $caminoalpoder=public_path();
+        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/correo_prueba.py',$request->nombre,$request->correo]);
+        $process->run();
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+        $data = $process->getOutput();
+        return redirect()->route('aviso');
+ 
+ }
 }
 

@@ -104,7 +104,7 @@ worksheet.write('F8','Plantel',header_format)
 
 for i in range(0,len(encuestas)):
     worksheet.write('B'+str(i+9),encuestas['CUENTA'].values[i],blue_content)
-    worksheet.write('C'+str(i+9),str(encuestas['FEC_CAPT'].values[i]),date_content)
+    worksheet.write('C'+str(i+9),str(encuestas['FEC_CAPT'].values[i])[0:10],date_content)
     worksheet.write('D'+str(i+9),encuestas['APLICA'].values[i],blue_content)
     worksheet.write('E'+str(i+9),encuestas['carrera'].values[i],blue_content)
     worksheet.write('F'+str(i+9),encuestas['plantel'].values[i],blue_content)
