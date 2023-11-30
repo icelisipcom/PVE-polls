@@ -34,7 +34,6 @@ class HomeController extends Controller
                              $join->on('carreras.clave_carrera', '=', 'muestras.carrera_id');
                              $join->on('carreras.clave_plantel', '=', 'muestras.plantel_id');                             
                          })
-       
         ->get();
         
         $requeridas=0;
@@ -107,13 +106,13 @@ class HomeController extends Controller
     public function aviso(){
       
         return view('aviso');
-    
     }
+
     public function invitacion(){
       
         return view('invitacion');
-    
     }
+
     public function buscar(){
         return view('buscar');
     
@@ -161,7 +160,6 @@ class HomeController extends Controller
         }
         $data = $process->getOutput();
         return redirect()->route('aviso');
- 
  }
 }
 

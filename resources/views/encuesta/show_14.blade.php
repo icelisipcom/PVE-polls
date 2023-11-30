@@ -920,7 +920,6 @@ Comprensión auditiva<br></h2>
         <option value=14 @if($Encuesta->NGR13A==14) selected @endif>No es necesario</option>
         <option value=0 hidden > </option>
       </select>
-
      <h2 class="reactivo">
 Comprensión de lectura<br>  </h2>
      <select class="select" id="ngr13b"  name="ngr13b" >
