@@ -146,7 +146,7 @@ def AvisoPrivacidad(nombre,you):
                                                 </tbody>
                                               </table>
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                Pr&#243;ximamente nos ponemos en contacto contigo a trav&#233;s del correo electr&#243;nico o por medio de nuestros operadores telef&#243;nicos  mediante el numero:
+                                                Pr&#243;ximamente nos ponemos en contacto con usted a trav&#233;s del correo electr&#243;nico o por medio de nuestros operadores telef&#243;nicos  mediante el numero:
                                               </p>
                                               <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                 <tbody>
