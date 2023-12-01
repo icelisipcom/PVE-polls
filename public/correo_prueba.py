@@ -69,10 +69,10 @@ def AvisoPrivacidad(nombre,you):
                                                 <tbody>
                                                   <tr>
                                                     <td class="col" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; padding-right: 24px; margin: 0;" align="left" valign="top">
-                                                      <img class="img-fluid" src="https://www.pveu.unam.mx/images/logoPVE.png" alt="Some Image" style="width: 25.0vw; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; max-width: 100%; border-style: none; border-width: 0;" width="100%">
+                                                      <img class="img-fluid" src="https://www.pveu.unam.mx/images/logoPVE.png" alt="Some Image" width="80%" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; max-width: 100%; width: 100%; border-style: none; border-width: 0;">
                                                     </td>
-                                                    <td class="col-8" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; padding-right: 24px; width: 66.666667%; margin: 0;" align="left" valign="top">
-                                                      <h1 class="h3" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 28px; line-height: 33.6px; margin: 0;" align="left">PROGRAMA DE VINCULACION A EGRESADOS Y ACADEMICOS JUBILADOS DE LA UNAM</h1>
+                                                    <td class="col-9" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; padding-right: 24px; width: 75%; margin: 0;" align="left" valign="top">
+                                                      <h1 class="h3  text-center" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 28px; line-height: 33.6px; margin: 0;" align="center">PROGRAMA DE VINCULACION CON EGRESADOS Y ACADEMICOS JUBILADOS DE LA UNAM</h1>
                                                       <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                         <tbody>
                                                           <tr>
@@ -87,7 +87,8 @@ def AvisoPrivacidad(nombre,you):
                                                 </tbody>
                                               </table>
                                             </div>
-                                            <h5 class="text-teal-700" style="color: #13795b; padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;" align="left">Here is a very simple email using Bootstrap Email</h5>
+                                            <br>
+                                            <h5 class="text-700" style="color: #b68a11; padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;" align="left">Le invitamos a actualizar o registrar sus datos como egresado de la UNAM</h5>
                                             <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                               <tbody>
                                                 <tr>
@@ -115,21 +116,10 @@ def AvisoPrivacidad(nombre,you):
                                               </tbody>
                                             </table>
                                             <div class="space-y-3">
-                                              <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">Click the "Render" button at the top of the page every time you want to rebuild the email.</p>
-                                              <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
-                                                <tbody>
-                                                  <tr>
-                                                    <td style="line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;" align="left" width="100%" height="12">
-                                                      &#160;
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                We hope you enjoy using Bootstrap Email. This is our Online Editor that allows you to edit emails
-                                                and have them render directly in the browser. The outputted HTML will be in the "HTML" tab in the top
-                                                and that is the HTML you want to use to send emails. All the styles and responsive CSS are self contained in the
-                                                HTML that is generated making is very portable needing no external CSS files.
+                                                La Universidad Nacional Autonoma de M&#233;xico a tr&#225;ves de su programa de vinculaci&#243;n, le invita a 
+                                                mantener el contacto con la institucion, pudiendo asi recibir informacion importante, asi como los boletines digitales que emite nuestro progrma, adem&#225;s de poder participar
+                                                en los distintos estudios de seguimiento que se realizan continuamente.
                                               </p>
                                               <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                 <tbody>
@@ -141,19 +131,7 @@ def AvisoPrivacidad(nombre,you):
                                                 </tbody>
                                               </table>
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                You can use the "Test" button to email yourself the outputted code to test in your inbox and email client.
-                                              </p>
-                                              <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
-                                                <tbody>
-                                                  <tr>
-                                                    <td style="line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;" align="left" width="100%" height="12">
-                                                      &#160;
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                              <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                Check out the <a href="https://bootstrapemail.com/docs/introduction" target="_blank" style="color: #0d6efd;">Documentation</a> for syntax and usage of writing emails with Bootstrap Email.
+                                                Tambien le invitamos a conocer los resultados estadisticos en la pagina del programa, y a conocer los distintos beneficios de la credencial de egresados.
                                               </p>
                                             </div>
                                             <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
@@ -182,15 +160,35 @@ def AvisoPrivacidad(nombre,you):
                                                 </tr>
                                               </tbody>
                                             </table>
-                                            <table class="btn btn-primary" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-radius: 6px; border-collapse: separate !important;">
-                                              <tbody>
-                                                <tr>
-                                                  <td style="line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;" align="center" bgcolor="#0d6efd">
-                                                    <a href="https://app.bootstrapemail.com/templates" target="_blank" style="color: #ffffff; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; background-color: #0d6efd; padding: 8px 12px; border: 1px solid #0d6efd;">Get More Email Templates</a>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
+                                            <div style="display: flex; justify-content: space-between;">
+                                              <table class="btn" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-radius: 6px; border-collapse: separate !important;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td style="line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;" align="center">
+                                                      <a style="background-color: #b39648; color: white; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; padding: 8px 12px; border: 1px solid transparent;" href="https://registro.pveu.unam.mx/" target="_blank">REGISTRA TUS DATOS</a>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                              <table class="btn" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-radius: 6px; border-collapse: separate !important;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td style="line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;" align="center">
+                                                      <a style="background-color: #b39648; color: white; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; padding: 8px 12px; border: 1px solid transparent;" href="https://www.pveu.unam.mx/aviso-de-privacidad.php" target="_blank">AVISO DE PRIVACIDAD</a>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                              <table class="btn" role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-radius: 6px; border-collapse: separate !important;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td style="line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;" align="center">
+                                                      <a style="background-color: #b39648; color: white; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; padding: 8px 12px; border: 1px solid transparent;" href="https://www.pveu.unam.mx/seguimiento.php#estadistica/" target="_blank">VER ESTADISTICAS</a>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
                                           </td>
                                         </tr>
                                       </tbody>
