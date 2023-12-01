@@ -72,7 +72,7 @@ def AvisoPrivacidad(nombre,you):
                                                       <img class="img-fluid" src="https://i0.wp.com/www.atmosfera.unam.mx/wp-content/uploads/2019/06/unam-escudo-azul.png?ssl=1" alt="Some Image" width="80%" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; max-width: 100%; width: 100%; border-style: none; border-width: 0;">
                                                     </td>
                                                     <td class="col-8" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; padding-right: 24px; width: 66.666667%; margin: 0;" align="left" valign="top">
-                                                      <h1 class="h4  text-center" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="center">PROGRAMA DE VINCULACION CON EGRESADOS Y ACADEMICOS JUBILADOS DE LA UNAM</h1>
+                                                      <h1 class="h4  text-center" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="center">PROGRAMA DE VINCULACI&#211;N CON EGRESADOS Y ACAD&#201;MICOS JUBILADOS DE LA UNAM</h1>
                                                       <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                         <tbody>
                                                           <tr>
@@ -120,9 +120,9 @@ def AvisoPrivacidad(nombre,you):
                                             </table>
                                             <div class="space-y-3">
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                La Universidad Nacional Aut&#243;noma de M&#233;xico a trav&#233;s de su programa de vinculaci&#243;n, le invita a 
-                                                mantener el contacto con la instituci&#243;n, pudiendo as&#237; recibir informaci&#243;n importante, as&#237; como los boletines digitales que emite nuestro programa, adem&#225;s de poder participar
-                                                en los distintos estudios de seguimiento que se realizan continuamente.
+                                                La Universidad Nacional Aut&#243;noma de M&#233;xico, a trav&#233;s de su Programa de Vinculaci&#243;n, le invita a 
+                                                mantener el contacto con la Instituci&#243;n, pudiendo as&#237; recibir informaci&#243;n importante como los boletines digitales que emite nuestro programa, adem&#225;s de poder participar
+                                                en los distintos estudios de seguimiento de egresados que se realizan continuamente.
                                               </p>
                                               <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                 <tbody>
@@ -134,7 +134,7 @@ def AvisoPrivacidad(nombre,you):
                                                 </tbody>
                                               </table>
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                Tambi&#233;n le invitamos a conocer los resultados estad&#237;sticos en la p&#225;gina del programa, y a conocer los distintos beneficios de la credencial de egresados.
+                                                Tambi&#233;n le invitamos a conocer los resultados estad&#237;sticos del seguimiento en la p&#225;gina y los distintos beneficios que ofrece la credencial de egresados.
                                               </p>
                                               <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                 <tbody>
@@ -146,7 +146,19 @@ def AvisoPrivacidad(nombre,you):
                                                 </tbody>
                                               </table>
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
-                                                Pr&#243;ximamente nos ponemos en contacto contigo a trav&#233;s del correo electr&#243;nico o por medio de nuestros operadores telef&#243;nicos  mediante el numero 5556226000.
+                                                Pr&#243;ximamente nos ponemos en contacto contigo a trav&#233;s del correo electr&#243;nico o por medio de nuestros operadores telef&#243;nicos  mediante el numero:
+                                              </p>
+                                              <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                                <tbody>
+                                                  <tr>
+                                                    <td style="line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;" align="left" width="100%" height="12">
+                                                      &#160;
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                              <p class="text-black-1000" style="font-weight: bold; line-height: 24px; font-size: 16px; width: 100%; margin: 0;" align="left">
+                                                5556226000.
                                               </p>
                                             </div>
                                             <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
@@ -198,7 +210,7 @@ def AvisoPrivacidad(nombre,you):
                                                 <tbody>
                                                   <tr>
                                                     <td style="line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;" align="center">
-                                                      <a style="background-color: #b39648; color: white; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; padding: 8px 12px; border: 1px solid transparent;" href="https://www.pveu.unam.mx/seguimiento.php#estadistica/" target="_blank">VER ESTADISTICAS</a>
+                                                      <a style="background-color: #b39648; color: white; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; padding: 8px 12px; border: 1px solid transparent;" href="https://www.pveu.unam.mx/seguimiento.php#estadistica/" target="_blank">ESTAD&#205;STICAS</a>
                                                     </td>
                                                   </tr>
                                                 </tbody>
@@ -240,7 +252,8 @@ def AvisoPrivacidad(nombre,you):
       </tbody>
     </table>
   </body>
-</html>"""
+</html>
+"""
 
 # Record the MIME types of both parts - text/plain and text/html.
     part1 = MIMEText(text, 'plain')
