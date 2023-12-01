@@ -121,7 +121,7 @@ def AvisoPrivacidad(nombre,you):
                                             <div class="space-y-3">
                                               <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">
                                                 La Universidad Nacional Aut&#243;noma de M&#233;xico, a trav&#233;s de su Programa de Vinculaci&#243;n, le invita a 
-                                                mantener el contacto con la Instituci&#243;n, pudiendo as&#237; recibir informaci&#243;n importante como los boletines digitales que emite nuestro programa, adem&#225;s de poder participar
+                                                mantener el contacto con la Instituci&#243;n, pudiendo as&#237; recibir informaci&#243;n importante como los boletines digitales que emite nuestro Programa, adem&#225;s de poder participar
                                                 en los distintos estudios de seguimiento de egresados que se realizan continuamente.
                                               </p>
                                               <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
