@@ -108,7 +108,6 @@ header_format = workbook.add_format({
     'border_color':'white',
     'font_color': 'white',
     'border': 1,
-    
     'font_size':12})
 blue_content = workbook.add_format({
     'border': 1,

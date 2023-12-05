@@ -158,6 +158,7 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxl
 <option value=26 @if($Encuesta->NAR14==26) selected @endif >Vendedores ambulantes</option>
 <option value=36 @if($Encuesta->NAR14==36) selected @endif >No trabaja</option>
 <option value=37 @if($Encuesta->NAR14==37) selected @endif >No lo sabe</option>
+<option value=44 @if($Encuesta->NAR14==44) selected @endif >Trabajadores en actividades elementales y de apoyo</option>
 <option value=38 @if($Encuesta->NAR14==38) selected @endif >Otra(Especifíque)</option>
 <option value=0  hidden></option>     
 </select>

@@ -41,7 +41,6 @@
 @push('js')
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 <script>
- 
   console.log('script jalando ¿?');
   $(document).ready(function() {
     $('#myTable').DataTable();
