@@ -42,6 +42,51 @@ bottom: 0;
 overflow: auto;
 }
 </style>
+<style>
+    .dataTables_filter {
+  position: relative;
+  background: transparent;
+  color: {{ Auth::user()->color}};
+}
+
+.dataTables_filter input {
+  width: 10.9vw;
+  height: 2.9vw;
+  /* background: var(--primary); */
+  border: 1px solid rgba(255, 255, 255, 0.937);
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  text-indent: 10px;
+  font-color: {{ Auth::user()->color}};
+  font-size: 1.3vw;
+}
+ 
+.dataTables_filter {
+  aling: center;
+  size: 40px;
+   color: {{ Auth::user()->color}};
+
+}
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background:  {{ Auth::user()->color}} !important;
+  color: white!important;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  font-size: 1.9vw;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background:  white!important;
+  color: #9e7205!important;
+  weight: bolder;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+}
+ 
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+  background: #f9b70f9d!important;
+  color: white!important;
+}
+</style>
      @stack('css')
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

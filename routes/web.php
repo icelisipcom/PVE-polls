@@ -32,6 +32,9 @@ Route::get('muestras20/index', [MuestrasController::class,'index_20'])->name('mu
 Route::resource('encuestas', EncuestasController::class);
 
 Route::get('/encuestas/2014/show/{id}', [App\Http\Controllers\EncuestasController::class, 'show_14'])->name('encuestas.show_14');
+Route::get('/encuestas/2014/recados/{id}', [App\Http\Controllers\RecadosController::class, 'recado_14'])->name('encuestas.recado_14');
+
+Route::post('/encuestas/2014/marcar/{id}', [App\Http\Controllers\RecadosController::class, 'marcar_14'])->name('marcar_14');
 
 Route::post('/encuestas/real_update/{id}', [App\Http\Controllers\EncuestasController::class, 'update2'])->name('encuestas.real_update');
 Route::post('/encuestas/2014/real_update/{id}', [App\Http\Controllers\EncuestasController::class, 'update14'])->name('encuestas14.real_update');

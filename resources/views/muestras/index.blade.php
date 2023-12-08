@@ -9,11 +9,11 @@
     <center >
   <a href="{{route('muestras20.index')}}">
     <button class='btn mybutton' >
-       <br><br>ENCUESTA DE ACTUALIZACION 2014 <br><br><br>
+       <br><br>ENCUESTA DE SEGUIMIENTO 2020 <br><br><br>
     </button></a>
   <a href="{{route('muestras14.index')}}">
     <button class='btn mybutton' >
-       <br><br>ENCUESTA DE SEGUIMIENTO 2014 <br><br><br>
+       <br><br>ENCUESTA DE ACTUALIZACION 2014 <br><br><br>
     </button></a>
    
   

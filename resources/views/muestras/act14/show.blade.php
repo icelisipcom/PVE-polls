@@ -16,18 +16,21 @@
             <th>Telefono <br> Trabajo</th>
             <th>Telefono <br> Casa</th>
             <th>Correo</th>
+            <th>llamadas</th>
             <th> </th>
           </tr>
           </thead>
           <tbody>
             @foreach($muestra as $e)
-            <tr>
+            <tr style="background-color: {{$e->color}};">
                 <td>{{$e->nombre}} {{$e->PATERNO}} {{$e->materno}}</td>
                 <td>{{$e->CUENTA}} </td>
                 <td>{{$e->TELTRA}} </td>
                 <td>{{$e->TELCASA}} </td>
                 <td style="word-wrap:break-word;">{{$e->NAR1_A}} </td>
-                <td><a href="{{route('encuestas.show_14',$e->REGISTRO)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Hacer encuesta </button></a></td>
+                <td>{{$e->llamadas}} </td>
+                <td><a href="{{route('encuestas.show_14',$e->REGISTRO)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw">Hacer Encuesta </button></a>
+              <br><a href="{{route('encuestas.recado_14',$e->REGISTRO)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;  margin: 0.1vw">Dejar Recado </button></a></td>
             </tr>
             @endforeach
           </tbody>

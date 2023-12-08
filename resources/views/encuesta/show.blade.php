@@ -438,7 +438,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
  <h2 class="reactivo"> 22.- Nombre de la empresa o institución donde trabaja </h2>
  <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->ncr2}}" size="220" maxlength="220"  >
     
-    <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
+  <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
 
 
 <select class="select" id="ncr2a"  name="ncr2a" > 

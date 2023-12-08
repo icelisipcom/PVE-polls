@@ -4,15 +4,13 @@
 
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}" id='cuerpo' style="scroll-behavior: smooth;">
 
-
 <div style="padding:30px;" id='datos'>
     <h1 class="text-white-50">
                  @if(!is_null($Encuesta->cuenta))
                  COMPLETAR ENCUESTA 2014 @else
                  HACER NUEVA ENCUESTA 2014 @endif </h1>
         <h1 class="text-white-50"> </h1>
-        <div >
-        
+        <div >  
         <table class="table text-xl">
           <TR>
             <td>Egresad@: </td>
@@ -47,7 +45,7 @@
       <h1 class="seccion">DATOS PERSONALES</h1>
 
       <h2 class="reactivo">FECHA EN QUE SE CAPTURA </h2> 
-    <!--   -------FECHA DE NACIMIENTO-->
+    <!--------FECHA DE NACIMIENTO-->
     <center>
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradioa" autocomplete="off" checked onclick="automatico();">

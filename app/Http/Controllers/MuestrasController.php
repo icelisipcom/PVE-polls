@@ -44,7 +44,27 @@ return view('muestras.act14.index',compact('carreras'));
 
 public function show_14($carrera,$plantel){
   $muestra=respuestas14::where('carrera','=',$carrera)->where('plantel','=',$plantel)->get();
-  // dd($muestra);
+  foreach($muestra as $m){
+    $color='';
+    switch ($m->status) {
+      
+      case 3:
+          $color="rgba(245, 66, 66, 0.5)";
+          break;
+      case 4:
+        $color="rgba(147, 66, 245,0.5)";
+          break;
+      case 5:
+        $color="rgba(64, 64, 64,0.5)";
+          break;
+      case 6:
+        $color="rgba(59, 173, 196,0.5)";
+          break;
+  }
+  $m->color=$color;
+}
+ 
+  $muestra=collect($muestra);
   return view('muestras.act14.show',compact('muestra'));
 }
 

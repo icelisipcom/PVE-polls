@@ -10,7 +10,6 @@
                     <thead>
                        
                         <tr class="text-center">
-                            
                             <th>Plantel</th>
                             <th >Carrera</th>
                             <th>Telefonicas</th>
@@ -58,8 +57,8 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
-@stop
 
+@stop
 
 @push('js')
 
