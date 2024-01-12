@@ -15,8 +15,6 @@
     <button class='btn mybutton' >
        <br><br>ENCUESTA DE ACTUALIZACION 2014 <br><br><br>
     </button></a>
-   
-  
   </center>
 
 

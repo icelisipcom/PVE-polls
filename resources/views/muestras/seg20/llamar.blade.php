@@ -7,13 +7,21 @@
     <span class="badge badge-pill badge-primary" style="background-color: transparent" id="pildora"><h1 class="text-back-50">{{$Egresado->nombre}} {{$Egresado->PATERNO}} {{$Egresado->materno}}  </h1>
     </span>
     <h1 class="text-white-40" id="info">{{$Egresado->carrera}} {{$Egresado->plantel}}  </h1>
-        <h1 class="text-white-40" id="layer"> Dejar un recado </h1>
+        <h1 class="text-white-35" id="layer"> NUMEROS DE TELEFONO </h1>
+
     </div>
-    <form action="{{ route('marcar_14',$Egresado->REGISTRO)}}" method="POST" enctype="multipart/form-data">
+
+    <div class='col'>
+        @foreach($Telefonos as $telefono)
+        <div class="container">
+  
+  <button type="button" class="btn btn-info" id="{{'tel_button'.$telefono->id}}"data-toggle="collapse" style="background-color: #40409A"  data-target="{{'#demo'.$telefono->id}}">   <h1 class="text-white-35"> {{$telefono->telefono}} </h1></button>
+  <div id="{{'demo'.$telefono->id}}" class="collapse" style="background-color: rgba(0,0,0,0.2)">
+  <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
     <label for="exampleInputEmail1">Selecciona un código de color</label>
-    <select name="code" id="code" class="select" style="color: #f0f0f0" onchange="codigo()">
+    <select name="code" id="{{'code'.$telefono->id}}" class="select" style="color: #f0f0f0" onchange="codigo({{$telefono->id}})">
         <option value=""> </option>
         <option style="background-color: #f54242" value="3" @if($Egresado->status == 3) selected @endif>Llamar en un horario específico </option>
         <option style="background-color: #9342f5" value="4" @if($Egresado->status == 4) selected @endif>Ya no quiere que le llamemos</option>
@@ -37,10 +45,12 @@
     </thead>
     <tbody>
         @foreach($Recados as $r)
+        @if($r->tel_id == $telefono->id)
         <tr style="background-color: {{$r->color}};">
             <td> {{$r->recado}} </td>
             <td> {{$r->fecha}} </td>
         </tr>
+        @endif
         @endforeach
     </tbody>
 </table>
@@ -54,62 +64,67 @@
   <div class='row'>
     <div class='col'>
     <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Marcar y guardar recado</button>
-    </div>
-    <div class='col'>
-    <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-danger btn-lg">  <i class="fas fa-times"></i> Cancelar</button>
-    </div>
+    </div>    
   </div>
   
-  </form>
+  </form></div>
+</div>
+        <br>
+        @endforeach
+        
+    </div>
+
+    
 </div>
 @stop
 
 @section('css')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
 @stop
 
 @push('js')
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-function change_color(color){
+function change_color(color,tel_id){
     document.getElementById('pildora').style.backgroundColor=color;
-    document.getElementById('code').style.backgroundColor=color;
+    document.getElementById('code'+tel_id).style.backgroundColor=color;
+    document.getElementById('tel_button'+tel_id).style.backgroundColor=color;
     document.getElementById('pildora').style.color='white';
     document.getElementById('layer').style.color=color;
     document.getElementById('info').style.color=color;
 }
-function codigo(){
-    valor=document.getElementById('code').value;
-    console.log(valor);
+function codigo(tel_id){
+    id_codigo='code'+(tel_id);
+    console.log(id_codigo)
+    valor=document.getElementById(id_codigo).value;
+    console.log(valor,tel_id);
     switch (valor) {
   case '3':
-    change_color('#f54242');
+    change_color('#f54242',tel_id);
     break;
     case '4':
-    change_color('#9342f5');
+    change_color('#9342f5',tel_id);
     break;
     case '5':
-    change_color('#6c6b6b');
+    change_color('#6c6b6b',tel_id);
     break;
     case '6':
-    change_color('#3badc4');
+    change_color('#3badc4',tel_id);
     break;
     case '7':
-    change_color('#db8560');
+    change_color('#db8560',tel_id);
     break;
   
  
 }
 
 }
-codigo();
 </script>
 <script>
- 
+
   console.log('script jalando ¿?');
-  $(document).ready(function() {
-    $('#myTable').DataTable();
-} );
+ 
  </script>
 @endpush

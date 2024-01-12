@@ -70,11 +70,9 @@ class HomeController extends Controller
         $aplica_chart = LarapexChart::barChart()
         ->setTitle('Conteo por encuestador')
         ->setSubtitle('enc2019 vs enc2014 actualizacion')
-      
          ->addData('2019', [$moni, $ere,$cesar,$eli,$ivon])
          ->addData('2014', [$moni14, $ere14,$cesar14,$eli14,$ivon14])
          ->setColors(['#D1690E', '#EB572F'])
-         
          ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne']);
     
          

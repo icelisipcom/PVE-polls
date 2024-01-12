@@ -9,7 +9,6 @@ from datetime import date
 
 today = date.today()
 load_dotenv()
-
 #configurar la conexion a la base de datos
 DB_USERNAME = os.getenv('DB_USERNAME')
 DB_DATABASE = os.getenv('DB_DATABASE')
@@ -32,8 +31,9 @@ encuestas=pd.read_sql("""select respuestas2.aplica, egresados.cuenta, respuestas
                         
                         where (respuestas2.UTILIZA is not null or respuestas2.ngr11f is not null) and egresados.anio_egreso=2019""",cnx)
 
-ClavesNombres = {'17': 'Erendira', '12':'Mónica', '15':'César', '20':'María', '21':'Ivonne',
+ClavesNombres = {'17': 'Erendira', '12':'Mónica', '15':'César', '20':'María', '21':'Ivonne','8':'Elia','7':'otra monica','6':'Silvia','9':'Veronica',
                              '14':'Alberto','18':'Daniela','19':'Elvira','13':'Carolina','22':'Elizabeth'}
+
 def mapeo(x):
     if(x==None):
         return 'INTERNET'
@@ -72,7 +72,6 @@ header_format = workbook.add_format({
     'border_color':'white',
     'font_color': 'white',
     'border': 1,
-    
     'font_size':12})
 blue_content = workbook.add_format({
     'border': 1,

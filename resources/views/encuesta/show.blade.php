@@ -2665,7 +2665,7 @@ body {
     hide_all();
     document.getElementById(sec).style.display='block';
     document.getElementById(sec+'btn').style.backgroundColor="{{Auth::user()->color}}";
-    console.log(document.getElementById(sec+'btn').style.color)
+    console.log(document.getElementById(sec+'btn').style.color);
     document.getElementById(sec+'txt').style.color="white";
 //     var el = document.querySelector('#cuerpo');
 //     window.scrollTo(888, 1000);
@@ -2797,6 +2797,7 @@ function deportes(){
 }
 function autoempleo(){
   bloquear('ncr6a2',[4],[ncr6a,ncr6otra]);
+  console.log('autoempleo');
   bloquear('ncr6a2',[2],[ncr6otra]);
 }
  </script>
@@ -2866,7 +2867,7 @@ function automatico(myRadio) {
   bloquear('nar8',[1],[nar11,nar14])
   funcion_ndr2();
   bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
-  var d15={{$Encuesta->ndr15}};
+  var d15='{{$Encuesta->ndr15}}';
   //Get select object
 var selectObj = document.getElementById("ndr15");
 
