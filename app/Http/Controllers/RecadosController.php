@@ -10,6 +10,7 @@ use App\Models\Carrera;
 use App\Models\Comentario;
 use App\Models\Recado;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Telefono;
 use Illuminate\Http\Request;
 
@@ -68,6 +69,8 @@ class RecadosController extends Controller
       $Recado->status=$request->code;
       $Recado->tel_id=$telefono->id;
       $Recado->cuenta=$Egresado->cuenta;
+      
+      $Recado->user_id=Auth::user()->id;
       $Recado->fecha=now()->modify('-6 hours');
       $Recado->save();
 
@@ -75,8 +78,9 @@ class RecadosController extends Controller
       $Egresado->status=$request->code;
       $Egresado->llamadas=$Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get()->count();
       $Egresado->save();
-
-     
+      
+      $telefono->status=$request->code;
+      $telefono->save();
       return redirect()->route('muestras20.show',[$Egresado->carrera,$Egresado->plantel]);
       }
 }
