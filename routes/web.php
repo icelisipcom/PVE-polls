@@ -46,13 +46,14 @@ Route::get('/encuestas/2014/recados/{id}', [App\Http\Controllers\RecadosControll
 Route::post('/encuestas/2014/marcar/{id}', [App\Http\Controllers\RecadosController::class, 'marcar_14'])->name('marcar_14');
 Route::post('/encuestas/2020/marcar/{telid}/{egid}', [App\Http\Controllers\RecadosController::class, 'marcar_20'])->name('marcar_20');
 
-Route::post('/encuestas/real_update/{id}', [App\Http\Controllers\EncuestasController::class, 'update2'])->name('encuestas.real_update');
+Route::post('/encuestas/real_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'update2'])->name('encuestas.real_update');
 Route::post('/encuestas/2014/real_update/{id}', [App\Http\Controllers\EncuestasController::class, 'update14'])->name('encuestas14.real_update');
 Route::get('/encuestas/json/{id}', [App\Http\Controllers\EncuestasController::class, 'json'])->name('encuestas.json');
 
 Route::get('/enc2019_make', [App\Http\Controllers\EncuestasController::class, 'index'])->name('encuestas.make19');
 Route::get('/enc2020_actualizar/{cuenta}/{carrera}', [App\Http\Controllers\Encuesta20Controller::class, 'act_data'])->name('encuesta20.act_data');
 Route::get('/comenzar_encuesta_2020/{correo}/{cuenta}/{carrera}', [App\Http\Controllers\Encuesta20Controller::class, 'comenzar'])->name('comenzar_encuesta_2020');
+Route::get('/encuestas_2020/edit/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'edit'])->name('edit_20');
 
 Route::get('/encuestas/verify/{id}', [App\Http\Controllers\EncuestasController::class, 'verificar'])->name('encuestas.verificar');
 

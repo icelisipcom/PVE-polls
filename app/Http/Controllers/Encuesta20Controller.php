@@ -9,7 +9,8 @@ use App\Models\Correo;
 use App\Models\Telefono;
 use App\Models\respuestas20;
 use App\Models\comentario;
-
+use Illuminate\Support\Facades\Auth;
+use File;
 use Symfony\Component\Process\Process; 
 use Symfony\Component\Process\Exception\ProcessFailedException; 
 
@@ -31,9 +32,10 @@ class Encuesta20Controller extends Controller
                throw new ProcessFailedException($process);
            }
            $data = $process->getOutput();
-           $Encuesta=respuestas20::where('cuenta','=','cuenta')->where('nbr2','=',$carrera)->first();
+           $Encuesta=respuestas20::where('cuenta','=',$cuenta)->where('nbr2','=',$carrera)->first();
+           
            if($Encuesta){
-            return redirect()->route('edit_20',$Encuesta->id);
+            return redirect('/encuestas_2020/edit/'.$Encuesta->registro);
            }else{
             $Encuesta=new respuestas20();
             $Encuesta->cuenta=$cuenta;
@@ -47,7 +49,7 @@ class Encuesta20Controller extends Controller
             $Encuesta->gen_dgae=2020;
             $Encuesta->completed=0;
             $Encuesta->save();
-            return redirect()->route('edit_20',$Encuesta->id);
+            return redirect('/encuestas/2020/edit/'.$Encuesta->registro);
            }
            
 
@@ -57,6 +59,11 @@ class Encuesta20Controller extends Controller
 public function edit($id){
     
     $Encuesta=respuestas20::where('registro','=',$id)->first();
+    $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
+    $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
+    $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
+    $Comentario=''.comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+           
     $Coment=comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     if($Coment){
 $Comentario=$Coment->comentario;
@@ -71,7 +78,7 @@ $Comentario=$Coment->comentario;
 
 public function update2(Request $request,$id){
     
-    $Encuesta=respuestas2::where('registro',$id)->first();
+    $Encuesta=respuestas20::where('registro',$id)->first();
     $fileName = time().$Encuesta->cuenta.'.json';
     $fileStorePath = public_path('storage/'.$fileName);
     File::put($fileStorePath, json_encode($request->all()));
