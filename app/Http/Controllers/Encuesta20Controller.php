@@ -33,7 +33,7 @@ class Encuesta20Controller extends Controller
            $data = $process->getOutput();
            $Encuesta=respuestas20::where('cuenta','=','cuenta')->where('nbr2','=',$carrera)->first();
            if($Encuesta){
-            return redirect()->route('edit_20',$Encuestas->id);
+            return redirect()->route('edit_20',$Encuesta->id);
            }else{
             $Encuesta=new respuestas20();
             $Encuesta->cuenta=$cuenta;
@@ -47,7 +47,7 @@ class Encuesta20Controller extends Controller
             $Encuesta->gen_dgae=2020;
             $Encuesta->completed=0;
             $Encuesta->save();
-            return redirect()->route('edit_20',$Encuestas->id);
+            return redirect()->route('edit_20',$Encuesta->id);
            }
            
 
