@@ -8,7 +8,7 @@ use App\Models\Carrera;
 use App\Models\Correo;
 use App\Models\Telefono;
 use App\Models\respuestas20;
-use App\Models\comentario;
+use App\Models\Comentario;
 use Illuminate\Support\Facades\Auth;
 use File;
 use Symfony\Component\Process\Process; 
@@ -17,7 +17,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class Encuesta20Controller extends Controller
 {
     public function act_data($cuenta,$carrera){
-        $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
+        $Egresado=Egresado::where('cuenta', $cuenta)->where('carrera',$carrera)->first();
         $Telefonos=Telefono::where('cuenta','=',$cuenta)->get();
         $Correos=Correo::where('cuenta','=',$cuenta)->get();
         return view('encuesta.seg20.actualizar_datos',compact('Egresado','Telefonos','Correos'));
@@ -62,9 +62,9 @@ public function edit($id){
     $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
     $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
     $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
-    $Comentario=''.comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+    $Comentario=''.Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
            
-    $Coment=comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+    $Coment=Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     if($Coment){
 $Comentario=$Coment->comentario;
     }  else{
@@ -581,6 +581,12 @@ public function update2(Request $request,$id){
         $Encuesta-> ngr11f  = $request-> ngr11f ;}
     
     $Encuesta->save();
+    //marcar egresado como ya encuestado
+    $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
+    $Egresado->status=1; //i.e encuestado via telefonica
+    $Egresado->save();
+
+
     $fileName = $Encuesta->cuenta.'.json';
     $fileStorePath = public_path('storage/json/'.$fileName);
     

@@ -14,14 +14,12 @@
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Reporte Individual 2014
     </button></a>
     
-    
     <a href="{{ route('report','correos_inconclusas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas inconclusas
     </button></a>
     </div>
 <br><br><br>
 </div>
-        
         {!! $chart->container() !!}
         {!! $aplica_chart->container() !!}
 
