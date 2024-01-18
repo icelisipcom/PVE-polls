@@ -6,7 +6,9 @@
     <div style="padding:30px;">
     <span class="badge badge-pill badge-primary" style="background-color: transparent" id="pildora"><h1 class="text-back-50">{{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}}  </h1>
     </span>
-    <h1 class="text-white-40" id="info">{{$Egresado->carrera}} {{$Egresado->plantel}}  </h1>
+   <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
+    <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
+     
         <h1 class="text-white-35" id="layer"> NUMEROS DE TELEFONO </h1>
 
     </div>

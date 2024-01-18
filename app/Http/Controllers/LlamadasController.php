@@ -17,6 +17,8 @@ class LlamadasController extends Controller
 {
     public function llamar_20($id){
         $Egresado=Egresado::where('cuenta','=',$id)->where('muestra','=',3)->first();
+        $Carrera= Carrera::where('clave_carrera',$Egresado->carrera)->where('clave_plantel',$Egresado->plantel)->first();
+  
         $Telefonos=Telefono::where('cuenta','=',$Egresado->cuenta)->get();
         //colorear status del telefono
         foreach($Telefonos as $t){
@@ -36,6 +38,9 @@ class LlamadasController extends Controller
               case 6:
                 $color="rgb(59, 173, 196)";
                   break;
+              case 7:
+                $color="rgb(219, 133, 96)";
+                    break;
           }
           $t->color=$color;}
           $telefonos=collect($Telefonos);
@@ -56,9 +61,12 @@ class LlamadasController extends Controller
               case 6:
                 $color="rgba(59, 173, 196,0.45)";
                   break;
+               case 7:
+                  $color="rgba(219, 133, 96,0.45)";
+                  break;
           }
           $r->color=$color;}
-        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados'));
+        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera'));
 
     }
 }

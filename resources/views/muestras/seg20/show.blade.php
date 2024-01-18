@@ -4,16 +4,19 @@
 
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
     <div style="padding:30px;">
-    <h1 class="text-white-50">  </h1>
-        <h1 class="text-white-50"> </h1>
+    <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
+    <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
+     
     </div>
     <div class="col-6 col-lg-12 table-responsive">
         <table class="table text-xl " id="myTable" style="table-layout:fixed;">
           <thead>
             <tr>
             <th>Nombre</th>
+            <th>Paterno </th>
+            <th>Materno</th>
             <th>Num. Cuenta</th>
-            <th>Telefono <br> Casa</th>
+            
             <th>llamadas</th>
             <th> </th>
           </tr>
@@ -21,9 +24,11 @@
           <tbody>
             @foreach($muestra as $e)
             <tr style="background-color: {{$e->color}};">
-                <td>{{$e->nombre}} {{$e->PATERNO}} {{$e->materno}}</td>
+                <td>{{$e->nombre}} {{$e->paterno}} {{$e->materno}}</td>
+                <td> {{$e->paterno}} </td>
+                <td> {{$e->materno}}</td>
+                
                 <td>{{$e->cuenta}} </td>
-                <td>{{$e->telefono}} </td>
                <td>{{$e->llamadas}} </td>
                 <td><a href="{{route('llamar_20',$e->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
               </td>

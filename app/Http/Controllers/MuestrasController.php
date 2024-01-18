@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Estudio;
 use App\Models\Muestra;
+
+use App\Models\Carrera;
 use DB;
 use App\Models\Egresado;
 use App\Models\respuestas2;
@@ -84,6 +86,7 @@ public function show_14($carrera,$plantel){
   return view('muestras.act14.show',compact('muestra'));
 }
 public function show_20($carrera,$plantel){
+  $Carrera= Carrera::where('clave_carrera',$carrera)->where('clave_plantel',$plantel)->first();
   $muestra=Egresado::where('muestra','=','3')->where('carrera','=',$carrera)->where('plantel','=',$plantel)->get();
   foreach($muestra as $m){
     $color='';
@@ -114,7 +117,7 @@ public function show_20($carrera,$plantel){
 }
   
   $muestra=collect($muestra);
-  return view('muestras.seg20.show',compact('muestra'));
+  return view('muestras.seg20.show',compact('muestra','Carrera'));
 }
 
 }
