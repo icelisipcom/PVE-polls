@@ -54,7 +54,7 @@ class Encuesta20Controller extends Controller
             $Encuesta->gen_dgae=2020;
             $Encuesta->completed=0;
             $Encuesta->save();
-            return redirect('/encuestas/2020/edit/'.$Encuesta->registro);
+            return redirect('/encuestas_2020/edit/'.$Encuesta->registro);
            }           
 
     }
