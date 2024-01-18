@@ -28,7 +28,7 @@ class Encuesta20Controller extends Controller
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
         if($Correo->enviado==0){
         $caminoalpoder=public_path();
-           $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$correo]);
+           $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$Correo->correo]);
            $process->run();
            if (!$process->isSuccessful()) {
                throw new ProcessFailedException($process);

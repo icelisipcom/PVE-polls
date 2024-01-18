@@ -106,6 +106,9 @@ public function show_20($carrera,$plantel){
       case 6:
         $color="rgba(59, 173, 196,0.45)";
           break;
+          case 7:
+            $color="rgba(219, 133, 96,0.45)";
+              break;
   }
   $m->color=$color;
 }
