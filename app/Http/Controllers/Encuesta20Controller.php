@@ -23,8 +23,10 @@ class Encuesta20Controller extends Controller
         return view('encuesta.seg20.actualizar_datos',compact('Egresado','Telefonos','Correos'));
     }
     public function comenzar($correo, $cuenta, $carrera){
-        $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
         
+        $Correo=Correo::find($correo);
+        $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
+        if($Correo->enviado==0){
         $caminoalpoder=public_path();
            $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$correo]);
            $process->run();
@@ -32,8 +34,10 @@ class Encuesta20Controller extends Controller
                throw new ProcessFailedException($process);
            }
            $data = $process->getOutput();
+           $Correo->enviado=1;
+           $Correo->save();
+        }
            $Encuesta=respuestas20::where('cuenta','=',$cuenta)->where('nbr2','=',$carrera)->first();
-           
            if($Encuesta){
             return redirect('/encuestas_2020/edit/'.$Encuesta->registro);
            }else{
@@ -50,9 +54,7 @@ class Encuesta20Controller extends Controller
             $Encuesta->completed=0;
             $Encuesta->save();
             return redirect('/encuestas/2020/edit/'.$Encuesta->registro);
-           }
-           
-
+           }           
 
     }
     
@@ -85,7 +87,7 @@ public function update2(Request $request,$id){
     
     $Encuesta-> aplica  = Auth::user()->clave;
     if($request->fec_capt=="2023-01-01"){
-        $Encuesta-> fec_capt  = now() ;
+        $Encuesta-> fec_capt  = now()->modify('-6 hours') ;
     }else{
         $Encuesta-> fec_capt  = $request-> fec_capt ;
     }

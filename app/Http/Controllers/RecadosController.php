@@ -74,13 +74,17 @@ class RecadosController extends Controller
       $Recado->fecha=now()->modify('-6 hours');
       $Recado->save();
 
-
-      $Egresado->status=$request->code;
-      $Egresado->llamadas=$Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get()->count();
-      $Egresado->save();
-      
       $telefono->status=$request->code;
       $telefono->save();
+      if($Recado->status != 6){
+        $Egresado->status=$request->code;
+        $Egresado->llamadas=$Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get()->count();
+        $Egresado->save();}
+
+      //verificar si todos los telefonos no existen (egresado ilocalizable)
+      $Telefonos=Telefono::where('cuenta',$Egresado->cuenta);
+      
+      
       return redirect()->route('muestras20.show',[$Egresado->carrera,$Egresado->plantel]);
       }
 }

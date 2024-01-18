@@ -48,7 +48,6 @@ public function index_20(){
       $join->on('carreras.clave_carrera', '=', 'egresados.carrera');
       $join->on('carreras.clave_plantel', '=', 'egresados.plantel');                             
   })->select('carreras.carrera','carreras.plantel','egresados.carrera as c','egresados.plantel as p')->get();
-
   return view('muestras.seg20.index',compact('carreras'));
 
 }
@@ -75,10 +74,12 @@ public function show_14($carrera,$plantel){
       case 6:
         $color="rgba(59, 173, 196,0.45)";
           break;
+      case 7:
+        $color="rgba(219, 133, 96,0.45)";
+          break;
   }
   $m->color=$color;
 }
-  
   $muestra=collect($muestra);
   return view('muestras.act14.show',compact('muestra'));
 }

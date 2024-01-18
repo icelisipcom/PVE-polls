@@ -146,38 +146,27 @@ Extensión:
     </select>
 Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxlength="50" @if(strlen($Encuesta->nar11a)>2) value="{{$Encuesta->nar11a}}" @else value=0 hidden @endif > 
 
-  
 <h2 class="reactivo">9.-Ocupación de su esposo(a)</h2>
 
 <select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[18,19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17],[nar14otra])"  >
-       <option value="" ></option>
-<option value=28 @if($Encuesta->nar14==28) selected @endif >Artesanos y obrero</option>
-<option value=25 @if($Encuesta->nar14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
-<option value=41 @if($Encuesta->nar14==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
-<option value=21 @if($Encuesta->nar14==21) selected @endif >Funcionario y directivo</option>
-<option value=35 @if($Encuesta->nar14==35) selected @endif >Finado</option>
-<option value=34 @if($Encuesta->nar14==34) selected @endif >Jubilado</option>
-<option value=33 @if($Encuesta->nar14==33) selected @endif >Labores del Hogar</option>
-<option value=22 @if($Encuesta->nar14==22) selected @endif >Mando medio</option>
-<option value=29 @if($Encuesta->nar14==29) selected @endif >Obreros especializados</option>
-<option value=16 @if($Encuesta->nar14==16) selected @endif >Profesionista</option>
-<option value=39 @if($Encuesta->nar14==39) selected @endif >Profesor Enseñanza Superior</option>
-<option value=17 @if($Encuesta->nar14==17) selected @endif >Profesor Enseñanza Media Superior</option>
-<option value=18 @if($Encuesta->nar14==18) selected @endif >Profesor Enseñanza Media</option>
-<option value=19 @if($Encuesta->nar14==19) selected @endif >Profesor Enseñanza Básica</option>
-<option value=20 @if($Encuesta->nar14==20) selected @endif >Trabajador del arte, espectáculos y deportes</option>
-<option value=23 @if($Encuesta->nar14==23) selected @endif >Técnico</option>
-<option value=24 @if($Encuesta->nar14==24) selected @endif >Trabajador de apoyo actividades administrativas</option>
-<option value=27 @if($Encuesta->nar14==27) selected @endif >Trabajadores en actividades agricolas, ganaderias, silvícolas y de caza y pesca</option>
-<option value=30 @if($Encuesta->nar14==30) selected @endif >Trabajador en servicios personales</option>
-<option value=31 @if($Encuesta->nar14==31) selected @endif >Trabajador en servicios doméstico</option>
-<option value=32 @if($Encuesta->nar14==32) selected @endif >Trabajador de servicios vigilancia y protección y fuerzas armadas</option>
-<option value=26 @if($Encuesta->nar14==26) selected @endif >Vendedores ambulantes</option>
-<option value=36 @if($Encuesta->nar14==36) selected @endif >No trabaja</option>
-<option value=37 @if($Encuesta->nar14==37) selected @endif >No lo sabe</option>
-<option value=38 @if($Encuesta->nar14==38) selected @endif >Otra(Especifíque)</option>
-<option value=44 @if($Encuesta->nar14==44) selected @endif >Trabajadores en actividades elementales y de apoyo</option>
+<option value="" ></option>
 
+<option value=45 @if($Encuesta->nar14==45) selected @endif >1 Funcionarios Directores y Jefes   </option>
+<option value=46 @if($Encuesta->nar14==46) selected @endif >2 Profesionistas y técnicos </option>
+<option value=47 @if($Encuesta->nar14==47) selected @endif >3 Trabajadores Auxiliares en actividades administrativas  </option>
+<option value=48 @if($Encuesta->nar14==48) selected @endif >4 Comerciantes, empleados en ventas y agentes de ventas  </option>
+<option value=49 @if($Encuesta->nar14==49) selected @endif >5 Trabajadores en servicios personales y de vigilancia  </option>
+<option value=50 @if($Encuesta->nar14==50) selected @endif >6 Trabajadores en actividades agrícolas, ganaderas, forestales, caza y pesca  </option>
+<option value=51 @if($Encuesta->nar14==51) selected @endif >7 Trabajadores artesanales, en la construcción y otros oficios  </option>
+<option value=52 @if($Encuesta->nar14==52) selected @endif >8 Operadores de maquinaria industrial, ensambladores, choferes y conductores de transporte  </option>
+<option value=53 @if($Encuesta->nar14==53) selected @endif >9 Trabajadores en actividades elementales y de apoyo  </option>
+<option value=54 @if($Encuesta->nar14==54) selected @endif >Profesor Enseñanza Superior  </option>
+<option value=55 @if($Encuesta->nar14==55) selected @endif > Profesor Enseñanza Media Superior</option>
+<option value=56 @if($Encuesta->nar14==56) selected @endif > Profesor Enseñanza Media </option>
+<option value=57 @if($Encuesta->nar14==57) selected @endif > Profesor Enseñanza Básica</option>
+<option value=58 @if($Encuesta->nar14==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
+
+<option value=38 @if($Encuesta->nar14==38) selected @endif >Otra(Especifíque)</option>
 <option value=0  hidden></option>     
 </select>
     <br>
@@ -220,31 +209,24 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 
   <select class="select" id="nar15" name="nar15"  onchange="bloquear('nar15',[28,25,41,21,35,34,33,22,29,16,39,17,18,19,20,23,24,27,30,31,32,26,36,37],[nar15otra])" >
   <option value="" ></option>
-<option value=28 @if($Encuesta->nar15==28) selected @endif >Artesanos y obrero</option>
-<option value=25 @if($Encuesta->nar15==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
-<option value=41 @if($Encuesta->nar15==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
-<option value=21 @if($Encuesta->nar15==21) selected @endif >Funcionario y directivo</option>
-<option value=35 @if($Encuesta->nar15==35) selected @endif >Finado</option>
-<option value=34 @if($Encuesta->nar15==34) selected @endif >Jubilado</option>
-<option value=33 @if($Encuesta->nar15==33) selected @endif >Labores del Hogar</option>
-<option value=22 @if($Encuesta->nar15==22) selected @endif >Mando medio</option>
-<option value=29 @if($Encuesta->nar15==29) selected @endif >Obreros especializados</option>
-<option value=16 @if($Encuesta->nar15==16) selected @endif >Profesionista</option>
-<option value=39 @if($Encuesta->nar15==39) selected @endif >Profesor Enseñanza Superior</option>
-<option value=17 @if($Encuesta->nar15==17) selected @endif >Profesor Enseñanza Media Superior</option>
-<option value=18 @if($Encuesta->nar15==18) selected @endif >Profesor Enseñanza Media</option>
-<option value=19 @if($Encuesta->nar15==19) selected @endif >Profesor Enseñanza Básica</option>
-<option value=20 @if($Encuesta->nar15==20) selected @endif >Trabajador del arte, espectáculos y deportes</option>
-<option value=23 @if($Encuesta->nar15==23) selected @endif >Técnico</option>
-<option value=24 @if($Encuesta->nar15==24) selected @endif >Trabajador de apoyo actividades administrativas</option>
-<option value=27 @if($Encuesta->nar15==27) selected @endif >Trabajadores en actividades agricolas, ganaderias, silvícolas y de caza y pesca</option>
-<option value=30 @if($Encuesta->nar15==30) selected @endif >Trabajador en servicios personales</option>
-<option value=31 @if($Encuesta->nar15==31) selected @endif >Trabajador en servicios doméstico</option>
-<option value=32 @if($Encuesta->nar15==32) selected @endif >Trabajador de servicios vigilancia y protección y fuerzas armadas</option>
-<option value=26 @if($Encuesta->nar15==26) selected @endif >Vendedores ambulantes</option>
-<option value=36 @if($Encuesta->nar15==36) selected @endif >No trabaja</option>
-<option value=37 @if($Encuesta->nar15==37) selected @endif >No lo sabe</option>
+
+<option value=45 @if($Encuesta->nar15==45) selected @endif >1 Funcionarios Directores y Jefes   </option>
+<option value=46 @if($Encuesta->nar15==46) selected @endif >2 Profesionistas y técnicos </option>
+<option value=47 @if($Encuesta->nar15==47) selected @endif >3 Trabajadores Auxiliares en actividades administrativas  </option>
+<option value=48 @if($Encuesta->nar15==48) selected @endif >4 Comerciantes, empleados en ventas y agentes de ventas  </option>
+<option value=49 @if($Encuesta->nar15==49) selected @endif >5 Trabajadores en servicios personales y de vigilancia  </option>
+<option value=50 @if($Encuesta->nar15==50) selected @endif >6 Trabajadores en actividades agrícolas, ganaderas, forestales, caza y pesca  </option>
+<option value=51 @if($Encuesta->nar15==51) selected @endif >7 Trabajadores artesanales, en la construcción y otros oficios  </option>
+<option value=52 @if($Encuesta->nar15==52) selected @endif >8 Operadores de maquinaria industrial, ensambladores, choferes y conductores de transporte  </option>
+<option value=53 @if($Encuesta->nar15==53) selected @endif >9 Trabajadores en actividades elementales y de apoyo  </option>
+<option value=54 @if($Encuesta->nar15==54) selected @endif >Profesor Enseñanza Superior  </option>
+<option value=55 @if($Encuesta->nar15==55) selected @endif > Profesor Enseñanza Media Superior</option>
+<option value=56 @if($Encuesta->nar15==56) selected @endif > Profesor Enseñanza Media </option>
+<option value=57 @if($Encuesta->nar15==57) selected @endif > Profesor Enseñanza Básica</option>
+<option value=58 @if($Encuesta->nar15==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
+
 <option value=38 @if($Encuesta->nar15==38) selected @endif >Otra(Especifíque)</option>
+<option value=0  hidden></option>  
 </select>
 <br>(Especifíque)
 Otra:
@@ -283,34 +265,24 @@ cursó sus estudios en la UNAM? </h2>
 
  <select class="select" id="nar16" name="nar16"  onchange="bloquear('nar16',[19,20,23,24,27,30,31,32,26,36,37,28,25,41,21,35,34,33,22,29,16,39,17,18],[nar16otra])">
  <option value="" ></option>
-<option value=28 @if($Encuesta->nar16==28) selected @endif >Artesanos y obrero</option>
-<option value=25 @if($Encuesta->nar16==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
-<option value=41 @if($Encuesta->nar16==41) selected @endif >Conductores de maquinaria móvil terrestre, aérea, marítima, de vías ferreras</option>
-<option value=21 @if($Encuesta->nar16==21) selected @endif >Funcionario y directivo</option>
-<option value=35 @if($Encuesta->nar16==35) selected @endif >Finado</option>
-<option value=34 @if($Encuesta->nar16==34) selected @endif >Jubilado</option>
-<option value=33 @if($Encuesta->nar16==33) selected @endif >Labores del Hogar</option>
-<option value=22 @if($Encuesta->nar16==22) selected @endif >Mando medio</option>
-<option value=29 @if($Encuesta->nar16==29) selected @endif >Obreros especializados</option>
-<option value=16 @if($Encuesta->nar16==16) selected @endif >Profesionista</option>
-<option value=39 @if($Encuesta->nar16==39) selected @endif >Profesor Enseñanza Superior</option>
-<option value=17 @if($Encuesta->nar16==17) selected @endif >Profesor Enseñanza Media Superior</option>
-<option value=18 @if($Encuesta->nar16==18) selected @endif >Profesor Enseñanza Media</option>
-<option value=19 @if($Encuesta->nar16==19) selected @endif >Profesor Enseñanza Básica</option>
-<option value=20 @if($Encuesta->nar16==20) selected @endif >Trabajador del arte, espectáculos y deportes</option>
-<option value=23 @if($Encuesta->nar16==23) selected @endif >Técnico</option>
-<option value=24 @if($Encuesta->nar16==24) selected @endif >Trabajador de apoyo actividades administrativas</option>
-<option value=27 @if($Encuesta->nar16==27) selected @endif >Trabajadores en actividades agricolas, ganaderias, silvícolas y de caza y pesca</option>
-<option value=30 @if($Encuesta->nar16==30) selected @endif >Trabajador en servicios personales</option>
-<option value=31 @if($Encuesta->nar16==31) selected @endif >Trabajador en servicios doméstico</option>
-<option value=32 @if($Encuesta->nar16==32) selected @endif >Trabajador de servicios vigilancia y protección y fuerzas armadas</option>
-<option value=26 @if($Encuesta->nar16==26) selected @endif >Vendedores ambulantes</option>
-<option value=36 @if($Encuesta->nar16==36) selected @endif >No trabaja</option>
-<option value=37 @if($Encuesta->nar16==37) selected @endif >No lo sabe</option>
-<option value=44 @if($Encuesta->nar16==44) selected @endif >Trabajadores en actividades elementales y de apoyo</option>
 
-<option value=38 @if($Encuesta->nar16==38) selected @endif >Otra(Especifíque)</option>
-</select>
+<option value=45 @if($Encuesta->nar14==45) selected @endif >1 Funcionarios Directores y Jefes   </option>
+<option value=46 @if($Encuesta->nar14==46) selected @endif >2 Profesionistas y técnicos </option>
+<option value=47 @if($Encuesta->nar14==47) selected @endif >3 Trabajadores Auxiliares en actividades administrativas  </option>
+<option value=48 @if($Encuesta->nar14==48) selected @endif >4 Comerciantes, empleados en ventas y agentes de ventas  </option>
+<option value=49 @if($Encuesta->nar14==49) selected @endif >5 Trabajadores en servicios personales y de vigilancia  </option>
+<option value=50 @if($Encuesta->nar14==50) selected @endif >6 Trabajadores en actividades agrícolas, ganaderas, forestales, caza y pesca  </option>
+<option value=51 @if($Encuesta->nar14==51) selected @endif >7 Trabajadores artesanales, en la construcción y otros oficios  </option>
+<option value=52 @if($Encuesta->nar14==52) selected @endif >8 Operadores de maquinaria industrial, ensambladores, choferes y conductores de transporte  </option>
+<option value=53 @if($Encuesta->nar14==53) selected @endif >9 Trabajadores en actividades elementales y de apoyo  </option>
+<option value=54 @if($Encuesta->nar14==54) selected @endif >Profesor Enseñanza Superior  </option>
+<option value=55 @if($Encuesta->nar14==55) selected @endif > Profesor Enseñanza Media Superior</option>
+<option value=56 @if($Encuesta->nar14==56) selected @endif > Profesor Enseñanza Media </option>
+<option value=57 @if($Encuesta->nar14==57) selected @endif > Profesor Enseñanza Básica</option>
+<option value=58 @if($Encuesta->nar14==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
+
+<option value=38 @if($Encuesta->nar14==38) selected @endif >Otra(Especifíque)</option>
+<option value=0  hidden></option>  </select>
 <br>(Especifíque)
 Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80" maxlength="80"  @if(strlen($Encuesta->nar16otra)>2) value="{{$Encuesta->nar16otra}}" @else value=0 hidden @endif >   
 
@@ -320,7 +292,6 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
 
 </div><br>
       </div>
-
 
       <div class='col' id='B' style='text-align: center;'>
       <h2 class="reactivo">14).-¿Tipo de bachillerato que cursó?   </h2>
@@ -360,15 +331,13 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="80"
  <option value=3 @if($Encuesta->nar1==3) selected @endif >Presencial</option>
  </select>
  
- </TD>
-  </TR>
+</td>
+</tr>
  
-  <TR>
- <TD width='55%'>
- 
-     <h2 class="reactivo">17).-¿Durante sus estudios de bachillerato fue becario?    </h2>
-   
- 
+  <tr>
+ <tr width='55%'>
+ <h2 class="reactivo">17).-¿Durante sus estudios de bachillerato fue becario?    </h2>
+  
  <select class="select" id="nar2a" name="nar2a"  onchange=check_beca()   >
  <option value="" selected></option>
  <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>

@@ -19,6 +19,7 @@ class CorreosController extends Controller
         $Correo->cuenta=$cuenta;
         $Correo->correo=$request->correo;
         $Correo->status='en uso';
+        $Correo->enviado=0;
         $Correo->save();
         return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
     }
