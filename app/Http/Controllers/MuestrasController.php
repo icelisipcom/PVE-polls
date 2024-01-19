@@ -92,25 +92,25 @@ public function show_20($carrera,$plantel){
     $color='';
     switch ($m->status) {
       case 1:
-        $color="rgba(92, 191, 98,0.45)";
+        $color="rgba(92, 191, 98,0.75)";
         break;
       case 2:
-        $color="rgba(44, 92, 40,0.45)";
+        $color="rgba(44, 92, 40,0.75)";
         break;
       case 3:
-          $color="rgba(245, 66, 66, 0.45)";
+          $color="rgba(245, 66, 66, 0.75)";
           break;
       case 4:
-        $color="rgba(147, 66, 245,0.45)";
+        $color="rgba(147, 66, 245,0.75)";
           break;
       case 5:
-        $color="rgba(64, 64, 64,0.7)";
+        $color="rgba(64, 64, 64,0.75)";
           break;
       case 6:
-        $color="rgba(59, 173, 196,0.45)";
+        $color="rgba(59, 173, 196,0.75)";
           break;
           case 7:
-            $color="rgba(219, 133, 96,0.45)";
+            $color="rgba(219, 133, 96,0.75)";
               break;
   }
   $m->color=$color;

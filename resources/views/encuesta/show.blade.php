@@ -2379,51 +2379,6 @@ c).- Motivo por el que no lo practico </h2>
 <h2 class="reactivo">   
 <b>Desde su punto de vista, sus experiencias en la UNAM contribuyeron a:
 </h2></b>
-<h2 class="reactivo">  
-137.- Desarrollar en usted una actitud de tolerancia y aceptación por las
-demás  personas</TD></h2>
-<TD><select class="select" id="ngr41" name="ngr41" >
-<option selected="selected" value="">
-<option value=1 @if($Encuesta->ngr41==1) selected @endif >Totalmente de acuerdo</option>
-<option value=2 @if($Encuesta->ngr41==2) selected @endif >De acuerdo</option>
-<option value=3 @if($Encuesta->ngr41==3) selected @endif >Medianamente de acuerdo</option>
-<option value=4 @if($Encuesta->ngr41==4) selected @endif >En desacuerdo</option>
-<option value=5 @if($Encuesta->ngr41==5) selected @endif >Totalmente en desacuerdo</option>
-</select>
-
-<h2 class="reactivo">  
-138.- Fortalecer sus valores como ciudadano </h2>
-<select class="select" id="ngr42" name="ngr42" >
-<option selected="selected" value="">
-<option value=1 @if($Encuesta->ngr42==1) selected @endif >Totalmente de acuerdo</option>
-<option value=2 @if($Encuesta->ngr42==2) selected @endif >De acuerdo</option>
-<option value=3 @if($Encuesta->ngr42==3) selected @endif >Medianamente de acuerdo</option>
-<option value=4 @if($Encuesta->ngr42==4) selected @endif >En desacuerdo</option>
-<option value=5 @if($Encuesta->ngr42==5) selected @endif >Totalmente en desacuerdo</option>
-</select>
-
-<h2 class="reactivo">  
-139.-Incrementar  su  interés por promover y participar  en  programas de beneficio social </TD></h2>
-<TD><select class="select" id="ngr43" name="ngr43" >
-<option selected="selected" value="">
-<option value=1 @if($Encuesta->ngr43==1) selected @endif >Totalmente de acuerdo</option>
-<option value=2 @if($Encuesta->ngr43==2) selected @endif >De acuerdo</option>
-<option value=3 @if($Encuesta->ngr43==3) selected @endif >Medianamente deacuerdo</option>
-<option value=4 @if($Encuesta->ngr43==4) selected @endif >En desacuerdo</option>
-<option value=5 @if($Encuesta->ngr43==5) selected @endif >Totalmente en desacuerdo</option>
-</select>
-
-<h2 class="reactivo">  
-140.- Incrementar su concientización e interés por los problemas del medio
-ambiente </h2>
-<select class="select" id="ngr44" name="ngr44" >
-<option selected="selected" value="">
-<option value=1 @if($Encuesta->ngr44==1) selected @endif >Totalmente de acuerdo</option>
-<option value=2 @if($Encuesta->ngr44==2) selected @endif >De acuerdo</option>
-<option value=3 @if($Encuesta->ngr44==3) selected @endif >Medianamente de acuerdo</option>
-<option value=4 @if($Encuesta->ngr44==4) selected @endif >En desacuerdo</option>
-<option value=5>Totalmente en desacuerdo</option>
-</select>
 
 <h2 class="reactivo"> 
 141.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>

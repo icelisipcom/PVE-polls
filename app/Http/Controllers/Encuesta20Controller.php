@@ -545,14 +545,7 @@ public function update2(Request $request,$id){
         $Encuesta-> ngr40_a  = $request-> ngr40_a ;}
     if(strlen(strval($request-> ngr40_b ))>0){
         $Encuesta-> ngr40_b  = $request-> ngr40_b ;}
-    if(strlen(strval($request-> ngr41 ))>0){
-        $Encuesta-> ngr41  = $request-> ngr41 ;}
-    if(strlen(strval($request-> ngr42 ))>0){
-        $Encuesta-> ngr42  = $request-> ngr42 ;}
-    if(strlen(strval($request-> ngr43 ))>0){
-        $Encuesta-> ngr43  = $request-> ngr43 ;}
-    if(strlen(strval($request-> ngr44 ))>0){
-        $Encuesta-> ngr44  = $request-> ngr44 ;}
+  
     if(strlen(strval($request-> ngr45 ))>0){
         $Encuesta-> ngr45  = $request-> ngr45 ;}
     if(strlen(strval($request-> ngr45_a ))>0){
