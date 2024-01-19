@@ -11,7 +11,7 @@ use App\Models\Egresado;
 use App\Models\Carrera;
 use App\Models\Comentario;
 use App\Models\Telefono;
-
+use DB;
 use App\Models\Recado;
 class LlamadasController extends Controller
 {
@@ -19,54 +19,19 @@ class LlamadasController extends Controller
         $Egresado=Egresado::where('cuenta','=',$id)->where('muestra','=',3)->first();
         $Carrera= Carrera::where('clave_carrera',$Egresado->carrera)->where('clave_plantel',$Egresado->plantel)->first();
   
-        $Telefonos=Telefono::where('cuenta','=',$Egresado->cuenta)->get();
-        //colorear status del telefono
-        foreach($Telefonos as $t){
-             $color='#40409A';
-            //  dd($t->status,$t->id);
-            switch ($t->status) {
-             
-              case 3:
-                  $color="rgb(245, 66, 66)";
-                  break;
-              case 4:
-                $color="rgb(147, 66, 245)";
-                  break;
-              case 5:
-                $color="rgb(64, 64, 64)";
-                  break;
-              case 6:
-                $color="rgb(59, 173, 196)";
-                  break;
-              case 7:
-                $color="rgb(219, 133, 96)";
-                    break;
-          }
-          $t->color=$color;}
-          $telefonos=collect($Telefonos);
-        $Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get();
-        foreach($Recados as $r){
-            $color='';
-            switch ($r->status) {
-              
-              case 3:
-                  $color="rgba(245, 66, 66, 0.45)";
-                  break;
-              case 4:
-                $color="rgba(147, 66, 245,0.45)";
-                  break;
-              case 5:
-                $color="rgba(64, 64, 64,0.7)";
-                  break;
-              case 6:
-                $color="rgba(59, 173, 196,0.45)";
-                  break;
-               case 7:
-                  $color="rgba(219, 133, 96,0.45)";
-                  break;
-          }
-          $r->color=$color;}
-        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera'));
+
+        $Telefonos=DB::table('telefonos')->where('cuenta','=',$Egresado->cuenta)
+        ->leftJoin('codigos','codigos.code','=','telefonos.status')
+        ->select('telefonos.*','codigos.color_rgb','codigos.description')
+        ->get();
+        $Recados=DB::table('recados')->where('cuenta','=',$Egresado->cuenta)
+        ->leftJoin('codigos','codigos.code','=','recados.status')
+        ->select('recados.*','codigos.color_rgb','codigos.description')
+        ->get();
+        $Codigos=DB::table('codigos')->where('code','>=',3)
+        ->orderBy('color')->get();
+ 
+        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera','Codigos'));
 
     }
 }
