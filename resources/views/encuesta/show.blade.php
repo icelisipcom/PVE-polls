@@ -64,12 +64,7 @@
           <input type="date"  class="fecha" name="fec_capt" id="fec_capt"  value="2023-01-01" style="width : 30%;"/> 
           </div></center>
     <hr>
-    <h2 class="reactivo">1.-Fecha de Nacimiento </h2>             <!--   -------FECHA DE NACIMIENTO-->
-    
-    <input class="fecha" type="date" id="start" name="fechaNac"
-    @if($Encuesta->yernac)
-      value="{{sprintf('%02d',$Encuesta->yernac).'-'.sprintf('%02d',$Encuesta->mesnac).'-'.sprintf('%02d',$Encuesta->dianac)}}" else value="2001-12-31"
-      @endif min="1950-01-01" max="2001-12-31">
+   
 
       <h2 class="reactivo">2.-Genero </h2>             <!--   -------FECHA DE NACIMIENTO-->
     <select class="select" id= "nar7"  name="nar7" >
@@ -110,19 +105,6 @@
 Extensión: 
  <INPUT type="text" class="texto" id="exttra" size="5" maxlength="5" name="exttra"  value="{{$Encuesta->exttra}}" >
 
-<h2 class="reactivo">7.- ¿Tiene correo electrónico?</h2>  
-
-<select class="select" id="ncrcc" name="ncrcc"  onchange="bloquear('ncrcc',[2],[correo,nar1_a])" >
-<option value="" ></option>
-        <option  selected  value='1'>Sí</option>
-        <option value='2'  >No</option> 
-</select>
-<div name="correo" id="correo">
-  <br>
-  <h2 class="reactivo">7a).-Cúal es su correo : </h2>
-
-<INPUT type="text" class="texto"  id="nar1_a" name="nar1_a" size="39" maxlength="39" value="{{$Encuesta->nar1_a}}"  >
-</div>
   <div name="nar11div" id="nar11div"  >
 
     <h2 class="reactivo"> 8.- Nivel de estudios de su esposo(a)</h2>

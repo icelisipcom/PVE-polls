@@ -76,11 +76,21 @@ class RecadosController extends Controller
 
       $telefono->status=$request->code;
       $telefono->save();
+      $Egresado->llamadas=$Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get()->count();
+      
       if($Recado->status != 6){
         $Egresado->status=$request->code;
-        $Egresado->llamadas=$Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get()->count();
-        $Egresado->save();}
+        }else{
+          $Telefonos=Telefono::where('cuenta',$Egresado->cuenta)->get();
+          
+          $flag=1;
+          foreach( $Telefonos as $r){ if($r->status != 6){$flag=0;}}
+          if($flag==1){
+            $Egresado->status=6; 
+          }
+        }
 
+        $Egresado->save();
       //verificar si todos los telefonos no existen (egresado ilocalizable)
       $Telefonos=Telefono::where('cuenta',$Egresado->cuenta);
       

@@ -97,10 +97,7 @@ public function update2(Request $request,$id){
     $Encuesta-> TELCEL  = $request-> TELCEL ;
     $Encuesta-> teltra  = $request-> teltra ;
     $Encuesta-> exttra  = $request-> exttra ;
-    $Encuesta-> dianac  = substr($request->fechaNac,-2);
-    $Encuesta-> mesnac  = substr($request->fechaNac,5,-3);
-    $Encuesta-> yernac  = substr($request->fechaNac,0,4);
-    
+
     if(strlen(strval($request-> telcasa ))>0){
         $Encuesta-> telcasa  = $request-> telcasa ;}
     if(strlen(strval($request-> TELCEL ))>0){
