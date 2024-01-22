@@ -95,6 +95,6 @@ class RecadosController extends Controller
       $Telefonos=Telefono::where('cuenta',$Egresado->cuenta);
       
       
-      return redirect()->route('muestras20.show',[$Egresado->carrera,$Egresado->plantel]);
+      return redirect()->route('llamar_20',$Egresado->plantel);
       }
 }

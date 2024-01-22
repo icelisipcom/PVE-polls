@@ -75,6 +75,6 @@ Route::get('/invitacion', [App\Http\Controllers\HomeController::class, 'invitaci
 Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, 'enviar_invitacion'])->name('enviar_invitacion');
 
 Route::get('/reporte/{report}', [App\Http\Controllers\ReportController::class, 'generate'])->name('report');
-Route::get('/reporte/semanal/{semana}/{user}', [App\Http\Controllers\ReportController::class, 'semanal'])->name('reporte.semanal');
+Route::get('/reporte/semanal/{semana}/{user?}', [App\Http\Controllers\ReportController::class, 'semanal'])->name('reporte.semanal');
 
 });
