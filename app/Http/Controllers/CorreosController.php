@@ -23,4 +23,20 @@ class CorreosController extends Controller
         $Correo->save();
         return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
     }
+    public function edit($id,$carrera){
+        $Correo=Correo::find($id);
+        $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
+         
+        return view('encuesta.seg20.editar_correo',compact('Egresado','Correo'));
+    }
+    public function update(Request $request ,$id,$carrera){
+        $Correo=Correo::find($id);
+        $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
+        
+        $Correo->correo=$request->correo;
+        $Correo->status=$request->status;
+        $Correo->enviado=0;
+        $Correo->save();
+        return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
+    }
 }

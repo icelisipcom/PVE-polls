@@ -39,6 +39,9 @@ Route::resource('encuestas', EncuestasController::class);
 Route::resource('correos', CorreosController::class);
 Route::get('/agregar_correo/{cuenta}/{carrera}', [App\Http\Controllers\CorreosController::class, 'create'])->name('agregar_correo');
 Route::post('/guardar{cuenta}/{carrera}', [App\Http\Controllers\CorreosController::class, 'store'])->name('guardar_correo');
+Route::get('/editar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'edit'])->name('editar_correo');
+Route::post('/actualizar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'update'])->name('actualizar_correo');
+
 
 Route::get('/encuestas/2014/show/{id}', [App\Http\Controllers\EncuestasController::class, 'show_14'])->name('encuestas.show_14');
 Route::get('/encuestas/2014/recados/{id}', [App\Http\Controllers\RecadosController::class, 'recado_14'])->name('encuestas.recado_14');
@@ -64,6 +67,7 @@ Route::get('/2019', [App\Http\Controllers\HomeController::class, 'encuesta_2019'
 Route::get('/2020', [App\Http\Controllers\Encuesta20Controller::class, 'encuesta_2020'])->name('2020');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');
 Route::post('/resultado', [App\Http\Controllers\HomeController::class, 'resultado'])->name('resultado');
+Route::post('/resultado_fonetico', [App\Http\Controllers\HomeController::class, 'resultado_fonetico'])->name('resultado_fonetico');
 Route::get('/aviso', [App\Http\Controllers\HomeController::class, 'aviso'])->name('aviso');
 Route::post('/enviar_aviso', [App\Http\Controllers\HomeController::class, 'enviar_aviso'])->name('enviar_aviso');
 
@@ -71,5 +75,6 @@ Route::get('/invitacion', [App\Http\Controllers\HomeController::class, 'invitaci
 Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, 'enviar_invitacion'])->name('enviar_invitacion');
 
 Route::get('/reporte/{report}', [App\Http\Controllers\ReportController::class, 'generate'])->name('report');
+Route::get('/reporte/semanal/{semana}/{user}', [App\Http\Controllers\ReportController::class, 'semanal'])->name('reporte.semanal');
 
 });

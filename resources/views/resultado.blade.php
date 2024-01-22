@@ -7,9 +7,9 @@
         <h1 class="text-white-50"> ¿Deseas buscar un numero de cuenta?</h1>
     </div>
     <center >
-        @if($encuestas19->count()>0)
+        @if($encuestas20->count()>0)
         <h1>
-            ENCUESTA 2019
+            ENCUESTA 2020
         </h1>
         <div class="col-6 col-sm-12 table-responsive">
                 <table class="table  text-xl">
@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($encuestas19 as $e)
+            @foreach($encuestas20 as $e)
             <tr style="color:#b0a46f" >
                 <td>{{  $e->nombre}}   {{  $e->paterno}}  {{  $e->materno }}  </td>
                 <td> @if($e->aplica ){{$e->aplica}} @else INTERNET @endif </td>
@@ -33,7 +33,7 @@
                 <td>{{$e->nbr3}}</td>
                 <td>{{$e->nbr2}}</td>
                 <td>@if(is_null($e->ngr11f)) Inompleta @else Completa @endif</td>
-                <td>@if(is_null($e->ngr11f))  <a href="{{ route('encuestas.edit', $e->registro)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+                <td>@if(is_null($e->ngr11f))  <a href="{{ route('edit_20', $e->registro)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
                                             <i class="fas fa-edit  "></i> Completar</button>
                                         </a>@endif</td>
             </tr>
@@ -42,9 +42,9 @@
     </table>
     </div>
     @else
-    No hay encuestas 2019 para mostrar unu, @if($eg)deseas hacer una nueva encuesta¿?
+    No hay encuestas 2020 para mostrar unu, @if($egresados->count() > 0) deseas hacer una nueva encuesta¿?
     <div class="col-6 col-sm-12 table-responsive">
-                <table class="table  text-xl">
+                <table class="table  text-xl" id="myTable">
         <thead>
             <tr>
             <th>Egresado</th>
@@ -56,21 +56,25 @@
             </tr>
         </thead>
         <tbody>
-          
+          @foreach($egresados as $eg)
             <tr style="color:#b0a46f" >
                 <td>{{$eg->nombre}}  {{  $eg->paterno}}  {{  $eg->materno }}   </td>
                 <td> {{$eg->cuenta}} </td>
                 <td> </td>
                 <td>{{$eg->carrera}}</td>     
                 <td>{{$eg->plantel}}</td> 
-                <td><a href="{{route('encuestas.show',$eg->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Hacer encuesta </button></a></td>
+                <td>@if($eg->muestra==3 && in_array( $eg->status,[0,3,4,5,6,7], true))
+                <a href="{{route('llamar_20',$eg->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
+                @endif
+                </td>
             
             </tr> 
-           
+           @endforeach
         </tbody>
     </table>
     </div>
-    @endif
+       
+       @endif
     @endif
 
     @if($encuestas14->count()>0)
@@ -140,3 +144,14 @@
    </center>
     </div>
 @endsection
+
+@push('js')
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+ 
+  console.log('script jalando ¿?');
+  $(document).ready(function() {
+    $('#myTable').DataTable();
+} );
+ </script>
+@endpush

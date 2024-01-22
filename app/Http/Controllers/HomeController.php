@@ -117,13 +117,13 @@ class HomeController extends Controller
     }
     
     public function resultado(Request $request){
-        $encuestas19=DB::table('respuestas2')
-        ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
-        ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
-        ->where('egresados.anio_egreso','=',2019)
-        ->where('respuestas2.cuenta','=',(int)$request->nc)
+        $encuestas20=DB::table('respuestas20')
+        ->join('egresados','egresados.cuenta','=','respuestas20.cuenta')
+        ->select('respuestas20.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->where('egresados.anio_egreso','=',2020)
+        ->where('respuestas20.cuenta','=',(int)$request->nc)
         ->get(); 
-        $eg=Egresado::where('cuenta',(int)$request->nc)->first();
+        $egresados=Egresado::where('cuenta',(int)$request->nc)->get();
         $encuestas14=DB::table('respuestas14')
         ->where('respuestas14.cuenta','=',$request->nc)
         ->whereNotNull('respuestas14.NGR11')
@@ -132,7 +132,36 @@ class HomeController extends Controller
         ->where('respuestas14.cuenta','=',$request->nc)
         ->whereNull('respuestas14.NGR11')
         ->first();       
-        return view('resultado',compact('encuestas19','encuestas14','eg','eg14'));
+        return view('resultado',compact('encuestas20','encuestas14','egresados','eg14'));
+
+    
+    }
+    public function resultado_fonetico(Request $request){
+
+        $encuestas20=DB::table('respuestas20')
+        ->join('egresados','egresados.cuenta','=','respuestas20.cuenta')
+        ->select('respuestas20.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->where('egresados.anio_egreso','=',2020)
+        ->where('respuestas20.nombre','like','%'.mb_strtoupper($request->name, 'UTF-8').'%')
+        ->get(); 
+        
+     
+        $egresados=Egresado::where('nombre','like','%'.mb_strtoupper($request->name, 'UTF-8').'%')->get();
+        if($request->paterno){
+            $egresados=$egresados->toQuery()->where('paterno','like','%'.mb_strtoupper($request->paterno, 'UTF-8').'%')->get();
+        }
+        if($request->materno){
+            $egresados=$egresados->toQuery()->where('materno','like','%'.mb_strtoupper($request->materno, 'UTF-8').'%')->get();
+        }
+        $encuestas14=DB::table('respuestas14')
+        ->where('respuestas14.cuenta','=',$request->nc)
+        ->whereNotNull('respuestas14.NGR11')
+        ->get(); 
+        $eg14=DB::table('respuestas14')
+        ->where('respuestas14.cuenta','=',$request->nc)
+        ->whereNull('respuestas14.NGR11')
+        ->first();       
+        return view('resultado',compact('encuestas20','encuestas14','egresados','eg14',));
 
     
     }

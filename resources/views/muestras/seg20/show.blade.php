@@ -70,7 +70,11 @@
  
   console.log('script jalando ¿?');
   $(document).ready(function() {
-    $('#myTable').DataTable();
+    $('#myTable').DataTable(
+      @if(Auth::user()->id==10)
+      {paging: false}
+      @endif
+    );
 } );
  </script>
 @endpush

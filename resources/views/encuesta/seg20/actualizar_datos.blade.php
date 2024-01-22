@@ -34,7 +34,7 @@
                 <td>{{$c->cuenta}} </td>
                 <td style="width:40%; word-wrap: break-word">{{$c->correo}} </td>
                <td>{{$c->status}} </td>
-                <td><a href="{{route('correos.edit',$c->id)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-edit" aria-hidden="true"> </i> &nbsp; EDITAR </button></a>
+                <td><a href="{{route('editar_correo',[$c->id,$Egresado->carrera])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-edit" aria-hidden="true"> </i> &nbsp; EDITAR </button></a>
               </td>
               <td><a href="{{route('comenzar_encuesta_2020',[$c->id,$Egresado->cuenta,$Egresado->carrera])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fas fa-paper-plane" aria-hidden="true"> </i> &nbsp; ENVIAR AVISO <br> Y ENCUESTAR</button></a>
               </td>
