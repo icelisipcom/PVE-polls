@@ -31,11 +31,18 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{ route('revision') }}" class="nav-link {{ Request::is('revision') ? 'active' : '' }}">
+    <i class="nav-icon fas fa-eye"></i>
+        <p>Revisar mis encuestas</p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ route('aviso') }}" class="nav-link {{ Request::is('aviso') ? 'active' : '' }}">
     <i class="nav-icon fas fa-paper-plane"></i>
         <p>Enviar aviso </p>
     </a>
 </li>
+
 <li class="nav-item">
     <a href="{{ route('buscar') }}" class="nav-link {{ Request::is('buscar') ? 'active' : '' }}">
     <i class="fas fa-eye"></i>

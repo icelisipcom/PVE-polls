@@ -32,6 +32,7 @@ Route::get('muestras14/show/{carrera}/{plantel}', [MuestrasController::class,'sh
 Route::get('muestras20/index', [MuestrasController::class,'index_20'])->name('muestras20.index');
 Route::get('muestras20/show/{carrera}/{plantel}', [MuestrasController::class,'show_20'])->name('muestras20.show');
 Route::get('/encuestas/2020/llamar/{id}', [App\Http\Controllers\LlamadasController::class, 'llamar_20'])->name('llamar_20');
+Route::get('revision', [MuestrasController::class,'revision'])->name('revision');
 
 
 Route::post('/encuestas/2020/real_update/{id}', [App\Http\Controllers\Encuestas20Controller::class, 'update2'])->name('encuestas.real_update');

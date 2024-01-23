@@ -26,8 +26,8 @@
       </div>
      </div>
     </div>
-    <div class="col-6 col-lg-12 table-responsive">
-        <table class="table text-xl " id="myTable" style="table-layout:fixed;">
+    <div class="col-6 col-sm-12 table-responsive">
+        <table class="table text-sm " id="myTable" style="table-layout:fixed; font-size:50%">
           <thead>
             <tr>
             <th>Nombre</th>
@@ -42,8 +42,8 @@
           </thead>
           <tbody>
             @foreach($muestra as $e)
-            <tr style="background-color: {{$e->color_rgb}};">
-                <td>{{$e->nombre}} {{$e->paterno}} {{$e->materno}}</td>
+            <tr style="background-color: {{$e->color_rgb}}; ">
+                <td>{{$e->nombre}} </td>
                 <td> {{$e->paterno}} </td>
                 <td> {{$e->materno}}</td>
                 

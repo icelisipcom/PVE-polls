@@ -11,6 +11,8 @@ use App\Models\Carrera;
 use DB;
 use App\Models\Egresado;
 use App\Models\respuestas2;
+
+use App\Models\respuestas20;
 use App\Models\respuestas14;
 
 use Illuminate\Support\Facades\Auth;
@@ -96,6 +98,16 @@ public function show_20($carrera,$plantel){
 
   
   return view('muestras.seg20.show',compact('muestra','Carrera','Codigos'));
+}
+public function revision(){
+  $Encuestas=respuestas20::leftJoin('carreras', function($join)
+  {
+      $join->on('carreras.clave_carrera', '=', 'respuestas20.nbr2');
+      $join->on('carreras.clave_plantel', '=', 'respuestas20.nbr3');                             
+  })
+  //->where('aplica',Auth::user()->clave) 
+  ->get();
+  return view('muestras.seg20.revision',compact('Encuestas'));
 }
 
 }

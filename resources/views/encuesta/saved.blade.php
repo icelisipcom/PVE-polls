@@ -12,6 +12,15 @@
        <button class="btn "  type="button"  style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
     <i class="fas fa-download fa-lg"></i> &nbsp; DESCARGAR JSON
   </button></a>
+
+  <br>
+  <a href="{{route('edit_20',$Encuesta->registro)}}">
+       <button class="btn "  type="button"  style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
+    <i class="fas fa-eye fa-lg"></i> &nbsp; Revisar
+  </button></a>
+
+
+
    </center>
     </div>
 @endsection

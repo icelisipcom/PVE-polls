@@ -18,6 +18,8 @@
             <td>Egresad@: </td>
             <td> {{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}} </td>
           </TR>
+          
+          <tr><td>Numero C:</td><td> {{$Egresado->cuenta}}</td> </tr>
           <tr>
             <td>Promedio:</td> <td>{{$Egresado->promedio}}</td>
           </tr>
@@ -2614,8 +2616,9 @@ if(options.includes(parseInt(val.value))){
 
 function ocultar(item){
 console.log('reactivo a ocultar: '+item);
-document.getElementById(item.id).value=0;
+
 document.getElementById(item.id).hidden="hidden";
+document.getElementById(item.id).value=0;
 console.log(document.getElementById(item.id).value);
 }
 

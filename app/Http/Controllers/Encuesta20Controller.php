@@ -8,6 +8,8 @@ use App\Models\Carrera;
 use App\Models\Correo;
 use App\Models\Telefono;
 use App\Models\respuestas20;
+
+use App\Models\historico_encuestas;
 use App\Models\Comentario;
 use Illuminate\Support\Facades\Auth;
 use File;
@@ -75,17 +77,18 @@ $Comentario=$Coment->comentario;
     }
     // dd($Comentario);
     return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel','Comentario'));
-
 }
 
 
-public function update2(Request $request,$id){
-    
+public function update2(Request $request,$id){  
     $Encuesta=respuestas20::where('registro',$id)->first();
+    $Encuesta_respaldo = $Encuesta->replicate(); 
+    $Encuesta_respaldo->setTable('respuestas20_resp');
+    $Encuesta_respaldo->save();
     $fileName = time().$Encuesta->cuenta.'.json';
     $fileStorePath = public_path('storage/'.$fileName);
     File::put($fileStorePath, json_encode($request->all()));
-    
+
     $Encuesta-> aplica  = Auth::user()->clave;
     if($request->fec_capt=="2023-01-01"){
         $Encuesta-> fec_capt  = now()->modify('-6 hours') ;
