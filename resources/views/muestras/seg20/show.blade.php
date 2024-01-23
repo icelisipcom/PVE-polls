@@ -27,7 +27,7 @@
      </div>
     </div>
     <div class="col-6 col-sm-12 table-responsive">
-        <table class="table text-sm " id="myTable" style="table-layout:fixed; font-size:50%">
+        <table class="table text-md " id="myTable" style="table-layout:fixed;">
           <thead>
             <tr>
             <th>Nombre</th>
@@ -70,11 +70,7 @@
  
   console.log('script jalando ¿?');
   $(document).ready(function() {
-    $('#myTable').DataTable(
-      @if(Auth::user()->id==10)
-      {paging: false}
-      @endif
-    );
+    $('#myTable').DataTable({paging: false});
 } );
  </script>
 @endpush

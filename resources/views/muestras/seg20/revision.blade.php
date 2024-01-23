@@ -9,10 +9,8 @@
           <thead>
             <tr>
             <th>Nombre</th>
-            <th>Paterno </th>
-            <th>Materno</th>
             <th>Num. Cuenta</th>
-            
+            <th>Aplicador</th>
             <th>fecha</th>
             <th>carrera</th>
             <th>plantel</th>
@@ -22,14 +20,12 @@
           <tbody>
             @foreach($Encuestas as $e)
             <tr style="background-color: {{$e->color_rgb}};">
-                <td>{{$e->nombre}} </td>
-                <td> {{$e->paterno}} </td>
-                <td> {{$e->materno}}</td>
-                
+                <td>{{$e->nombre}} {{$e->paterno}} {{$e->materno}}</td> 
                 <td>{{$e->cuenta}} </td>
-               <td>{{$e->fec_capt}} </td>
-               <td> {{$e->carrera}}</td>
-               <td> {{$e->plantel}}</td>
+                <td>{{$e->name}}  </td>
+                <td>{{$e->fec_capt}} </td>
+                <td> {{$e->carrera}}</td>
+                <td> {{$e->plantel}}</td>
                 <td><a href="{{route('edit_20',$e->registro)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-eye" aria-hidden="true"> </i> &nbsp; Revisar </button></a>
               </td>
             </tr>

@@ -75,6 +75,10 @@
         <a href="{{route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera])}}">
     <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-file"></i> Contestar Encuesta</button></a>
     </div> 
+    <div class='col'>
+        <a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}">
+    <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-arrow-left"></i> Regresar a al muestra</button></a>
+    </div>
   </div>
   
   </form></div>
