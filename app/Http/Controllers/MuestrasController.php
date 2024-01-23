@@ -105,7 +105,7 @@ public function revision(){
       $join->on('carreras.clave_carrera', '=', 'respuestas20.nbr2');
       $join->on('carreras.clave_plantel', '=', 'respuestas20.nbr3');                             
   })
-  ->rightjoin('users','users.clave','=','respuestas20.aplica')
+  ->leftjoin('users','users.clave','=','respuestas20.aplica')
   ->select('respuestas20.*','carreras.carrera','carreras.plantel','users.name')
   //->where('aplica',Auth::user()->clave) 
   ->get();
