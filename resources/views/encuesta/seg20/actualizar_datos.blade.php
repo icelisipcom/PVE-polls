@@ -8,15 +8,52 @@
         <h1 class="text-white-50">{{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}}   </h1>
     </div>
     <div class="col-6 col-lg-12 table-responsive">
+    <H1> TELEFONOS DEL EGRESADO </H1> 
     <div class="col-sm-12 text-right">
-            
-                <a href="{{ route('agregar_correo',[$Egresado->cuenta,$Egresado->carrera])}}">
-                  <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo Correo </button>
+           
+                <a href="{{ route('agregar_telefono',[$Egresado->cuenta,$Egresado->carrera])}}">
+                  <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 2.3vw"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo telefono </button>
                     
                 </a>
                 
             </div>
-        <table class="table text-xl " id="myTable" style="table-layout:fixed;">
+            
+        <table class="table text-xl " style="table-layout:fixed;">
+          <thead>
+            <tr>
+            
+            <th>Num. Cuenta</th>
+            <th style="width:30%; word-wrap: break-word">Telefono</th>
+            <th>status</th>
+            <th> </th>
+            
+          </tr>
+          </thead>
+          <tbody>
+            @foreach($Telefonos as $t)
+            <tr >
+                
+                <td>{{$t->cuenta}} </td>
+                <td style="width:40%; word-wrap: break-word">{{$t->telefono}} </td>
+               <td>{{$t->status}} </td>
+                <td><a href="{{route('editar_telefono',[$t->id,$Egresado->carrera])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-edit" aria-hidden="true"> </i> &nbsp; EDITAR </button></a>
+              </td>
+              
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+    <h1> CORREOS DEL EGRESADO</h1>
+    <div class="col-sm-12 text-right">
+      
+            
+                <a href="{{ route('agregar_correo',[$Egresado->cuenta,$Egresado->carrera])}}">
+                  <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.9vw;"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo Correo </button>
+                    
+                </a>
+                
+            </div>
+        <table class="table text-xl " style="table-layout:fixed;">
           <thead>
             <tr>
             
@@ -42,6 +79,8 @@
             @endforeach
           </tbody>
         </table>
+    </div>
+    
     </div>
 </div>
 @stop

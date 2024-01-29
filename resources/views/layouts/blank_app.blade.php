@@ -2,92 +2,9 @@
 <head>
 <link rel="shortcut icon" type="image/png" href="{{ asset('img/logoPVE.png') }}">
 <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script
-    src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<link rel="stylesheet"
-    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet"
-    href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-    <style>
-        th{
-            background-color: {{ Auth::user()->color }};
-            color: white;
-        }
-        .content-wrapper {
-   
-  background: url("{{asset('img/'.Auth::user()->image )}}") 50% 0 no-repeat fixed;
-  background-size: cover;
-  font-weight: bold;
-  size: 1.9vw;
-  color: #cdc8d8;
-}
-.wrapper {
-   
-   background: #343A40;
-    
-}
-     </style>
-     <style>
-.panel-fullscreen {
-display: block;
-z-index: 9999;
-position: fixed;
-width: 100%;
-height: 100%;
-top: 0;
-right: 0;
-left: 0;
-bottom: 0;
-overflow: auto;
-}
-</style>
-<style>
-    .dataTables_filter {
-  position: relative;
-  background: transparent;
-  color: {{ Auth::user()->color}};
-}
-
-.dataTables_filter input {
-  width: 10.9vw;
-  height: 2.9vw;
-  /* background: var(--primary); */
-  border: 1px solid rgba(255, 255, 255, 0.937);
-  border-radius: 5px;
-  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
-  text-indent: 10px;
-  font-color: {{ Auth::user()->color}};
-  font-size: 1.3vw;
-}
- 
-.dataTables_filter {
-  aling: center;
-  size: 40px;
-   color: {{ Auth::user()->color}};
-
-}
-    .dataTables_wrapper .dataTables_paginate .paginate_button {
-  background:  {{ Auth::user()->color}} !important;
-  color: white!important;
-  border-radius: 4px;
-  border: 1px solid #ffffff;
-  font-size: 1.9vw;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  background:  white!important;
-  color: #9e7205!important;
-  weight: bolder;
-  border-radius: 4px;
-  border: 1px solid #ffffff;
-}
- 
-.dataTables_wrapper .dataTables_paginate .paginate_button:active {
-  background: #f9b70f9d!important;
-  color: white!important;
-}
-</style>
+@include('encuesta.estilo_encuesta')
      @stack('css')
+     
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -103,6 +20,7 @@ overflow: auto;
   }
 }
 </script>
+
 </head>
     <body class="hold-transition sidebar-mini layout-fixed"  >
         <div class="wrapper">
@@ -125,7 +43,7 @@ overflow: auto;
                             <img src="{{asset('img/logoPVE.png')}}"
                                 class="user-image img-circle elevation-2" alt="User Image">
                             <span class="d-none d-md-inline" style="color:white;"> 
-                                <!-- aki iba el nombre de usuario pero lo quite  -->
+                                
                                 {{ Auth::user()->name }}
 
                             </span>
@@ -156,7 +74,7 @@ overflow: auto;
                 </ul>
             </nav>
 
-            <!-- Left side column. contains the logo and sidebar -->
+      <!-- Left side column. contains the logo and sidebar -->
             @include('layouts.sidebar')
 
             <!-- Content Wrapper. Contains page content -->
@@ -164,21 +82,14 @@ overflow: auto;
                 @yield('content')
             </div>
 
-            <!-- Main Footer -->
-            <footer class="main-footer" style="background:#343A40">
-                <div class="float-right d-none d-sm-block" >
-                    <b>Version</b> 3.1.0
-                </div>
-                <strong>Copyright &copy; 2022-2023 <a href="https://www.pveu.unam.mx/">PVE-UNAM</a>.</strong> All rights
-                reserved.
-            </footer>
-        </div>
+            
 
         
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
   
+  @include('encuesta.scripts_encuesta')
+   @stack('js')
 
-        @stack('js')
     </body>
 </x-laravel-ui-adminlte::adminlte-layout>
 

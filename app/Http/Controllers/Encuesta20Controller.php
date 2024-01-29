@@ -28,21 +28,21 @@ class Encuesta20Controller extends Controller
         
         $Correo=Correo::find($correo);
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
-        if($Correo->enviado==0){
+        // if($Correo->enviado==0){
            
-        $caminoalpoder=public_path();
-           $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$Correo->correo]);
-           $process->run();
-           if (!$process->isSuccessful()) {
-               throw new ProcessFailedException($process);
-           }
-           $data = $process->getOutput();
-           $Correo->enviado=1;
-           $Correo->save();
-        }
+        // $caminoalpoder=public_path();
+        //    $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$Correo->correo]);
+        //    $process->run();
+        //    if (!$process->isSuccessful()) {
+        //        throw new ProcessFailedException($process);
+        //    }
+        //    $data = $process->getOutput();
+        //    $Correo->enviado=1;
+        //    $Correo->save();
+        // }
            $Encuesta=respuestas20::where('cuenta','=',$cuenta)->where('nbr2','=',$carrera)->first();
            if($Encuesta){
-            return redirect('/encuestas_2020/edit/'.$Encuesta->registro);
+            return redirect('/encuestas_2020/edit/'.$Encuesta->registro.'/A');
            }else{
             $Encuesta=new respuestas20();
             $Encuesta->cuenta=$cuenta;
@@ -56,28 +56,222 @@ class Encuesta20Controller extends Controller
             $Encuesta->gen_dgae=2020;
             $Encuesta->completed=0;
             $Encuesta->save();
-            return redirect('/encuestas_2020/edit/'.$Encuesta->registro);
+            return redirect('/encuestas_2020/edit/'.$Encuesta->registro.'/A');
            }           
 
     }
     
-public function edit($id){
+public function edit($id,$section){
     
     $Encuesta=respuestas20::where('registro','=',$id)->first();
     $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
     $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
     $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
     $Comentario=''.Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
-           
+    $Telefonos=Telefono::where('cuenta',$Egresado->cuenta)->get();       
     $Coment=Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     if($Coment){
 $Comentario=$Coment->comentario;
     }  else{
         $Comentario='';
     }
+    $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
+    $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
     // dd($Comentario);
-    return view('encuesta.show',compact('Encuesta','Egresado','Carrera','Plantel','Comentario'));
+    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos'));
 }
+public function updateA(Request $request,$id){
+    $Encuesta=respuestas20::where('registro',$id)->first();
+    $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
+    $rules=[
+        'fec_capt' => 'required',
+       'nar8' => 'required',
+       'nar9' => 'required',
+       'nar10' => 'required',
+       'nar11' => 'required',
+       'nar11a' => 'required',
+       'nar14' => 'required',
+       'nar14otra' => 'required',
+       'nar12' => 'required',
+       'nar12otra' => 'required',
+       'nrx' => 'required',
+       'nar15' => 'required',
+       'nar15otra' => 'required',
+       'nar13' => 'required',
+       'nar13otra' => 'required',
+       'nrxx' => 'required',
+       'nar16' => 'required',
+       'nar16otra' => 'required',
+       'nbr1' => 'required',
+       'ner20' => 'required',
+       'ner20txt' => 'required',
+       'ner20a' => 'required',
+       'nar1' => 'required',
+       'nar2a' => 'required',
+       'nar3a' => 'required',
+       'nar4a' => 'required',
+       'nar5a' => 'required',
+    ];
+   
+    if($Egresado->sexo=='M'){
+        $nar7=2;
+    }else{$nar7=1; }
+    $Encuesta_respaldo = $Encuesta->replicate(); 
+    $Encuesta_respaldo->setTable('respuestas20_resp');
+    $Encuesta_respaldo->save();
+    $Encuesta->nar7=$nar7;
+    $Encuesta-> aplica  = Auth::user()->clave;
+    $Encuesta->update($request->except(['_token', '_method','btnradio']) );
+    $Encuesta->save();
+    $validated = $request->validate($rules);
+    $Encuesta->sec_a=1;
+    $Encuesta->save();
+    return redirect()->route('edit_20',[$Encuesta->registro,'E']);
+}
+
+
+    public function updateE(Request $request,$id){
+        $Encuesta=respuestas20::where('registro',$id)->first();
+        $Encuesta-> aplica  = Auth::user()->clave;
+        $Encuesta->update($request->except(['_token', '_method']) );
+        $Encuesta->save();
+        $rules=['ner1' => 'required',
+                'ner2' => 'required',
+                'ner1a' => 'required',
+                'ner3' => 'required',
+                'ner4' => 'required',
+                'ner5' => 'required',
+                'ner6' => 'required',
+                'ner7' => 'required',
+                'ner7int' => 'required',
+                'ner7a' => 'required',
+                'ner8' => 'required',
+                'ner9' => 'required',
+                'ner10' => 'required',
+                'ner10a' => 'required',
+                'ner11' => 'required',
+                'ner12' => 'required',
+                'ner13' => 'required',
+                'ner14' => 'required',
+                'ner15' => 'required',
+                'ner12a' => 'required',
+                'ner12b' => 'required',
+                'ner16' => 'required',
+                'ner17' => 'required',
+                'ner18' => 'required',
+                'ner19' => 'required',];
+        $validated = $request->validate($rules);
+        $Encuesta->sec_e=1;
+        $Encuesta->save();
+        return redirect()->route('edit_20',[$Encuesta->registro,'F']);
+}
+
+//guardar seccion F
+public function updateF(Request $request,$id){
+    $Encuesta=respuestas20::where('registro',$id)->first();
+    $Encuesta-> aplica  = Auth::user()->clave;
+    $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->save();
+    $rules=['nfr0' => 'required',
+            'nfr1' => 'required',
+            'nfr2' => 'required',
+            'nfr3' => 'required',
+            'nfr5' => 'required',
+            'nfr5_a' => 'required',
+            'nfr6' => 'required',
+            'nfr6_a' => 'required',
+            'nfr7' => 'required',
+            'nfr8' => 'required',
+            'nfr9' => 'required',
+            'nfr10' => 'required',
+            'nfr11' => 'required',
+            'nfr11a' => 'required',
+            'nfr12' => 'required',
+            'nfr13' => 'required',
+            'nfr22' => 'required',
+            'nfr23a' => 'required',
+            'nfr23' => 'required',
+            'nfr24' => 'required',
+            'nfr25' => 'required',
+            'nfr26' => 'required',
+            'nfr27' => 'required',
+            'nfr28' => 'required',
+            'nfr29' => 'required',
+            'nfr29a' => 'required',
+            'nfr30' => 'required',
+            'nfr31' => 'required',
+            'nfr32' => 'required',
+            'nfr33' => 'required',];
+    $validated = $request->validate($rules);
+    $Encuesta->sec_f=1;
+    $Encuesta->save();
+    return redirect()->route('edit_20',[$Encuesta->registro,'C']);
+}
+//guardar seccion C
+public function updateC(Request $request,$id){
+    $Encuesta=respuestas20::where('registro',$id)->first();
+    $Encuesta-> aplica  = Auth::user()->clave;
+    $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->save();
+    $rules=[];
+    $validated = $request->validate($rules);
+    $Encuesta->sec_c=1;
+    $Encuesta->save();
+    return redirect()->route('edit_20',[$Encuesta->registro,'D']);
+}
+//guardar seccion D
+public function updateD(Request $request,$id){
+    $Encuesta=respuestas20::where('registro',$id)->first();
+    $Encuesta-> aplica  = Auth::user()->clave;
+    $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->save();
+    $rules=[];
+    $validated = $request->validate($rules);
+    $Encuesta->sec_d=1;
+    $Encuesta->save();
+    return redirect()->route('edit_20',[$Encuesta->registro,'G']);
+}
+//guardar ultima seccion (G)
+public function updateG(Request $request,$id){
+    $Encuesta=respuestas20::where('registro',$id)->first();
+    $Encuesta-> aplica  = Auth::user()->clave;
+    $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->save();
+    $rules=[];
+    $validated = $request->validate($rules);
+    $Encuesta->sec_g=1;
+    $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
+    $Egresado->status=1; //i.e encuestado via telefonica
+    $Egresado->save();
+
+
+    $fileName = $Encuesta->cuenta.'.json';
+    $fileStorePath = public_path('storage/json/'.$fileName);
+    
+    File::put($fileStorePath, json_encode($request->all()));
+    $comentario=comentario::where('cuenta',$Encuesta->cuenta)->first();
+    if($comentario){
+        $comentario->comentario=$request->comentario;
+        $comentario->save();
+    }else{
+        $comentario=new comentario();
+        $comentario->cuenta=$Encuesta->cuenta;
+        $comentario->comentario=$request->comentario;
+        $comentario->save();
+    }
+    
+
+    return view('encuesta.saved',compact('Encuesta'));
+    }
+
+
+
+
+
+
+
+
+
 
 
 public function update2(Request $request,$id){  

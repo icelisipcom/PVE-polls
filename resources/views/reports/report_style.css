@@ -1,0 +1,11 @@
+table{
+    th{
+        background-color: rgb(23, 30, 92);
+        color: white;
+        padding:0.2vw;
+    }
+    td{
+        color: black;
+        padding:0.2vw;
+    }
+}

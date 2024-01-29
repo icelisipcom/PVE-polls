@@ -1,0 +1,356 @@
+@extends('layouts.blank_app')
+
+@section('content')
+<h1 > COMPLETAR ENCUESTA </h1>
+<div  id='datos'>  @include('encuesta.personal_data') </div>
+<div style="padding:1.2vw;">
+<form action="{{ url('encuestas/2020/D_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
+@csrf
+<table class="encuesta_table">
+        <!-- primera fila  -->
+<tr>
+<td colspan="2">
+<h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
+
+ 
+<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
+        <option value="" selected></option>
+        <option value=1  @if($Encuesta->ndr1==1) selected @endif>Muy fácil</option>
+        <option value=2  @if($Encuesta->ndr1==2) selected @endif>Fácil</option> 
+        <option value=3  @if($Encuesta->ndr1==3) selected @endif>Medianamente</option> 
+        <option value=4  @if($Encuesta->ndr1==4) selected @endif>Difícil</option> 
+        <option value=5  @if($Encuesta->ndr1==5) selected @endif>Muy difícil</option> 
+        <option value=6  @if($Encuesta->ndr1==6) selected @endif>No he buscado un trabajo relacionado con mi carrera (Pase 61)</option> 
+        <option value=7  @if($Encuesta->ndr1==7) selected @endif>No he encontrado un trabajo relacionado con mi carrera (Pase 61)</option> 
+        <option value=0  hidden></option>   
+</select>
+
+
+
+    </td>
+<td>
+<h2 class="reactivo"> 45.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
+<select class="select" id="ndr2" name="ndr2" onchange="funcion_ndr2()">
+<option selected="selected" value="">
+<option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
+<option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 57)</option>
+<option value=1  @if($Encuesta->ndr2==1) selected @endif>En la bolsa de trabajo de la UNAM</option>
+<option value=2  @if($Encuesta->ndr2==2) selected @endif>En otra bolsa de trabajo</option>
+<option value=8  @if($Encuesta->ndr2==8) selected @endif>Por relaciones en el servicio social</option>
+<option value=10 @if($Encuesta->ndr2==10) selected @endif>Integración a un negocio familiar (Pase a la 57)</option>
+<option value=11 @if($Encuesta->ndr2==11) selected @endif>Iniciativa propia</option>
+<option value=7  @if($Encuesta->ndr2==7) selected @endif>Relaciones laborales previas</option>
+<option value=3  @if($Encuesta->ndr2==3) selected @endif>Recomendado por amigos</option>
+<option value=4  @if($Encuesta->ndr2==4) selected @endif>Recomendado por parientes</option>
+<option value=5  @if($Encuesta->ndr2==5) selected @endif>Recomendado por un profesor</option>
+<option value=12  @if($Encuesta->ndr2==12) selected @endif>Internet (especifíque)</option>
+<option value=13  @if($Encuesta->ndr2==13) selected @endif>Prácticas profesionales (especifíque)</option>
+<option value=14  @if($Encuesta->ndr2==14) selected @endif>Ofrecimiento directo (especifíque)</option>
+<option value=16  @if($Encuesta->ndr2==16) selected @endif>Anuncio</option>
+<option value=17  @if($Encuesta->ndr2==17) selected @endif>Convocatoria o Examen de selecci&oacuten</option>
+<option value=15  @if($Encuesta->ndr2==15) selected @endif>Otra forma (especifíque)</option>
+<option value=0  hidden></option>   
+</select>
+</td>
+<td>
+<br>Especifíque:
+<INPUT id="ndr2a" class="texto"  NAME="ndr2a"  TYPE=TEXT SIZE="60" MAXLENGTH="60" value="{{$Encuesta->ndr2_a}}">
+
+    </td>
+</tr>
+
+<tr>
+<td colspan="4">
+<h2 class="reactivo"> <b>¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </b> </h2>
+    </td>
+</tr>
+<tr>
+<td>
+<h2 class="reactivo">  46).- El prestigio de la UNAM </h2>
+  
+
+	<select class="select" id="ndr3" name="ndr3" >
+        <option value="">
+        <option value=1  @if($Encuesta->ndr3==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr3==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr3==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr3==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr3==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+</td>
+<td>
+<h2 class="reactivo">47).- Su comportamiento en la entrevista y/o en los exámenes de selección  </h2>
+	<select class="select" id="ndr8" name="ndr8" >
+        <option selected="selected" value="">
+        <option value=1   @if($Encuesta->ndr8==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr8==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr8==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr8==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr8==5) selected @endif>Nada importante </option> 
+  <option value=0  hidden></option>   
+</select>
+</td>
+<td>
+<h2 class="reactivo"> 	48.- Sus conocimientos sobre la carrera </h2>
+
+	<select class="select" id="ndr4" name="ndr4" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr4==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr4==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr4==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr4==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr4==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+ </td>
+<td>
+<h2 class="reactivo">  49.- Recomendaciones</h2>
+
+
+	<select class="select" id="ndr9" name="ndr9" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr9==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr9==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr9==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr9==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr9==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+      </td>
+</tr>
+
+<tr>
+<td>
+<h2 class="reactivo"> 50.- Sus conocimientos sobre computación   </h2>
+	<select class="select" id="ndr5" name="ndr5" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr5==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr5==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr5==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr5==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr5==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+</td>
+<td>
+<h2 class="reactivo">51.- Su género (sexo)  </h2>
+	<select class="select" id="ndr10" name="ndr10" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr10==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr10==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr10==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr10==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr10==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+            </td>
+<td>
+<h2 class="reactivo"> 52.- Su  dominio  del inglés   </h2>
+	<select class="select" id="ndr6" name="ndr6" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr6==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr6==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr6==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr6==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr6==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+ 
+
+            </td>
+<td>
+<h2 class="reactivo"> 53.- Su edad  </h2>
+	<select class="select" id="ndr11" name="ndr11" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr11==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr11==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr11==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr11==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr11==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+            </td>
+</tr>
+
+<tr>
+<td>
+<h2 class="reactivo">	54.- Su dominio de otro idioma  </h2>
+	<select class="select" id="ndr7" name="ndr7" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr7==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr7==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr7==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr7==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr7==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+</td>
+<td>
+<h2 class="reactivo"> 55.- Su estado civil       </h2>
+	<select class="select" id="ndr12" name="ndr12" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->ndr12==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->ndr12==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->ndr12==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->ndr12==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->ndr12==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+ </select>
+            </td>
+<td>
+<h2 class="reactivo">55.1 - Cercania al domicilio.  </h2>
+	      <select class="select" id="ndr12a" name="NDR12A" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->NDR12A==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->NDR12A==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->NDR12A==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->NDR12A==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->NDR12A==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+            </td>
+<td>
+<h2 class="reactivo">55.2 - Experiencia profesional    </h2>
+	<select class="select" id="ndr12b" name="NDR12B" >
+        <option selected="selected" value="">
+        <option value=1  @if($Encuesta->NDR12B==1) selected @endif>Muy importante</option>
+        <option value=2  @if($Encuesta->NDR12B==2) selected @endif>Importante</option> 
+        <option value=3  @if($Encuesta->NDR12B==3) selected @endif>Medianamente importante</option> 
+        <option value=4  @if($Encuesta->NDR12B==4) selected @endif>Poco importante</option> 
+        <option value=5  @if($Encuesta->NDR12B==5) selected @endif>Nada importante </option> 
+        <option value=0  hidden></option>   
+</select>
+
+            </td>
+</tr>
+<tr>
+<td>
+<h2 class="reactivo"> 55.3 - Título profesional.   </h2>
+	      <select class="select" id="ndr12c" name="NDR12C" >
+          <option selected="selected" value="">
+          <option value=1  @if($Encuesta->NDR12C==1) selected @endif>Muy importante</option>
+          <option value=2  @if($Encuesta->NDR12C==2) selected @endif>Importante</option> 
+          <option value=3  @if($Encuesta->NDR12C==3) selected @endif>Medianamente importante</option> 
+          <option value=4  @if($Encuesta->NDR12C==4) selected @endif>Poco importante</option> 
+          <option value=5  @if($Encuesta->NDR12C==5) selected @endif>Nada importante </option> 
+          <option value=0  hidden></option>   
+</select>
+    </td>
+<td>
+<h2 class="reactivo">56.- Otro factor para su contratación, ¿Cuál? </h2>
+
+<INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" " TYPE=TEXT SIZE="60" MAXLENGTH="60" >
+
+      </td>
+      <td></td>
+      <td></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<h2 class="reactivo"> 58.- ¿Cuánto tiempo después  de  egresar  de  la licenciatura obtuvo su primer trabajo? {{$Encuesta->ndr15==1}}</h2>
+<select class="select" id="ndr15" name="ndr15" >
+<option selected="selected" value=0></option>
+   <option value=1  @if($Encuesta->ndr15==1) selected @endif>6 meses o menos</option>
+   <option value=2  @if($Encuesta->ndr15==2) selected @endif>de 6 meses a un año </option>
+   <option value=3  @if($Encuesta->ndr15==3) selected @endif> más de un año</option>
+   <option value=0  hidden></option>   
+</select>
+
+      </td>
+<td>
+<h2 class="reactivo"> 59.- ¿Actualmente sigue laborando en el mismo trabajo?</h2>
+<select class="select" id="ndr16" name="ndr16" >
+<option selected="selected" value="">
+   <option value=1  @if($Encuesta->ndr16==1) selected @endif>Sí</option>
+   <option value=2  @if($Encuesta->ndr16==2) selected @endif>No</option>
+   <option value=0  hidden></option>   
+</select>
+
+      </td>
+<td>
+<h2 class="reactivo"> 60.- ¿Cuántos trabajos ha tenido desde que egresó de la licenciatura? </h2>
+<select class="select" id="ndr17" name="ndr17" >
+<option selected="selected" value="">
+   <option value=1  @if($Encuesta->ndr17==1) selected @endif>Uno</option>
+   <option value=2  @if($Encuesta->ndr17==2) selected @endif>Dos </option>
+   <option value=3  @if($Encuesta->ndr17==3) selected @endif>De tres a seis</option>
+ <option value=4  @if($Encuesta->ndr17==4) selected @endif>Más de seis</option>
+ <option value=5  @if($Encuesta->ndr17==5) selected @endif>Ninguno</option>
+ <option value=0  hidden></option>   
+</select>
+
+     </td>
+
+</tr>
+<tr><td colspan="4">
+<h2 class="reactivo">Desde su inserción al campo laboral a la fecha, considera que su situación ha mejorado, con relación a el:</h2>
+
+     </td></tr>
+<tr>
+
+<td>
+<h2 class="reactivo">61).- Puesto que ocupa    </h2>
+<select class="select" id="ndr18" name="ndr18">
+        <option selected="selected" value="">
+<option value=1  @if($Encuesta->ndr18==1) selected @endif>Mejoró</option>
+<option value=2  @if($Encuesta->ndr18==2) selected @endif>Es la misma</option>
+<option value=3  @if($Encuesta->ndr18==3) selected @endif>Empeoró</option>
+<option value=0  hidden></option>   
+</select>
+
+        </td>
+<td>
+<h2 class="reactivo">62).- Salario    </h2> 
+<select class="select" id="ndr19" name="ndr19" >
+        <option selected="selected" value="">
+<option value=1  @if($Encuesta->ndr19==1) selected @endif>Mejoró</option>
+<option value=2  @if($Encuesta->ndr19==2) selected @endif>Es la misma</option>
+<option value=3  @if($Encuesta->ndr19==3) selected @endif>Empeoró</option>
+<option value=0  hidden></option>   
+</select>
+</td> <td></td> <td></td>
+</tr>
+</table>
+<button class="btn fixed" name='boton1'  value=0 type="summit" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
+<i class="fas fa-arrow-right"></i> &nbsp; Siguiente
+  </button>
+  </form>
+</div>
+
+@endsection
+
+
+@push('js')
+<script>
+  unhide('D');
+  reactivos=document.getElementById("forma_sagrada").elements
+  for (var i=0, item; item = reactivos[i]; i++) {
+  // Look no need to do list[i] in the body of the loop
+  console.log("'"+item.name+"' => 'required',");
+}
+</script>
+<script>
+ @foreach ($errors->all() as $error)
+                document.getElementById( "{{str_replace('The ','',str_replace(' field is required.', '', $error)) }}").style="border: 0.3vw  solid red";
+  @endforeach
+</script>
+@if($errors->any())
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+  Swal.fire({
+  title: "Sección Incompleta",
+  text: "faltan algunas respuestas, se marcaran en rojo",
+  icon: "warning",
+});
+</script>
+@endif
+
+@endpush

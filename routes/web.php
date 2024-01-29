@@ -5,6 +5,7 @@ use App\Http\Controllers\MuestrasController;
 
 use App\Http\Controllers\Encuesta20Controller;
 use App\Http\Controllers\CorreosController;
+use App\Http\Controllers\TelefonosController;
 use App\Http\Controllers\EncuestasController;
 /*
 |--------------------------------------------------------------------------|
@@ -35,13 +36,26 @@ Route::get('/encuestas/2020/llamar/{id}', [App\Http\Controllers\LlamadasControll
 Route::get('revision', [MuestrasController::class,'revision'])->name('revision');
 
 
-Route::post('/encuestas/2020/real_update/{id}', [App\Http\Controllers\Encuestas20Controller::class, 'update2'])->name('encuestas.real_update');
+Route::post('/encuestas/2020/real_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'update2'])->name('encuestas.real_update');
+Route::post('/encuestas/2020/A_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateA'])->name('encuestas.real_update.A');
+Route::post('/encuestas/2020/C_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateC'])->name('encuestas.real_update.C');
+Route::post('/encuestas/2020/D_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateD'])->name('encuestas.real_update.D');
+Route::post('/encuestas/2020/E_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateE'])->name('encuestas.real_update.E');
+Route::post('/encuestas/2020/F_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateF'])->name('encuestas.real_update.F');
+Route::post('/encuestas/2020/G_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateG'])->name('encuestas.real_update.G');
+
 Route::resource('encuestas', EncuestasController::class);
 Route::resource('correos', CorreosController::class);
 Route::get('/agregar_correo/{cuenta}/{carrera}', [App\Http\Controllers\CorreosController::class, 'create'])->name('agregar_correo');
-Route::post('/guardar{cuenta}/{carrera}', [App\Http\Controllers\CorreosController::class, 'store'])->name('guardar_correo');
+Route::post('/guardar_correo{cuenta}/{carrera}', [App\Http\Controllers\CorreosController::class, 'store'])->name('guardar_correo');
 Route::get('/editar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'edit'])->name('editar_correo');
 Route::post('/actualizar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'update'])->name('actualizar_correo');
+
+Route::get('/agregar_telefono/{cuenta}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'create'])->name('agregar_telefono');
+Route::post('/guardar_telefono{cuenta}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'store'])->name('guardar_telefono');
+Route::get('/editar_telefono/{id}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'edit'])->name('editar_telefono');
+Route::post('/actualizar_telefono/{id}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'update'])->name('actualizar_telefono');
+
 
 
 Route::get('/encuestas/2014/show/{id}', [App\Http\Controllers\EncuestasController::class, 'show_14'])->name('encuestas.show_14');
@@ -57,7 +71,7 @@ Route::get('/encuestas/json/{id}', [App\Http\Controllers\EncuestasController::cl
 Route::get('/enc2019_make', [App\Http\Controllers\EncuestasController::class, 'index'])->name('encuestas.make19');
 Route::get('/enc2020_actualizar/{cuenta}/{carrera}', [App\Http\Controllers\Encuesta20Controller::class, 'act_data'])->name('encuesta20.act_data');
 Route::get('/comenzar_encuesta_2020/{correo}/{cuenta}/{carrera}', [App\Http\Controllers\Encuesta20Controller::class, 'comenzar'])->name('comenzar_encuesta_2020');
-Route::get('/encuestas_2020/edit/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'edit'])->name('edit_20');
+Route::get('/encuestas_2020/edit/{id}/{section}', [App\Http\Controllers\Encuesta20Controller::class, 'edit'])->name('edit_20');
 
 Route::get('/encuestas/verify/{id}', [App\Http\Controllers\EncuestasController::class, 'verificar'])->name('encuestas.verificar');
 
