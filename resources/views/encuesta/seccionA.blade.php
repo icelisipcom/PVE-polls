@@ -344,6 +344,17 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   <option value="" selected></option>
   <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>
   <option value=2 @if($Encuesta->nar2a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
+  
+  <option value=6 @if($Encuesta->nar2a==6) selected @endif > Beca de Excelencia Bécalos</option>
+  <option value=7 @if($Encuesta->nar2a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
+  <option value=8 @if($Encuesta->nar2a==8) selected @endif > Programa de Apoyo Nutricional </option>
+  <option value=9 @if($Encuesta->nar2a==9) selected @endif >Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
+  <option value=10 @if($Encuesta->nar2a==10) selected @endif > Beca para Disminuir el Bajo Rendimiento Académico</option>
+  <option value=11 @if($Encuesta->nar2a==11) selected @endif > Beca de Fortalecimiento y Beca de Alta Exigencia Académica</option>
+  <option value=12 @if($Encuesta->nar2a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
+  <option value=13 @if($Encuesta->nar2a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
+  <option value=14 @if($Encuesta->nar2a==14) selected @endif >Beca Especialidad (TITULACION) </option>
+ 
   <option value=3 @if($Encuesta->nar2a==3) selected @endif >Sí, de otro programa</option>
   </select>  
 </td>
