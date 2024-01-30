@@ -37,7 +37,7 @@
           </div></td>
 <td>  <h2 class="reactivo">2.- Estado civil:</h2>
            
-           <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar14])" > 
+           <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar14,nar14otra])" > 
            <option value="" selected></option>
            <option value=1  @if($Encuesta->nar8==1) selected @endif>Soltero(a)</option>
            <option value=2 @if($Encuesta->nar8==2) selected @endif>Casado(a)</option>

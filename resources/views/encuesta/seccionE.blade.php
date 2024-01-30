@@ -360,6 +360,8 @@
   bloquear('ner13',[2],[ner14,ner15]);
   bloquear('ner16',[2],[ner17,ner18]);
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
-  
+  @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202))
+   [ner12b,ner12a].forEach(ocultar);
+    @endif 
 </script>
 @endpush

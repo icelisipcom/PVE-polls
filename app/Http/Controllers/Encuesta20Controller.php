@@ -85,15 +85,18 @@ $Comentario=$Coment->comentario;
 
 function validar_completa($registro){
     $encuesta=respuestas20::where('registro','=',$registro)->first();
+    $Egresado=Egresado::where('cuenta',$encuesta->cuenta)->where('carrera',$encuesta->nbr2)->first();
+    
     if(($encuesta->sec_a==1)&&($encuesta->sec_a==1)&&($encuesta->sec_c==1)&&($encuesta->sec_d==1)&&($encuesta->sec_e==1)&&($encuesta->sec_f==1)&&($encuesta->sec_g==1)){
         $encuesta->completed=1;
-        $Egresado=Egresado::where('cuenta',$encuesta->cuenta)->where('carrera',$encuesta->nbr2)->first();
-    $Egresado->status=1; //i.e encuestado via telefonica
-    $Egresado->save();
+        $Egresado->status=1; //i.e encuestado via telefonica
+   
     }else{
         $encuesta->completed=0;
+        $Egresado->status=10; //encuesta inconclusa
     }
 $encuesta->save();
+$Egresado->save();
 }
 public function updateA(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
@@ -291,7 +294,6 @@ public function updateD(Request $request,$id){
     $Encuesta->save();
     $rules=['ndr1' => 'required',
             'ndr2' => 'required',
-            'ndr2a' => 'required',
             'ndr3' => 'required',
             'ndr8' => 'required',
             'ndr4' => 'required',

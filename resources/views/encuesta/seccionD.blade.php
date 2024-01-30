@@ -30,7 +30,7 @@
     </td>
 <td>
 <h2 class="reactivo"> 45.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
-<select class="select" id="ndr2" name="ndr2" onchange="funcion_ndr2()">
+<select class="select" id="ndr2" name="ndr2" onchange="bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17],[ndr2a)">
 <option selected="selected" value="">
 <option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
 <option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 57)</option>

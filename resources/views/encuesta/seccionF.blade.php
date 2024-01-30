@@ -109,7 +109,7 @@
 <td>
 <h2 class="reactivo"> 
  87).- ¿Recomendaría su escuela o facultad?</h2>
-   <select class="select" id="nfr6" name="nfr6"  onchange="z">
+   <select class="select" id="nfr6" name="nfr6"  onchange="bloquear('nfr6',[1],[nfr6_a])">
      <option value="" selected="selected"></option>
      <option value=1 @if($Encuesta->nfr6==1) selected @endif>Sí (pasa a la 88)</option>
      <option value=2 @if($Encuesta->nfr6==2) selected @endif>No</option>
@@ -344,7 +344,9 @@ discriminación?
   <option value=16 @if($Encuesta->nfr29==16) selected @endif>Motivos de salud</option>
   <option value=8 @if($Encuesta->nfr29==8) selected @endif>No deseo contestar</option>
   <option value=9 @if($Encuesta->nfr29==9) selected @endif>Otra (especifíque)</option>
-  </select> 
+  <option value=0 ></option>
+    
+</select> 
       </td>
 <td>
 <h2 class="reactivo">
@@ -447,11 +449,11 @@ servicio social? </h2>
 function titulado(){
   bloquear('nfr27',[2,3],[nfr28]);
   bloquear('nfr27',[1],[nfr29,nfr29a]);
-  // bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,""],[nfr29a]);
-}
-titulado();
-bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
  
+}
+
+bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
+titulado();
 bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
 bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a]);
 bloquear('nfr5',[1],[nfr5_a])
