@@ -8,7 +8,7 @@ use App\Models\Carrera;
 use App\Models\Correo;
 use App\Models\Telefono;
 use App\Models\respuestas20;
-
+use DB;
 use App\Models\historico_encuestas;
 use App\Models\Comentario;
 use Illuminate\Support\Facades\Auth;
@@ -78,7 +78,7 @@ $Comentario=$Coment->comentario;
     $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
     // dd($Comentario);
-    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos'));
+    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','nfr23_options','Discriminacion'));
 }
 public function updateA(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
@@ -172,6 +172,20 @@ public function updateF(Request $request,$id){
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
     $Encuesta->save();
+    $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
+    $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
+    foreach($nfr23_options as $o){
+        $field_presenter = 'opcion'.$o->clave;
+        if($request->$field_presenter){
+            // $arr=[
+            //     "encuesta_id"=>$Encuesta->registro,
+            //     "tipo"=>$o->clave,
+            // ];
+            // DB::table->insert($arr);
+		// dd($o->clave);
+        }
+
+    }
     $rules=['nfr0' => 'required',
             'nfr1' => 'required',
             'nfr2' => 'required',

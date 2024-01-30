@@ -232,11 +232,11 @@ discriminación?
 
   <TD colspan="2"> 
   <h2 class="reactivo"> 
-97.-Especifíque:----  </h2>
-@foreach($Discriminacion as $d)
-<input type="checkbox" id="scales" name="scales" checked />
-    <label for="scales">Scales</label>
-  </div>
+97.-Especifíque:  </h2>
+@foreach($nfr23_options  as $o)
+<input type="checkbox" name="opcion{{$o->clave}}" @if($Discriminacion->where('tipo','=',$o->clave)->count()>0) checked @endif/>
+    <label for="scales">{{$o->descripcion}}</label>
+  
   <br>
 @endforeach
     <h2 class="reactivo"> 
