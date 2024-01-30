@@ -349,7 +349,8 @@ Especifique:</h2>
 <h2 class="reactivo"> 42.-¿Cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
      <select class="select" id="ncr24" name="ncr24" onchange="funcion_ncr24()" >
-      <option value=0 @if($Encuesta->ncr24==0) selected @endif> -</option>
+     <option value=""> </option>
+     
       <option value=1 @if($Encuesta->ncr24==1) selected @endif> Estar estudiando</option>
       <option value=13 @if($Encuesta->ncr24==13) selected @endif>Embarazo </option>
       <option value=11 @if($Encuesta->ncr24==11) selected @endif>Razones de salud </option>
@@ -371,7 +372,8 @@ Especifique:</h2>
       <option value=19 @if($Encuesta->ncr24==19) selected @endif>Motivos personales</option> 
       <option value=20 @if($Encuesta->ncr24==29) selected @endif>Derivado de la pandemia</option> 
       <option value=14 @if($Encuesta->ncr24==14) selected @endif>Otra </option>
-       
+      <option value=0 @if($Encuesta->ncr24==0) selected @endif> -</option>
+     
 </select>
 </td><td>
     <br>(Especifíque)
@@ -433,10 +435,13 @@ Especifique:</h2>
   console.log("'"+item.name+"' => 'required',");
 }
 </script>
-<script>
+ <script>
+console.log('marcandooo rojo');
  @foreach ($errors->all() as $error)
-                document.getElementById( "{{str_replace('The ','',str_replace(' field is required.', '', $error)) }}").style="border: 0.3vw  solid red";
+                document.getElementById( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}").style="border: 0.3vw  solid red";
+                console.log( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}");
   @endforeach
+
 </script>
 @if($errors->any())
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -447,6 +452,57 @@ Especifique:</h2>
   icon: "warning",
 });
 </script>
+
 @endif
+<script>  
+function seccionc2(){
+  c1_value=document.getElementById("ncr1").value;
+  console.log(c1_value);
+  switch(c1_value){
+    case '1':
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23];
+      reactivosPorCerrar.forEach(visibilizar);
+    break;
+    case '2':
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr4a,ncr5,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23];
+      reactivosPorCerrar.forEach(visibilizar);
+    break;
+    case '3':
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar.forEach(ocultar);
+    break;
+
+    case '4':
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar.forEach(ocultar);
+    break;
+    case '5':
+      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar.forEach(ocultar);
+    break;
+    case '6':
+      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23];
+      reactivosPorCerrar.forEach(ocultar);
+    break;
+  }
+}
+function funcion_ncr24(){
+  bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,29],[ncr24porque]);
+  bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,29],[ncr24a])
+} 
+function autoempleo(){
+  bloquear('ncr6a2',[4],[ncr6a,ncr6otra]);
+  console.log('autoempleo');
+  bloquear('ncr6a2',[2],[ncr6otra]);
+ 
+}
+
+
+// inicializar 
+bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
+autoempleo();  
+seccionc2();
+  
+</script>
 
 @endpush

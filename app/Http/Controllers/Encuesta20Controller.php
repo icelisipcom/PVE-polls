@@ -225,7 +225,35 @@ public function updateC(Request $request,$id){
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
     $Encuesta->save();
-    $rules=[];
+    $rules=['ncr1' => 'required',
+    'ncr2' => 'required',
+    'ncr2a' => 'required',
+    'ncr3' => 'required',
+    'ncr4' => 'required',
+    'ncr4a' => 'required',
+    'ncr5' => 'required',
+    'ncr6' => 'required',
+    'ncr6t' => 'required',
+    'ncr6_a' => 'required',
+    'ncr7a' => 'required',
+    'ncr7b' => 'required',
+    'ncr8' => 'required',
+    'ncr9' => 'required',
+    'ncr10' => 'required',
+    'ncr11' => 'required',
+    'ncr12_a' => 'required',
+    'ncr15' => 'required',
+    'ncr16' => 'required',
+    'ncr17' => 'required',
+    'ncr18' => 'required',
+    'ncr19' => 'required',
+    'ncr20' => 'required',
+    'ncr21_a' => 'required',
+    'ncr22' => 'required',
+    'ncr24' => 'required',
+    'ncr24a' => 'required',
+    'ncr24porque' => 'required',
+    'ncr23' => 'required'];
     $validated = $request->validate($rules);
     $Encuesta->sec_c=1;
     $Encuesta->save();
