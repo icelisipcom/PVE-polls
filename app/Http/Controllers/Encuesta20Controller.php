@@ -144,7 +144,6 @@ public function updateA(Request $request,$id){
                 'ner6' => 'required',
                 'ner7' => 'required',
                 'ner7int' => 'required',
-                'ner7a' => 'required',
                 'ner8' => 'required',
                 'ner9' => 'required',
                 'ner10' => 'required',
@@ -159,7 +158,7 @@ public function updateA(Request $request,$id){
                 'ner16' => 'required',
                 'ner17' => 'required',
                 'ner18' => 'required',
-                'ner19' => 'required',];
+                'ner19' => 'required'];
         $validated = $request->validate($rules);
         $Encuesta->sec_e=1;
         $Encuesta->save();
@@ -174,15 +173,16 @@ public function updateF(Request $request,$id){
     $Encuesta->save();
     $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
+    DB::table('discriminacion')->where('encuesta_id',$Encuesta->registro)->delete();
     foreach($nfr23_options as $o){
         $field_presenter = 'opcion'.$o->clave;
         if($request->$field_presenter){
-            // $arr=[
-            //     "encuesta_id"=>$Encuesta->registro,
-            //     "tipo"=>$o->clave,
-            // ];
-            // DB::table->insert($arr);
-		// dd($o->clave);
+            $arr=[
+               "encuesta_id"=>$Encuesta->registro,
+                "tipo"=>$o->clave,
+            ];
+            DB::table('discriminacion')->insert($arr);
+		
         }
 
     }
@@ -204,8 +204,6 @@ public function updateF(Request $request,$id){
             'nfr13' => 'required',
             'nfr22' => 'required',
             'nfr23a' => 'required',
-            'nfr23' => 'required',
-            'nfr24' => 'required',
             'nfr25' => 'required',
             'nfr26' => 'required',
             'nfr27' => 'required',

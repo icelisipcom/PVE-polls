@@ -1,12 +1,18 @@
 @extends('layouts.blank_app')
 
 @section('content')
-<h1 >
-                 @if(!is_null($Encuesta->cuenta))
-                 COMPLETAR ENCUESTA @else
-                 HACER NUEVA ENCUESTA @endif </h1>
+<h1 >COMPLETAR ENCUESTA</h1>
 <div  id='datos'>  @include('encuesta.personal_data') </div>
 <div style="padding:1.2vw;">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}} {{str_replace('The ','',str_replace('field is required', '', $error)) }} </li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{ url('encuestas/2020/E_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
 <table class="encuesta_table">
@@ -350,9 +356,10 @@
 
 <script>
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
-  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   bloquear('ner10',[2],[ner10a,ner11,ner12]);
   bloquear('ner13',[2],[ner14,ner15]);
   bloquear('ner16',[2],[ner17,ner18]);
+  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
+  
 </script>
 @endpush

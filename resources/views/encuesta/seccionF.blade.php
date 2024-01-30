@@ -4,6 +4,15 @@
 <h1 >COMPLETAR ENCUESTA   </h1>
 <div  id='datos'>  @include('encuesta.personal_data') </div>
 <div style="padding:1.2vw;">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}} {{str_replace('The ','',str_replace('field is required', '', $error)) }} </li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{ url('encuestas/2020/F_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
 <table class="encuesta_table">
@@ -13,7 +22,7 @@
         <td>
 <h2 class="reactivo">
 82.-La carrera que estudió: </h2>
-<select class="select" id="nfr0"  name="nfr0"  onchange="bloquear('nfr0',[2],[nfr1])">
+<select class="select" id="nfr0"  name="nfr0"  onchange="bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a])">
  <option selected="selected" value=""></option>
    <option value=1 @if($Encuesta->nfr0==1) selected @endif>La eligió </option>
   <option value=2 @if($Encuesta->nfr0==2) selected @endif>Se la asignaron (Pase a la 84)</option>
@@ -24,8 +33,8 @@
 <td>
 <h2 class="reactivo">
 83. ¿Cuál  fue la razón más importante por la que usted eligió su carrera?</h2>
-<select class="select" id="nfr1"  name="nfr1"  onchange=bloqueof(f)>
-<option value="" selected="selected"></option>
+<select class="select" id="nfr1"  name="nfr1"  onchange="bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a])">
+<option value=" " selected="selected"></option>
 <option value=1 @if($Encuesta->nfr1==1) selected @endif>El prestigio de la profesión</option>
 <option value=2 @if($Encuesta->nfr1==2) selected @endif>Sus  habilidades  y  fortalezas   académicas</option>
 <option value=3 @if($Encuesta->nfr1==3) selected @endif>Opinión de amistades y/o familiares</option>
@@ -38,6 +47,7 @@
 <option value=10 @if($Encuesta->nfr1==10) selected @endif>Contribuir al  desarrollo de la ciencia o cultura</option>
 <option value=11 @if($Encuesta->nfr1==11) selected @endif>Otro</option>
   </select>
+  <p id='nfr1a_label'>Otra:</p><input type="text" class="texto"   id="nfr1a" name="nfr1a"  maxlength="50"  value="{{$Encuesta->nfr1a}}"> 
 
       </td>
 <td>
@@ -63,7 +73,20 @@
   <option value=3 @if($Encuesta->nfr3==3) selected @endif>No, una totalmente diferente</option>
    </select>
 <br>
-
+<h2 class="reactivo">
+85a).- ¿Por qué no la elegiría? </h2>
+  <select class="select" id="nfr4"  name="nfr4" @if($Encuesta->nfr3==1) hidden value=0 @endif > 
+  <option selected="selected" value="">
+  <option value=1 @if($Encuesta->nfr4==1) selected @endif>Esta carrera no fue mi primera opción</option>
+  <option value=2 @if($Encuesta->nfr4==2) selected @endif>No ha podido encontrar trabajo en este campo</option>
+  <option value=3 @if($Encuesta->nfr4==3) selected @endif>No está satisfecho(a) con su trabajo</option>
+  <option value=4 @if($Encuesta->nfr4==4) selected @endif>No está satisfecho(a) con el salario que percibe en su  actual trabajo</option>
+  <option value=5 @if($Encuesta->nfr4==5) selected @endif>Un cambio en sus intereses</option>
+  <option value=6 @if($Encuesta->nfr4==6) selected @endif>En la carrera no adquirió las habilidades prácticas  necesarias para el trabajo</option>
+  <option value=7 @if($Encuesta->nfr4==7) selected @endif>Otra</option>
+  <option value=0 @if($Encuesta->nfr3==1)selected  @endif hidden></option>  
+</select>
+  
     </td>
 </tr>
 <tr>
@@ -86,7 +109,7 @@
 <td>
 <h2 class="reactivo"> 
  87).- ¿Recomendaría su escuela o facultad?</h2>
-   <select class="select" id="nfr6" name="nfr6"  onchange="bloquear('nfr6',[1],[nfr6_a])">
+   <select class="select" id="nfr6" name="nfr6"  onchange="z">
      <option value="" selected="selected"></option>
      <option value=1 @if($Encuesta->nfr6==1) selected @endif>Sí (pasa a la 88)</option>
      <option value=2 @if($Encuesta->nfr6==2) selected @endif>No</option>
@@ -225,20 +248,20 @@ discriminación?
 </h2>
 <select class="select" id="nfr23a" name="nfr23a"   onchange="bloquear('nfr23a',[2],[nfr23,nfr24])">
 <option selected="selected" value="">
- <option value=1 @if($Encuesta->nfr23==1) selected @endif>Sí (Especifíque)</option>
- <option value=2 @if($Encuesta->nfr23==2) selected @endif>No (Pase a la 98)</option>
+ <option value=1 @if($Discriminacion->count()>0) selected @endif>Sí (Especifíque)</option>
+ <option value=2 @if($Discriminacion->count()==0) selected @endif>No (Pase a la 98)</option>
   </select>
     </TD>
 
   <TD colspan="2"> 
   <h2 class="reactivo"> 
-97.-Especifíque:  </h2>
+97.-Especifíque:  </h2><div id="nfr23">
 @foreach($nfr23_options  as $o)
 <input type="checkbox" name="opcion{{$o->clave}}" @if($Discriminacion->where('tipo','=',$o->clave)->count()>0) checked @endif/>
     <label for="scales">{{$o->descripcion}}</label>
   
   <br>
-@endforeach
+@endforeach</div>
     <h2 class="reactivo"> 
 97a) Otra-</h2>
 <INPUT id="nfr24" name="nfr24" TYPE=TEXT  class="texto"  MAXLENGTH=80 value="{{$Encuesta->nfr24}}" >
@@ -347,7 +370,7 @@ discriminación?
   <h2 class="reactivo">
 104.- ¿En  qué  grado  estaban  relacionadas  con  su carrera las actividades que llevó a cabo durante el 
 servicio social? </h2>
-<select class="select" id="Pregunta 104" name="nfr31" >
+<select class="select" id="nfr31" name="nfr31" >
      <option selected="selected" value="">
  <option value=1 @if($Encuesta->nfr31==1) selected @endif>Muy relacionadas</option>
   <option value=2 @if($Encuesta->nfr31==2) selected @endif>Relacionadas</option>
@@ -360,7 +383,7 @@ servicio social? </h2>
 <td>
 <h2 class="reactivo">
 105.- ¿Las funciones qué realizó en su servicio social, se traducían en beneficios para la sociedad?  </h2>
-<select class="select" id="Pregunta 105" name="nfr32" >
+<select class="select" id="nfr32" name="nfr32" >
  <option selected="selected" value="">
  <option value=1 @if($Encuesta->nfr32==1) selected @endif>Sí</option>
  <option value=2 @if($Encuesta->nfr32==2) selected @endif>No</option>
@@ -370,7 +393,7 @@ servicio social? </h2>
 <td>
 <h2 class="reactivo"> 
 106.- ¿En qué medida está satisfecho con su formación profesional?  </h2>
-<select class="select" id="Pregunta 106" name="nfr33" >
+<select class="select" id="nfr33" name="nfr33" >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->nfr33==1) selected @endif>Muy satisfecho(a)</option>
     <option value=2 @if($Encuesta->nfr33==2) selected @endif>Satisfecho(a)</option>
@@ -402,8 +425,10 @@ servicio social? </h2>
 // }
 </script>
 <script>
+  console.log('marcandooo rojo');
  @foreach ($errors->all() as $error)
-                document.getElementById( "{{str_replace('The ','',str_replace(' field is required.', '', $error)) }}").style="border: 0.3vw  solid red";
+                document.getElementById( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}").style="border: 0.3vw  solid red";
+                console.log( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}");
   @endforeach
 </script>
 @if($errors->any())
@@ -417,7 +442,21 @@ servicio social? </h2>
 </script>
 @endif
 
-<script>
 
+<script>
+function titulado(){
+  bloquear('nfr27',[2,3],[nfr28]);
+  bloquear('nfr27',[1],[nfr29,nfr29a]);
+  // bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,""],[nfr29a]);
+}
+titulado();
+bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
+ 
+bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
+bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a]);
+bloquear('nfr5',[1],[nfr5_a])
+bloquear('nfr6',[1],[nfr6_a])
+bloquear('nfr11',[2],[nfr11a]);
+bloquear('nfr23a',[2],[nfr23,nfr24]); 
 </script>
 @endpush
