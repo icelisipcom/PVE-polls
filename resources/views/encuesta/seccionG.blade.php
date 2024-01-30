@@ -4,6 +4,15 @@
 <h1 > COMPLETAR ENCUESTA </h1>
 <div  id='datos'>  @include('encuesta.personal_data') </div>
 <div style="padding:1.2vw;">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}} {{str_replace('The ','',str_replace('field is required', '', $error)) }} </li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{ url('encuestas/2020/G_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
 <table class="encuesta_table">
@@ -515,11 +524,13 @@ su desempeño laboral?</h2>
 b).-
 <select class="select" id="ngr15"  name="ngr15">
 <option value="" selected="selected"></option>
+
   <option value=1 @if($Encuesta->ngr15==1) selected @endif>Muchísimo</option>
   <option value=2 @if($Encuesta->ngr15==2) selected @endif>Mucho</option>
   <option value=3 @if($Encuesta->ngr15==3) selected @endif>Regular</option>
   <option value=4 @if($Encuesta->ngr15==4) selected @endif>Poco</option>
   <option value=5 @if($Encuesta->ngr15==5) selected @endif>Nada</option>
+  <option value=0></option>
  </select>
 
 
@@ -546,6 +557,7 @@ b).-<select class="select" id="ngr17"  name="ngr17">
   <option value=3 @if($Encuesta->ngr17==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr17==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr17==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
      </td>
@@ -572,6 +584,7 @@ b).- <select class="select" id="ngr19"  name="ngr19">
   <option value=3 @if($Encuesta->ngr19==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr19==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr19==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
      </td>
@@ -587,6 +600,7 @@ a).- <select class="select" id="ngr20"  name="ngr20">
   <option value=3 @if($Encuesta->ngr20==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr20==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr20==5) selected @endif >Nada</option>
+  
  </select>
  </td><td>
 b).- <select class="select" id="ngr21"  name="ngr21">
@@ -596,6 +610,7 @@ b).- <select class="select" id="ngr21"  name="ngr21">
   <option value=3 @if($Encuesta->ngr21==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr21==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr21==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
      </td>
@@ -620,6 +635,7 @@ b).-<select class="select" id="ngr23"  name="ngr23">
   <option value=3 @if($Encuesta->ngr23==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr23==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr23==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
     </td>
@@ -647,6 +663,7 @@ b).-
   <option value=3 @if($Encuesta->ngr25==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr25==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr25==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
      </td>
@@ -673,6 +690,7 @@ b).-<select class="select" id="ngr27"  name="ngr27">
   <option value=3 @if($Encuesta->ngr27==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr27==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr27==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
       </td>
      </tr><tr>
@@ -696,6 +714,7 @@ b).-<select class="select" id="ngr29"  name="ngr29">
   <option value=3 @if($Encuesta->ngr29==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr29==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr29==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
      </td>
@@ -721,6 +740,7 @@ b).- <select class="select" id="ngr31"  name="ngr31">
   <option value=3 @if($Encuesta->ngr31==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr31==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr31==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
     </td>
@@ -746,6 +766,7 @@ b).-<select class="select" id="ngr33"  name="ngr33">
   <option value=3 @if($Encuesta->ngr33==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr33==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr33==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
     </td>
@@ -771,6 +792,7 @@ b).-  <select class="select" id="ngr35"  name="ngr35">
   <option value=3 @if($Encuesta->ngr35==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr35==4) selected @endif >Poco</option>
   <option value=5 @if($Encuesta->ngr35==5) selected @endif >Nada</option>
+  <option value=0 ></option>
  </select>
 
 
