@@ -249,7 +249,17 @@
 <INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" " TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 
       </td>
-      <td></td>
+      <td>
+<h2 class="reactivo">57.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
+<select class="select" id="ndr14" name="ndr14"  onchange="bloquear('ndr14',[1,3],[ndr15])">
+   <option selected="selected" value="">
+   <option value=1  @if($Encuesta->ndr14==1) selected @endif>Desde que estaba estudiando (Pase a la 58)</option>
+   <option value=2  @if($Encuesta->ndr14==2) selected @endif>Después de egresar de la carrera </option>
+   <option value=3  @if($Encuesta->ndr14==3) selected @endif>En el momento que terminó </option>
+   <option value=0  hidden></option>   
+</select>
+
+      </td>
       <td></td>
 </tr>
 
@@ -338,9 +348,12 @@
 }
 </script>
 <script>
+console.log('marcandooo rojo');
  @foreach ($errors->all() as $error)
-                document.getElementById( "{{str_replace('The ','',str_replace(' field is required.', '', $error)) }}").style="border: 0.3vw  solid red";
+                document.getElementById( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}").style="border: 0.3vw  solid red";
+                console.log( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}");
   @endforeach
+
 </script>
 @if($errors->any())
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -351,6 +364,38 @@
   icon: "warning",
 });
 </script>
+
 @endif
+
+<script>
+function funcion_ndr2(){
+  bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a]);
+  bloquear('ndr2',[9],[ndr2a,ndr3,ndr4,ndr5,ndr6,ndr7,ndr8,ndr9,ndr10,ndr11,ndr13a,ndr12,ndr12a,ndr12b,ndr12c]);
+  funcion_ndr2();
+  bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
+  var d15='{{$Encuesta->ndr15}}';
+  //Get select object
+var selectObj = document.getElementById("ndr15");
+
+
+console.log('!!!!!!!!-------------------ndr15: {{$Encuesta->ndr15}}');
+console.log(selectObj.options.length);
+    for (var i = 0; i < selectObj.options.length; i++) {
+          
+        if (selectObj.options[i].value== d15) {
+           selectObj.options[i].selected = true;
+           selectObj.selectedIndex=i;
+           console.log('valor de la opcion '+i+selectObj.options[i].value);
+       
+        }
+      }
+  
+}
+
+@if($Encuesta->ncr1==6)
+[ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
+
+@endif
+</script>
 
 @endpush

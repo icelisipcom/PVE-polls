@@ -14,6 +14,252 @@
 
 </td>
 </tr> 
+
+<tr>
+<td>
+<h2 class="reactivo">Tiene computadora en:   <br>
+110).- Su casa</h2>
+  <select class="select" id="Pregunta 110" name="ngr4" >
+    <option selected="selected" value="">
+    <option value=1 @if($Encuesta->ngr4==1) selected @endif>Sí</option>
+    <option value=2 @if($Encuesta->ngr4==2) selected @endif>No</option>
+  </select>
+    </td>
+<td>
+<h2 class="reactivo">
+111).- Su trabajo </h2>
+  <select class="select" id="ngr5" name="ngr5" >
+    <option value="" selected="selected"></option>
+    <option value=1 @if($Encuesta->ngr5==1) selected @endif>Sí</option>
+    <option value=2 @if($Encuesta->ngr5==2) selected @endif>No</option>
+    <option value=3 @if($Encuesta->ngr5==3) selected @endif>Sin trabajo</option>
+    <option value=0 hidden > </option>     
+   </select>
+       </td>
+
+<td>
+<h2 class="reactivo"> 
+112).- ¿Incrementó y/o adquirió habilidades para la computación durante sus estudios de licenciatura?
+</h2>
+<select class="select" id="ngr6" name="ngr6"   onchange="bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g])">
+    <option selected="selected" value="">
+    <option value=1 @if($Encuesta->ngr6==1) selected @endif>No</option>
+    <option value=2 @if($Encuesta->ngr6==2) selected @endif>Sí, en la UNAM </option>
+    <option value=3 @if($Encuesta->ngr6==3) selected @endif>Sí, en instituciones externas (distinta) a la UNAM </option>
+    <option value=4 @if($Encuesta->ngr6==4) selected @endif>Sí, por autoaprendizaje </option>
+   </select>
+
+       </td>
+</tr>
+
+
+<tr>
+  <td colspan="4">
+  Habilidades para la computación </h2>
+<table id="comp_table">
+  <thead >
+    <tr style='border-style: solid;
+  border-color: red;'>
+
+<th>
+<h2 class="reactivo">Habilidad </h2></th>
+<th>  
+<h2 class="reactivo">
+¿Cuánto las incrementó y/o adquirió 
+durante sus estudios de licenciatura?</h2></th>
+<th>
+<h2 class="reactivo">
+¿Han  sido  necesarias  para  
+su desempeño laboral?</h2>
+</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr>
+<td>
+<h2 class="reactivo">a).- Procesadores de texto </h2></td>
+<td>113a).-     
+  <select class="select" id="ngr6a" name="ngr6a" >
+        <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6a==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6a==2) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6a==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6a==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6a==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+      </select>
+</td>
+<td>114a).-
+  <select class="select" id="ngr7a" name="ngr7a" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7a==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7a==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select>
+</td>
+    </tr>
+
+    <tr>
+<td>
+<h2 class="reactivo"> b).- Diseño </h2></td>
+      <td>113b).-     
+      <select class="select" id="ngr6b" name="ngr6b" >
+       <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6b==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6b==2) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6b==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6b==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6b==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+      </select>
+
+      <td>
+   114b).-
+  <select class="select" id="ngr7b" name="ngr7b" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7b==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7b==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select></td>
+      </td>
+    </tr>
+    <tr>
+      <td> 
+<h2 class="reactivo">
+       c).- Programación</h2></td>
+       <td>
+113c).-    
+      <select class="select" id="ngr6c" name="ngr6c" >
+       <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6c==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6c==2) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6c==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6c==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6c==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+      </select>
+    </td>
+<td>
+  
+114c).-
+<select class="select" id="ngr7c" name="ngr7c" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7c==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7c==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select></td>
+    </tr>
+
+    <tr>
+<td>
+<h2 class="reactivo"> d).- Software especializado </h2> </td>
+      <td>113d).-
+      <select class="select" id="ngr6d" name="ngr6d" >
+       <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6d==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6d==3) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6d==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6d==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6d==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+      </select>
+             </td>
+      <td>
+            
+114d).-
+<select class="select" id="ngr7d" name="ngr7d" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7d==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7d==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select></td>
+    </tr>
+
+
+    <tr>
+<td>
+<h2 class="reactivo">
+  e).- Internet y/o correo electrónico</h2></td>
+<td>113e).-
+      <select class="select" id="ngr6e" name="ngr6e" >
+       <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6e==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6e==2) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6e==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6e==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6e==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+       </select>
+</td>
+<td>
+114e).-
+<select class="select" id="ngr7e" name="ngr7e" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7e==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7e==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select></td>
+    </tr>
+
+    <tr>
+<td>
+<h2 class="reactivo"> 
+f).- Base de datos<BR> </h2>
+</td>
+      <td>113f).- 
+      <select class="select" id="ngr6f" name="ngr6f" >
+       <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6f==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6f==2) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6f==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6f==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6f==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+      </select>
+
+</td>
+      <td>
+114f).-
+<select class="select" id="ngr7f" name="ngr7f" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7f==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7f==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select></td>
+    </tr>
+    <tr>
+<td>
+<h2 class="reactivo">
+g).-Hoja de cálculo</h2>
+</td><td>
+113g).-
+   <select class="select" id="ngr6g" name="ngr6g" >
+       <option value="" selected="selected"></option>
+        <option value=1 @if($Encuesta->ngr6a==1) selected @endif>Muy alto</option>
+        <option value=2 @if($Encuesta->ngr6a==2) selected @endif>Alto</option>
+        <option value=3 @if($Encuesta->ngr6a==3) selected @endif>Medio</option>
+        <option value=4 @if($Encuesta->ngr6a==4) selected @endif>Bajo</option>
+        <option value=5 @if($Encuesta->ngr6a==5) selected @endif>Nulo</option>
+        <option value=0 hidden > </option>
+      </select>
+             </td><td>
+114g).-
+<select class="select" id="ngr7g" name="ngr7g" >
+    <option value="" selected="selected"></option>
+    <option value=11 @if($Encuesta->ngr7g==11) selected @endif>Sí</option>
+    <option value=12 @if($Encuesta->ngr7g==12) selected @endif>No</option>
+    <option value=0 hidden > </option>
+      </select>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+  </td>
+</tr>
+
 <tr>
 <td>
 <h2 class="reactivo"> 
@@ -791,30 +1037,20 @@ c).- Motivo por el que no lo practico </h2>
 @push('js')
 <script>
   unhide('G');
-//   reactivos=document.getElementById("forma_sagrada").elements
-//   for (var i=0, item; item = reactivos[i]; i++) {
-//   // Look no need to do list[i] in the body of the loop
-//   console.log("'"+item.name+"' => 'required',");
-// }
+  reactivos=document.getElementById("forma_sagrada").elements
+  for (var i=0, item; item = reactivos[i]; i++) {
+  // Look no need to do list[i] in the body of the loop
+  console.log("'"+item.name+"' => 'required',");
+}
 </script>
 <script>
+console.log('marcandooo rojo');
  @foreach ($errors->all() as $error)
-                document.getElementById( "{{str_replace('The ','',str_replace(' field is required.', '', $error)) }}").style="border: 0.3vw  solid red";
+                document.getElementById( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}").style="border: 0.3vw  solid red";
+                console.log( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}");
   @endforeach
-</script>
-  <script>
-       function manual(myRadio) {
-        var folio = document.getElementById("fecha-group");
-        folio.style.display="block";
-        }
-        function automatico(myRadio) {
-            var group = document.getElementById("fecha-group");
-            var fecha = document.getElementById("fec_capt");
-            group.style.display="none";
-            fecha.value="2023-01-01";
-        }
-    </script>
 
+</script>
 @if($errors->any())
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
@@ -824,6 +1060,35 @@ c).- Motivo por el que no lo practico </h2>
   icon: "warning",
 });
 </script>
+
 @endif
 
+
+<script>
+  function artisticos(){
+  bloquear('ngr37',[12],[ngr37a]);
+  bloquear('ngr37',[11],[ngr37m]);
+}
+function deportes(){
+  bloquear('ngr40',[12],[ngr40_a,ngr40a]);
+  bloquear('ngr40',[11],[ngr40_b]);
+}
+  bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
+  bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
+  bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
+  bloquear('ngr40',[12],[ngr40_a,ngr40a]);
+  bloquear('ngr45',[2],[ngr45a,ngr45_a]);
+  bloquear('ngr37',[12],[ngr37a]);
+  artisticos();
+  deportes();
+  bloquear('comen',[2],[comentario]);
+
+  @if($Encuesta->ncr1>=3 && $Encuesta->ncr1<=5)
+  ocultar(ngr5);
+  @endif
+
+  @if($Encuesta->ncr1==6)
+  [ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35].forEach(ocultar);
+  @endif
+</script>
 @endpush

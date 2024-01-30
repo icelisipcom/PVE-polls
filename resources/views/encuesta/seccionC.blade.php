@@ -348,7 +348,7 @@ Especifique:</h2>
 <td>
 <h2 class="reactivo"> 42.-¿Cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
-     <select class="select" id="ncr24" name="ncr24" onchange="funcion_ncr24()" >
+     <select class="select" id="ncr24" name="ncr24" >
      <option value=""> </option>
      
       <option value=1 @if($Encuesta->ncr24==1) selected @endif> Estar estudiando</option>
@@ -378,7 +378,7 @@ Especifique:</h2>
 </td><td>
     <br>(Especifíque)
     Otra:
-    <input type="text" class="texto" id="ncr24a" name="ncr24a" maxlength="55" > 
+    <input type="text" class="texto" id="ncr24a" name="ncr24a" value="{{$Encuesta->ncr24a}}" maxlength="55" > 
     
     
         </td>

@@ -61,6 +61,8 @@ class Encuesta20Controller extends Controller
 
     }
     
+
+
 public function edit($id,$section){
     
     $Encuesta=respuestas20::where('registro','=',$id)->first();
@@ -79,6 +81,19 @@ $Comentario=$Coment->comentario;
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
     // dd($Comentario);
     return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','nfr23_options','Discriminacion'));
+}
+
+function validar_completa($registro){
+    $encuesta=respuestas20::where('registro','=',$registro)->first();
+    if(($encuesta->sec_a==1)&&($encuesta->sec_a==1)&&($encuesta->sec_c==1)&&($encuesta->sec_d==1)&&($encuesta->sec_e==1)&&($encuesta->sec_f==1)&&($encuesta->sec_g==1)){
+        $encuesta->completed=1;
+        $Egresado=Egresado::where('cuenta',$encuesta->cuenta)->where('carrera',$encuesta->nbr2)->first();
+    $Egresado->status=1; //i.e encuestado via telefonica
+    $Egresado->save();
+    }else{
+        $encuesta->completed=0;
+    }
+$encuesta->save();
 }
 public function updateA(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
@@ -123,9 +138,11 @@ public function updateA(Request $request,$id){
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method','btnradio']) );
     $Encuesta->save();
+    $Encuesta->sec_a=0;
     $validated = $request->validate($rules);
     $Encuesta->sec_a=1;
     $Encuesta->save();
+    $this->validar_completa($Encuesta->registro);
     return redirect()->route('edit_20',[$Encuesta->registro,'E']);
 }
 
@@ -134,6 +151,7 @@ public function updateA(Request $request,$id){
         $Encuesta=respuestas20::where('registro',$id)->first();
         $Encuesta-> aplica  = Auth::user()->clave;
         $Encuesta->update($request->except(['_token', '_method']) );
+        $Encuesta->sec_e=0;
         $Encuesta->save();
         $rules=['ner1' => 'required',
                 'ner2' => 'required',
@@ -162,6 +180,7 @@ public function updateA(Request $request,$id){
         $validated = $request->validate($rules);
         $Encuesta->sec_e=1;
         $Encuesta->save();
+        $this->validar_completa($Encuesta->registro);
         return redirect()->route('edit_20',[$Encuesta->registro,'F']);
 }
 
@@ -170,6 +189,7 @@ public function updateF(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->sec_f=0;
     $Encuesta->save();
     $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
@@ -217,6 +237,7 @@ public function updateF(Request $request,$id){
     $validated = $request->validate($rules);
     $Encuesta->sec_f=1;
     $Encuesta->save();
+    $this->validar_completa($Encuesta->registro);
     return redirect()->route('edit_20',[$Encuesta->registro,'C']);
 }
 //guardar seccion C
@@ -224,6 +245,7 @@ public function updateC(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->sec_c=0;
     $Encuesta->save();
     $rules=['ncr1' => 'required',
     'ncr2' => 'required',
@@ -257,6 +279,7 @@ public function updateC(Request $request,$id){
     $validated = $request->validate($rules);
     $Encuesta->sec_c=1;
     $Encuesta->save();
+    $this->validar_completa($Encuesta->registro);
     return redirect()->route('edit_20',[$Encuesta->registro,'D']);
 }
 //guardar seccion D
@@ -264,11 +287,34 @@ public function updateD(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->sec_d=0;
     $Encuesta->save();
-    $rules=[];
+    $rules=['ndr1' => 'required',
+            'ndr2' => 'required',
+            'ndr2a' => 'required',
+            'ndr3' => 'required',
+            'ndr8' => 'required',
+            'ndr4' => 'required',
+            'ndr9' => 'required',
+            'ndr5' => 'required',
+            'ndr10' => 'required',
+            'ndr6' => 'required',
+            'ndr11' => 'required',
+            'ndr7' => 'required',
+            'ndr12' => 'required',
+            'NDR12A' => 'required',
+            'NDR12B' => 'required',
+            'NDR12C' => 'required',
+            'ndr13a' => 'required',
+            'ndr15' => 'required',
+            'ndr16' => 'required',
+            'ndr17' => 'required',
+            'ndr18' => 'required',
+            'ndr19' => 'required',];
     $validated = $request->validate($rules);
     $Encuesta->sec_d=1;
     $Encuesta->save();
+    $this->validar_completa($Encuesta->registro);
     return redirect()->route('edit_20',[$Encuesta->registro,'G']);
 }
 //guardar ultima seccion (G)
@@ -280,11 +326,9 @@ public function updateG(Request $request,$id){
     $rules=[];
     $validated = $request->validate($rules);
     $Encuesta->sec_g=1;
-    $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
-    $Egresado->status=1; //i.e encuestado via telefonica
-    $Egresado->save();
-
-
+    $Encuesta->save();
+    $this->validar_completa($Encuesta->registro);
+    
     $fileName = $Encuesta->cuenta.'.json';
     $fileStorePath = public_path('storage/json/'.$fileName);
     
