@@ -8,11 +8,11 @@
     </div>
     <center >
     <br><br>
-        <form action="{{ route('actualizar_telefono',[$Correo->id,$Egresado->carrera])}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('actualizar_telefono',[$Telefono->id,$Egresado->carrera])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
     <label for="exampleInputEmail1">Telefono</label>
-    <input  style="width:50%" type="text" class="form-control" value="{{$Correo->correo}}" name="correo" aria-describedby="emailHelp" >
+    <input  style="width:50%" type="text" class="form-control" value="{{$Telefono->telefono}}" name="telefono" aria-describedby="emailHelp" >
    </div>
    
   <br>

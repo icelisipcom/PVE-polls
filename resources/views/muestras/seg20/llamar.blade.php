@@ -4,15 +4,29 @@
 
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
     <div style="padding:30px;">
-    <span class="badge badge-pill badge-primary" style="background-color: transparent" id="pildora"><h1 class="text-back-50">{{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}}  </h1>
-    </span>
-    <h1 class="text-white-35" style="font-color: white">{{$Egresado->cuenta}}  </h1> 
+    <table>
+        <tr>
+            <td >
+            <span class="badge badge-pill badge-primary" style="background-color: transparent" id="pildora"><h1 class="text-back-50">{{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}}  </h1></span>
+            </td><td>
+            <h1 class="text-white-35" style="font-color: white">{{$Egresado->cuenta}}  </h1>
+            </td>
+        </tr>
+        <tr>
+            <td>   
+                <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
+                <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
+            </td>
+            <td><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-arrow-left"></i> Regresar a al muestra</button></a>
+    </td>
+        </tr>
+    </table>
+  
    
-   <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
-    <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
-     
-        <h1 class="text-white-35" id="layer"> NUMEROS DE TELEFONO </h1>
 
+        <h1 class="text-white-35" id="layer"> NUMEROS DE TELEFONO </h1>
+ 
+   
     </div>
 
     <div class='col'>

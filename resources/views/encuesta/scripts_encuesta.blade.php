@@ -61,7 +61,7 @@ if(options.includes(parseInt(val.value))){
 
 
 function ocultar(item){
-console.log('reactivo a ocultar: '+item);
+console.log('reactivo a ocultar: '+item.id);
 
 document.getElementById(item.id).hidden="hidden";
 document.getElementById(item.id).value=0;

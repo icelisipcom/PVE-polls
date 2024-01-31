@@ -1,18 +1,44 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
 <style>
+  :root {
+   @if(Auth::user()->dark_mode==1) 
+   --fuente: white;
+   --fondo: black;
+    @else
+    --fuente: black;
+    --fondo: white;
+    @endif;
+}
   #cuerpo{
     scroll-behavior: smooth;
-    @if(Auth::user()->dark_mode==1) 
+    /* @if(Auth::user()->dark_mode==1) 
     background-color: #090900;
     @else
     background-color: #FAFAFA;
-    @endif 
+    @endif  */
+    background-color: #FFFF00;
   }
+  .content-wrapper {
+   
+    @if(Auth::user()->dark_mode==1) 
+    background-color: #090900;
+    color:white;
+    @else
+    background-color: #FAFAFA;
+    @endif
+    font-weight: bold;
+  
+ }
   
   table.encuesta_table{
     font-family: 'Montserrat';
     tr:nth-child(odd) {
-            background-color: #a3b1c7;
+      @if(Auth::user()->dark_mode==1) 
+    background-color: #49494949;
+    @else
+    background-color: #a3b1c7;
+    @endif
+           
         }
     td{
       text-align: center;
@@ -32,7 +58,8 @@
     font-size: 90%;
     font-weight:bolder;
     background-color: white;
-    color: {{Auth::user()->color}};
+    color: var(--fuente);
+    background-color: var(--fondo);
     border: 0.2vw solid;
     border-color: {{Auth::user()->color}};
 }
@@ -48,10 +75,14 @@
     z-index: 1;
     top:0;
     padding:0.1vw;
+    color: var(--fuente);
+  background-color: var(--fondo);
    
 }
 </style>
 <style>
+
+
   .Scroll {
   height:600px;
   overflow-y: scroll;
@@ -67,22 +98,25 @@ text-align: center;
   padding: 2.2vw;
   font-weight: bold;
   font-size: 1.7vw;
-  color: black;
+  color: var(--fuente);
   text-shadow: gray,
   font-family: 'Montserrat',
 }
 .texto{
   font-size:25px;
-  color:{{Auth::user()->color}};
+  color: var(--fuente);
+  background-color: var(--fondo);
   width:90%;
 }
 .fecha{
   font-size:25px;
-  color:{{Auth::user()->color}};
+  color: var(--fuente);
+  background-color: var(--fondo);
 }
 .select{
   font-size:25px;
-  color:{{Auth::user()->color}};
+  color: var(--fuente);
+  background-color: var(--fondo);
   max-width: 15.0vw;
 }
 </style>

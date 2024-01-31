@@ -22,7 +22,7 @@
             <th>Numero C:</th><td> {{$Egresado->cuenta}}</td>
             <th> Telefonos:</th>
               @foreach($Telefonos as $t)
-              <td> {{$t->telefono}}</td>
+              <td> <a href="{{route('editar_telefono',[$t->id,$Egresado->carrera])}}">{{$t->telefono}} </a></td>
               @endforeach
             <th>Promedio:</th> <td> @if($Egresado->promedio>10) {{$Egresado->promedio /100}} @else {{$Egresado->promedio}} @endif</td>
             <th>fec. nac.:</th> <td>{{$Egresado->fec_nac}}</td>

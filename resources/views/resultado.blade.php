@@ -32,8 +32,8 @@
                 <td>{{$e->fec_capt}}</td>
                 <td>{{$e->nbr3}}</td>
                 <td>{{$e->nbr2}}</td>
-                <td>@if(is_null($e->ngr11f)) Inompleta @else Completa @endif</td>
-                <td>@if(is_null($e->ngr11f))  <a href="{{ route('edit_20', $e->registro)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+                <td>@if($e->completed != 1) Inompleta @else Completa @endif</td>
+                <td>@if($e->completed != 1)  <a href="{{ route('edit_20',[ $e->registro,'SEARCH'])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
                                             <i class="fas fa-edit  "></i> Completar</button>
                                         </a>@endif</td>
             </tr>

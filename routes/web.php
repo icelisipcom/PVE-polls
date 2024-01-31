@@ -92,4 +92,7 @@ Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, '
 Route::get('/reporte/{report}', [App\Http\Controllers\ReportController::class, 'generate'])->name('report');
 Route::get('/reporte/semanal/{semana}/{user?}', [App\Http\Controllers\ReportController::class, 'semanal'])->name('reporte.semanal');
 
+Route::get('/switch', [App\Http\Controllers\ConfigController::class, 'switch_mode'])->name('switch_mode');
+
+
 });

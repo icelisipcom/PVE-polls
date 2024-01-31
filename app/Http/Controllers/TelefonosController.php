@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Redirect;
 use App\Models\Egresado;
 use App\Models\Carrera;
 use App\Models\Telefono;
@@ -20,21 +21,20 @@ class TelefonosController extends Controller
         $Correo->telefono=$request->telefono;
         $Correo->status=0;
         $Correo->save();
-        return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
-    }
+        return Redirect::back();
+     }
     public function edit($id,$carrera){
-        $Correo=Telefono::find($id);
-        $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
-         
-        return view('encuesta.seg20.editar_telefono',compact('Egresado','Correo'));
+        $Telefono=Telefono::find($id);
+        $Egresado=Egresado::where('cuenta',$Telefono->cuenta)->where('carrera',$carrera)->first();
+        return view('encuesta.seg20.editar_telefono',compact('Egresado','Telefono'));
     }
     public function update(Request $request ,$id,$carrera){
-        $Correo=Telefono::find($id);
-        $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
+        $Telefono=Telefono::find($id);
+        $Egresado=Egresado::where('cuenta',$Telefono->cuenta)->where('carrera',$carrera)->first();
         
-        $Correo->telefono=$request->telefono;
-        $Correo->status=0;
-        $Correo->save();
-        return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
+        $Telefono->telefono=$request->telefono;
+        $Telefono->status=0;
+        $Telefono->save();
+        return Redirect::back();
     }
 }

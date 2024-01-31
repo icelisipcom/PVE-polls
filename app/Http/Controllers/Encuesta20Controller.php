@@ -80,6 +80,18 @@ $Comentario=$Coment->comentario;
     $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
     // dd($Comentario);
+    if($section=='SEARCH'){
+        foreach(array('A','E','F','C','D','G') as $sec){
+            $format_field='sec_'.strtolower($sec);
+           
+            if($Encuesta->$format_field!=1){
+                
+                $section=$sec;
+                break;
+            }
+        }
+        // dd($section);
+    }
     return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','nfr23_options','Discriminacion'));
 }
 

@@ -167,7 +167,7 @@
 <tr>
 <td> <h2 class="reactivo"> 
     73.- <B>¿Especialización?</B> </h2>
-    <select class="select" id="ner10" name="ner10"  onchange="bloquear('ner10',[2],[ner10a,ner11,ner12])" >
+    <select class="select" id="ner10" name="ner10"  onchange="z" >
       <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner10==1) selected @endif>Sí</option>
       <option value=2  @if($Encuesta->ner10==2) selected @endif>No</option>
@@ -356,12 +356,13 @@
 
 <script>
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
-  bloquear('ner10',[2],[ner10a,ner11,ner12]);
-  bloquear('ner13',[2],[ner14,ner15]);
-  bloquear('ner16',[2],[ner17,ner18]);
+
   bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202))
    [ner12b,ner12a].forEach(ocultar);
     @endif 
+    bloquear('ner10',[2],[ner10a,ner11,ner12]);
+  bloquear('ner13',[2],[ner14,ner15]);
+  bloquear('ner16',[2],[ner17,ner18]);
 </script>
 @endpush

@@ -27,7 +27,7 @@
      </div>
     </div>
     <div class="col-6 col-sm-12 table-responsive">
-        <table class="table text-md " id="myTable" style="table-layout:fixed;">
+        <table class="table text-lg " id="myTable" style="table-layout:fixed;">
           <thead>
             <tr>
             <th>Nombre</th>
