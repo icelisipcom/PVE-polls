@@ -46,6 +46,7 @@
 <option value=9 @if($Encuesta->nfr1==9) selected @endif>Contribuir al desarrollo del país</option>
 <option value=10 @if($Encuesta->nfr1==10) selected @endif>Contribuir al  desarrollo de la ciencia o cultura</option>
 <option value=11 @if($Encuesta->nfr1==11) selected @endif>Otro</option>
+<option value=0 ></option>
   </select>
   <p id='nfr1a_label'>Otra:</p><input type="text" class="texto"   id="nfr1a" name="nfr1a"  maxlength="50"  value="{{$Encuesta->nfr1a}}"> 
 
