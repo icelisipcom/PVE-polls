@@ -144,7 +144,7 @@
 
 <select class="select" id="ncr6a2"  name="ncr6" onchange="autoempleo()">
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr6==2) selected @endif @if($Encuesta->ncr6==3) selected @endif>Autoempleo</option>
+    <option value=1 @if($Encuesta->ncr6<=3 ) selected @endif >Autoempleo</option>
     <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
     <option value=5 @if($Encuesta->ncr6==5) selected @endif>Otro (Especifíque)</option>
     <option value=0  hidden></option>   
@@ -240,7 +240,6 @@
 <h2 class="reactivo">33.- ¿Que actividades realiza? 
 Especifique:</h2>
 <textarea type="text" class="texto" id="ncr12_a"  rows="3"  name="ncr12_a" maxlength="110"  > {{$Encuesta->ncr12_a}} </textarea>
-
     </td>
 <td>
 <h2 class="reactivo"> 34.- ¿Si su trabajo no está relacionado con su carrera
@@ -348,7 +347,7 @@ Especifique:</h2>
 <td>
 <h2 class="reactivo"> 42.-¿Cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
-     <select class="select" id="ncr24" name="ncr24" >
+     <select class="select" id="ncr24" name="ncr24" onchange="porque()">
      <option value=""> </option>
      
       <option value=1 @if($Encuesta->ncr24==1) selected @endif> Estar estudiando</option>
@@ -491,18 +490,38 @@ function funcion_ncr24(){
   bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,29],[ncr24a])
 } 
 function autoempleo(){
-  bloquear('ncr6a2',[4],[ncr6a,ncr6otra]);
-  console.log('autoempleo');
-  bloquear('ncr6a2',[2],[ncr6otra]);
- 
+  ncr6_val=document.getElementById('ncr6a2').value;
+  console.log('func autoempleo '+ncr6_val);
+  switch(ncr6_val){
+    case '1': ocultar(ncr6otra);visibilizar(ncr6a);
+    break;
+    case '4': ocultar(ncr6otra);ocultar(ncr6a);
+    break;
+    case '5': ocultar(ncr6a);visibilizar(ncr6otra);
+    break;
+  }
+}
+function porque(){
+  ncr24_val=document.getElementById('ncr24').value;
+  console.log('func porque '+ncr24_val);
+  ocultar(ncr24a);
+  switch(ncr24_val){
+    case '12': ocultar(ncr24a);visibilizar(ncr24porque);
+    break;
+    case '14': visibilizar(ncr24a);ocultar(ncr24porque);
+    break;
+    default: ocultar(ncr24a);ocultar(ncr24porque);
+    break;
+  }
 }
 
 
 // inicializar 
-bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]);
-autoempleo();  
+bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]); 
 seccionc2();
-  
+bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a])
+autoempleo(); 
+porque();
 </script>
 
 @endpush

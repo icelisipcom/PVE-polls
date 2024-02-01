@@ -46,7 +46,7 @@
 <li class="nav-item">
     <a href="{{ route('buscar') }}" class="nav-link {{ Request::is('buscar') ? 'active' : '' }}">
     <i class="fas fa-eye"></i>
-        <p>Buscar numero de cuenta </p>
+        <p>Buscar numero  </p>
     </a>
 </li>
 <li class="nav-item">
@@ -54,10 +54,10 @@
     <button  class="btn" style="color:white">
     @if(Auth::user()->dark_mode==1)    
     <i class="fas fa-sun"></i>
-        <p>  desactivar Modo oscuro </p>
+        <p>  desactivar <br>Modo oscuro </p>
         @else
         <i class="fas fa-moon"></i>
-        <p>  activar Modo oscuro </p>
+        <p>  activar <br>Modo oscuro </p>
         @endif
     </button>
 

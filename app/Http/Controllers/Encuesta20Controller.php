@@ -260,6 +260,9 @@ public function updateC(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
+    if($request->ncr6==1){
+        $Encuesta->ncr6=$request->ncr6t;
+    }
     $Encuesta->sec_c=0;
     $Encuesta->save();
     $rules=['ncr1' => 'required',
@@ -319,7 +322,6 @@ public function updateD(Request $request,$id){
             'NDR12A' => 'required',
             'NDR12B' => 'required',
             'NDR12C' => 'required',
-            'ndr13a' => 'required',
             'ndr15' => 'required',
             'ndr16' => 'required',
             'ndr17' => 'required',

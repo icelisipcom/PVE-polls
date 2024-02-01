@@ -150,7 +150,7 @@
        <option value=0  hidden></option>   
 </select> 
 </td>
-<td>
+<td colspan="2">
 <h2 class="reactivo">  
     72a).-¿Qué tan relacionados están los estudios de posgrado que realiza y su carrera?</h2>
     <select class="select" id="ner9" name="ner9" >
@@ -178,7 +178,7 @@
 <td>
 <h2 class="reactivo">  
     ¿Cuál? </h2>
-    <INPUT   id="ner10a" name="ner10a" TYPE=TEXT class="texto"  value=" " MAXLENGTH=60 >
+    <INPUT   id="ner10a" name="ner10a" TYPE=TEXT class="texto"  value=" {{str_replace('0','',$Encuesta->ner10a)}}" MAXLENGTH=60 >
 </td>
 
 <td>
