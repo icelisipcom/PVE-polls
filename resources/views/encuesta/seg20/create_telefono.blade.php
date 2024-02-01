@@ -8,7 +8,7 @@
     </div>
     <center >
     <br><br>
-        <form action="{{ route('guardar_telefono',[$Egresado->cuenta,$Egresado->carrera])}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('guardar_telefono',[$Egresado->cuenta,$Egresado->carrera,$encuesta])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
     <label for="exampleInputEmail1">Ingrese el nuevo telefono</label>

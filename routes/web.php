@@ -51,12 +51,10 @@ Route::post('/guardar_correo{cuenta}/{carrera}', [App\Http\Controllers\CorreosCo
 Route::get('/editar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'edit'])->name('editar_correo');
 Route::post('/actualizar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'update'])->name('actualizar_correo');
 
-Route::get('/agregar_telefono/{cuenta}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'create'])->name('agregar_telefono');
-Route::post('/guardar_telefono{cuenta}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'store'])->name('guardar_telefono');
-Route::get('/editar_telefono/{id}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'edit'])->name('editar_telefono');
-Route::post('/actualizar_telefono/{id}/{carrera}', [App\Http\Controllers\TelefonosController::class, 'update'])->name('actualizar_telefono');
-
-
+Route::get('/agregar_telefono/{cuenta}/{carrera}/{encuesta?}', [App\Http\Controllers\TelefonosController::class, 'create'])->name('agregar_telefono');
+Route::post('/guardar_telefono{cuenta}/{carrera}/{encuesta?}', [App\Http\Controllers\TelefonosController::class, 'store'])->name('guardar_telefono');
+Route::get('/editar_telefono/{id}/{carrera}/{encuesta?}', [App\Http\Controllers\TelefonosController::class, 'edit'])->name('editar_telefono');
+Route::post('/actualizar_telefono/{id}/{carrera}/{encuesta?}', [App\Http\Controllers\TelefonosController::class, 'update'])->name('actualizar_telefono');
 
 Route::get('/encuestas/2014/show/{id}', [App\Http\Controllers\EncuestasController::class, 'show_14'])->name('encuestas.show_14');
 Route::get('/encuestas/2014/recados/{id}', [App\Http\Controllers\RecadosController::class, 'recado_14'])->name('encuestas.recado_14');
