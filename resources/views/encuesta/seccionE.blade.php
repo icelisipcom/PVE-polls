@@ -174,7 +174,6 @@
       <option value=0  hidden></option>   
 </select>
 </td>
-
 <td>
 <h2 class="reactivo">  
     ¿Cuál? </h2>

@@ -414,13 +414,8 @@ public function updateG(Request $request,$id){
     $validated = $request->validate($rules);
     $Encuesta->sec_g=1;
     $Encuesta->save();
-    $this->validar_completa($Encuesta->registro);
     
-    $fileName = $Encuesta->cuenta.'.json';
-    $fileStorePath = public_path('storage/json/'.$fileName);
-    
-    File::put($fileStorePath, json_encode($request->all()));
-    $comentario=comentario::where('cuenta',$Encuesta->cuenta)->first();
+   $comentario=comentario::where('cuenta',$Encuesta->cuenta)->first();
     if($comentario){
         $comentario->comentario=$request->comentario;
         $comentario->save();
@@ -432,9 +427,22 @@ public function updateG(Request $request,$id){
     }
     
 
-    return view('encuesta.saved',compact('Encuesta'));
+    $this->validar_completa($Encuesta->registro);
+    return redirect()->route('edit_20',[$Encuesta->registro,'G']);
     }
 
+    public function terminar($id){
+        $Encuesta=respuestas20::where('registro',$id)->first();
+        
+        $fileName = $Encuesta->cuenta.'.json';
+        $fileStorePath = public_path('storage/json/'.$fileName);
+        
+        File::put($fileStorePath, json_encode($request->all()));
+        
+        
+    
+        return view('encuesta.saved',compact('Encuesta'));
+        }
 
 
 

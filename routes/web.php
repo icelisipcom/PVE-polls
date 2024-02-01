@@ -44,6 +44,8 @@ Route::post('/encuestas/2020/E_update/{id}', [App\Http\Controllers\Encuesta20Con
 Route::post('/encuestas/2020/F_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateF'])->name('encuestas.real_update.F');
 Route::post('/encuestas/2020/G_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'updateG'])->name('encuestas.real_update.G');
 
+Route::get('/encuestas/2020/terminar/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'terminar'])->name('terminar');
+
 Route::resource('encuestas', EncuestasController::class);
 Route::resource('correos', CorreosController::class);
 Route::get('/agregar_correo/{cuenta}/{carrera}', [App\Http\Controllers\CorreosController::class, 'create'])->name('agregar_correo');

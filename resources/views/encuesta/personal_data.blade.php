@@ -13,7 +13,14 @@
           </div>
         </td>
         <td colspan="4">
-      Encuesta de Seguimiento generacion 2020
+          @if($Encuesta->completed==1)
+          <a href="{{route('terminar',$Encuesta->registro)}}"></a>
+        <button   type="button"  style="background-color:{{Auth::user()->color}} ; color:white; ">
+<center><i class="fas fa-right-arrow fa-lg"></i>   Salir </center>
+  </button>
+  @else
+  Encuesta de seguimiento 2020
+  @endif
         </td>
           </tr>
           <tr>
