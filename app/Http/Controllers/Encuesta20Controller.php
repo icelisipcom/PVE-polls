@@ -437,7 +437,7 @@ public function updateG(Request $request,$id){
         $fileName = $Encuesta->cuenta.'.json';
         $fileStorePath = public_path('storage/json/'.$fileName);
         
-        File::put($fileStorePath, json_encode($request->all()));
+        File::put($fileStorePath, json_encode($Encuesta));
         
         
     
