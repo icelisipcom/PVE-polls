@@ -20,7 +20,7 @@
             <th>Egresad@: </th>
             <td> {{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}} </td>
             <th>Numero C:</th><td> {{$Egresado->cuenta}}</td>
-            <th> <a href="{{route('agregar_telefono',[$Egresado->carrera,$Encuesta->registro])}}">Telefonos:</th>
+            <th> Telefonos: <a href="{{route('agregar_telefono',[$Egresado->cuenta,$Egresado->carrera,$Encuesta->registro])}}">  <button class="btn btn-mb2" style="background-color:{{Auth::user()->color}} ; color:white; font-size:0.9vw"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo  </button></a></th>
               @foreach($Telefonos as $t)
               <td> <a href="{{route('editar_telefono',[$t->id,$Egresado->carrera,$Encuesta->registro])}}">{{$t->telefono}} </a></td>
               @endforeach

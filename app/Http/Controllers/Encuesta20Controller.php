@@ -28,18 +28,18 @@ class Encuesta20Controller extends Controller
         
         $Correo=Correo::find($correo);
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
-        // if($Correo->enviado==0){
+        if($Correo->enviado==0){
            
-        // $caminoalpoder=public_path();
-        //    $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$Correo->correo]);
-        //    $process->run();
-        //    if (!$process->isSuccessful()) {
-        //        throw new ProcessFailedException($process);
-        //    }
-        //    $data = $process->getOutput();
-        //    $Correo->enviado=1;
-        //    $Correo->save();
-        // }
+        $caminoalpoder=public_path();
+           $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre,$Correo->correo]);
+           $process->run();
+           if (!$process->isSuccessful()) {
+               throw new ProcessFailedException($process);
+           }
+           $data = $process->getOutput();
+           $Correo->enviado=1;
+           $Correo->save();
+        }
            $Encuesta=respuestas20::where('cuenta','=',$cuenta)->where('nbr2','=',$carrera)->first();
            if($Encuesta){
             return redirect('/encuestas_2020/edit/'.$Encuesta->registro.'/A');
@@ -81,6 +81,7 @@ $Comentario=$Coment->comentario;
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
     // dd($Comentario);
     if($section=='SEARCH'){
+     
         foreach(array('A','E','F','C','D','G') as $sec){
             $format_field='sec_'.strtolower($sec);
            
@@ -90,8 +91,9 @@ $Comentario=$Coment->comentario;
                 break;
             }
         }
-        // dd($section);
+         
     }
+    if($section=='SEARCH'){$section='A';}
     return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','nfr23_options','Discriminacion'));
 }
 
@@ -275,7 +277,7 @@ public function updateC(Request $request,$id){
     'ncr6' => 'required',
     'ncr6t' => 'required',
     'ncr6_a' => 'required',
-    'ncr7a' => 'required',
+    'ncr7_a' => 'required',
     'ncr7b' => 'required',
     'ncr8' => 'required',
     'ncr9' => 'required',

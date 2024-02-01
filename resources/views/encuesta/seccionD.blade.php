@@ -244,7 +244,7 @@
 </select>
     </td>
 <td>
-<h2 class="reactivo">56.- Otro factor para su contratación, ¿Cuál? </h2>
+<h2 class="reactivo">56.- Otro factor para su contratación, ¿Cuál?(opcional) </h2>
 
 <INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" {{$Encuesta->ndr13a}}" TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 

@@ -104,7 +104,7 @@
 <h2 class="reactivo"><br> <br>
    86a).- ¿Por qué?
   <br> <br></h2>
-<INPUT  name="nfr5_a" id="nfr5_a" style="width:50%" value="{{str_replace('0','',$Encuesta->nfr5_a )}}"  maxlength="35" type="text" class="texto">
+<INPUT  name="nfr5_a" id="nfr5_a" style="width:50%" value="{{str_replace('0','',$Encuesta->nfr5_a )}}"  maxlength="50" type="text" class="texto">
 
       </td>
 <td>
@@ -264,7 +264,7 @@ discriminación?
   <br>
 @endforeach</div>
     <h2 class="reactivo"> 
-97a) Otra-</h2>
+97a) Otra (opcional):</h2>
 <INPUT id="nfr24" name="nfr24" TYPE=TEXT  class="texto"  MAXLENGTH=80 value="{{$Encuesta->nfr24}}" >
 </TD>
 </tr>

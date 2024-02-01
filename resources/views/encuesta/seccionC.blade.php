@@ -144,7 +144,7 @@
 
 <select class="select" id="ncr6a2"  name="ncr6" onchange="autoempleo()">
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr6<=3 ) selected @endif >Autoempleo</option>
+    <option value=1 @if($Encuesta->ncr6<=3 && $Encuesta->ncr6>=1) selected @endif >Autoempleo</option>
     <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
     <option value=5 @if($Encuesta->ncr6==5) selected @endif>Otro (Especifíque)</option>
     <option value=0  hidden></option>   
@@ -171,7 +171,7 @@
 <h2 class="reactivo">27.- ¿Cuál es su puesto? </h2>
 
 
- <INPUT type="text" class="texto" id="ncr7a" name="ncr7a" value="{{$Encuesta->ncr7_a}}" style="width:60%"  maxlength="110"  >
+ <INPUT type="text" class="texto" id="ncr7a" name="ncr7_a" value="{{$Encuesta->ncr7_a}}" style="width:60%"  maxlength="110"  >
 
     </td>
 </tr>

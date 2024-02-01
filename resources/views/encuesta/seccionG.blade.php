@@ -951,7 +951,7 @@ b).- ¿Con qué frecuencia lo practicó?</h2>
       </select>
 </td> <td>
 <h2 class="reactivo" >  
-c).- Motivo por el que no lo practico </h2>
+c).- Motivo por el que no lo practicó </h2>
 <select class="select" id="ngr40_b" name="ngr40_b"  >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr40_b==1) selected @endif >Desinterés</option>
