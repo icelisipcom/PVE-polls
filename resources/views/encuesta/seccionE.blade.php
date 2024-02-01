@@ -167,7 +167,7 @@
 <tr>
 <td> <h2 class="reactivo"> 
     73.- <B>¿Especialización?</B> </h2>
-    <select class="select" id="ner10" name="ner10"  onchange="z" >
+    <select class="select" id="ner10" name="ner10"  onchange="bloquear('ner10',[2],[ner10a,ner11,ner12]);" >
       <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner10==1) selected @endif>Sí</option>
       <option value=2  @if($Encuesta->ner10==2) selected @endif>No</option>
