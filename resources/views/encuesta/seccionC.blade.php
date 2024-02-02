@@ -517,7 +517,6 @@ function porque(){
 
 
 // inicializar 
-bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a]); 
 
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
 autoempleo();
@@ -525,6 +524,10 @@ bloquear('ncr8',[2],[ncr9]);
 bloquear('ncr11',[1,2],[ncr15]);
 porque();
 seccionc2();
+bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
+autoempleo();
+bloquear('ncr11',[1,2],[ncr15]);
+bloquear('ncr8',[2],[ncr9])
 </script>
 
 @endpush

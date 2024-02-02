@@ -49,7 +49,7 @@
                 
                 <td>{{$e->cuenta}} </td>
                <td>{{$e->llamadas}} </td>
-               <td> {{$e->description}}</td>
+               <td @if($e->description=='') class='focoso' @endif> {{$e->description}}</td>
                 <td><a href="{{route('llamar_20',$e->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
               </td>
             </tr>
@@ -57,6 +57,7 @@
           </tbody>
         </table>
     </div>
+    <div id="xd">xd</div>
 </div>
 @stop
 
@@ -77,9 +78,10 @@
  </script>
 
  <script>
-  var elems = $('td').filter(function(){
- return this.textContent.trim() === "0"
+ $('html, body').animate({
+scrollTop: $('#xd').offset().top
+}, 600, function(){
+
 });
-console.log(elems.first());
  </script>
 @endpush
