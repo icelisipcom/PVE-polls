@@ -75,4 +75,11 @@
     });
 } );
  </script>
+
+ <script>
+  var elems = $('td').filter(function(){
+ return this.textContent.trim() === "0"
+});
+console.log(elems.first());
+ </script>
 @endpush
