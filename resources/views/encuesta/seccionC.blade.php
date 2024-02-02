@@ -90,7 +90,7 @@
 <h2 class="reactivo">24.- ¿En qué sector se ubica? </h2>
 
 
-<select class="select" id="ncr4" name="ncr4"   onchange="bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a])">
+<select class="select" id="ncr4" name="ncr4"   onchange="bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])">
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ncr4==1) selected @endif> Agricultura, ganadería, aprovechamiento forestal, caza y pesca</option>
 <option value=19 @if($Encuesta->ncr4==19) selected @endif>Asociaciones y agrupaciones</option>
@@ -202,7 +202,7 @@
 <h2 class="reactivo"> 30.- ¿Cuántas personas trabajan con usted? </h2>
 
 
-<select class="select" id="ncr9" @if($Encuesta->ncr8==2) hidden @endif name="ncr9"  >
+<select class="select" id="ncr9"  name="ncr9"  >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr9==1) selected @endif>1 a 5 </option>
     <option value=2 @if($Encuesta->ncr9==2) selected @endif>6 a 10</option> 
@@ -246,7 +246,7 @@ Especifique:</h2>
          es porque usted asílo decidió? </h2>
 
 <select class="select" id="ncr15" name="ncr15"  >
-<option selected="selected" value="" @if($Encuesta->ncr11!=3) hidden @endif>
+<option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr15==1) selected @endif>Sí</OPTION>
     <option value=2 @if($Encuesta->ncr15==2) selected @endif>No</OPTION> 
     <option value=0  hidden></option>   
@@ -517,11 +517,14 @@ function porque(){
 
 
 // inicializar 
-bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a]); 
-seccionc2();
-bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22],[ncr4a])
-autoempleo(); 
+bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a]); 
+
+bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
+autoempleo();
+bloquear('ncr8',[2],[ncr9]); 
+bloquear('ncr11',[1,2],[ncr15]);
 porque();
+seccionc2();
 </script>
 
 @endpush

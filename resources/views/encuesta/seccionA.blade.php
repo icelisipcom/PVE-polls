@@ -108,7 +108,6 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="20" maxl
 <option value=52 @if($Encuesta->nar14==52) selected @endif >8 Operadores de maquinaria industrial, ensambladores, choferes y conductores de transporte  </option>
 <option value=53 @if($Encuesta->nar14==53) selected @endif >9 Trabajadores en actividades elementales y de apoyo  </option>
 <option value=54 @if($Encuesta->nar14==54) selected @endif >Profesor Enseñanza Superior  </option>
-<option value=55 @if($Encuesta->nar14==55) selected @endif > Profesor Enseñanza Media Superior</option>
 <option value=56 @if($Encuesta->nar14==56) selected @endif > Profesor Enseñanza Media </option>
 <option value=57 @if($Encuesta->nar14==57) selected @endif > Profesor Enseñanza Básica</option>
 <option value=58 @if($Encuesta->nar14==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
@@ -188,7 +187,7 @@ cursó sus estudios en la UNAM? </h2>
 <option value=52 @if($Encuesta->nar15==52) selected @endif >8 Operadores de maquinaria industrial, ensambladores, choferes y conductores de transporte  </option>
 <option value=53 @if($Encuesta->nar15==53) selected @endif >9 Trabajadores en actividades elementales y de apoyo  </option>
 <option value=54 @if($Encuesta->nar15==54) selected @endif >Profesor Enseñanza Superior  </option>
-<option value=55 @if($Encuesta->nar15==55) selected @endif > Profesor Enseñanza Media Superior</option>
+
 <option value=56 @if($Encuesta->nar15==56) selected @endif > Profesor Enseñanza Media </option>
 <option value=57 @if($Encuesta->nar15==57) selected @endif > Profesor Enseñanza Básica</option>
 <option value=58 @if($Encuesta->nar15==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
@@ -267,7 +266,6 @@ cursó sus estudios en la UNAM? </h2>
    <option value=52 @if($Encuesta->nar16==52) selected @endif >8 Operadores de maquinaria industrial, ensambladores, choferes y conductores de transporte  </option>
    <option value=53 @if($Encuesta->nar16==53) selected @endif >9 Trabajadores en actividades elementales y de apoyo  </option>
    <option value=54 @if($Encuesta->nar16==54) selected @endif >Profesor Enseñanza Superior  </option>
-   <option value=55 @if($Encuesta->nar16==55) selected @endif > Profesor Enseñanza Media Superior</option>
    <option value=56 @if($Encuesta->nar16==56) selected @endif > Profesor Enseñanza Media </option>
    <option value=57 @if($Encuesta->nar16==57) selected @endif > Profesor Enseñanza Básica</option>
    <option value=58 @if($Encuesta->nar16==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
@@ -342,33 +340,34 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   
   <select class="select" id="nar2a" name="nar2a"  onchange=check_beca()   >
   <option value="" selected></option>
-  <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>
-  <option value=2 @if($Encuesta->nar2a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
   
-  <option value=6 @if($Encuesta->nar2a==6) selected @endif > Beca de Excelencia Bécalos</option>
-  <option value=7 @if($Encuesta->nar2a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
-  <option value=8 @if($Encuesta->nar2a==8) selected @endif > Programa de Apoyo Nutricional </option>
-  <option value=9 @if($Encuesta->nar2a==9) selected @endif >Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
-  <option value=10 @if($Encuesta->nar2a==10) selected @endif > Beca para Disminuir el Bajo Rendimiento Académico</option>
-  <option value=11 @if($Encuesta->nar2a==11) selected @endif > Beca de Fortalecimiento y Beca de Alta Exigencia Académica</option>
-  <option value=12 @if($Encuesta->nar2a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
-  <option value=13 @if($Encuesta->nar2a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
-  <option value=14 @if($Encuesta->nar2a==14) selected @endif >Beca Especialidad (TITULACION) </option>
- 
-  <option value=3 @if($Encuesta->nar2a==3) selected @endif >Sí, de otro programa</option>
-  </select>  
+  <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>
+    <option value=2 @if($Encuesta->nar2a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
+    <option value=3 @if($Encuesta->nar2a==3) selected @endif>Sí, del Programa de Alta Exigencia Académica</option >
+    <option value=4 @if($Encuesta->nar2a==4) selected @endif>Sí, de otro programa</option>
+               </select>  
 </td>
 <td>
  
 <h2 class="reactivo">18).- ¿Durante sus estudios de licenciatura fue becario?   </h2>
  
  <select class="select" id="nar3a" name="nar3a"  onchange=check_beca() >
+ 
  <option value="" selected></option>
-    <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
-    <option value=2 @if($Encuesta->nar3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
-    <option value=3 @if($Encuesta->nar3a==3) selected @endif>Sí, del Programa de Alta Exigencia Académica</option >
-    <option value=4 @if($Encuesta->nar3a==4) selected @endif>Sí, de otro programa</option>
-               </select>   
+ <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
+  <option value=2 @if($Encuesta->na3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
+  
+  <option value=6 @if($Encuesta->nar3a==6) selected @endif > Beca de Excelencia Bécalos</option>
+  <option value=7 @if($Encuesta->nar3a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
+  <option value=8 @if($Encuesta->nar3a==8) selected @endif > Programa de Apoyo Nutricional </option>
+  <option value=9 @if($Encuesta->nar3a==9) selected @endif >Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
+  <option value=10 @if($Encuesta->nar3a==10) selected @endif > Beca para Disminuir el Bajo Rendimiento Académico</option>
+  <option value=11 @if($Encuesta->nar3a==11) selected @endif > Beca de Fortalecimiento y Beca de Alta Exigencia Académica</option>
+  <option value=12 @if($Encuesta->nar3a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
+  <option value=13 @if($Encuesta->nar3a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
+  <option value=14 @if($Encuesta->nar3a==14) selected @endif >Beca Especialidad (TITULACION) </option>
+  <option value=3 @if($Encuesta->nar3a==3) selected @endif >Sí, de otro programa</option>
+  </select>   
 </td>
 <td></td>
 <tr >

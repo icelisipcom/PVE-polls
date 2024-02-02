@@ -22,7 +22,7 @@
         <td>
 <h2 class="reactivo">
 82.-La carrera que estudió: </h2>
-<select class="select" id="nfr0"  name="nfr0"  onchange="zzzz">
+<select class="select" id="nfr0"  name="nfr0"  onchange="bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);">
  <option selected="selected" value=""></option>
    <option value=1 @if($Encuesta->nfr0==1) selected @endif>La eligió </option>
   <option value=2 @if($Encuesta->nfr0==2) selected @endif>Se la asignaron (Pase a la 84)</option>
@@ -104,7 +104,7 @@
 <h2 class="reactivo"><br> <br>
    86a).- ¿Por qué?
   <br> <br></h2>
-<INPUT  name="nfr5_a" id="nfr5_a" style="width:50%" value="{{str_replace('0','',$Encuesta->nfr5_a )}}"  maxlength="50" type="text" class="texto">
+<INPUT  name="nfr5_a" id="nfr5_a" style="width:50%" value="{{str_replace('0','',$Encuesta->nfr5_a )}}"  maxlength="99" type="text" class="texto">
 
       </td>
 <td>
@@ -121,7 +121,7 @@
 <h2 class="reactivo"><br> <br>
 87a).- ¿Por qué? 
 <br> <br></h2>
-<INPUT id="nfr6_a" class="texto" Type='text' name="nfr6_a" value="{{str_replace('0','',$Encuesta->nfr6_a )}}" maxlength='50' style="width:50%" >
+<INPUT id="nfr6_a" class="texto" Type='text' name="nfr6_a" value="{{str_replace('0','',$Encuesta->nfr6_a )}}" maxlength='99' style="width:50%" >
 
       </td>
 </tr>
@@ -193,7 +193,7 @@
 <td>
 <h2 class="reactivo">
 92a).- ¿Cúales?</h2>
-<INPUT type="text" class="texto" id="nfr11a" name="nfr11a" maxlength="75" value="{{$Encuesta->nfr11a}}">
+<INPUT type="text" class="texto" id="nfr11a" name="nfr11a" maxlength="99" value="{{$Encuesta->nfr11a}}">
 
       </td>
 <td>
@@ -380,6 +380,7 @@ servicio social? </h2>
   <option value=3 @if($Encuesta->nfr31==3) selected @endif>Medianamente relacionadas</option>
   <option value=4 @if($Encuesta->nfr31==4) selected @endif>Poco relacionadas</option>
   <option value=5 @if($Encuesta->nfr31==5) selected @endif>Nada relacionadas</option>
+  <option value=0>
 </select>
 
   </td>
@@ -390,6 +391,7 @@ servicio social? </h2>
  <option selected="selected" value="">
  <option value=1 @if($Encuesta->nfr32==1) selected @endif>Sí</option>
  <option value=2 @if($Encuesta->nfr32==2) selected @endif>No</option>
+ <option value=0>
 </select></TD>
 
      </td>
@@ -456,12 +458,13 @@ function titulado(){
 
 titulado();
 bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
-bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a]);
 bloquear('nfr5',[1],[nfr5_a])
 bloquear('nfr6',[1],[nfr6_a])
 bloquear('nfr11',[2],[nfr11a]);
 bloquear('nfr23a',[2],[nfr23,nfr24]); 
 bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
 bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
+
+bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a]);
 </script>
 @endpush

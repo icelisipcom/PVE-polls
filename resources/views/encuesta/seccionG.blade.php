@@ -966,7 +966,7 @@ c).- Motivo por el que no lo practicó </h2>
 <td>
 <h2 class="reactivo"> 
 141.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>
-<select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45_a,ngr45a])">
+<select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45_a,ngr45otra])">
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->ngr45==1) selected @endif >Sí</option>
 <option value=2 @if($Encuesta->ngr45==2) selected @endif >No</option>
@@ -975,22 +975,22 @@ c).- Motivo por el que no lo practicó </h2>
     <td>
 <h2 class="reactivo">
 141a).-¿Cuál?</h2>
-<select class="select" id="ngr45_a" name="ngr45_a" onchange="bloquear('ngr45_a',[1,2,3,4,5,6],[ngr45a])">
-<option selected="selected" value="">
+<select class="select" id="ngr45_a" name="ngr45_a" onchange="bloquear('ngr45_a',[1,2,3,4,5,6],[ngr45otra])">
+<option  value="">
 <option value=4 @if($Encuesta->ngr45_a==4) selected @endif >Afiliado a un grupo religioso</option>
-<option value=3 @if($Encuesta->ngr41_a==3) selected @endif >Cultural, educativa, recreativa o deportiva</option>
-<option value=5 @if($Encuesta->ngr41_a==5) selected @endif >Comunitaria o cívica</option>
-<option value=6 @if($Encuesta->ngr41_a==6) selected @endif >Científica o Investigación</option>
-<option value=1 @if($Encuesta->ngr41_a==1) selected @endif >Profesional</option>
-<option value=2 @if($Encuesta->ngr41_a==2) selected @endif >Política</option>
-<option value=7 @if($Encuesta->ngr41_a==7) selected @endif >OTRA</option>
+<option value=3 @if($Encuesta->ngr45_a==3) selected @endif >Cultural, educativa, recreativa o deportiva</option>
+<option value=5 @if($Encuesta->ngr45_a==5) selected @endif >Comunitaria o cívica</option>
+<option value=6 @if($Encuesta->ngr45_a==6) selected @endif >Científica o Investigación</option>
+<option value=1 @if($Encuesta->ngr45_a==1) selected @endif >Profesional</option>
+<option value=2 @if($Encuesta->ngr45_a==2) selected @endif >Política</option>
+<option value=7 @if($Encuesta->ngr45_a==7) selected @endif >OTRA</option>
 <option value=0 hidden > </option>
       </select>
 
    
 <h2 class="reactivo">141b).-Otra:  </h2>
 
-<INPUT  id="ngr45a" name="ngr45a" TYPE=TEXT  class="texto"  SIZE=60 MAXLENGTH=60 value="{{$Encuesta->ngr45a}}">
+<INPUT  id="ngr45otra" name="ngr45otra" TYPE=TEXT  class="texto"  SIZE=60 MAXLENGTH=60 value="{{$Encuesta->ngr45otra}}">
 
     </td>
 </tr>
@@ -1099,12 +1099,12 @@ function deportes(){
   bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
   bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
-  bloquear('ngr45',[2],[ngr45a,ngr45_a]);
   bloquear('ngr37',[12],[ngr37a]);
   artisticos();
   deportes();
   bloquear('comen',[2],[comentario]);
 
+  bloquear('ngr45',[2],[ngr45otra,ngr45_a]);
   @if($Encuesta->ncr1>=3 && $Encuesta->ncr1<=5)
   ocultar(ngr5);
   @endif
@@ -1112,5 +1112,7 @@ function deportes(){
   @if($Encuesta->ncr1==6)
   [ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35].forEach(ocultar);
   @endif
+
+  bloquear('CUE_CRE',[2],[UTILIZA])
 </script>
 @endpush

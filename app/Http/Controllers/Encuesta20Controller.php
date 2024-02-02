@@ -407,7 +407,7 @@ public function updateG(Request $request,$id){
             'ngr40_b' => 'required',
             'ngr45' => 'required',
             'ngr45_a' => 'required',
-            'ngr45a' => 'required',
+            'ngr45otra' => 'required',
             'CONOCE' => 'required',
             'CUE_CRE' => 'required',
             'UTILIZA' => 'required'];

@@ -87,6 +87,7 @@ public function show_14($carrera,$plantel){
   $muestra=collect($muestra);
   return view('muestras.act14.show',compact('muestra'));
 }
+
 public function show_20($carrera,$plantel){
  $Carrera= Carrera::where('clave_carrera',$carrera)->where('clave_plantel',$plantel)->first();
  $muestra=DB::table('egresados')->where('muestra','=','3')->where('carrera','=',$carrera)->where('plantel','=',$plantel)

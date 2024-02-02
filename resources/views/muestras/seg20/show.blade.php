@@ -70,7 +70,9 @@
  
   console.log('script jalando ¿?');
   $(document).ready(function() {
-    $('#myTable').DataTable({paging: false});
+    $('#myTable').DataTable({paging: false,
+      sorting: [[5, 'desc'],[1, 'asc']]
+    });
 } );
  </script>
 @endpush

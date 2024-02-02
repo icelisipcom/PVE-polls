@@ -13,7 +13,6 @@
         <p>Actualizacion 2014 </p>
     </a>
 </li>
-
 <li class="nav-item">
     <a href="{{ route('muestras.index') }}" class="nav-link {{ Request::is('muestras') ? 'active' : '' }}">
     <i class="nav-icon fas fa-table"></i>

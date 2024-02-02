@@ -30,7 +30,7 @@
     </td>
 <td>
 <h2 class="reactivo"> 45.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
-<select class="select" id="ndr2" name="ndr2" onchange="bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17],[ndr2a])">
+<select class="select" id="ndr2" name="ndr2" onchange="funcion_ndr2()">
 <option selected="selected" value="">
 <option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
 <option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 57)</option>
@@ -369,35 +369,39 @@ console.log('marcandooo rojo');
 
 <script>
 function funcion_ndr2(){
-  bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,16,17],[ndr2a]);
-  bloquear('ndr2',[9],[ndr2a,ndr3,ndr4,ndr5,ndr6,ndr7,ndr8,ndr9,ndr10,ndr11,ndr13a,ndr12,ndr12a,ndr12b,ndr12c]);
-  funcion_ndr2();
-  bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
- var d15='{{$Encuesta->ndr15}}';
-  //Get select object
-var selectObj = document.getElementById("ndr15");
-
-
-console.log('!!!!!!!!-------------------ndr15: {{$Encuesta->ndr15}}');
-console.log(selectObj.options.length);
-    for (var i = 0; i < selectObj.options.length; i++) {
-          
-        if (selectObj.options[i].value== d15) {
-           selectObj.options[i].selected = true;
-           selectObj.selectedIndex=i;
-           console.log('valor de la opcion '+i+selectObj.options[i].value);
-       
-        }
-      }
-  
+ 
+  ndr2_val=document.getElementById('ndr2').value;
+  console.log('func ndr2 '+ndr2_val);
+  switch(ndr2_val){
+    case '12': visibilizar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(visibilizar);
+    break;
+    case '13':visibilizar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(visibilizar);
+    break;
+    case '14': visibilizar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(visibilizar);
+    break;
+    case '15': visibilizar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(visibilizar);
+    break;
+    case '9': ocultar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
+    break;
+    case '10': ocultar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
+    break;
+    default: ocultar(ndr2a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(visibilizar);
+    break;
+  }
 }
 
 @if($Encuesta->ncr1==6)
 [ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
 
 @endif
-bloquear('ndr2',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17],[ndr2a])
-  
+
+@if($Encuesta->ncr1==2 | $Encuesta->ncr1==3)
+document.getElementById('ndr2').value=9;
+[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
+@endif
+
+bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
+funcion_ndr2();
 </script>
 
 @endpush
