@@ -20,9 +20,9 @@
 <tr>
 <td colspan="2">
 <h2 class="reactivo">  
-    63.- ¿Desde que egresó de la licenciatura ha realizado actividades formales de actualización en su campo profesional?
+    16.- ¿Desde que egresó de la licenciatura ha realizado actividades formales de actualización en su campo profesional?
     (cursos, diplomados,seminarios, etc.)</h2>
-         <select class="select" id="ner1" name="ner1"  onchange="bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a])" > 
+         <select class="select" id="ner1" name="ner1"  onchange="bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7_a])" > 
         <option  value="" selected></option>
        <option value=1  @if($Encuesta->ner1==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->ner1==2) selected @endif>No (pase a la 72)</option>
@@ -31,7 +31,7 @@
 </td>
 <td>
 <h2 class="reactivo">  
-    64.- ¿Cada cuando lo realiza?</h2>
+    17.- ¿Cada cuando lo realiza?</h2>
           <select class="select" id="ner2" name="ner2"  >
           <option value=""></option>
        <option value=1  @if($Encuesta->ner2==1) selected @endif>Cada seis meses</option>
@@ -63,7 +63,7 @@
 <tr>
     <td>
     <h2 class="reactivo">  
-    65.- En la UNAM</h2>
+    18.- En la UNAM</h2>
     <select class="select" id="ner3"  name="ner3" >
     <option value="" selected="selected"></option>
         <option value=1  @if($Encuesta->ner3==1) selected @endif>Sí</option>
@@ -74,7 +74,7 @@
 <td>
    
 <h2 class="reactivo">  
-    66.- En otra institución pública</h2>
+    19.- En otra institución pública</h2>
     <select class="select" id="ner4" name="ner4" >
     <option value="" selected="selected"></option>
         <option value=1  @if($Encuesta->ner4==1) selected @endif>Sí</option>
@@ -84,7 +84,7 @@
 </td>
 <td>
 <h2 class="reactivo">  
-67.- En otra institución privada</h2>
+20.- En otra institución privada</h2>
     <select class="select" id="ner5" name="ner5" >
       <option value="" selected="selected"></option>
       <option value=1  @if($Encuesta->ner5==1) selected @endif>Sí</option>
@@ -95,7 +95,7 @@
 <td>
     
 <h2 class="reactivo">  
-    68.-En la empresa o institución en la que trabaja</h2>
+    21.-En la empresa o institución en la que trabaja</h2>
     <select class="select" id="ner6" name="ner6" >
     <option value="" selected="selected"></option>
     <option value=1  @if($Encuesta->ner6==1) selected @endif>Sí</option>
@@ -107,7 +107,7 @@
 <tr>
 <td>
 <h2 class="reactivo">  
-    69.-En una asociación</h2>
+    22.-En una asociación</h2>
     <select class="select" id="ner7" name="ner7" >
     <option value="" selected="selected"></option>
     <option value=1  @if($Encuesta->ner7==1) selected @endif>Sí</option>
@@ -119,7 +119,7 @@
 <td>
       
 <h2 class="reactivo">  
-    70.-En Internet</h2>
+    23.-En Internet</h2>
     <select class="select" id="ner7int" name="ner7int" >
       <option value="" selected="selected"></option>
       <option value=1  @if($Encuesta->ner7int==1) selected @endif>Sí</option>
@@ -128,8 +128,8 @@
 </select>
 </td>
 <td colspan="2">
-<h2 class="reactivo">  71.-Otro lugar ¿Cúal?</h2>
- <INPUT id="ner7a" NAME="ner7a" TYPE=TEXT class="texto"  value="{{$Encuesta->ner7a}} " MAXLENGTH=60 >
+<h2 class="reactivo">  24.-Otro lugar ¿Cúal?</h2>
+ <INPUT id="ner7_a" NAME="ner7_a" TYPE=TEXT class="texto"  value="{{$Encuesta->ner7_a}} " MAXLENGTH=60 >
       
 </td>
 </tr>
@@ -141,7 +141,7 @@
 <tr>
 <td>
 <h2 class="reactivo">  
-    72.- <B>¿Posgrado?</B></h2>
+    25.- <B>¿Posgrado?</B></h2>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <select class="select" id="ner8" name="ner8"  onchange="bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner13,ner14,ner15,ner12a,ner12b,ner16,ner17,ner18,ner19])" >
        <option selected="selected" value="">
@@ -152,7 +152,7 @@
 </td>
 <td colspan="2">
 <h2 class="reactivo">  
-    72a).-¿Qué tan relacionados están los estudios de posgrado que realiza y su carrera?</h2>
+    25a).-¿Qué tan relacionados están los estudios de posgrado que realiza y su carrera?</h2>
     <select class="select" id="ner9" name="ner9" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner9==1) selected @endif>Muy relacionados</option>
@@ -166,8 +166,8 @@
 
 <tr>
 <td> <h2 class="reactivo"> 
-    73.- <B>¿Especialización?</B> </h2>
-    <select class="select" id="ner10" name="ner10"  onchange="bloquear('ner10',[2],[ner10a,ner11,ner12]);" >
+    26.- <B>¿Especialización?</B> </h2>
+    <select class="select" id="ner10" name="ner10"  onchange="bloquear('ner10',[2],[ner10a,ner11,ner12,ner12ext]);" >
       <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner10==1) selected @endif>Sí</option>
       <option value=2  @if($Encuesta->ner10==2) selected @endif>No</option>
@@ -182,7 +182,7 @@
 
 <td>
 <h2 class="reactivo"> 
- 73a).- ¿Ya se graduó? </h2>
+ 26a).- ¿Ya se graduó? </h2>
     <select class="select" id="ner11" name="ner11" >
       <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner11==1) selected @endif>Sí</option>
@@ -192,8 +192,8 @@
 </td>
 <td>
 <h2 class="reactivo"> 
-    74.- ¿En dónde los hizo? </h2>
-     <select class="select" id="ner12" name="ner12" >
+    27.- ¿En dónde los hizo? </h2>
+     <select class="select" id="ner12" name="ner12"  onchange="bloquear('ner12',[0,1,2,3],[ner12ext])">
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner12==1) selected @endif>En la UNAM</option>
        <option value=2  @if($Encuesta->ner12==2) selected @endif>En otra institución pública</option>
@@ -201,14 +201,19 @@
        <option value=4  @if($Encuesta->ner12==4) selected @endif>En el extranjero</option>
        <option value=0  hidden></option>   
 </select>
+
+<h2 class="reactivo">27a.- Extranjero Especifique: </h2>
+
+ <INPUT type="text" class="texto " id="ner12ext" name="ner12ext" value="{{$Encuesta->ner12text}}" style="width:60%"  maxlength="100"  >
+
 </td>
 </tr>
 
 <tr>
     <td>
     <h2 class="reactivo">  
-    75.- <b>¿Maestría?</b></h2>
-    <select class="select" id="ner13" name="ner13"  onchange="bloquear('ner13',[2],[ner14,ner15])" >
+    28.- <b>¿Maestría?</b></h2>
+    <select class="select" id="ner13" name="ner13"  onchange="bloquear('ner13',[2],[ner14,ner15,ner15ext])" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ner13==1) selected @endif>Sí</option>
         <option value=2  @if($Encuesta->ner13==2) selected @endif>No</option>
@@ -218,7 +223,7 @@
 
     <td>
     <h2 class="reactivo">  
-    75a).- ¿Ya se graduó?</h2>
+    28a).- ¿Ya se graduó?</h2>
     <select class="select" id="ner14" name="ner14" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner14==1) selected @endif>Sí</option>
@@ -229,8 +234,8 @@
 
     <td>
     <h2 class="reactivo"> 
-    76.- ¿En dónde los hizo? </h2>
-    <select class="select" id="ner15"  name="ner15" >
+    29.- ¿En dónde los hizo? </h2>
+    <select class="select" id="ner15"  name="ner15"  onchange="bloquear('ner15',[0,1,2,3],[ner15ext])" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner15==1) selected @endif>En la UNAM</option>
        <option value=2  @if($Encuesta->ner15==2) selected @endif>En otra institución pública</option>
@@ -238,6 +243,10 @@
        <option value=4  @if($Encuesta->ner15==4) selected @endif>En el extranjero</option>
        <option value=0  hidden></option>   
 </select>
+<h2 class="reactivo">29a.- Extranjero Especifique: </h2>
+
+ <INPUT type="text" class="texto " id="ner15ext" name="ner15ext" value="{{$Encuesta->ner15text}}" style="width:60%"  maxlength="100"  >
+
     </td>
 
     <td>
@@ -246,7 +255,7 @@
 </tr>
 <tr>
 <td>   <h2 class="reactivo">
-    77.-¿Subespecialización? (solo médicos)  </h2>
+    30.-¿Subespecialización? (solo médicos)  </h2>
     <select class="select" id="ner12a" name="ner12a" onchange="bloquear('ner12a',[2],[ner12b])" @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202)) hidden value=0 @endif>
       <option value=0 >-</option>
       <option value=1  @if($Encuesta->ner12a==1) selected @endif>Sí</option>
@@ -256,7 +265,7 @@
 
     <td clospan="2">
     <h2 class="reactivo">  
-    77a).-¿En qué área? </h2>
+    30a).-¿En qué área? </h2>
     <INPUT   id="ner12b" name="ner12b" TYPE=TEXT  class="texto" value=" "  MAXLENGTH=60 @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202)) hidden value=0 @endif>
     </td>
 
@@ -266,8 +275,8 @@
 <tr>
 <td colspan="2">
 <h2 class="reactivo">  
-    78.-¿Ha realizado estudios de Doctorado?</h2>
-    <select class="select" id="ner16" name="ner16"  onchange="bloquear('ner16',[2],[ner17,ner18])" >
+    31.-¿Ha realizado estudios de Doctorado?</h2>
+    <select class="select" id="ner16" name="ner16"  onchange="bloquear('ner16',[2],[ner17,ner18,ner18ext])" >
       <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner16==1) selected @endif>Sí</option>
       <option value=2  @if($Encuesta->ner16==2) selected @endif>No (Pase a la 81)</option>
@@ -276,7 +285,7 @@
 </td>
 <td>
 <h2 class="reactivo">  
-    79.- ¿Ya se graduó?</h2>
+   32.- ¿Ya se graduó?</h2>
     <select class="select" id="ner17" name="ner17" @if($Encuesta->ner16==2) hidden value=0 @endif>
     <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner17==1) selected @endif>Sí</option>
@@ -286,8 +295,8 @@
 </td>
 <td>
 <h2 class="reactivo">  
-    80).- ¿En dónde los hizo?-</h2>
-    <select class="select" id="ner18" name="ner18" @if($Encuesta->ner16==2) hidden value=0 @endif>
+    33).- ¿En dónde los hizo?-</h2>
+    <select class="select" id="ner18" name="ner18" onchange="bloquear('ner18',[0,1,2,3],[ner18ext])">
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner18==1) selected @endif>En la UNAM</option>
        <option value=2  @if($Encuesta->ner18==2) selected @endif>En otra institución pública</option>
@@ -295,13 +304,16 @@
        <option value=4  @if($Encuesta->ner18==4) selected @endif>En el extranjero</option>
        <option value=0  hidden></option>   
  </select>
-    
+ <h2 class="reactivo">33a.- Extranjero Especifique: </h2>
+
+<INPUT type="text" class="texto " id="ner18ext" name="ner18ext" value="{{$Encuesta->ner18text}}" style="width:60%"  maxlength="100"  >
+ 
 </td>
 </tr>
 <tr>
 <td colspan="4">
 <h2 class="reactivo">  
-    <BR>81.-¿Cuál es la razón más importante por la que realiza(ó) estos estudios (posgrado y/o especialidad y/o doctorado)?
+    <BR>34.-¿Cuál es la razón más importante por la que realiza(ó) estos estudios (posgrado y/o especialidad y/o doctorado)?
     </h2>
      <select class="select" id="ner19" name="ner19"  > 
        <option selected="selected" value="">
@@ -354,16 +366,19 @@
 @endif
 
 <script>
-  bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7a]);
+    console.log('bloquenado ando');
+  bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7_a]);
 
-  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
+  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, ner12ext, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
   @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202))
    [ner12b,ner12a].forEach(ocultar);
     @endif 
-    bloquear('ner10',[2],[ner10a,ner11,ner12]);
-  bloquear('ner13',[2],[ner14,ner15]);
-  bloquear('ner16',[2],[ner17,ner18]);
-  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19]);
- 
+  bloquear('ner10',[2],[ner10a,ner11,ner12,ner12ext]);
+  bloquear('ner13',[2],[ner14,ner15,ner15ext]);
+  bloquear('ner16',[2],[ner17,ner18,ner18ext]);
+  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner12ext, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner15ext,ner16,ner17,ner18,ner18ext,ner19]);
+  bloquear('ner18',[0,1,2,3],[ner18ext]);
+  bloquear('ner15',[0,1,2,3],[ner15ext]);
+  bloquear('ner12',[0,1,2,3],[ner12ext]);
 </script>
 @endpush

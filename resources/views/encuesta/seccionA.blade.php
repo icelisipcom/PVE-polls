@@ -21,7 +21,7 @@
 <table class="encuesta_table">
         <!-- primera fila  -->
 <tr>
-<td> <h2 class="reactivo"> 1 .- FECHA EN QUE SE CAPTURA </h2> 
+<td> <h2 class="reactivo"> FECHA EN QUE SE CAPTURA </h2> 
    <center>
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="z-index: 0;">
         <input type="radio" class="btn-check" name="btnradio" id="btnradioa" autocomplete="off" checked onclick="automatico();">
@@ -35,7 +35,7 @@
           
           <input type="date"  class="fecha" name="fec_capt" id="fec_capt"  value="{{now()->modify('-6 hours')->format('Y-m-d')}}" /> 
           </div></td>
-<td>  <h2 class="reactivo">2.- Estado civil:</h2>
+<td>  <h2 class="reactivo">1.- Estado civil:</h2>
            
            <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar14,nar14otra])" > 
            <option value="" selected></option>
@@ -46,7 +46,7 @@
            <option value=5 @if($Encuesta->nar8==5) selected @endif>Viudo(a)</option>
             </select></td>
 <td>
-    <center> <h2 class="reactivo"> 3.- ¿Tiene hijos?   </h2>
+    <center> <h2 class="reactivo"> 2.- ¿Tiene hijos?   </h2>
          
          <select class="select" @if($errors->first('nar9')) style="border: 0.3vw  solid red;" @endif id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar10])" >
          <option value="" selected></option>
@@ -62,7 +62,7 @@
 <!-- segunda fila  -->
 <tr>
 <td colspan="2">
-    <h2 class="reactivo"> 4.- Nivel de estudios de su esposo(a)</h2>
+    <h2 class="reactivo"> 3.- Nivel de estudios de su esposo(a)</h2>
  
  <select class="select" id="nar11" name="nar11"   onchange="bloquear('nar11',[1,2,3,4,5,6,7,8,9,10,11,12],[nar11a])"  >
 <option value=""></option>
@@ -93,7 +93,7 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="20" maxl
 <tr>
     <td colspan="2" >
         
-<h2 class="reactivo">5.-Ocupación de su esposo(a)</h2>
+<h2 class="reactivo">4.-Ocupación de su esposo(a)</h2>
 
 <select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[0,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar14otra])" >
 <option value="" ></option>
@@ -133,7 +133,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
 </tr>
 <tr>
 <td colspan="2">
-<h2 class="reactivo"> 6.- Nivel de estudios de su madre  </h2>
+<h2 class="reactivo"> 5.- Nivel de estudios de su madre  </h2>
         
        <select class="select" id="nar12" name="nar12"  onchange="escolaridad()" >
        <option value=""></option>
@@ -159,7 +159,7 @@ Otra:<input type="text" class="texto" id="nar12otra" name="nar12otra"  maxlength
 </td>
 <td>
 <h2 class="reactivo">
-10a).-¿Si su madre es profesionista 
+5a).-¿Si su madre es profesionista 
 cursó sus estudios en la UNAM? </h2>
       <select class="select" id="nrx" name="nrx"  >
        <option value=""></option>
@@ -172,7 +172,7 @@ cursó sus estudios en la UNAM? </h2>
 <!-- quinta fila -->
 <tr>
 <td colspan="2">
-<h2 class="reactivo">11.- La ocupación de su madre (cuando cursaba la carrera )</h2>   
+<h2 class="reactivo">6.- La ocupación de su madre (cuando cursaba la carrera )</h2>   
 
 <select class="select" id="nar15" name="nar15"  onchange="bloquear('nar15',[33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar15otra])" >
 <option value="" ></option>
@@ -212,7 +212,7 @@ Otra:
 <tr>
     <td colspan="2">
 
-    <h2 class="reactivo">12.- Nivel de estudios de su padre </h2>
+    <h2 class="reactivo">7 </h2>
         
         <select class="select" id="nar13" name="nar13"   onchange="escolaridadp()" >
         <option value=""></option>
@@ -237,7 +237,7 @@ Otra:<input type="text" class="texto" id="nar13otra" name="nar13otra" maxlength=
 </td>
     <td >
     <h2 class="reactivo">
-12a).-¿Si su padre es profesionista 
+7a).-¿Si su padre es profesionista 
 cursó sus estudios en la UNAM? </h2>
       <select class="select" id="nrxx" name="nrxx"  >
        <option value=""></option>
@@ -250,7 +250,7 @@ cursó sus estudios en la UNAM? </h2>
 </tr>
 <tr>
     <td colspan="2">
-    <h2 class="reactivo">13.- La ocupación de su padre (cuando cursaba la carrera )</h2> 
+    <h2 class="reactivo">8.- La ocupación de su padre (cuando cursaba la carrera )</h2> 
     
 
     <select class="select" id="nar16" name="nar16"  onchange="bloquear('nar16',[33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar16otra])">
@@ -287,7 +287,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 <!-- seccion B  -->
 <tr>
 <td>
-<h2 class="reactivo">14).-¿Tipo de bachillerato que cursó?   </h2>
+<h2 class="reactivo">9).-¿Tipo de bachillerato que cursó?   </h2>
     
     <select class="select" id="nbr1" name="nbr1" >
  <option value="" selected></option>
@@ -299,7 +299,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
        </select>
 </td>
 <td>
-<h2 class="reactivo">15).- ¿Tiene una segunda Licenciatura?</h2>
+<h2 class="reactivo">10).- ¿Tiene una segunda Licenciatura?</h2>
  
  <select class="select" id= "ner20"  name="ner20"  onchange="bloquear('ner20',[1],[ner20a,ner20txt])" >
    <option selected="selected" value="">
@@ -309,11 +309,11 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
  </select>
 </td>
 <td>
-<h2 class="reactivo">15a).- ¿Cuál? </h2>
+<h2 class="reactivo">10a).- ¿Cuál? </h2>
  <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT value="{{$Encuesta->ner20txt}}" MAXLENGTH=40 >
 </td>
 <td>
-<h2 class="reactivo">15b).¿La ejerce?  </h2>
+<h2 class="reactivo">10b).¿La ejerce?  </h2>
    <select class="select" id="ner20a" name="ner20a" >
    <option  value="">
    <option value=1 @if($Encuesta->ner20a==1) selected @endif >No</option>
@@ -325,7 +325,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 
 <!-- seccion b segunda fila -->
 <td>
-<h2 class="reactivo">16).-¿Bajo qué sistema de enseñanza realizó sus estudios de licenciatura? </h2>
+<h2 class="reactivo">11).-¿Bajo qué sistema de enseñanza realizó sus estudios de licenciatura? </h2>
  
  <select class="select" id="nar1" name="nar1" >
  <option value="" ></option>
@@ -336,7 +336,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 </td>
 
 <td>
-<h2 class="reactivo">17).-¿Durante sus estudios de bachillerato fue becario?    </h2>
+<h2 class="reactivo">12).-¿Durante sus estudios de bachillerato fue becario?    </h2>
   
   <select class="select" id="nar2a" name="nar2a"  onchange=check_beca()   >
   <option value="" selected></option>
@@ -349,7 +349,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 </td>
 <td>
  
-<h2 class="reactivo">18).- ¿Durante sus estudios de licenciatura fue becario?   </h2>
+<h2 class="reactivo">13).- ¿Durante sus estudios de licenciatura fue becario?   </h2>
  
  <select class="select" id="nar3a" name="nar3a"  onchange=check_beca() >
  
@@ -377,7 +377,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 </tr>
 <tr>
 <td  colspan="2">
-<h2 class="reactivo">19).- Su desempeño académico </h2>
+<h2 class="reactivo">14).- Su desempeño académico </h2>
  
  
  
@@ -392,7 +392,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 </select>
 </td>
 <td  colspan="2">
-<h2 class="reactivo">20).- La conclusión de sus estudios </h2>
+<h2 class="reactivo">15).- La conclusión de sus estudios </h2>
  
  &nbsp;   <select class="select" id="nar5a" name="nar5a" >
  <option value=""></option>

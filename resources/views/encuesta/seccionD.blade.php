@@ -10,7 +10,7 @@
         <!-- primera fila  -->
 <tr>
 <td colspan="2">
-<h2 class="reactivo">44.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
+<h2 class="reactivo">85.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
 
  
 <select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
@@ -29,7 +29,7 @@
 
     </td>
 <td>
-<h2 class="reactivo"> 45.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
+<h2 class="reactivo"> 86.- ¿Cómo encontró su primer  trabajo  en  su  campo profesional?   </h2>
 <select class="select" id="ndr2" name="ndr2" onchange="funcion_ndr2()">
 <option selected="selected" value="">
 <option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
@@ -66,7 +66,7 @@
 </tr>
 <tr>
 <td>
-<h2 class="reactivo">  46).- El prestigio de la UNAM </h2>
+<h2 class="reactivo">  87).- El prestigio de la UNAM </h2>
   
 
 	<select class="select" id="ndr3" name="ndr3" >
@@ -80,7 +80,7 @@
 </select>
 </td>
 <td>
-<h2 class="reactivo">47).- Su comportamiento en la entrevista y/o en los exámenes de selección  </h2>
+<h2 class="reactivo">88).- Su comportamiento en la entrevista y/o en los exámenes de selección  </h2>
 	<select class="select" id="ndr8" name="ndr8" >
         <option selected="selected" value="">
         <option value=1   @if($Encuesta->ndr8==1) selected @endif>Muy importante</option>
@@ -92,7 +92,7 @@
 </select>
 </td>
 <td>
-<h2 class="reactivo"> 	48.- Sus conocimientos sobre la carrera </h2>
+<h2 class="reactivo"> 	89.- Sus conocimientos sobre la carrera </h2>
 
 	<select class="select" id="ndr4" name="ndr4" >
         <option selected="selected" value="">
@@ -106,7 +106,7 @@
 
  </td>
 <td>
-<h2 class="reactivo">  49.- Recomendaciones</h2>
+<h2 class="reactivo">  90.- Recomendaciones</h2>
 
 
 	<select class="select" id="ndr9" name="ndr9" >
@@ -124,7 +124,7 @@
 
 <tr>
 <td>
-<h2 class="reactivo"> 50.- Sus conocimientos sobre computación   </h2>
+<h2 class="reactivo"> 91.- Sus conocimientos sobre computación   </h2>
 	<select class="select" id="ndr5" name="ndr5" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ndr5==1) selected @endif>Muy importante</option>
@@ -137,7 +137,7 @@
 
 </td>
 <td>
-<h2 class="reactivo">51.- Su género (sexo)  </h2>
+<h2 class="reactivo">92.- Su género (sexo)  </h2>
 	<select class="select" id="ndr10" name="ndr10" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ndr10==1) selected @endif>Muy importante</option>
@@ -150,7 +150,7 @@
 
             </td>
 <td>
-<h2 class="reactivo"> 52.- Su  dominio  del inglés   </h2>
+<h2 class="reactivo"> 93.- Su  dominio  del inglés   </h2>
 	<select class="select" id="ndr6" name="ndr6" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ndr6==1) selected @endif>Muy importante</option>
@@ -164,7 +164,7 @@
 
             </td>
 <td>
-<h2 class="reactivo"> 53.- Su edad  </h2>
+<h2 class="reactivo"> 94.- Su edad  </h2>
 	<select class="select" id="ndr11" name="ndr11" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ndr11==1) selected @endif>Muy importante</option>
@@ -180,7 +180,7 @@
 
 <tr>
 <td>
-<h2 class="reactivo">	54.- Su dominio de otro idioma  </h2>
+<h2 class="reactivo">	95.- Su dominio de otro idioma  </h2>
 	<select class="select" id="ndr7" name="ndr7" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ndr7==1) selected @endif>Muy importante</option>
@@ -192,7 +192,7 @@
 </select>
 </td>
 <td>
-<h2 class="reactivo"> 55.- Su estado civil       </h2>
+<h2 class="reactivo"> 96.- Su estado civil       </h2>
 	<select class="select" id="ndr12" name="ndr12" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->ndr12==1) selected @endif>Muy importante</option>
@@ -204,7 +204,7 @@
  </select>
             </td>
 <td>
-<h2 class="reactivo">55.1 - Cercania al domicilio.  </h2>
+<h2 class="reactivo">96.1 - Cercania al domicilio.  </h2>
 	      <select class="select" id="ndr12a" name="NDR12A" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->NDR12A==1) selected @endif>Muy importante</option>
@@ -217,7 +217,7 @@
 
             </td>
 <td>
-<h2 class="reactivo">55.2 - Experiencia profesional    </h2>
+<h2 class="reactivo">96.2 - Experiencia profesional    </h2>
 	<select class="select" id="ndr12b" name="NDR12B" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->NDR12B==1) selected @endif>Muy importante</option>
@@ -232,7 +232,7 @@
 </tr>
 <tr>
 <td>
-<h2 class="reactivo"> 55.3 - Título profesional.   </h2>
+<h2 class="reactivo"> 96.3 - Título profesional.   </h2>
 	      <select class="select" id="ndr12c" name="NDR12C" >
           <option selected="selected" value="">
           <option value=1  @if($Encuesta->NDR12C==1) selected @endif>Muy importante</option>
@@ -244,13 +244,13 @@
 </select>
     </td>
 <td>
-<h2 class="reactivo">56.- Otro factor para su contratación, ¿Cuál?(opcional) </h2>
+<h2 class="reactivo">97.- Otro factor para su contratación, ¿Cuál?(opcional) </h2>
 
 <INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" {{$Encuesta->ndr13a}}" TYPE=TEXT SIZE="60" MAXLENGTH="60" >
 
       </td>
       <td>
-<h2 class="reactivo">57.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
+<h2 class="reactivo">98.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
 <select class="select" id="ndr14" name="ndr14"  onchange="bloquear('ndr14',[1,3],[ndr15])">
    <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr14==1) selected @endif>Desde que estaba estudiando (Pase a la 58)</option>
@@ -265,7 +265,7 @@
 
 <tr>
 <td colspan="2">
-<h2 class="reactivo"> 58.- ¿Cuánto tiempo después  de  egresar  de  la licenciatura obtuvo su primer trabajo? {{$Encuesta->ndr15==1}}</h2>
+<h2 class="reactivo"> 99.- ¿Cuánto tiempo después  de  egresar  de  la licenciatura obtuvo su primer trabajo? {{$Encuesta->ndr15==1}}</h2>
 <select class="select" id="ndr15" name="ndr15" >
 <option selected="selected" value=0></option>
    <option value=1  @if($Encuesta->ndr15==1) selected @endif>6 meses o menos</option>
@@ -276,7 +276,7 @@
 
       </td>
 <td>
-<h2 class="reactivo"> 59.- ¿Actualmente sigue laborando en el mismo trabajo?</h2>
+<h2 class="reactivo"> 100.- ¿Actualmente sigue laborando en el mismo trabajo?</h2>
 <select class="select" id="ndr16" name="ndr16" >
 <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr16==1) selected @endif>Sí</option>
@@ -286,7 +286,7 @@
 
       </td>
 <td>
-<h2 class="reactivo"> 60.- ¿Cuántos trabajos ha tenido desde que egresó de la licenciatura? </h2>
+<h2 class="reactivo"> 101.- ¿Cuántos trabajos ha tenido desde que egresó de la licenciatura? </h2>
 <select class="select" id="ndr17" name="ndr17" >
 <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr17==1) selected @endif>Uno</option>
@@ -307,7 +307,7 @@
 <tr>
 
 <td>
-<h2 class="reactivo">61).- Puesto que ocupa    </h2>
+<h2 class="reactivo">102).- Puesto que ocupa    </h2>
 <select class="select" id="ndr18" name="ndr18">
         <option selected="selected" value="">
 <option value=1  @if($Encuesta->ndr18==1) selected @endif>Mejoró</option>
@@ -318,7 +318,7 @@
 
         </td>
 <td>
-<h2 class="reactivo">62).- Salario    </h2> 
+<h2 class="reactivo">103).- Salario    </h2> 
 <select class="select" id="ndr19" name="ndr19" >
         <option selected="selected" value="">
 <option value=1  @if($Encuesta->ndr19==1) selected @endif>Mejoró</option>
@@ -391,6 +391,10 @@ function funcion_ndr2(){
 }
 
 @if($Encuesta->ncr1==6)
+[ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
+
+@endif
+@if($Encuesta->ncr1==7)
 [ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
 
 @endif

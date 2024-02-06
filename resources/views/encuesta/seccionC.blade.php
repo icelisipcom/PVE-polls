@@ -10,7 +10,7 @@
         <!-- primera fila  -->
 <tr>
 <td>
-<h2 class="reactivo">21.- ¿Actualmente está trabajando? </h2> 
+<h2 class="reactivo">61.- ¿Actualmente está trabajando? </h2> 
  
     
  <select class="select" id="ncr1" name="ncr1"  onchange='seccionc2()'>
@@ -21,18 +21,19 @@
 <option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 42)</option>
 <option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 2)</option>
 <option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
+<option value=7 @if($Encuesta->ncr1==7) selected @endif>Becario</option>
 </select>
 </td>
  <td colspan="2">
- <h2 class="reactivo"> 22.- Nombre de la empresa o institución donde trabaja </h2>
+ <h2 class="reactivo"> 62.- Nombre de la empresa o institución donde trabaja </h2>
  <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->ncr2}}" maxlength="220"  >
 
  </td>
  <td>
-  <h2 class="reactivo"> 22a.-Estado donde se ubica </h2> 
+  <h2 class="reactivo"> 63.-Estado donde se ubica </h2> 
 
 
-<select class="select" id="ncr2a"  name="ncr2a" > 
+<select class="select" id="ncr2a"  name="ncr2a" onchange="bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])"> 
 <option selected  value=""></option>
 <option value=1 @if($Encuesta->ncr2a==1) selected @endif>CDMX</option>
 <option value=2 @if($Encuesta->ncr2a==2) selected @endif>EXTRANJERO</option>
@@ -69,12 +70,19 @@
 <option value=33 @if($Encuesta->ncr2a==33) selected @endif>Zacatecas</option>
 <option value=0  hidden></option>   
 </select>
+
+<h2 class="reactivo">63a.- Extranjero Especifique: </h2>
+
+
+ <INPUT type="text" class="texto " id="ncr2ext" name="ncr2ext" value="{{$Encuesta->ncr2text}}" style="width:60%"  maxlength="110"  >
+
+
 </td>
 </tr>
 
 <tr>
 <td>
-<h2 class="reactivo"> 23.- La empresa o institución donde trabaja es: 
+<h2 class="reactivo"> 64.- La empresa o institución donde trabaja es: 
 </h2>
 
 
@@ -87,7 +95,7 @@
 </select>
     </td>
 <td>
-<h2 class="reactivo">24.- ¿En qué sector se ubica? </h2>
+<h2 class="reactivo">65.- ¿En qué sector se ubica? </h2>
 
 
 <select class="select" id="ncr4" name="ncr4"   onchange="bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])">
@@ -122,11 +130,11 @@
 <td>
 <h2 class="reactivo">
 
-24a).- Otra:</h2> 
+65a).- Otra:</h2> 
 <input  class="texto" id="ncr4a" name="ncr4a"  maxlength="65" value=0 > 
 </td>
 <td>
-<h2 class="reactivo"> 25.-Aproximadamente, ¿cuántas personas laboran en la empresa?  </h2>
+<h2 class="reactivo"> 66.-Aproximadamente, ¿cuántas personas laboran en la empresa?  </h2>
 
 <select class="select" id="ncr5" name="ncr5"  >
   <option selected="selected" value="">
@@ -140,7 +148,7 @@
 
 <tr>
 <td>
-<h2 class="reactivo"> 26.- ¿Cuál es su condición en el trabajo? </h2>
+<h2 class="reactivo"> 67.- ¿Cuál es su condición en el trabajo? </h2>
 
 <select class="select" id="ncr6a2"  name="ncr6" onchange="autoempleo()">
     <option selected="selected" value="">
@@ -153,7 +161,7 @@
     
         </td>
 <td>
-<h2 class="reactivo"> 26a.-¿Tipo de autoempleo? </h2>
+<h2 class="reactivo"> 67a.-¿Tipo de autoempleo? </h2>
 <select class="select" id="ncr6a" name="ncr6t" >
 <option selected="selected" value="">
 <option value=2 @if($Encuesta->ncr6==2) selected @endif>Propietario</option>
@@ -168,7 +176,7 @@
      </td>
 <td>
 
-<h2 class="reactivo">27.- ¿Cuál es su puesto? </h2>
+<h2 class="reactivo">68.- ¿Cuál es su puesto? </h2>
 
 
  <INPUT type="text" class="texto" id="ncr7a" name="ncr7_a" value="{{$Encuesta->ncr7_a}}" style="width:60%"  maxlength="110"  >
@@ -178,7 +186,7 @@
 
 <tr>
 <td>
-<h2 class="reactivo">28.- ¿Requiere tener título profesional para el puesto que ocupa? </h2>
+<h2 class="reactivo">69.- ¿Requiere tener título profesional para el puesto que ocupa? </h2>
 
 
 <select class="select" id="ncr7b" name="ncr7b"  >
@@ -190,7 +198,7 @@
 
         </td>
 <td>
-<h2 class="reactivo"> 29.- En su trabajo,¿tiene personal a su cargo? </h2>
+<h2 class="reactivo"> 70.- En su trabajo,¿tiene personal a su cargo? </h2>
 <select class="select" id="ncr8" name="ncr8"  onchange="bloquear('ncr8',[2],[ncr9])" >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr8==1) selected @endif>Sí</option>
@@ -199,7 +207,7 @@
  </select>
         </td>
 <td>
-<h2 class="reactivo"> 30.- ¿Cuántas personas trabajan con usted? </h2>
+<h2 class="reactivo"> 71.- ¿Cuántas personas trabajan con usted? </h2>
 
 
 <select class="select" id="ncr9"  name="ncr9"  >
@@ -213,7 +221,7 @@
 </select>
     </td>
 <td>
-<h2 class="reactivo">31.- ¿Su trabajo es de tiempo completo?</h2> 
+<h2 class="reactivo">72.- ¿Su trabajo es de tiempo completo?</h2> 
 <select class="select" id="ncr10" name="ncr10"  >
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ncr10==1) selected @endif>Sí</option>
@@ -225,7 +233,7 @@
 
 <tr>
 <td>
-<h2 class="reactivo"> 32.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
+<h2 class="reactivo"> 73.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
 
 <select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15])" >
   <option selected="selected" value="">
@@ -237,12 +245,12 @@
 </select>
     </td>
 <td>
-<h2 class="reactivo">33.- ¿Que actividades realiza? 
+<h2 class="reactivo">74.- ¿Que actividades realiza? 
 Especifique:</h2>
 <textarea type="text" class="texto" id="ncr12_a"  rows="3"  name="ncr12_a" maxlength="110"  > {{$Encuesta->ncr12_a}} </textarea>
     </td>
 <td>
-<h2 class="reactivo"> 34.- ¿Si su trabajo no está relacionado con su carrera
+<h2 class="reactivo"> 75.- ¿Si su trabajo no está relacionado con su carrera
          es porque usted asílo decidió? </h2>
 
 <select class="select" id="ncr15" name="ncr15"  >
@@ -254,7 +262,7 @@ Especifique:</h2>
 
     </td>
 <td>
-<h2 class="reactivo"> 35.- ¿Cómo considera qué lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
+<h2 class="reactivo"> 76.- ¿Cómo considera qué lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
     
     <select class="select" id="ncr16" name="ncr16"   > 
            <option selected="selected" value="">
@@ -270,7 +278,7 @@ Especifique:</h2>
 </tr>
 <tr>
 <td>
-<h2 class="reactivo">36.¿Cuál es su grado de satisfacción con su trabajo actual? </h2>
+<h2 class="reactivo">77.¿Cuál es su grado de satisfacción con su trabajo actual? </h2>
          <select class="select" id="ncr17" name="ncr17" >  
        <option selected="selected" value="">
        <option value=1 @if($Encuesta->ncr17==1) selected @endif>Muy satisfecho(a)</option>
@@ -282,7 +290,7 @@ Especifique:</h2>
 </select>
              </td>
 <td>
-<h2 class="reactivo">37.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
+<h2 class="reactivo">78.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
         </h2>
     
        <select class="select" id="ncr18" name="ncr18">  
@@ -297,7 +305,7 @@ Especifique:</h2>
     
            </td>
 <td>
-<h2 class="reactivo">38.- ¿Considera que las actividades y responsabilidades que tiene 
+<h2 class="reactivo">79.- ¿Considera que las actividades y responsabilidades que tiene 
         en su trabajo, corresponden a su nivel educativo?  </h2>
     
        <select class="select" id="ncr19" name="ncr19" > 
@@ -311,7 +319,7 @@ Especifique:</h2>
 </select>
         </td>
 <td>
-<h2 class="reactivo">39.- ¿Cuantos trabajos tiene actualmente?  </h2>
+<h2 class="reactivo">80.- ¿Cuantos trabajos tiene actualmente?  </h2>
     
           <select class="select" id="ncr20" name="ncr20"  > 
           <option selected="selected" value="">
@@ -325,13 +333,13 @@ Especifique:</h2>
 </tr>
 <tr>
 <td>
-<h2 class="reactivo"> 40.- ¿Cuáles son sus ingresos mensuales promedio en su o sus trabajos?  </h2>
+<h2 class="reactivo"> 81.- ¿Cuáles son sus ingresos mensuales promedio en su o sus trabajos?  </h2>
     
     <INPUT type="text" class="texto"  id="ncr21_a" name="ncr21_a" size="10" maxlength="6" value="{{$Encuesta->ncr21_a}}"  onKeyPress="return acceptNum(event)" > 
     (solo enteros, sin centavos, comas, ni puntos) 
         </td>
 <td>
-<h2 class="reactivo"> 41.- Desde que terminó sus estudios de licenciatura,
+<h2 class="reactivo"> 82.- Desde que terminó sus estudios de licenciatura,
         ¿ha dejado de trabajar? </h2>
     
     
@@ -345,7 +353,7 @@ Especifique:</h2>
     
         </td>
 <td>
-<h2 class="reactivo"> 42.-¿Cuál es la razón principal por la que usted no está trabajando o 
+<h2 class="reactivo"> 83.-¿Cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
      <select class="select" id="ncr24" name="ncr24" onchange="porque()">
      <option value=""> </option>
@@ -371,7 +379,7 @@ Especifique:</h2>
       <option value=19 @if($Encuesta->ncr24==19) selected @endif>Motivos personales</option> 
       <option value=20 @if($Encuesta->ncr24==29) selected @endif>Derivado de la pandemia</option> 
       <option value=14 @if($Encuesta->ncr24==14) selected @endif>Otra </option>
-      <option value=0 @if($Encuesta->ncr24==0) selected @endif> -</option>
+      <option value=0 @if($Encuesta->ncr24==0) selected @endif> </option>
      
 </select>
 </td><td>
@@ -384,7 +392,7 @@ Especifique:</h2>
 </tr>
 <tr>
 <td>
-<h2 class="reactivo"> 42a):-Perdió o dejó su trabajo, ¿por qué? </h2>
+<h2 class="reactivo"> 83a):-Perdió o dejó su trabajo, ¿por qué? </h2>
   
      <select class="select" id="ncr24porque" name="ncr24porque" >
               <option  value="" selected></option>
@@ -402,7 +410,7 @@ Especifique:</h2>
        
          </td>
 <td>
-<h2 class="reactivo"> 43.- ¿Cuál es el periodo más largo que ha permanecido sin laborar? </h2>
+<h2 class="reactivo"> 84.- ¿Cuál es el periodo más largo que ha permanecido sin laborar? </h2>
     
     
     <select class="select" id="ncr23" name="ncr23" >
@@ -416,6 +424,7 @@ Especifique:</h2>
 </td>
 </tr>
 </table>
+
 <button class="btn fixed" name='boton1'  value=0 type="summit" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
 <i class="fas fa-arrow-right"></i> &nbsp; Siguiente
   </button>
@@ -426,13 +435,15 @@ Especifique:</h2>
 
 
 @push('js')
+
+
 <script>
   unhide('C');
-  reactivos=document.getElementById("forma_sagrada").elements
-  for (var i=0, item; item = reactivos[i]; i++) {
-  // Look no need to do list[i] in the body of the loop
-  console.log("'"+item.name+"' => 'required',");
-}
+//   reactivos=document.getElementById("forma_sagrada").elements
+//   for (var i=0, item; item = reactivos[i]; i++) {
+//   // Look no need to do list[i] in the body of the loop
+//   console.log("'"+item.name+"' => 'required',");
+// }
 </script>
  <script>
 console.log('marcandooo rojo');
@@ -483,11 +494,16 @@ function seccionc2(){
       reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23];
       reactivosPorCerrar.forEach(ocultar);
     break;
+    case '7':
+      reactivosPorCerrar=[ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr22,ncr24,ncr24a,ncr24porque,ncr23];
+      reactivosPorCerrar.forEach(ocultar);
+    break;
   }
 }
 function funcion_ncr24(){
   bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,29],[ncr24porque]);
   bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,29],[ncr24a])
+
 } 
 function autoempleo(){
   ncr6_val=document.getElementById('ncr6a2').value;
@@ -519,12 +535,14 @@ function porque(){
 // inicializar 
 
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
+
 autoempleo();
 bloquear('ncr8',[2],[ncr9]); 
 bloquear('ncr11',[1,2],[ncr15]);
 porque();
 seccionc2();
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
+bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])
 autoempleo();
 bloquear('ncr11',[1,2],[ncr15]);
 bloquear('ncr8',[2],[ncr9])

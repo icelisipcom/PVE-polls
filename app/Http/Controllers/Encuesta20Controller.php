@@ -399,8 +399,6 @@ public function updateG(Request $request,$id){
             'ngr37' => 'required',
             'ngr37_a' => 'required',
             'ngr37m' => 'required',
-            'ngr38' => 'required',
-            'ngr39' => 'required',
             'ngr40' => 'required',
             'ngr40_a' => 'required',
             'ngr40a' => 'required',

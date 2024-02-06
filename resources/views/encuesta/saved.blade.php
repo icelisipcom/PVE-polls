@@ -12,13 +12,14 @@
        <button class="btn "  type="button"  style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
     <i class="fas fa-download fa-lg"></i> &nbsp; DESCARGAR JSON
   </button></a>
-
-  <br>
+<br>
   <a href="{{route('edit_20',[$Encuesta->registro,'A'])}}">
        <button class="btn "  type="button"  style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
     <i class="fas fa-eye fa-lg"></i> &nbsp; Revisar
   </button></a>
-
+  <br>
+<a href="{{route('muestras20.show',[$Encuesta->nbr2,$Encuesta->nbr3])}}"><button type="button"style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">  <i class="fas fa-arrow-left"></i> Regresar a la muestra</button></a>
+  
 
 
    </center>
