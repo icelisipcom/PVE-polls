@@ -396,16 +396,10 @@ function funcion_ndr2(){
 @endif
 @if($Encuesta->ncr1==7)
 [ndr1,ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
-
 @endif
 
-@if($Encuesta->ncr1==2 | $Encuesta->ncr1==3)
-document.getElementById('ndr2').value=9;
-[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
-@endif
 
-bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
-funcion_ndr2();
+s;
 </script>
 
 @endpush
