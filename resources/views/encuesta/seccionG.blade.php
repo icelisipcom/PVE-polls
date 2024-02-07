@@ -166,7 +166,7 @@ su desempeño laboral?</h2>
       <select class="select" id="ngr6d" name="ngr6d" >
        <option value="" selected="selected"></option>
         <option value=1 @if($Encuesta->ngr6d==1) selected @endif>Muy alto</option>
-        <option value=2 @if($Encuesta->ngr6d==3) selected @endif>Alto</option>
+        <option value=2 @if($Encuesta->ngr6d==2) selected @endif>Alto</option>
         <option value=3 @if($Encuesta->ngr6d==3) selected @endif>Medio</option>
         <option value=4 @if($Encuesta->ngr6d==4) selected @endif>Bajo</option>
         <option value=5 @if($Encuesta->ngr6d==5) selected @endif>Nulo</option>
