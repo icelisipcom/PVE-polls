@@ -402,6 +402,8 @@ function funcion_ndr2(){
 
 bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
 funcion_ndr2();
+bloquear('ndr1',[6,7],[ndr2,ndr2a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
+
 </script>
 
 @endpush
