@@ -481,7 +481,6 @@ function seccionc2(){
       reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
-
     case '4':
       reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
@@ -503,7 +502,6 @@ function seccionc2(){
 function funcion_ncr24(){
   bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,29],[ncr24porque]);
   bloquear('ncr24',[1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,29],[ncr24a])
-
 } 
 function autoempleo(){
   ncr6_val=document.getElementById('ncr6a2').value;
@@ -531,21 +529,21 @@ function porque(){
   }
 }
 
-
 // inicializar 
-
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
-
 autoempleo();
-bloquear('ncr8',[2],[ncr9]); 
+bloquear('ncr8',[0,2],[ncr9]); 
 bloquear('ncr11',[1,2],[ncr15]);
 porque();
+bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23])
 seccionc2();
-bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
+bloquear('ncr4',[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
 bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])
+bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23])
 autoempleo();
 bloquear('ncr11',[1,2],[ncr15]);
-bloquear('ncr8',[2],[ncr9])
+bloquear('ncr8',[2,0],[ncr9])
+
 </script>
 
 @endpush

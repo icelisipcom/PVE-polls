@@ -212,7 +212,7 @@ Otra:
 <tr>
     <td colspan="2">
 
-    <h2 class="reactivo">7 </h2>
+    <h2 class="reactivo">7.- Nivel de estudios de su padre</h2>
         
         <select class="select" id="nar13" name="nar13"   onchange="escolaridadp()" >
         <option value=""></option>
@@ -355,8 +355,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
  
  <option value="" selected></option>
  <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
-  <option value=2 @if($Encuesta->na3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
-  
+  <option value=2 @if($Encuesta->nar3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
   <option value=6 @if($Encuesta->nar3a==6) selected @endif > Beca de Excelencia Bécalos</option>
   <option value=7 @if($Encuesta->nar3a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
   <option value=8 @if($Encuesta->nar3a==8) selected @endif > Programa de Apoyo Nutricional </option>
