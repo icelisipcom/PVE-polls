@@ -123,6 +123,12 @@ class HomeController extends Controller
         ->where('egresados.anio_egreso','=',2020)
         ->where('respuestas20.cuenta','=',(int)$request->nc)
         ->get(); 
+        $encuestas19=DB::table('respuestas2')
+        ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
+        ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->where('egresados.anio_egreso','=',2019)
+        ->where('respuestas2.cuenta','=',(int)$request->nc)
+        ->get(); 
         $egresados=Egresado::where('cuenta',(int)$request->nc)->get();
         $encuestas14=DB::table('respuestas14')
         ->where('respuestas14.cuenta','=',$request->nc)
@@ -132,7 +138,7 @@ class HomeController extends Controller
         ->where('respuestas14.cuenta','=',$request->nc)
         ->whereNull('respuestas14.NGR11')
         ->first();       
-        return view('resultado',compact('encuestas20','encuestas14','egresados','eg14'));
+        return view('resultado',compact('encuestas20','encuestas19','encuestas14','egresados','eg14'));
 
     
     }
@@ -145,7 +151,12 @@ class HomeController extends Controller
         ->where('respuestas20.nombre','like','%'.mb_strtoupper($request->name, 'UTF-8').'%')
         ->get(); 
         
-     
+        $encuestas19=DB::table('respuestas2')
+        ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
+        ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->where('egresados.anio_egreso','=',2019)
+        ->where('respuestas2.nombre','like','%'.mb_strtoupper($request->name, 'UTF-8').'%')
+        ->get(); 
         $egresados=Egresado::where('nombre','like','%'.mb_strtoupper($request->name, 'UTF-8').'%')->get();
         if($request->paterno){
             $egresados=$egresados->toQuery()->where('paterno','like','%'.mb_strtoupper($request->paterno, 'UTF-8').'%')->get();
@@ -161,7 +172,7 @@ class HomeController extends Controller
         ->where('respuestas14.cuenta','=',$request->nc)
         ->whereNull('respuestas14.NGR11')
         ->first();       
-        return view('resultado',compact('encuestas20','encuestas14','egresados','eg14',));
+        return view('resultado',compact('encuestas20','encuestas14','egresados','eg14','encuestas19'));
 
     
     }

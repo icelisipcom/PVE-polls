@@ -7,6 +7,41 @@
         <h1 class="text-white-50"> ¿Deseas buscar un numero de cuenta?</h1>
     </div>
     <center >
+    @if($encuestas19->count()>0)
+        <h1>
+            ENCUESTA 2019
+        </h1>
+        <div class="col-6 col-sm-12 table-responsive">
+                <table class="table  text-xl" id="myTable2">
+        <thead>
+            <tr>
+            <th>Egresado</th>
+            <th>Aplicador</th>
+            <th>Fecha</th>
+            <th>Carrera</th>
+            <th>Plantel</th>
+            <th>Status</th>
+          
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($encuestas19 as $e)
+            <tr @if(is_null($e->ngr11f )) style="color:#b0a46f"  @else style="background-color:rgba(92, 191, 98,0.75)" @endif>
+                <td>{{  $e->nombre}}   {{  $e->paterno}}  {{  $e->materno }}  </td>
+                <td> @if($e->aplica ){{$e->aplica}} @else INTERNET @endif </td>
+                <td>{{$e->fec_capt}}</td>
+                <td>{{$e->nbr3}}</td>
+                <td>{{$e->nbr2}}</td>
+                <td> @if(is_null($e->ngr11f ))Inompleta @else Completa @endif</td>
+                
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
+    @else <p>No hay encuestas 2019 para mostrar</p>
+    <br>
+        @endif
         @if($encuestas20->count()>0)
         <h1>
             ENCUESTA 2020
@@ -63,7 +98,7 @@
                 <td> </td>
                 <td>{{$eg->carrera}}</td>     
                 <td>{{$eg->plantel}}</td> 
-                <td>@if($eg->muestra==3 && in_array( $eg->status,[0,3,4,5,6,7], true))
+                <td>@if($eg->muestra==3 && in_array( $eg->status,[null,0,3,4,5,6,7], true))
                 <a href="{{route('llamar_20',$eg->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
                 @endif
                 </td>
@@ -152,6 +187,9 @@
   console.log('script jalando ¿?');
   $(document).ready(function() {
     $('#myTable').DataTable();
+} );
+$(document).ready(function() {
+    $('#myTable2').DataTable();
 } );
  </script>
 @endpush
