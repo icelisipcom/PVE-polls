@@ -406,7 +406,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 </tr>
 </table>
 <button class="btn fixed" name='boton1'  value=0 type="summit" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
-<i class="fas fa-arrow-right"></i> &nbsp; Siguiente
+<i class="fas fa-save"></i> &nbsp; GUARDAR <br> SECCION
   </button>
   </form>
 </div>

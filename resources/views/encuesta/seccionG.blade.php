@@ -1028,8 +1028,8 @@ c).- Motivo por el que no lo practicó </h2>
 </tr>
   </table>
 
-<button class="btn fixed" name='boton1'  value=0 type="summit" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
-<center><i class="fas fa-save fa-lg"></i>  <br> Terminar Encuesta </center>
+  <button class="btn fixed" name='boton1'  value=0 type="summit" onclick="post_data()" style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">
+<i class="fas fa-save"></i> &nbsp; GUARDAR <br> SECCION
   </button>
   </form>
 </div>
