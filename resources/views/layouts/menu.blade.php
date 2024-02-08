@@ -6,6 +6,12 @@
         <p>Dashboard</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('2019') }}" class="nav-link {{ Request::is('2019') ? 'active' : '' }}">
+    <i class="nav-icon fas fa-paper-plane"></i>
+        <p>2019 progreso </p>
+    </a>
+</li>
 
 <li class="nav-item">
     <a href="{{ route('2014_act') }}" class="nav-link {{ Request::is('2014_act') ? 'active' : '' }}">

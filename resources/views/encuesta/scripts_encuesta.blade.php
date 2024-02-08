@@ -1,5 +1,5 @@
 <!-- colorear pestañas  -->
-<script>
+<script> 
 function hide_all(){
     sections=['A','C','D','E','F','G'];
    for (let i = 0; i < sections.length; i++) {
@@ -58,8 +58,6 @@ if(options.includes(parseInt(val.value))){
 }
 
 }
-
-
 function ocultar(item){
 console.log('reactivo a ocultar: '+item.id);
 
