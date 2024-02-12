@@ -340,6 +340,7 @@ public function updateG(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->sec_g=0;
     $Encuesta->save();
     $rules=['ngr4' => 'required',
             'ngr5' => 'required',
@@ -409,7 +410,7 @@ public function updateG(Request $request,$id){
             'CONOCE' => 'required',
             'CUE_CRE' => 'required',
             'UTILIZA' => 'required'];
-    $Encuesta->sec_g=0;
+    
     $validated = $request->validate($rules);
     $Encuesta->sec_g=1;
     $Encuesta->save();
