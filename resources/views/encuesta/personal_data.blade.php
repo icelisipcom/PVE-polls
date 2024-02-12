@@ -38,7 +38,7 @@
           <th>Carrera:</th><td > {{$Carrera}}  </td> 
           <th>Plantel:</th><td colspan="{{$Telefonos->count() +2}}"> {{$Plantel}}</td> 
           <th>Sexo:</th> <td>{{$Egresado->sexo}}</td>
-          <th>Bach::</th> <td>{{$Egresado->bach}}</td>
+          <th>Bach::</th> <td> @if($Egresado->bach >= 20 && $Egresado->bach < 30)  ENP @elseif($Egresado->bach >= 30) CCH @endif </td>
           </tr>
           
          </table>

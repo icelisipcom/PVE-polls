@@ -630,7 +630,7 @@ a).-<select class="select" id="ngr22"  name="ngr22">
  </td><td>
 b).-<select class="select" id="ngr23"  name="ngr23">
 <option value="" selected="selected"></option>
-  <option value=1 @if($Encuesta->ngr22==1) selected @endif >Muchísimo</option>
+  <option value=1 @if($Encuesta->ngr23==1) selected @endif >Muchísimo</option>
   <option value=2 @if($Encuesta->ngr23==2) selected @endif >Mucho</option>
   <option value=3 @if($Encuesta->ngr23==3) selected @endif >Regular</option>
   <option value=4 @if($Encuesta->ngr23==4) selected @endif >Poco</option>
@@ -642,7 +642,7 @@ b).-<select class="select" id="ngr23"  name="ngr23">
     </tr><tr>
 <td>
 <h2 class="reactivo"> 
-119).-Resolver problemasa).- </h2>
+119).-Resolver problemas).- </h2>
 </td><td>
   a).-
 <select class="select" id="ngr24"  name="ngr24">
@@ -674,11 +674,11 @@ b).-
  </td><td>
 a).- <select class="select" id="ngr26"  name="ngr26">
 <option value="" selected="selected"></option>
-  <option value=1 @if($Encuesta->ngr22==1) selected @endif >Muchísimo</option>
-  <option value=2 @if($Encuesta->ngr22==2) selected @endif >Mucho</option>
-  <option value=3 @if($Encuesta->ngr22==3) selected @endif >Regular</option>
-  <option value=4 @if($Encuesta->ngr22==4) selected @endif >Poco</option>
-  <option value=5 @if($Encuesta->ngr22==5) selected @endif >Nada</option>
+  <option value=1 @if($Encuesta->ngr26==1) selected @endif >Muchísimo</option>
+  <option value=2 @if($Encuesta->ngr26==2) selected @endif >Mucho</option>
+  <option value=3 @if($Encuesta->ngr26==3) selected @endif >Regular</option>
+  <option value=4 @if($Encuesta->ngr26==4) selected @endif >Poco</option>
+  <option value=5 @if($Encuesta->ngr26==5) selected @endif >Nada</option>
  </select>
 
  </td><td>

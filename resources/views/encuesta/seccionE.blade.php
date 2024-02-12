@@ -143,7 +143,7 @@
 <h2 class="reactivo">  
     25.- <B>¿Posgrado?</B></h2>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <select class="select" id="ner8" name="ner8"  onchange="bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner13,ner14,ner15,ner12a,ner12b,ner16,ner17,ner18,ner19])" >
+    <select class="select" id="ner8" name="ner8"  onchange="bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19])" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner8==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->ner8==2) selected @endif>No (pase a 82 o 77)</option >
@@ -279,7 +279,7 @@
     <select class="select" id="ner16" name="ner16"  onchange="bloquear('ner16',[2],[ner17,ner18,ner18ext])" >
       <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner16==1) selected @endif>Sí</option>
-      <option value=2  @if($Encuesta->ner16==2) selected @endif>No (Pase a la 81)</option>
+      <option value=2  @if($Encuesta->ner16==2) selected @endif>No (Pase a la 34)</option>
       <option value=0  hidden></option>   
 </select>
 </td>
@@ -373,12 +373,14 @@
   @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202))
    [ner12b,ner12a].forEach(ocultar);
     @endif 
+  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner12ext, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner15ext,ner16,ner17,ner18,ner18ext,ner19]);
+  @if($Encuesta->ner8 == 1)
   bloquear('ner10',[2],[ner10a,ner11,ner12,ner12ext]);
   bloquear('ner13',[2],[ner14,ner15,ner15ext]);
   bloquear('ner16',[2],[ner17,ner18,ner18ext]);
-  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner12ext, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner15ext,ner16,ner17,ner18,ner18ext,ner19]);
   bloquear('ner18',[0,1,2,3],[ner18ext]);
   bloquear('ner15',[0,1,2,3],[ner15ext]);
   bloquear('ner12',[0,1,2,3],[ner12ext]);
+  @endif
 </script>
 @endpush

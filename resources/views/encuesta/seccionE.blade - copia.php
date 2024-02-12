@@ -286,7 +286,7 @@
 <td>
 <h2 class="reactivo">  
    32.- ¿Ya se graduó?</h2>
-    <select class="select" id="ner17" name="ner17" @if($Encuesta->ner16==2) hidden value=0 @endif>
+    <select class="select" id="ner17" name="ner17" >
     <option selected="selected" value="">
       <option value=1  @if($Encuesta->ner17==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->ner17==2) selected @endif>No</option>
@@ -373,12 +373,15 @@
   @if(($Egresado->carrera!=208) && ($Egresado->carrera !=202))
    [ner12b,ner12a].forEach(ocultar);
     @endif 
+  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner12ext, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner15ext,ner16,ner17,ner18,ner18ext,ner19]);
+  
+  @if($Encuesta->ner8 == 2)
   bloquear('ner10',[2],[ner10a,ner11,ner12,ner12ext]);
   bloquear('ner13',[2],[ner14,ner15,ner15ext]);
   bloquear('ner16',[2],[ner17,ner18,ner18ext]);
-  bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12,ner12ext, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner15ext,ner16,ner17,ner18,ner18ext,ner19]);
   bloquear('ner18',[0,1,2,3],[ner18ext]);
   bloquear('ner15',[0,1,2,3],[ner15ext]);
   bloquear('ner12',[0,1,2,3],[ner12ext]);
+  @endif
 </script>
 @endpush

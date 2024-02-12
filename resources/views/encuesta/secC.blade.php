@@ -17,10 +17,10 @@
 <option selected  value="">Seleccione...</option>
 <option value=1 @if($Encuesta->ncr1==1) selected @endif>Sí (permanente)</option>
 <option value=2 @if($Encuesta->ncr1==2) selected @endif>Sí (eventual)</option>
-<option value=3 @if($Encuesta->ncr1==3) selected @endif>No (Sin buscar trabajo), (pase a la 42)</option>
-<option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 42)</option>
-<option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 2)</option>
-<option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
+<option value=3 @if($Encuesta->ncr1==3) selected @endif>No (Sin buscar trabajo), (pase a la 85)</option>
+<option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 85)</option>
+<option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 62)</option>
+<option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 85 y despues a la 63)</option>
 <option value=7 @if($Encuesta->ncr1==7) selected @endif>Becario</option>
 </select>
 </td>

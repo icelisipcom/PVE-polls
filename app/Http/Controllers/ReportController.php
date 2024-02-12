@@ -8,6 +8,8 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use DateTime;
 use DB;
+use App\Models\Carrera;
+
 use App\Models\respuestas20;
 use App\Models\respuestas14;
 class ReportController extends Controller
@@ -23,7 +25,6 @@ class ReportController extends Controller
            $data = $process->getOutput();
            
                return response()->download(public_path('storage/'.$report.'.xlsx'));
-          
        }
        public function semanal ($semana,$user=0){
         $dias=$semana*7; //convertir semanas a dias
@@ -32,6 +33,12 @@ class ReportController extends Controller
         $inicio->modify('+ '.$dias.' days');//avanzamos al lunes de la semana en cuestion
         $fin=new DateTime('01-01-2024');
         $fin->modify('+ '.($dias+5).' days'); //analogamente, avanzamos al viernes
+        $Cuentas= $encuestas20=respuestas20::whereDate('fec_capt','>=',$inicio)->whereDate('fec_capt','<=',$fin)->get();
+        $Cuentas14= $encuestas14=respuestas14::whereDate('fec_capt','>=',$inicio)->whereDate('fec_capt','<=',$fin)->get();
+        if($user >0 ){
+            $Cuentas=$Cuentas->toQuery()->where('aplica',$user)->get(); 
+            $Cuentas14=$Cuentas14->toQuery()->where('aplica',$user)->get(); 
+        }
         $Dias= collect();
         for($i=0; $i<5;$i++){
             $date=new DateTime('01-01-2024');
@@ -64,7 +71,11 @@ class ReportController extends Controller
         }
         $Dias=collect($Dias);
         // dd($inicio->format('Y-m-d'),$Dias,$Dias->sum('recados'));
-
-        return view('reports.semanal',compact('inicio','fin','Dias'));
+        // dd($Cuentas->unique('nbr3'));
+        $Planteles=[];
+        foreach($Cuentas->unique('nbr3') as $c){
+            array_push($Planteles,Carrera::where('clave_plantel',$c->nbr3)->first()->plantel);
+        }
+        return view('reports.semanal',compact('inicio','fin','Dias','Cuentas','Cuentas14','Planteles','semana'));
        }
 }

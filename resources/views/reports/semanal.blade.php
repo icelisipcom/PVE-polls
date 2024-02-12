@@ -6,7 +6,7 @@
   <div id="tabla" style="print-color-adjust: exact;">
     <div style="padding:30px;" >
     <h1 class="text-white-35" style="font-family: 'Montserrat', sans-serif;
-font-weight: 400; padding: 0.2vw" >REPORTE SEMANAL   </h1> 
+font-weight: 400; padding: 0.2vw" >REPORTE SEMANA {{$semana}} </h1> 
      
     </div>
     <div class="col-6 col-lg-12 table-responsive">
@@ -46,6 +46,45 @@ font-weight: 100; padding: 0.2vw">
             </tr>
             @endforeach
           </tbody>
+        </table>
+        <br><br>
+        <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
+font-weight: 100; padding: 0.2vw"> 
+          <tr>
+            <th colspan="{{$Cuentas->count()}}">Numeros de Cuenta  </th>
+          </tr>
+          <tr>
+            @foreach($Cuentas as $c)
+            <td> {{$c->cuenta}}   &nbsp; &nbsp;</td>
+            @endforeach
+            
+          </tr>
+          <tr>
+            <th colspan="{{$Cuentas14->count()}}">Numeros de Cuenta 2014 </th>
+          </tr>
+          
+            
+            @for($i =1;$i<=ceil($Cuentas14->count()/12);$i++)
+           <tr>
+            @foreach($Cuentas14->slice(12*($i-1),12) as $c)
+            <td> {{$c->CUENTA}}   &nbsp; &nbsp;</td>
+            @endforeach
+            </tr>
+            @endfor
+          
+        </table>
+       <br>
+       <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
+font-weight: 100; padding: 0.2vw"> 
+          <tr>
+            <th >FACULTADES</th>
+          </tr>
+         
+            @foreach($Planteles as $p)
+            <tr>
+            <td> {{$p}}   &nbsp; &nbsp;</td></tr>
+            @endforeach
+          
         </table>
     </div>
     </div>
