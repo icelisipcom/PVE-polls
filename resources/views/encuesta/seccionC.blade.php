@@ -17,10 +17,10 @@
 <option selected  value="">Seleccione...</option>
 <option value=1 @if($Encuesta->ncr1==1) selected @endif>Sí (permanente)</option>
 <option value=2 @if($Encuesta->ncr1==2) selected @endif>Sí (eventual)</option>
-<option value=3 @if($Encuesta->ncr1==3) selected @endif>No (Sin buscar trabajo), (pase a la 42)</option>
-<option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 42)</option>
-<option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 2)</option>
-<option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 42 y despues a la 63)</option>
+<option value=3 @if($Encuesta->ncr1==3) selected @endif>No (Sin buscar trabajo), (pase a la 85)</option>
+<option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 85)</option>
+<option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 62)</option>
+<option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, (pase a la 85 )</option>
 <option value=7 @if($Encuesta->ncr1==7) selected @endif>Becario</option>
 </select>
 </td>
@@ -533,7 +533,6 @@ function porque(){
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
 autoempleo();
 bloquear('ncr8',[0,2],[ncr9]); 
-bloquear('ncr11',[1,2],[ncr15]);
 porque();
 bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23])
 seccionc2();
@@ -541,9 +540,11 @@ bloquear('ncr4',[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[nc
 bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])
 bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23])
 autoempleo();
+@if($Encuesta->ncr1==1 |$Encuesta->ncr2==1)
 bloquear('ncr11',[1,2],[ncr15]);
+@endif
 bloquear('ncr8',[2,0],[ncr9])
-
+porque();
 </script>
 
 @endpush

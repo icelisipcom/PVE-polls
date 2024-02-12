@@ -25,7 +25,7 @@
          <select class="select" id="ner1" name="ner1"  onchange="bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7_a])" > 
         <option  value="" selected></option>
        <option value=1  @if($Encuesta->ner1==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner1==2) selected @endif>No (pase a la 72)</option>
+       <option value=2  @if($Encuesta->ner1==2) selected @endif>No (pase a la 25)</option>
        <option value=0  hidden></option>   
 </select>
 </td>
@@ -146,7 +146,7 @@
     <select class="select" id="ner8" name="ner8"  onchange="bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19])" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner8==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner8==2) selected @endif>No (pase a 82 o 77)</option >
+       <option value=2  @if($Encuesta->ner8==2) selected @endif>No (pase a la 35)</option >
        <option value=0  hidden></option>   
 </select> 
 </td>

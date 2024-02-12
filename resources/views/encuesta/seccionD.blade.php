@@ -33,11 +33,11 @@
 <select class="select" id="ndr2" name="ndr2" onchange="funcion_ndr2()">
 <option selected="selected" value="">
 <option value=6  @if($Encuesta->ndr2==6) selected @endif>Aviso en el periódico</option>
-<option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 57)</option>
+<option value=9  @if($Encuesta->ndr2==9) selected @endif>Autoempleo (Pase a la 98)</option>
 <option value=1  @if($Encuesta->ndr2==1) selected @endif>En la bolsa de trabajo de la UNAM</option>
 <option value=2  @if($Encuesta->ndr2==2) selected @endif>En otra bolsa de trabajo</option>
 <option value=8  @if($Encuesta->ndr2==8) selected @endif>Por relaciones en el servicio social</option>
-<option value=10 @if($Encuesta->ndr2==10) selected @endif>Integración a un negocio familiar (Pase a la 57)</option>
+<option value=10 @if($Encuesta->ndr2==10) selected @endif>Integración a un negocio familiar (Pase a la 98)</option>
 <option value=11 @if($Encuesta->ndr2==11) selected @endif>Iniciativa propia</option>
 <option value=7  @if($Encuesta->ndr2==7) selected @endif>Relaciones laborales previas</option>
 <option value=3  @if($Encuesta->ndr2==3) selected @endif>Recomendado por amigos</option>

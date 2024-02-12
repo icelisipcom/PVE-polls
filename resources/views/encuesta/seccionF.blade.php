@@ -25,7 +25,7 @@
 <select class="select" id="nfr0"  name="nfr0"  onchange="bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);">
  <option selected="selected" value=""></option>
    <option value=1 @if($Encuesta->nfr0==1) selected @endif>La eligió </option>
-  <option value=2 @if($Encuesta->nfr0==2) selected @endif>Se la asignaron (Pase a la 84)</option>
+  <option value=2 @if($Encuesta->nfr0==2) selected @endif>Se la asignaron (Pase a la 37)</option>
   </select>
       </td>
 <td>
@@ -68,7 +68,7 @@
 ¿volvería   a elegir la misma carrera?</h2>
 <select class="select" id="nfr3" name="nfr3"  onchange="bloquear('nfr3',[1],[nfr4])" >
 <option selected="selected" value="">
-  <option value=1 @if($Encuesta->nfr3==1) selected @endif>Sí (pase a la 86)</option>
+  <option value=1 @if($Encuesta->nfr3==1) selected @endif>Sí (pase a la 40)</option>
   <option value=2 @if($Encuesta->nfr3==2) selected @endif>No, una relacionada</option>
   <option value=3 @if($Encuesta->nfr3==3) selected @endif>No, una totalmente diferente</option>
    </select>
@@ -249,7 +249,7 @@ discriminación?
 <select class="select" id="nfr23a" name="nfr23a"   onchange="bloquear('nfr23a',[2],[nfr23,nfr24])">
 <option selected="selected" value="">
  <option value=1 @if($Discriminacion->count()>0) selected @endif>Sí (Especifíque)</option>
- <option value=2 @if($Discriminacion->count()==0) selected @endif>No (Pase a la 98)</option>
+ <option value=2 @if($Discriminacion->count()==0) selected @endif>No (Pase a la 52)</option>
   </select>
     </TD>
 

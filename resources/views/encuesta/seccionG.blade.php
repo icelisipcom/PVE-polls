@@ -137,7 +137,7 @@ su desempeño laboral?</h2>
 <h2 class="reactivo">
        c).- Programación</h2></td>
        <td>
-107c).-    
+107c).-
       <select class="select" id="ngr6c" name="ngr6c" >
        <option value="" selected="selected"></option>
         <option value=1 @if($Encuesta->ngr6c==1) selected @endif>Muy alto</option>
@@ -158,7 +158,6 @@ su desempeño laboral?</h2>
     <option value=0 hidden > </option>
       </select></td>
     </tr>
-
     <tr>
 <td>
 <h2 class="reactivo"> d).- Software especializado </h2> </td>
