@@ -409,6 +409,7 @@ public function updateG(Request $request,$id){
             'CONOCE' => 'required',
             'CUE_CRE' => 'required',
             'UTILIZA' => 'required'];
+    $Encuesta->sec_g=0;
     $validated = $request->validate($rules);
     $Encuesta->sec_g=1;
     $Encuesta->save();
