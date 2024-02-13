@@ -9,7 +9,9 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use DateTime;
 use DB;
 use App\Models\Carrera;
+use App\Models\User;
 
+use App\Models\Recado;
 use App\Models\respuestas20;
 use App\Models\respuestas14;
 class ReportController extends Controller
@@ -38,14 +40,19 @@ class ReportController extends Controller
         if($user >0 ){
             $Cuentas=$Cuentas->toQuery()->where('aplica',$user)->get(); 
             $Cuentas14=$Cuentas14->toQuery()->where('aplica',$user)->get(); 
+            $Encuestador=User::where('clave',$user)->first()->name;
+        }else{
+            $Encuestador=" ";
         }
+        
         $Dias= collect();
         for($i=0; $i<5;$i++){
             $date=new DateTime('01-01-2024');
             $date->modify('+ '.($dias+$i).' days'); 
-            $recados=DB::table('recados')->whereDate('created_at','=',$date->format('Y-m-d'))->get();
+            $recados=Recado::whereDate('created_at','=',$date->format('Y-m-d'))->get();
             if($user >0 ){
-                $recados=$recados->where('user_id',$user);
+                if($recados->count()>0){
+                    $recados=$recados->toQuery()->where('user_id',User::where('clave',$user)->first()->id)->get();}
                 $encuestas20=respuestas20::where('aplica','=',$user)->whereDate('fec_capt','=',$date->format('Y-m-d'))->get();
                 $encuestas14=respuestas14::where('aplica','=',$user)->whereDate('FEC_CAPT','=',$date->format('Y-m-d'))->get();
                 
@@ -78,9 +85,9 @@ class ReportController extends Controller
         }
         $Planteles14=[];
         foreach($Cuentas14->unique('NBR3') as $c){
-            array_push($Planteles,Carrera::where('clave_plantel',$c->NBR3)->first()->plantel);
+            array_push($Planteles14,Carrera::where('clave_plantel',$c->NBR3)->first()->plantel);
         }
-        dd($Planteles14);
-        return view('reports.semanal',compact('inicio','fin','Dias','Cuentas','Cuentas14','Planteles','semana','Planteles14'));
+        // dd($Planteles14);
+        return view('reports.semanal',compact('inicio','fin','Dias','Cuentas','Cuentas14','Planteles','semana','Planteles14','Encuestador'));
        }
 }

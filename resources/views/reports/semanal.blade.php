@@ -6,7 +6,7 @@
   <div id="tabla" style="print-color-adjust: exact;">
     <div style="padding:30px;" >
     <h1 class="text-white-35" style="font-family: 'Montserrat', sans-serif;
-font-weight: 400; padding: 0.2vw" >REPORTE SEMANA {{$semana}} </h1> 
+font-weight: 400; padding: 0.2vw" >REPORTE SEMANA {{$semana}} {{$Encuestador}}</h1> 
      <h2 class="text-white-35" style="font-family: 'Montserrat', sans-serif;
 font-weight: 300; padding: 0.2vw">
 Del {{$inicio->format('d-m-Y')}} al {{$fin->format('d-m-Y')}}
@@ -49,6 +49,22 @@ font-weight: 100; padding: 0.2vw">
             </tr>
             @endforeach
           </tbody>
+          <tfoot>
+            <tr>
+              <th> TOTALES</th>
+              <th>{{$Dias->sum('recados')}} </th>
+              <th>{{$Dias->sum('contestadora')}} </th>
+              <th>{{$Dias->sum('no_contesta')}} </th>
+              <th>{{$Dias->sum('enc2014')}} </th>
+              <th>{{$Dias->sum('enc2020')}} </th>
+              <th>{{$Dias->sum('enc_inconclusas')}} </th>
+              <th>{{$Dias->sum('correos')}} </th>
+              <th>{{$Dias->sum('equivocados')}} </th>
+              <th>{{$Dias->sum('no_existe')}} </th>
+              <th>{{$Dias->sum('llamadas')}} </th>
+              <th>{{$Dias->sum('internet')}} </th>
+            </tr>
+          </tfoot>
         </table>
         <br><br>
         <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
@@ -56,12 +72,13 @@ font-weight: 100; padding: 0.2vw">
           <tr>
             <th colspan="{{$Cuentas->count()}}">Numeros de Cuenta  </th>
           </tr>
-          <tr>
-            @foreach($Cuentas as $c)
-            <td> {{$c->cuenta}}   &nbsp; &nbsp;</td>
+          @for($i =1;$i<=ceil($Cuentas->count()/12);$i++)
+           <tr>
+            @foreach($Cuentas->slice(12*($i-1),12) as $c)
+            <td style=" vertical-align: top;"> {{$c->cuenta}}   &nbsp; &nbsp;</td>
             @endforeach
-            
-          </tr>
+            </tr>
+            @endfor
           <tr>
             <th colspan="{{$Cuentas14->count()}}">Numeros de Cuenta 2014 </th>
           </tr>
@@ -70,7 +87,7 @@ font-weight: 100; padding: 0.2vw">
             @for($i =1;$i<=ceil($Cuentas14->count()/12);$i++)
            <tr>
             @foreach($Cuentas14->slice(12*($i-1),12) as $c)
-            <td> {{$c->CUENTA}}   &nbsp; &nbsp;</td>
+            <td style=" vertical-align: top;"> {{$c->CUENTA}}   &nbsp; &nbsp;</td>
             @endforeach
             </tr>
             @endfor
@@ -79,12 +96,12 @@ font-weight: 100; padding: 0.2vw">
        <br>
        <table>
         <tr>
-          <td> 
+          <td style=" vertical-align: top;"> 
             <!-- tabla facultades 2020 -->
             <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
 font-weight: 100; padding: 0.2vw"> 
           <tr>
-            <th >FACULTADES 2020</th>
+            <th >FACULTADES 2020 &nbsp; &nbsp;</th>
             
           </tr>
          
@@ -101,7 +118,7 @@ font-weight: 100; padding: 0.2vw">
             <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
 font-weight: 100; padding: 0.2vw"> 
           <tr>
-            <th >FACULTADES 2014</th>
+            <th >FACULTADES 2014 &nbsp;</th>
             
           </tr>
          
@@ -116,10 +133,24 @@ font-weight: 100; padding: 0.2vw">
         </tr>
        </table>
        
+       <br><br>
+       <table>
+        <tr>
+          <th>OBSERVACIONES</th>
+        </tr>
+        <tr>
+          <td id="obs_cell">
+          <textarea type="text" class="texto"   name="obs" id="obs" size="140"  id="comentario" rows="5" cols="50" >
+</textarea>
+          </td>
+        </tr>
+       </table>
+
+       
     </div>
     </div>
     <input type="button" value="click"
-                    onclick="printDiv()"> 
+    onclick="printDiv()"> 
 </div>
 @stop
 
@@ -133,7 +164,6 @@ font-weight: 100; padding: 0.2vw">
     color: black;
     background-color: rgb(240, 240, 240);
   }}
-    
 </style>
 
 @endpush
@@ -141,15 +171,22 @@ font-weight: 100; padding: 0.2vw">
 @push('js')
 <script> 
         function printDiv() { 
+            var observacion = document.getElementById("obs").value; 
+            old_inner=document.getElementById("obs_cell").innerHTML;
+            document.getElementById("obs_cell").innerHTML=observacion; 
+            console.log(observacion);
             var divContents = document.getElementById("tabla").innerHTML; 
             var a = window.open('', '', 'height=500, width=1200'); 
             a.document.write("<head> <link rel='stylesheet' href='report_style.css' type='text/css' media='print'/> ");  
             a.document.write("<style> table{ th{ background-color: rgb(23, 30, 92); color: white;  padding:0.2vw; } td{color: rgba(0,0,0,1); text-align: center; font-weight: bolder;size: 2.5vw;} }</style> </head>");  
             a.document.write('<html>'); 
-            a.document.write('<body > <h1> PVEAJU <br>'); 
+            
+            a.document.write('<body > <table> <tr> <td> <img src="{{asset('img/logoPVE.png')}}" style="width:16vw;"></td> </tr> <tr><td>PVEAJU</td></tr></table>'); 
             a.document.write(divContents); 
             a.document.write('</body></html>'); 
             a.document.close(); 
+            document.getElementById("obs_cell").innerHTML=old_inner;
+            document.getElementById("obs").value=observacion;
             a.print(); 
         } 
     </script> 
