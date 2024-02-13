@@ -31,7 +31,7 @@
 </td>
 <td>
 <h2 class="reactivo">  
-    17.- ¿Cada cuando lo realiza?</h2>
+    17.- ¿Cada cuándo lo realiza?</h2>
           <select class="select" id="ner2" name="ner2"  >
           <option value=""></option>
        <option value=1  @if($Encuesta->ner2==1) selected @endif>Cada seis meses</option>
@@ -152,7 +152,7 @@
 </td>
 <td colspan="2">
 <h2 class="reactivo">  
-    25a).-¿Qué tan relacionados están los estudios de posgrado que realiza y su carrera?</h2>
+    25a)-¿En qué medida estan relacionados  los estudios de posgrado con su carrera profesional?</h2>
     <select class="select" id="ner9" name="ner9" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner9==1) selected @endif>Muy relacionados</option>

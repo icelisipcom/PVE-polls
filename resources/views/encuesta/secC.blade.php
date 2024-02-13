@@ -251,7 +251,7 @@ Especifique:</h2>
     </td>
 <td>
 <h2 class="reactivo"> 75.- ¿Si su trabajo no está relacionado con su carrera
-         es porque usted asílo decidió? </h2>
+         es porque usted así lo decidió? </h2>
 
 <select class="select" id="ncr15" name="ncr15"  >
 <option selected="selected" value="">

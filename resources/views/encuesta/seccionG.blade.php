@@ -494,7 +494,7 @@ A continuación le pedimos que nos indique para cada una de las
 <th  style=" background-color:{{Auth::user()->color}}"> <h2 class="reactivo" style="color:white"> Habilidad </h2></th>
 <th style=" background-color:{{Auth::user()->color}}">
 <h2 class="reactivo" style="color:white"> 
-Cuánto las desarrolló durante su formación profesional? </h2>
+¿Cuánto las desarrolló durante su formación profesional? </h2>
 </th>
 <th  style=" background-color:{{Auth::user()->color}}">
 <h2 class="reactivo" style="color:white" >
@@ -641,7 +641,7 @@ b).-<select class="select" id="ngr23"  name="ngr23">
     </tr><tr>
 <td>
 <h2 class="reactivo"> 
-119).-Resolver problemas).- </h2>
+119).-Resolver problemas </h2>
 </td><td>
   a).-
 <select class="select" id="ngr24"  name="ngr24">
@@ -863,7 +863,7 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 <td colspan="2">
 <h2 class="reactivo">
-127.- ¿Interés por la práctica  de algún deporte?</h2>
+127.- ¿Durante su formación profesional practicó algún deporte?</h2>
 <select class="select" id="ngr40" name="ngr40"  onchange="deportes()">
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>

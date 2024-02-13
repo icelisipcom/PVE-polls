@@ -30,7 +30,7 @@
 
  </td>
  <td>
-  <h2 class="reactivo"> 63.-Estado donde se ubica </h2> 
+  <h2 class="reactivo"> 63.-¿Cuál es el estado dónde usted se encuentra laborando? </h2> 
 
 
 <select class="select" id="ncr2a"  name="ncr2a" onchange="bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])"> 
@@ -233,7 +233,7 @@
 
 <tr>
 <td>
-<h2 class="reactivo"> 73.- ¿Qué tanto está relacionado su trabajo actual con su profesión? </h2> 
+<h2 class="reactivo"> 73.- ¿En que médida está relacionado su trabajo actual con su profesión? </h2> 
 
 <select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15])" >
   <option selected="selected" value="">
@@ -251,7 +251,7 @@ Especifique:</h2>
     </td>
 <td>
 <h2 class="reactivo"> 75.- ¿Si su trabajo no está relacionado con su carrera
-         es porque usted asílo decidió? </h2>
+         es porque usted así lo decidió? </h2>
 
 <select class="select" id="ncr15" name="ncr15"  >
 <option selected="selected" value="">
@@ -262,7 +262,7 @@ Especifique:</h2>
 
     </td>
 <td>
-<h2 class="reactivo"> 76.- ¿Cómo considera qué lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
+<h2 class="reactivo"> 76.- ¿Cómo considera que lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
     
     <select class="select" id="ncr16" name="ncr16"   > 
            <option selected="selected" value="">
@@ -319,7 +319,7 @@ Especifique:</h2>
 </select>
         </td>
 <td>
-<h2 class="reactivo">80.- ¿Cuantos trabajos tiene actualmente?  </h2>
+<h2 class="reactivo">80.- ¿Cuántos trabajos tiene actualmente?  </h2>
     
           <select class="select" id="ncr20" name="ncr20"  > 
           <option selected="selected" value="">
@@ -353,7 +353,7 @@ Especifique:</h2>
     
         </td>
 <td>
-<h2 class="reactivo"> 83.-¿Cuál es la razón principal por la que usted no está trabajando o 
+<h2 class="reactivo"> 83.-¿Actualmente uál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
      <select class="select" id="ncr24" name="ncr24" onchange="porque()">
      <option value=""> </option>

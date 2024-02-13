@@ -339,7 +339,7 @@ Expresión escrita<br></h2>
 <td colspan="4">
 <h2 class="reactivo">
   <br><br>
-111.- Para el desempeño de su o sus trabajo ¿Qué nivel de dominio del idioma inglés requiere de las siguientes habilidades?
+111.- Para el desempeño de su o sus trabajos ¿Qué nivel de dominio del idioma inglés requiere de las siguientes habilidades?
 <br></h2>
     </td>
 </tr>
@@ -980,7 +980,7 @@ c).- Motivo por el que no lo practicó </h2>
 
 <td>
 <h2 class="reactivo"> 
-129.-¿Conoce usted la Credencial de Egresados y sus beneficios? </h2>
+129.-¿Conoce usted la credencial de Egresados y sus beneficios? </h2>
 <select class="select" id="CONOCE"  name="CONOCE"  >
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->CONOCE==1) selected @endif >Sí</option>
@@ -1013,7 +1013,7 @@ c).- Motivo por el que no lo practicó </h2>
 <tr>
   <td colspan="4">
  
-<h2 class="reactivo"> ¿Desea hacer algun comentario? </h2>
+<h2 class="reactivo"> ¿Desea hacer algún comentario? </h2>
 <select class="select" id="comen" name="ncro2" onchange="bloquear('comen',[2],[comentario])"  >
 <option value="" selected></option>
     <option value='1' @if(strlen($Comentario)>2) selected @endif >Sí</option>

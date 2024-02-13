@@ -301,7 +301,7 @@
 
 </tr>
 <tr><td colspan="4">
-<h2 class="reactivo">Desde su inserción al campo laboral a la fecha, considera que su situación ha mejorado, con relación a el:</h2>
+<h2 class="reactivo">Desde su inserción al campo laboral a la fecha, considera que su situación con respecto al:</h2>
 
      </td></tr>
 <tr>

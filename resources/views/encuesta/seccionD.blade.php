@@ -204,7 +204,7 @@
  </select>
             </td>
 <td>
-<h2 class="reactivo">96.1 - Cercania al domicilio.  </h2>
+<h2 class="reactivo">96.1 - Cercanía al domicilio.  </h2>
 	      <select class="select" id="ndr12a" name="NDR12A" >
         <option selected="selected" value="">
         <option value=1  @if($Encuesta->NDR12A==1) selected @endif>Muy importante</option>
@@ -247,7 +247,6 @@
 <h2 class="reactivo">97.- Otro factor para su contratación, ¿Cuál?(opcional) </h2>
 
 <INPUT id="ndr13a" class="texto"  NAME="ndr13a" value=" {{$Encuesta->ndr13a}}" TYPE=TEXT SIZE="60" MAXLENGTH="60" >
-
       </td>
       <td>
 <h2 class="reactivo">98.- ¿Cuándo encontró su primer trabajo relacionado con su campo profesional?  </h2>
@@ -301,7 +300,7 @@
 
 </tr>
 <tr><td colspan="4">
-<h2 class="reactivo">Desde su inserción al campo laboral a la fecha, considera que su situación ha mejorado, con relación a el:</h2>
+<h2 class="reactivo">Desde su inserción al campo laboral a la fecha, considera que su situación con respecto al:</h2>
 
      </td></tr>
 <tr>
