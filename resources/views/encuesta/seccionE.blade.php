@@ -143,7 +143,7 @@
 <h2 class="reactivo">  
     25.- <B>¿Posgrado?</B></h2>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <select class="select" id="ner8" name="ner8"  onchange="bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19])" >
+    <select class="select" id="ner8" name="ner8"  onchange="bloquear('ner8',[2],[ner9,ner10,ner10a,ner11,ner12, @if(($Egresado->carrera==208) || ($Egresado->carrera ==202)) ner12b,ner12a,ner12ext, @endif ner13,ner14,ner15,ner16,ner17,ner18,ner19])" >
        <option selected="selected" value="">
        <option value=1  @if($Encuesta->ner8==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->ner8==2) selected @endif>No (pase a la 35)</option >
