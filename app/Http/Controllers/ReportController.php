@@ -76,6 +76,11 @@ class ReportController extends Controller
         foreach($Cuentas->unique('nbr3') as $c){
             array_push($Planteles,Carrera::where('clave_plantel',$c->nbr3)->first()->plantel);
         }
-        return view('reports.semanal',compact('inicio','fin','Dias','Cuentas','Cuentas14','Planteles','semana'));
+        $Planteles14=[];
+        foreach($Cuentas14->unique('NBR3') as $c){
+            array_push($Planteles,Carrera::where('clave_plantel',$c->NBR3)->first()->plantel);
+        }
+        dd($Planteles14);
+        return view('reports.semanal',compact('inicio','fin','Dias','Cuentas','Cuentas14','Planteles','semana','Planteles14'));
        }
 }

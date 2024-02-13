@@ -7,7 +7,10 @@
     <div style="padding:30px;" >
     <h1 class="text-white-35" style="font-family: 'Montserrat', sans-serif;
 font-weight: 400; padding: 0.2vw" >REPORTE SEMANA {{$semana}} </h1> 
-     
+     <h2 class="text-white-35" style="font-family: 'Montserrat', sans-serif;
+font-weight: 300; padding: 0.2vw">
+Del {{$inicio->format('d-m-Y')}} al {{$fin->format('d-m-Y')}}
+     </h2>
     </div>
     <div class="col-6 col-lg-12 table-responsive">
         <table class="my-table" style="font-family: 'Montserrat', sans-serif;
@@ -74,10 +77,15 @@ font-weight: 100; padding: 0.2vw">
           
         </table>
        <br>
-       <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
+       <table>
+        <tr>
+          <td> 
+            <!-- tabla facultades 2020 -->
+            <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
 font-weight: 100; padding: 0.2vw"> 
           <tr>
-            <th >FACULTADES</th>
+            <th >FACULTADES 2020</th>
+            
           </tr>
          
             @foreach($Planteles as $p)
@@ -86,6 +94,28 @@ font-weight: 100; padding: 0.2vw">
             @endforeach
           
         </table>
+            <!-- fin de tabla fac2020 -->
+          </td>
+          <td>
+            <!-- tabla facultades 2014 -->
+            <table  class="my-table" style="font-family: 'Montserrat', sans-serif;
+font-weight: 100; padding: 0.2vw"> 
+          <tr>
+            <th >FACULTADES 2014</th>
+            
+          </tr>
+         
+            @foreach($Planteles14 as $p)
+            <tr>
+            <td> {{$p}}   &nbsp; &nbsp;</td></tr>
+            @endforeach
+          
+        </table>
+            <!-- fin tabla 14 -->
+          </td>
+        </tr>
+       </table>
+       
     </div>
     </div>
     <input type="button" value="click"
@@ -123,4 +153,9 @@ font-weight: 100; padding: 0.2vw">
             a.print(); 
         } 
     </script> 
+@endpush
+
+@push('css')
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+
 @endpush

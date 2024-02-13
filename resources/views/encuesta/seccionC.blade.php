@@ -377,7 +377,7 @@ Especifique:</h2>
       <option value=17 @if($Encuesta->ncr24==17) selected @endif>Cambio de residencia</option> 
       <option value=18 @if($Encuesta->ncr24==18) selected @endif>Emprender un negocio o empresa propios</option> 
       <option value=19 @if($Encuesta->ncr24==19) selected @endif>Motivos personales</option> 
-      <option value=20 @if($Encuesta->ncr24==29) selected @endif>Derivado de la pandemia</option> 
+      <option value=20 @if($Encuesta->ncr24==20) selected @endif>Derivado de la pandemia</option> 
       <option value=14 @if($Encuesta->ncr24==14) selected @endif>Otra </option>
       <option value=0 @if($Encuesta->ncr24==0) selected @endif> </option>
      
