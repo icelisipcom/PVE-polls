@@ -191,7 +191,7 @@ class HomeController extends Controller
     public function enviar_invitacion(Request $request){
       
         $caminoalpoder=public_path();
-        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/correo_prueba.py',$request->nombre,$request->correo]);
+        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo]);
         $process->run();
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
