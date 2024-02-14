@@ -106,9 +106,10 @@ class HomeController extends Controller
         return view('aviso');
     }
 
-    public function invitacion(){
+    public function invitacion($registro){
+        $Egresado=respuestas14::find($registro);
       
-        return view('invitacion');
+        return view('invitacion',compact('Egresado'));
     }
 
     public function buscar(){
@@ -191,7 +192,7 @@ class HomeController extends Controller
     public function enviar_invitacion(Request $request){
       
         $caminoalpoder=public_path();
-        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo]);
+        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo,$request->cuenta,$request->carrera,$request->plantel]);
         $process->run();
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);

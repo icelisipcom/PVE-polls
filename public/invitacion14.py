@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 import sys
 
 import os
-def AvisoPrivacidad(nombre,you):
+def AvisoPrivacidad(nombre,you,cuenta,carrera,plantel):
     me = "vinculacionexalumnos@exalumno.unam.mx"
 # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
@@ -90,6 +90,37 @@ def AvisoPrivacidad(nombre,you):
                                                 </tbody>
                                               </table>
                                             </div>
+                                             <h1 class="h4" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="left">"""+cuenta+"""</h1>
+                                            <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                                                    &#160;
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                             <h1 class="h4" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="left">"""+carrera+"""</h1>
+                                            <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                                                    &#160;
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                             <h1 class="h4" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="left">"""+plantel+"""</h1>
+                                            <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                                                    &#160;
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            
                                             <br>
                                             <h5 class="text-700" style="color: #b68a11; padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;" align="left">Estimado Egresado """ +nombre+"""</h5>
                                             <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
@@ -311,5 +342,7 @@ def AvisoPrivacidad(nombre,you):
     mail.quit()
 nombre=str(sys.argv[1])
 email=str(sys.argv[2])
-
-AvisoPrivacidad(nombre,email)
+cuenta=str(sys.argv[3])
+carrera=str(sys.argv[4])
+plantel=str(sys.argv[5])
+AvisoPrivacidad(nombre,email,cuenta,carrera,plantel)
