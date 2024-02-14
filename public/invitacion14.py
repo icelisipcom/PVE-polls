@@ -90,7 +90,17 @@ def AvisoPrivacidad(nombre,you,cuenta,carrera,plantel):
                                                 </tbody>
                                               </table>
                                             </div>
-                                             <h1 class="h4" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="left">"""+cuenta+"""</h1>
+                                            <h1 class="h4" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="left">"""+nombre+"""</h1>
+                                            <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="line-height: 8px; font-size: 8px; width: 100%; height: 8px; margin: 0;" align="left" width="100%" height="8">
+                                                    &#160;
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                             <h1 class="h4" style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 24px; line-height: 28.8px; margin: 0;" align="left"> Numero de Cuenta: """+cuenta+"""</h1>
                                             <table class="s-2 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                               <tbody>
                                                 <tr>
@@ -122,7 +132,7 @@ def AvisoPrivacidad(nombre,you,cuenta,carrera,plantel):
                                             </table>
                                             
                                             <br>
-                                            <h5 class="text-700" style="color: #b68a11; padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;" align="left">Estimado Egresado """ +nombre+"""</h5>
+                                            <h5 class="text-700" style="color: #b68a11; padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;" align="left">Estimado Egresado: </h5>
                                             <table class="s-5 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                               <tbody>
                                                 <tr>
