@@ -108,8 +108,14 @@ class HomeController extends Controller
 
     public function invitacion($registro){
         $Egresado=respuestas14::find($registro);
-      
-        return view('invitacion',compact('Egresado'));
+        $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
+        $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
+        
+        return view('invitacion',compact('Egresado','Carrera','Plantel'));
+    }
+    public function invitacion19($id){
+        $Egresado=Egresado::find($id);      
+        return view('invitacion19',compact('Egresado'));
     }
 
     public function buscar(){
@@ -191,6 +197,11 @@ class HomeController extends Controller
     }
     public function enviar_invitacion(Request $request){
       
+        if($request->anio==2014){
+            $link="https://www.pveu.unam.mx/encuesta/01/act_14/encuesta_actualizacion.php";
+        }else{
+            $link="https://www.pveu.unam.mx/encuesta/01/global/exalumno2.html";
+        }
         $caminoalpoder=public_path();
         $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo,$request->cuenta,$request->carrera,$request->plantel]);
         $process->run();

@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 import sys
 
 import os
-def AvisoPrivacidad(nombre,you,cuenta,carrera,plantel):
+def AvisoPrivacidad(nombre,you,cuenta,carrera,plantel,link):
     me = "vinculacionexalumnos@exalumno.unam.mx"
 # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
@@ -182,7 +182,7 @@ def AvisoPrivacidad(nombre,you,cuenta,carrera,plantel):
                                                   </tr>
                                                 </tbody>
                                               </table>
-                                              <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">Por favor ingrese a <a href="https://www.pveu.unam.mx/encuesta/01/act_14/encuesta_actualizacion.php" style="color: #0d6efd;">https://www.pveu.unam.mx/encuesta/01/act_14/encuesta_actualizacion.php </a> , entre a la  &#8221;ENCUESTA EGRESADOS 2014&#8221;, capture su n&#250;mero de cuenta sin eliminar el &#8220;0&#8221; si usted es de generaci&#243;n con n&#250;mero de cuenta anterior a 1999 y conteste todas las preguntas del cuestionario, en el caso de que algunas no sean aplicables a usted se le indicar&#225; como proseguir, cualquier duda o aclaraci&#243;n comun&#237;quese a los tel&#233;fonos 56226056, con Martha Nava de 9:30 a 18:30 horas de lunes a viernes o al correo electr&#243;nico vinculacionexalumnos@exalumno.unam.mx. 
+                                              <p class="text-gray-700" style="line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;" align="left">Por favor ingrese a <a href='"""+link+"""' style="color: #0d6efd;">"""+link+"""</a> , entre a la  &#8221;ENCUESTA EGRESADOS 2014&#8221;, capture su n&#250;mero de cuenta sin eliminar el &#8220;0&#8221; si usted es de generaci&#243;n con n&#250;mero de cuenta anterior a 1999 y conteste todas las preguntas del cuestionario, en el caso de que algunas no sean aplicables a usted se le indicar&#225; como proseguir, cualquier duda o aclaraci&#243;n comun&#237;quese a los tel&#233;fonos 56226056, con Martha Nava de 9:30 a 18:30 horas de lunes a viernes o al correo electr&#243;nico vinculacionexalumnos@exalumno.unam.mx. 
                                               </p>
                                               <table class="s-3 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                                                 <tbody>
@@ -355,4 +355,5 @@ email=str(sys.argv[2])
 cuenta=str(sys.argv[3])
 carrera=str(sys.argv[4])
 plantel=str(sys.argv[5])
-AvisoPrivacidad(nombre,email,cuenta,carrera,plantel)
+link=str(sys.argv[6])
+AvisoPrivacidad(nombre,email,cuenta,carrera,plantel,link)

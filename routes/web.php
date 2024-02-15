@@ -89,6 +89,8 @@ Route::post('/enviar_aviso', [App\Http\Controllers\HomeController::class, 'envia
 Route::get('/invitacion', [App\Http\Controllers\HomeController::class, 'invitacion'])->name('invitacion');
 Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, 'enviar_invitacion'])->name('enviar_invitacion');
 Route::get('/invitacion14/{registro}', [App\Http\Controllers\HomeController::class, 'invitacion'])->name('invitacion14');
+Route::get('/invitacion19/{id}', [App\Http\Controllers\HomeController::class, 'invitacion19'])->name('invitacion19');
+
 Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, 'enviar_invitacion'])->name('enviar_invitacion');
 
 

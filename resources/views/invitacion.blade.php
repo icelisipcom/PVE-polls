@@ -34,7 +34,9 @@
     <input  type="text" name="cuenta" class="form-control" hidden value="{{$Egresado->CUENTA}}">
     <input  type="text" name="carrera" class="form-control" hidden value="{{$Egresado->carrera}}">
     <input  type="text" name="plantel" class="form-control" hidden value="{{$Egresado->plantel}}">
-   </div>
+
+    <input  type="number" name="anio" class="form-control" hidden value="14">  
+</div>
 
   <br>
   <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Enviar</button>

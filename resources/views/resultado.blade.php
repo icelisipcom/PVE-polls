@@ -101,6 +101,9 @@
                 <td>@if($eg->muestra==3 && in_array( $eg->status,[null,0,3,4,5,6,7], true))
                 <a href="{{route('llamar_20',$eg->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
                 @endif
+                @if($eg->anio_egreso==2019)
+                <a href="{{route('invitacion19',$eg->id)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
+                @endif
                 </td>
             
             </tr> 
