@@ -25,6 +25,8 @@
         <table class="table text-xl " id="myTable">
         <thead>
         <tr>
+          <th>cuenta</th>
+          <th>telefono</th>
             <th>Recado</th>
             <th>tipo</th>
             <th>Fecha</th>
@@ -34,6 +36,8 @@
     <tbody>
         @foreach($Recados as $r)
         <tr style="background-color: {{$r->color_rgb}};">
+            <td> {{$r->cuenta}} </td>
+            <td> {{$r->telefono}} </td>
             <td> {{$r->recado}} </td>
             <td> {{$r->description}} </td>
             <td> {{$r->fecha}} </td>
