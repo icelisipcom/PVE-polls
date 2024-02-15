@@ -204,7 +204,7 @@ class HomeController extends Controller
             $link="https://www.pveu.unam.mx/encuesta/01/global/exalumno2.html";
         }
         $caminoalpoder=public_path();
-        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo,$request->cuenta,$request->carrera,$request->plantel]);
+        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo,$request->cuenta,$request->carrera,$request->plantel,$link]);
         $process->run();
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
