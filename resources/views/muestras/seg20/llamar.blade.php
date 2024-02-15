@@ -35,9 +35,8 @@
   
   <button type="button" class="btn btn-info" id="{{'tel_button'.$telefono->id}}"data-toggle="collapse" style="background-color: {{$telefono->color_rgb}}"  data-target="{{'#demo'.$telefono->id}}">   <h1 class="text-white-35"> {{$telefono->telefono}}  </h1></button>
   <div id="{{'demo'.$telefono->id}}" class="collapse" style="background-color: rgba(0,0,0,0.2)">
-  <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        
+  
+      
 <br><h1 class="text-white-40" id="layer"> RECADOS ANTERIORES </h1><br>
 @if($Recados->count()==0)
 <p> Aún no hay recados para mostrar </p>
@@ -49,6 +48,7 @@
             <th>Recado</th>
             <th>tipo</th>
             <th>Fecha</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -58,12 +58,22 @@
             <td> {{$r->recado}} </td>
             <td> {{$r->description}} </td>
             <td> {{$r->fecha}} </td>
+            <td> 
+            <form method="POST" action="{{ route('recados.destroy', $r->id) }}">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+
+                            <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>BORRAR!</button>
+                        </form>  </td>
         </tr>
         @endif
         @endforeach
     </tbody>
 </table>
 @endif
+  <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data">
+        @csrf
+    
 
   <div class="form-group">
     <label for="exampleInputEmail1">Deja un recado</label>
@@ -143,4 +153,27 @@ function codigo(tel_id){
   console.log('script jalando ¿?');
  
  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+ 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+  
+</script>
 @endpush
