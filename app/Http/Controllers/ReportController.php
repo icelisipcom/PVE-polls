@@ -49,7 +49,7 @@ class ReportController extends Controller
         for($i=0; $i<5;$i++){
             $date=new DateTime('01-01-2024');
             $date->modify('+ '.($dias+$i).' days'); 
-            $recados=Recado::whereDate('created_at','=',$date->format('Y-m-d'))->get();
+            $recados=Recado::whereDate('fecha','=',$date->format('Y-m-d'))->get();
             if($user >0 ){
                 if($recados->count()>0){
                     $recados=$recados->toQuery()->where('user_id',User::where('clave',$user)->first()->id)->get();}
@@ -63,7 +63,7 @@ class ReportController extends Controller
 
             $Dias->push((object)['dia' => $i+1,
                 'fecha' =>$date->format('Y-m-d'),
-                "recados" => $recados->where('status',3)->count(),
+                "recados" => $recados->where('status',12)->count(),
                 "contestadora" => $recados->where('status',9)->count(),
                 "no_contesta" => $recados->where('status',7)->count(),
                 "enc2014" => $encuestas14->count(),

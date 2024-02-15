@@ -2,6 +2,25 @@
 
 @section('content')
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
+<div class='row'>
+      <div class='col'> </div>
+      <div class='col'></div>
+      <div class='col'>
+        <table>
+          <thead> 
+            <tr> 
+              <th>Codigos</th>
+            </tr>         
+          </thead>
+          <tbody>
+            @foreach($Codigos as $c)
+            <tr>
+            <td style="background-color:{{$c->color_rgb}}"> {{$c->description}}</td>
+            </tr> @endforeach
+          </tbody>
+        </table>
+      </div>
+     </div>
 <div class="col-6 col-lg-12 table-responsive">
         <table class="table text-xl " id="myTable">
         <thead>
