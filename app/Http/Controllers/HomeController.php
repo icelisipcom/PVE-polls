@@ -107,15 +107,16 @@ class HomeController extends Controller
     }
 
     public function invitacion($registro){
-        $Egresado=respuestas14::find($registro);
+        $Egresado=respuestas14::find($registro);   
+        return view('invitacion19',compact('Egresado'));
+   
+      }
+    public function invitacion19($id){
+        $Egresado=Egresado::find($id);   
         $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
         $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
         
         return view('invitacion',compact('Egresado','Carrera','Plantel'));
-    }
-    public function invitacion19($id){
-        $Egresado=Egresado::find($id);      
-        return view('invitacion19',compact('Egresado'));
     }
 
     public function buscar(){
