@@ -9,13 +9,26 @@ use App\Models\Egresado;
 use App\Models\Carrera;
 use App\Models\Comentario;
 use App\Models\Recado;
-
+use DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Telefono;
 use Illuminate\Http\Request;
 
 class RecadosController extends Controller
 {
+
+
+  public function index(){
+    $Recados=DB::table('recados')
+    ->leftJoin('codigos','codigos.code','=','recados.status')
+    ->select('recados.*','codigos.color_rgb','codigos.description')
+    ->where('recados.user_id','=',Auth::user()->id)
+    ->get();
+    $Codigos=DB::table('codigos')->where('code','>=',3)
+    ->orderBy('color')->get();
+    return view('recados.index',compact('Recados','Codigos'));
+  }
+
     public function recado_14($id){
     $Egresado=respuestas14::find($id);
     $Recados=Recado::where('cuenta','=',$Egresado->CUENTA)->get();
@@ -96,5 +109,10 @@ class RecadosController extends Controller
       
       
       return redirect()->route('llamar_20',$Egresado->cuenta);
+      }
+
+      public function destroy($id){
+      Recado::destroy($id);
+      return back();
       }
 }

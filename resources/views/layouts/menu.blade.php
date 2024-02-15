@@ -14,9 +14,9 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('2014_act') }}" class="nav-link {{ Request::is('2014_act') ? 'active' : '' }}">
+    <a href="{{ route('recados.index') }}" class="nav-link {{ Request::is('recados.index') ? 'active' : '' }}">
     <i class="fas fa-poll"></i>
-        <p>Actualizacion 2014 </p>
+        <p>Recados Lista</p>
     </a>
 </li>
 <li class="nav-item">

@@ -6,6 +6,8 @@ use App\Http\Controllers\MuestrasController;
 use App\Http\Controllers\Encuesta20Controller;
 use App\Http\Controllers\CorreosController;
 use App\Http\Controllers\TelefonosController;
+
+use App\Http\Controllers\RecadosController;
 use App\Http\Controllers\EncuestasController;
 /*
 |--------------------------------------------------------------------------|
@@ -34,6 +36,9 @@ Route::get('muestras20/index', [MuestrasController::class,'index_20'])->name('mu
 Route::get('muestras20/show/{carrera}/{plantel}', [MuestrasController::class,'show_20'])->name('muestras20.show');
 Route::get('/encuestas/2020/llamar/{id}', [App\Http\Controllers\LlamadasController::class, 'llamar_20'])->name('llamar_20');
 Route::get('revision', [MuestrasController::class,'revision'])->name('revision');
+
+Route::get('recados', [RecadosController::class,'index'])->name('recados.index');
+Route::delete('recados/delete/{id}', [RecadosController::class,'destroy'])->name('recados.destroy');
 
 
 Route::post('/encuestas/2020/real_update/{id}', [App\Http\Controllers\Encuesta20Controller::class, 'update2'])->name('encuestas.real_update');

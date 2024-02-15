@@ -3275,10 +3275,6 @@ function autoempleo(){
     document.getElementById(element.id).focus();
   }
 })
-          // if(confirm("Seguro que deseas guardar una encuesta incompleta?")==true){
-          //   forma.submit();
-          // }
-          /* document.getElementById(element.id).focus(); */
           return;
       }
   }

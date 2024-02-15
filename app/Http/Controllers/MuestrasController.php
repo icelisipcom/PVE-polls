@@ -56,7 +56,7 @@ public function index_20(){
 
 }
 public function show_14($carrera,$plantel){
-  $muestra=respuestas14::dwhere('carrera','=',$carrera)->where('plantel','=',$plantel)->get();
+  $muestra=respuestas14::where('carrera','=',$carrera)->where('plantel','=',$plantel)->get();
   foreach($muestra as $m){
     $color='';
     switch ($m->status) {
