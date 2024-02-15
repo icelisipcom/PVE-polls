@@ -102,7 +102,7 @@
                 <a href="{{route('llamar_20',$eg->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
                 @endif
                 @if($eg->anio_egreso==2019)
-                <a href="{{route('invitacion19',$eg->id)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
+                <a href="{{route('invitacion19',$eg->id)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-mail" aria-hidden="true"> </i> &nbsp; Enviar por correo</button></a>
                 @endif
                 </td>
             
