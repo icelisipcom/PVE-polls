@@ -362,9 +362,16 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   <option value=9 @if($Encuesta->nar3a==9) selected @endif >Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
   <option value=10 @if($Encuesta->nar3a==10) selected @endif > Beca para Disminuir el Bajo Rendimiento Académico</option>
   <option value=11 @if($Encuesta->nar3a==11) selected @endif > Beca de Fortalecimiento y Beca de Alta Exigencia Académica</option>
+  <option value=15 @if($Encuesta->nar3a==15) selected @endif >Universitarios SI </option>
+  <option value=16 @if($Encuesta->nar3a==16) selected @endif >Permanecia Escolar EDOMEX </option>
   <option value=12 @if($Encuesta->nar3a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
   <option value=13 @if($Encuesta->nar3a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
   <option value=14 @if($Encuesta->nar3a==14) selected @endif >Beca Especialidad (TITULACION) </option>
+
+
+  <option value=17 @if($Encuesta->nar3a==17) selected @endif >Titulacion Proyectos Investigación(TITULACION) </option>
+  <option value=18 @if($Encuesta->nar3a==18) selected @endif >Titulacion Egresados Extemporaneos (TITULACION) </option>
+  
   <option value=3 @if($Encuesta->nar3a==3) selected @endif >Sí, de otro programa</option>
   </select>   
 </td>
