@@ -42,6 +42,8 @@
         }
     td{
       text-align: center;
+      padding-right: 0.5vw;
+      padding-left: 0.5vw;
     }
     
   }
@@ -74,7 +76,7 @@
     position: sticky;
     z-index: 1;
     top:0;
-    padding:0.1vw;
+    padding:-0.1vw;
     color: var(--fuente);
   background-color: var(--fondo);
    
@@ -94,27 +96,35 @@ border: 2px solid;
 border-color: red;
 }
 .reactivo{
-text-align: center;
+  text-align: center;
   padding: 2.2vw;
   font-weight: bold;
-  font-size: 1.7vw;
+  font-size: 1.4vw;
   color: var(--fuente);
   text-shadow: gray,
   font-family: 'Montserrat',
+ */
+}
+
+.largo{
+  padding-left: 20.2vw;
+  display:flex;
+  width: 60vw; 
+  overflow: hidden;
 }
 .texto{
-  font-size:25px;
+  font-size:1.4vw;
   color: var(--fuente);
   background-color: var(--fondo);
   width:90%;
 }
 .fecha{
-  font-size:25px;
+  font-size:1.4vw;
   color: var(--fuente);
   background-color: var(--fondo);
 }
 .select{
-  font-size:25px;
+  font-size:1.4vw;
   color: var(--fuente);
   background-color: var(--fondo);
   max-width: 15.0vw;

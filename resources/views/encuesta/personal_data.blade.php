@@ -1,6 +1,24 @@
 
   
         <table class="table text-lg personal" >
+         
+          <tr>
+            <th>Egresad@: </th>
+            <td> {{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}} </td>
+            <th>Numero C:</th><td> {{$Egresado->cuenta}}</td>
+            <th> Telefonos: <a href="{{route('agregar_telefono',[$Egresado->cuenta,$Egresado->carrera,$Encuesta->registro])}}">  <button class="btn btn-mb2" style="background-color:{{Auth::user()->color}} ; color:white; font-size:0.9vw"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo  </button></a></th>
+              @foreach($Telefonos as $t)
+              <td> <a href="{{route('editar_telefono',[$t->id,$Egresado->carrera,$Encuesta->registro])}}">{{$t->telefono}} </a></td>
+              @endforeach
+            <th>Promedio:</th> <td> @if($Egresado->promedio>10) {{$Egresado->promedio /100}} @else {{$Egresado->promedio}} @endif</td>
+            <th>fec. nac.:</th> <td>{{$Egresado->fec_nac}}</td>
+          </tr>
+          <tr>
+          <th>Carrera:</th><td > {{$Carrera}}  </td> 
+          <th>Plantel:</th><td colspan="{{$Telefonos->count() +2}}"> {{$Plantel}}</td> 
+          <th>Sexo:</th> <td>{{$Egresado->sexo}}</td>
+          <th>Bach::</th> <td> @if($Egresado->bach >= 20 && $Egresado->bach < 30)  ENP @elseif($Egresado->bach >= 30) CCH @endif </td>
+          </tr>
           <tr>
           <td style="padding: 0.1vw" colspan="{{5 + $Telefonos->count()}}">
           <div class="row">
@@ -23,27 +41,6 @@
   @endif
         </td>
           </tr>
-          <tr>
-            <th>Egresad@: </th>
-            <td> {{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}} </td>
-            <th>Numero C:</th><td> {{$Egresado->cuenta}}</td>
-            <th> Telefonos: <a href="{{route('agregar_telefono',[$Egresado->cuenta,$Egresado->carrera,$Encuesta->registro])}}">  <button class="btn btn-mb2" style="background-color:{{Auth::user()->color}} ; color:white; font-size:0.9vw"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo  </button></a></th>
-              @foreach($Telefonos as $t)
-              <td> <a href="{{route('editar_telefono',[$t->id,$Egresado->carrera,$Encuesta->registro])}}">{{$t->telefono}} </a></td>
-              @endforeach
-            <th>Promedio:</th> <td> @if($Egresado->promedio>10) {{$Egresado->promedio /100}} @else {{$Egresado->promedio}} @endif</td>
-            <th>fec. nac.:</th> <td>{{$Egresado->fec_nac}}</td>
-          </tr>
-          <tr>
-          <th>Carrera:</th><td > {{$Carrera}}  </td> 
-          <th>Plantel:</th><td colspan="{{$Telefonos->count() +2}}"> {{$Plantel}}</td> 
-          <th>Sexo:</th> <td>{{$Egresado->sexo}}</td>
-          <th>Bach::</th> <td> @if($Egresado->bach >= 20 && $Egresado->bach < 30)  ENP @elseif($Egresado->bach >= 30) CCH @endif </td>
-          </tr>
-          
          </table>
-
-         
-        <br>
 
   

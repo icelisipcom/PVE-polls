@@ -17,9 +17,11 @@
                 <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
                 <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
             </td>
-            <td><a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-arrow-left"></i> Regresar a la muestra</button></a>
+            <td><a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i> Ir a muestra Carrera </button></a>
     </td>
         </tr>
+        <tr> <td></td>
+     <td><a href="{{route('muestras20.show',[0,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i> Ir a muestra Plantel </button></a></td></tr>
     </table>
   
    

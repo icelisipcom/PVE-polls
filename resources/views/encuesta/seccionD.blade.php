@@ -61,7 +61,7 @@
 
 <tr>
 <td colspan="4">
-<h2 class="reactivo"> <b>¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </b> </h2>
+<h2 class="reactivo largo"> <b>¿Qué tan importantes fueron cada uno de los siguientes factores para su contratación, en su primer trabajo?  </b> </h2>
     </td>
 </tr>
 <tr>
@@ -274,7 +274,7 @@
 </select>
 
       </td>
-<td>
+<td colspan="2">
 <h2 class="reactivo"> 100.- ¿Actualmente sigue laborando en el mismo trabajo?</h2>
 <select class="select" id="ndr16" name="ndr16" >
 <option selected="selected" value="">
@@ -284,8 +284,12 @@
 </select>
 
       </td>
-<td>
-<h2 class="reactivo"> 101.- ¿Cuántos trabajos ha tenido desde que egresó de la licenciatura? </h2>
+
+
+</tr>
+<tr>
+<td colspan="2">
+<h2 class="reactivo"> 101 a).- ¿Cuántos trabajos relacionados con su carrera ha tenido desde que egresó de la licenciatura? </h2>
 <select class="select" id="ndr17" name="ndr17" >
 <option selected="selected" value="">
    <option value=1  @if($Encuesta->ndr17==1) selected @endif>Uno</option>
@@ -297,10 +301,23 @@
 </select>
 
      </td>
+     <td colspan="2">
+<h2 class="reactivo"> 101 b).- ¿Cuántos trabajos NO relacionados con su carrera ha tenido desde que egresó de la licenciatura? </h2>
+<select class="select" id="ndr17a" name="ndr17a" >
+<option selected="selected" value="">
+   <option value=1  @if($Encuesta->ndr17a==1) selected @endif>Uno</option>
+   <option value=2  @if($Encuesta->ndr17a==2) selected @endif>Dos </option>
+   <option value=3  @if($Encuesta->ndr17a==3) selected @endif>De tres a seis</option>
+ <option value=4  @if($Encuesta->ndr17a==4) selected @endif>Más de seis</option>
+ <option value=5  @if($Encuesta->ndr17a==5) selected @endif>Ninguno</option>
+ <option value=0  hidden></option>   
+</select>
+
+     </td>
 
 </tr>
 <tr><td colspan="4">
-<h2 class="reactivo">Desde su inserción al campo laboral a la fecha, considera que su situación con respecto al:</h2>
+<h2 class="reactivo largo">Desde su inserción al campo laboral a la fecha, considera que su situación con respecto al:</h2>
 
      </td></tr>
 <tr>
@@ -390,16 +407,16 @@ function funcion_ndr2(){
 }
 
 
-bloquear('ndr1',[6,7],[ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
+bloquear('ndr1',[6,7],[ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
 funcion_ndr2();
-bloquear('ndr1',[6,7],[ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
+bloquear('ndr1',[6,7],[ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
 @if($Encuesta->ncr1==6)
-[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
+[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19].forEach(ocultar);
 @endif
 @if($Encuesta->ncr1==7)
-[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
+[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,,ndr17a,ndr18,ndr19].forEach(ocultar);
 @endif
-
+funcion_ndr2();
 bloquear('ndr14',[1,3],[ndr15]);
 </script>
 

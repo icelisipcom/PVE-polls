@@ -4,8 +4,16 @@
 
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
     <div style="padding:30px;">
-    <h1 class="text-white-50"> DATOS DE CONTACTO PARA EL EGRESADO </h1>
-        <h1 class="text-white-50">{{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}}   </h1>
+    <h1  style="color:white"> DATOS DE CONTACTO PARA EL EGRESADO </h1>
+        <h1 style="color:white">{{$Egresado->nombre}} {{$Egresado->paterno}} {{$Egresado->materno}}   </h1>
+        <h1 style="color:white">{{$Egresado->cuenta}}   </h1>
+        <h1 style="color:white">{{$Carrera}} {{$Plantel}}   </h1>
+    </div>
+    <div class="row">
+        <div class="col"> <a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i></i> Ir a muestra carrera</button></a>
+    </div>
+    <div class="col"> <a href="{{route('muestras20.show',[0,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i></i>Ir a muestra del plantel</button></a>
+    </div>
     </div>
     <div class="col-6 col-lg-12 table-responsive">
     <H1> TELEFONOS DEL EGRESADO </H1> 
@@ -36,9 +44,8 @@
                 <td>{{$t->cuenta}} </td>
                 <td style="width:40%; word-wrap: break-word">{{$t->telefono}} </td>
                <td>{{$t->status}} </td>
-                <td><a href="{{route('editar_telefono',[$t->id,$Egresado->carrera])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-edit" aria-hidden="true"> </i> &nbsp; EDITAR </button></a>
+                <td> <a href="{{route('editar_telefono',[$t->id,$Egresado->carrera])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-edit" aria-hidden="true"> </i> &nbsp; EDITAR </button></a>
               </td>
-              
             </tr>
             @endforeach
           </tbody>

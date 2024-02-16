@@ -343,8 +343,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   
   <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>
     <option value=2 @if($Encuesta->nar2a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
-    <option value=3 @if($Encuesta->nar2a==3) selected @endif>Sí, del Programa de Alta Exigencia Académica</option >
-    <option value=4 @if($Encuesta->nar2a==4) selected @endif>Sí, de otro programa</option>
+    <option value=4 @if($Encuesta->nar2a==4) selected @endif>Sí, de otro programa Ej. Prepa Sí</option>
                </select>  
 </td>
 <td>
@@ -359,19 +358,25 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   <option value=6 @if($Encuesta->nar3a==6) selected @endif > Beca de Excelencia Bécalos</option>
   <option value=7 @if($Encuesta->nar3a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
   <option value=8 @if($Encuesta->nar3a==8) selected @endif > Programa de Apoyo Nutricional </option>
-  <option value=9 @if($Encuesta->nar3a==9) selected @endif >Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
+  <option value=9 @if($Encuesta->nar3a==9) selected @endif > Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
   <option value=10 @if($Encuesta->nar3a==10) selected @endif > Beca para Disminuir el Bajo Rendimiento Académico</option>
   <option value=11 @if($Encuesta->nar3a==11) selected @endif > Beca de Fortalecimiento y Beca de Alta Exigencia Académica</option>
   <option value=15 @if($Encuesta->nar3a==15) selected @endif >Universitarios SI </option>
   <option value=16 @if($Encuesta->nar3a==16) selected @endif >Permanecia Escolar EDOMEX </option>
   <option value=12 @if($Encuesta->nar3a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
+ 
+  <option value=19 @if($Encuesta->nar3a==19) selected @endif > Beca de Manutención Extraordinaria </option>
+  <option value=20 @if($Encuesta->nar3a==20) selected @endif > Becas de Idiomas</option>
+  <option value=21 @if($Encuesta->nar3a==21) selected @endif > Becas STUNAM</option>
+  <option value=22 @if($Encuesta->nar3a==22) selected @endif > Becas AAPAUNAM</option>
+ 
+ 
   <option value=13 @if($Encuesta->nar3a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
   <option value=14 @if($Encuesta->nar3a==14) selected @endif >Beca Especialidad (TITULACION) </option>
-
-
   <option value=17 @if($Encuesta->nar3a==17) selected @endif >Titulacion Proyectos Investigación(TITULACION) </option>
   <option value=18 @if($Encuesta->nar3a==18) selected @endif >Titulacion Egresados Extemporaneos (TITULACION) </option>
-  
+ 
+
   <option value=3 @if($Encuesta->nar3a==3) selected @endif >Sí, de otro programa</option>
   </select>   
 </td>

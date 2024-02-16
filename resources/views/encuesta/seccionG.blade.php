@@ -829,8 +829,10 @@ b).-  <select class="select" id="ngr35"  name="ngr35">
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr37==12) selected @endif >No</option>
+
+<option value=13 @if($Encuesta->ngr37==13) selected @endif >Ya lo tenía</option>
 </select>
-    </td>
+</td>
 <td>
 <h2 class="reactivo">
 a).-¿Con qué frecuencia asistió a eventos artísticos?</h2>
@@ -863,7 +865,18 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 <td colspan="2">
 <h2 class="reactivo">
-127.- ¿Durante su formación profesional practicó algún deporte?</h2>
+127a.- ¿Durante su formación profesional adquirió el interes por la practica de algún deporte?</h2>
+<select class="select" id="ngr40interes" name="ngr40interes"  onchange="deportes()">
+<option selected="selected" value="">
+  <option value=11 @if($Encuesta->ngr40interes==11) selected @endif >Sí</option>
+<option value=12 @if($Encuesta->ngr40interes==12) selected @endif >No</option>
+<option value=13 @if($Encuesta->ngr40interes==13) selected @endif >Ya lo tenía</option>
+</select>
+    </td>
+<td >
+<td colspan="2">
+<h2 class="reactivo">
+127b.- ¿Durante su formación profesional practicó algún deporte?</h2>
 <select class="select" id="ngr40" name="ngr40"  onchange="deportes()">
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>
@@ -871,6 +884,8 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 </select>
     </td>
 <td >
+</tr>
+<tr>
 <h2 class="reactivo">
 a).-¿Cuál? </h2>
 <select class="select" id="ngr40_a" name="ngr40_a"  >
@@ -1069,7 +1084,7 @@ console.log('marcandooo rojo');
 <script>
   function artisticos(){
   bloquear('ngr37',[12],[ngr37a]);
-  bloquear('ngr37',[11],[ngr37m]);
+  bloquear('ngr37',[11,13],[ngr37m]);
 }
 function deportes(){
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);

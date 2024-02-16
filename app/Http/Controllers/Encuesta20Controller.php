@@ -22,7 +22,10 @@ class Encuesta20Controller extends Controller
         $Egresado=Egresado::where('cuenta', $cuenta)->where('carrera',$carrera)->first();
         $Telefonos=Telefono::where('cuenta','=',$cuenta)->get();
         $Correos=Correo::where('cuenta','=',$cuenta)->get();
-        return view('encuesta.seg20.actualizar_datos',compact('Egresado','Telefonos','Correos'));
+        $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
+        $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
+    
+        return view('encuesta.seg20.actualizar_datos',compact('Egresado','Telefonos','Correos','Carrera','Plantel'));
     }
     public function comenzar($correo, $cuenta, $carrera){
         

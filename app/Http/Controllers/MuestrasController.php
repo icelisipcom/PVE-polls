@@ -89,16 +89,27 @@ public function show_14($carrera,$plantel){
 }
 
 public function show_20($carrera,$plantel){
- $Carrera= Carrera::where('clave_carrera',$carrera)->where('clave_plantel',$plantel)->first();
- $muestra=DB::table('egresados')->where('muestra','=','3')->where('carrera','=',$carrera)->where('plantel','=',$plantel)
-  ->leftJoin('codigos','codigos.code','=','egresados.status')
-  ->select('egresados.*','codigos.color_rgb','codigos.description')
-  ->get();
+  if($carrera>0){
+    $Carrera= Carrera::where('clave_carrera',$carrera)->where('clave_plantel',$plantel)->first();
+    $muestra=DB::table('egresados')->where('muestra','=','3')->where('carrera','=',$carrera)->where('plantel','=',$plantel)
+      ->leftJoin('codigos','codigos.code','=','egresados.status')
+      ->select('egresados.*','codigos.color_rgb','codigos.description')
+      ->get();
+}
+  else{
+    $Carrera= Carrera::where('clave_plantel',$plantel)->first();
+    $muestra=DB::table('egresados')->where('muestra','=','3')->where('egresados.plantel','=',$plantel)
+      ->leftJoin('codigos','codigos.code','=','egresados.status')
+      ->join('carreras','carreras.clave_carrera','egresados.carrera')
+      ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera')
+      ->get();
+
+  }
   $Codigos=DB::table('codigos')->where('code','>=',3)
   ->orderBy('color')->get();
 
   
-  return view('muestras.seg20.show',compact('muestra','Carrera','Codigos'));
+  return view('muestras.seg20.show',compact('muestra','Carrera','Codigos','carrera'));
 }
 public function revision(){
   $Encuestas=respuestas20::leftJoin('carreras', function($join)

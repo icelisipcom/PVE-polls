@@ -5,7 +5,7 @@
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
     <div style="padding:30px;">
      <div class='row'>
-      <div class='col'><h1 class="text-white-25" style="font-color: white; font-weight: bold;">{{$Carrera->carrera}}  </h1> 
+      <div class='col'><h1 class="text-white-25" style="font-color: white; font-weight: bold;">  @if($carrera>0) {{$Carrera->carrera}} @endif </h1> 
     <h1 class="text-white-25" style="font-color: white">{{$Carrera->plantel}}  </h1> 
     </div>
       <div class='col'></div>
@@ -34,7 +34,9 @@
             <th>Paterno </th>
             <th>Materno</th>
             <th>Num. Cuenta</th>
-            
+            @if($carrera==0)
+            <th> Carrera</th>
+            @endif
             <th>llamadas</th>
             <th>status</th>
             <th> </th>
@@ -48,6 +50,9 @@
                 <td> {{$e->materno}}</td>
                 
                 <td>{{$e->cuenta}} </td>
+                @if($carrera==0)
+            <td> {{$e->name_carrera}} </td>
+            @endif
                <td>{{$e->llamadas}} </td>
                <td @if($e->description=='') class='focoso' @endif> {{$e->description}}</td>
                 <td><a href="{{route('llamar_20',$e->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>

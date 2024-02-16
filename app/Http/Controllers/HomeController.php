@@ -75,8 +75,18 @@ class HomeController extends Controller
          ->setColors(['#D1690E', '#EB572F'])
          ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne']);
     
-         
-        return view('home',compact('encuestas19','carreras','chart','aplica_chart'));
+        
+        $nuevos_datos=DB::table('egresados')->where('muestra','=','3')->where('actualized','=','2024-02-16')
+        ->leftJoin('codigos','codigos.code','=','egresados.status')
+        ->leftJoin('carreras', function($join)
+  {
+      $join->on('carreras.clave_carrera', '=', 'egresados.carrera');
+      $join->on('carreras.clave_plantel', '=', 'egresados.plantel');                             
+  })
+        ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera','carreras.plantel as name_plantel')
+        ->get();
+
+        return view('home',compact('encuestas19','carreras','chart','aplica_chart','nuevos_datos'));
     }
 
     public function encuesta_2019(){

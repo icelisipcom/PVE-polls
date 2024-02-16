@@ -19,6 +19,32 @@
     </button></a>
     </div>
 <br><br><br>
+<div>
+    <h1 style="background-color:#E8A402"><i class="fas fa-exclamation-triangle"></i>  AVISO!! : NUEVOS NUMEROS DE TELEFONO: </h1>
+<table  class="table text-lg " id="myTable" style="table-layout:fixed;">
+    <thead> 
+        <th>cuenta</th>
+        <th>egresado</th>
+        <th>carrera</th>
+        <th>plantel</th>
+        <th></th>
+
+    </thead>
+    <tbody>
+        @foreach($nuevos_datos as $e)
+        <tr style="background-color: {{$e->color_rgb}};">
+            <td>{{$e->cuenta}} </td>
+            <td>{{$e->nombre}} {{$e->paterno}} {{$e->materno}} </td>
+            <td>{{$e->name_carrera}} </td>
+            <td>{{$e->name_plantel}} </td>
+            <td><a href="{{route('llamar_20',$e->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
+             </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+</div>
+<br>
 </div>
         {!! $chart->container() !!}
         {!! $aplica_chart->container() !!}
@@ -32,12 +58,20 @@
    <div style='color: black'>
     {!! $aplica_chart->script() !!}
     </div>
-    </div>
 @endsection
- @section('js')
- <script>
-    $(document).ready(function() {
-$('#tabla').dataTable();
+
+@section('css')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+@stop
+
+@push('js')
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+ 
+  console.log('script jalando ¿?');
+  $(document).ready(function() {
+    $('#myTable').DataTable();
 } );
  </script>
- @stop
+
+ @endpush

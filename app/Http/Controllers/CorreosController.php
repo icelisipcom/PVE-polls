@@ -10,8 +10,10 @@ class CorreosController extends Controller
 {
     public function create($cuenta,$carrera){
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
-         
-        return view('encuesta.seg20.create_correo',compact('Egresado'));
+        $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
+        $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
+     
+        return view('encuesta.seg20.create_correo',compact('Egresado','Carrera','Plantel'));
     }
     public function store(Request $request ,$cuenta,$carrera){
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
@@ -26,8 +28,10 @@ class CorreosController extends Controller
     public function edit($id,$carrera){
         $Correo=Correo::find($id);
         $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
-         
-        return view('encuesta.seg20.editar_correo',compact('Egresado','Correo'));
+        $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
+        $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
+     
+        return view('encuesta.seg20.editar_correo',compact('Egresado','Correo','Carrera','Plantel'));
     }
     public function update(Request $request ,$id,$carrera){
         $Correo=Correo::find($id);

@@ -9,6 +9,7 @@
             <th>Carrera</th>
             <th>Plantel</th>
             <th> </th>
+            <th></th>
           </tr>
           </thead>
           <tbody>
@@ -18,7 +19,9 @@
                 <td>{{$c->plantel}} </td>
                
                 <td><a href="{{route('muestras20.show',[$c->c,$c->p])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Ver Muestra </button></a></td>
-            </tr>
+                <td><a href="{{route('muestras20.show',[0,$c->p])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Ver Muestra Plantel </button></a></td>
+           
+              </tr>
             @endforeach
           </tbody>
         </table>
