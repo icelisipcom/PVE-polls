@@ -350,7 +350,7 @@ discriminación?
 <td>
 <h2 class="reactivo">
 56a).- Otra (especifíque):</h2>
-<INPUT  id="nfr29a" name="nfr29a" TYPE=TEXT  class="texto" MAXLENGTH=47 > 
+<INPUT  id="nfr29a" name="nfr29a" TYPE=TEXT  class="texto" MAXLENGTH=47 value="{{str_replace('0','',$Encuesta->nfr29a)}}"> 
 
       </td>
 <td>
