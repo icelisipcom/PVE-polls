@@ -886,6 +886,7 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 </tr>
 <tr>
+  <td>
 <h2 class="reactivo">
 a).-¿Cuál? </h2>
 <select class="select" id="ngr40_a" name="ngr40_a"  >
