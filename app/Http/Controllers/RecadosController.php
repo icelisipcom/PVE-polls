@@ -92,7 +92,7 @@ class RecadosController extends Controller
       $telefono->status=$request->code;
       $telefono->save();
       $Egresado->llamadas=$Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get()->count();
-      
+      if($Egresado->status!=1&&$Egresado->status!=2){
       if($Recado->status != 6){
         $Egresado->status=$request->code;
         }else{
@@ -105,7 +105,9 @@ class RecadosController extends Controller
           }
         }
 
-        $Egresado->save();
+      }
+      
+      $Egresado->save();
       //verificar si todos los telefonos no existen (egresado ilocalizable)
       $Telefonos=Telefono::where('cuenta',$Egresado->cuenta);
       

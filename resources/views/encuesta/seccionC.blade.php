@@ -353,7 +353,7 @@ Especifique:</h2>
     
         </td>
 <td>
-<h2 class="reactivo"> 83.-¿Actualmente uál es la razón principal por la que usted no está trabajando o 
+<h2 class="reactivo"> 83.-¿Actualmente csuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
      <select class="select" id="ncr24" name="ncr24" onchange="porque()">
      <option value=""> </option>
