@@ -35,7 +35,7 @@
           
           <input type="date"  class="fecha" name="fec_capt" id="fec_capt"  value="{{now()->modify('-6 hours')->format('Y-m-d')}}" /> 
           </div></td>
-<td>  <h2 class="reactivo">1.- Estado civil:</h2>
+<td>  <h2 class="reactivo">1.- ¿Cuál es su estado civil?:</h2>
            
            <select class="select"  id="nar8" name="nar8" onchange="bloquear('nar8',[1],[nar11,nar14,nar14otra])" > 
            <option value="" selected></option>
@@ -62,7 +62,7 @@
 <!-- segunda fila  -->
 <tr>
 <td colspan="2">
-    <h2 class="reactivo"> 3.- Nivel de estudios de su esposo(a)</h2>
+    <h2 class="reactivo"> 3.- ¿Cuál es el último grado de estudios de su pareja?</h2>
  
  <select class="select" id="nar11" name="nar11"   onchange="bloquear('nar11',[1,2,3,4,5,6,7,8,9,10,11,12],[nar11a])"  >
 <option value=""></option>
@@ -159,8 +159,8 @@ Otra:<input type="text" class="texto" id="nar12otra" name="nar12otra"  maxlength
 </td>
 <td>
 <h2 class="reactivo">
-5a).-¿Si su madre es profesionista 
-cursó sus estudios en la UNAM? </h2>
+5a).-Si su madre es profesionista 
+¿Cursó sus estudios en la UNAM? </h2>
       <select class="select" id="nrx" name="nrx"  >
        <option value=""></option>
        <option value=1 @if($Encuesta->nrx==1) selected @endif >SI</option>
@@ -237,8 +237,8 @@ Otra:<input type="text" class="texto" id="nar13otra" name="nar13otra" maxlength=
 </td>
     <td >
     <h2 class="reactivo">
-7a).-¿Si su padre es profesionista 
-cursó sus estudios en la UNAM? </h2>
+7a).-Si su padre es profesionista 
+¿Cursó sus estudios en la UNAM? </h2>
       <select class="select" id="nrxx" name="nrxx"  >
        <option value=""></option>
        <option value=1 @if($Encuesta->nrxx==1) selected @endif >SI</option>

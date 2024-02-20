@@ -812,7 +812,7 @@ b).-  <select class="select" id="ngr35"  name="ngr35">
 
 <td>
 <h2 class="reactivo">
-125.- Una cultura general amplia</h2>
+125.- ¿Una cultura general amplia?</h2>
 <select class="select" id="ngr36" name="ngr36" >
 <option selected="selected" value="">
 <option value=1 @if($Encuesta->ngr36==1) selected @endif >Totalmente de acuerdo</option>
@@ -824,13 +824,13 @@ b).-  <select class="select" id="ngr35"  name="ngr35">
     </td>
 <td>
 <h2 class="reactivo">
-126.- El interés por asistir a eventos  artísticos (cine, teatro, etc.)</h2>
+126.-¿Asistió a eventos artísticos dentro de la UNAM?</h2>
 <select class="select" id="ngr37" name="ngr37"  onchange="artisticos()">
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr37==12) selected @endif >No</option>
 
-<option value=13 @if($Encuesta->ngr37==13) selected @endif >Ya lo tenía</option>
+<option value=13 @if($Encuesta->ngr37==13) selected @endif >Asistía pero fuera de la UNAM</option>
 </select>
 </td>
 <td>
@@ -863,24 +863,16 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 <tr>
 
-<td colspan="2">
-<h2 class="reactivo">
-127a.- ¿Durante su formación profesional adquirió el interes por la practica de algún deporte?</h2>
-<select class="select" id="ngr40interes" name="ngr40interes"  onchange="deportes()">
-<option selected="selected" value="">
-  <option value=11 @if($Encuesta->ngr40interes==11) selected @endif >Sí</option>
-<option value=12 @if($Encuesta->ngr40interes==12) selected @endif >No</option>
-<option value=13 @if($Encuesta->ngr40interes==13) selected @endif >Ya lo tenía</option>
-</select>
-    </td>
 
 <td colspan="2">
 <h2 class="reactivo">
-127b.- ¿Durante su formación profesional practicó algún deporte?</h2>
+127.- ¿Practicó algún deporte dentro de la UNAM?</h2>
 <select class="select" id="ngr40" name="ngr40"  onchange="deportes()">
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>
 <option value=12 @if($Encuesta->ngr40==12) selected @endif >No</option>
+<option value=13 @if($Encuesta->ngr40==13) selected @endif >Lo practicaba fuera de la UNAM</option>
+
 </select>
     </td>
 
@@ -889,7 +881,7 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
   <td>
 <h2 class="reactivo">
 a).-¿Cuál? </h2>
-<select class="select" id="ngr40_a" name="ngr40_a"  >
+<select class="select" id="ngr40_a" name="ngr40_a"  onchange="bloquear('ngr40_a',[11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42],[ngr40otro])">
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr40_a==11) selected @endif >Acondicionamiento físico</option>
 <option value=12 @if($Encuesta->ngr40_a==12) selected @endif >Ajedrez</option>
@@ -928,6 +920,8 @@ a).-¿Cuál? </h2>
       </select>
 
     </td>
+  <td>b).- Especifique: <INPUT type="text" class="texto " id="ngr40otro" name="ngr40otro" value="{{$Encuesta->ngr40otro}}" style="width:60%"  maxlength="110"  >
+ </td>
     <td>
 <h2 class="reactivo">
 b).- ¿Con qué frecuencia lo practicó?</h2>
@@ -1089,7 +1083,8 @@ console.log('marcandooo rojo');
 }
 function deportes(){
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
-  bloquear('ngr40',[11],[ngr40_b]);
+  bloquear('ngr40',[11,13],[ngr40_b]);
+  bloquear('ngr40_a',[11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,0],[ngr40otro]);
 }
   bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
   bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);

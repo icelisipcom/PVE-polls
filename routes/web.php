@@ -105,4 +105,8 @@ Route::get('/reporte/semanal/{semana}/{user?}', [App\Http\Controllers\ReportCont
 Route::get('/switch', [App\Http\Controllers\ConfigController::class, 'switch_mode'])->name('switch_mode');
 
 
+//Rutas para encuesta fast
+Route::get('/fast_show/{registro}/{reactivo}', [App\Http\Controllers\FastPollController::class, 'show'])->name('reporte.semanal');
+
+
 });
