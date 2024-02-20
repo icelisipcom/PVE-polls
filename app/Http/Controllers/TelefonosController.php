@@ -19,6 +19,7 @@ class TelefonosController extends Controller
         $Correo=new Telefono();
         $Correo->cuenta=$cuenta;
         $Correo->telefono=$request->telefono;
+        $Correo->descripcion=$request->description;
         $Correo->status=0;
         $Correo->save();
         if($encuesta ==0){
@@ -37,6 +38,7 @@ class TelefonosController extends Controller
         $Egresado=Egresado::where('cuenta',$Telefono->cuenta)->where('carrera',$carrera)->first();
         
         $Telefono->telefono=$request->telefono;
+        $Telefono->descripcion=$request->description;
         $Telefono->status=0;
         $Telefono->save();
 

@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class CorreosController extends Controller
 {
-    public function create($cuenta,$carrera){
+    public function create($cuenta,$carrera,$encuesta=0){
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
         $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
         $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
      
-        return view('encuesta.seg20.create_correo',compact('Egresado','Carrera','Plantel'));
+        return view('encuesta.seg20.create_correo',compact('Egresado','Carrera','Plantel','encuesta'));
     }
-    public function store(Request $request ,$cuenta,$carrera){
+    public function store(Request $request ,$cuenta,$carrera,$encuesta=0){
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
         $Correo=new Correo();
         $Correo->cuenta=$cuenta;
@@ -23,7 +23,12 @@ class CorreosController extends Controller
         $Correo->status='en uso';
         $Correo->enviado=0;
         $Correo->save();
-        return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
+        if($encuesta ==0){
+            return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);}
+            else{
+                return redirect()->route('edit_20',[$encuesta,'SEARCH']);
+            }
+        
     }
     public function edit($id,$carrera){
         $Correo=Correo::find($id);

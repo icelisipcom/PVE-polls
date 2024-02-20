@@ -48,7 +48,7 @@
 <td>
     <center> <h2 class="reactivo"> 2.- ¿Tiene hijos?   </h2>
          
-         <select class="select" @if($errors->first('nar9')) style="border: 0.3vw  solid red;" @endif id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar10])" >
+         <select class="select" id="nar9" name="nar9"  onchange="bloquear('nar9',[2],[nar10])" >
          <option value="" selected></option>
         <option value='1' @if($Encuesta->nar9==1) selected @endif>Sí</option>
         <option value='2'@if($Encuesta->nar9==2) selected @endif>No</option> 

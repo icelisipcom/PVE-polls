@@ -14,7 +14,11 @@
     <label for="exampleInputEmail1">Telefono</label>
     <input  style="width:50%" type="text" class="form-control" value="{{$Telefono->telefono}}" name="telefono" aria-describedby="emailHelp" >
    </div>
-   
+   <div class="form-group">
+    <label for="exampleInputEmail1">Descripcion o notas (telefono de trabajo, lada, extencion)</label>
+    <input  style="width:50%" type="text" class="form-control" name="description" value="{{$Telefono->descripcion}}" aria-describedby="emailHelp" placeholder="Enter phone number">
+   </div>
+  
   <br>
   <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-store"></i> Guardar</button>
  

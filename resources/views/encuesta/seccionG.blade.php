@@ -824,7 +824,7 @@ b).-  <select class="select" id="ngr35"  name="ngr35">
     </td>
 <td>
 <h2 class="reactivo">
-126.- La capacidad para apreciar diferentes expresiones artísticas (cine, teatro, etc.)</h2>
+126.- El interés por asistir a eventos  artísticos (cine, teatro, etc.)</h2>
 <select class="select" id="ngr37" name="ngr37"  onchange="artisticos()">
 <option selected="selected" value="">
 <option value=11 @if($Encuesta->ngr37==11) selected @endif >Sí</option>
@@ -1105,7 +1105,7 @@ function deportes(){
   ocultar(ngr5);
   @endif
 
-  @if($Encuesta->ncr1==6)
+  @if($Encuesta->ncr1==6|$Encuesta->ncr1==8)
   [ngr5,ngr7a,ngr7b,ngr7c,ngr7d,ngr7e,ngr7f,ngr7g,ngr13,ngr13b,ngr13c,ngr13d,ngr15,ngr17,ngr19,ngr21,ngr23,ngr25,ngr27,ngr29,ngr31,ngr33,ngr35].forEach(ocultar);
   @endif
 

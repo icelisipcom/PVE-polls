@@ -20,7 +20,9 @@ class Encuesta20Controller extends Controller
 {
     public function act_data($cuenta,$carrera){
         $Egresado=Egresado::where('cuenta', $cuenta)->where('carrera',$carrera)->first();
-        $Telefonos=Telefono::where('cuenta','=',$cuenta)->get();
+        $Telefonos=DB::table('telefonos')->where('cuenta','=',$cuenta)
+        ->leftJoin('codigos','codigos.code','=','telefonos.status')
+        ->get();
         $Correos=Correo::where('cuenta','=',$cuenta)->get();
         $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
         $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;

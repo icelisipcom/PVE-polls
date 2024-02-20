@@ -31,7 +31,7 @@
 <td>
 <h2 class="reactivo">
 36. ¿Cuál  fue la razón más importante que lo/la llevo a elegir su carrera?</h2>
-<select class="select" id="nfr1"  name="nfr1"  onchange="bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a])">
+<select class="select" id="nfr1"  name="nfr1"  onchange="bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10,12],[nfr1a_label,nfr1a])">
 <option value=" " selected="selected"></option>
 <option value=1 @if($Encuesta->nfr1==1) selected @endif>El prestigio de la profesión</option>
 <option value=2 @if($Encuesta->nfr1==2) selected @endif>Sus  habilidades  y  fortalezas   académicas</option>
@@ -192,7 +192,7 @@
 <td>
 <h2 class="reactivo">
 46a).- ¿Cuáles?</h2>
-<INPUT type="text" class="texto" id="nfr11a" name="nfr11a" maxlength="99" value="{{$Encuesta->nfr11a}}">
+<INPUT type="text" class="texto" id="nfr11a" name="nfr11a" maxlength="250" value="{{$Encuesta->nfr11a}}">
 
       </td>
 <td>
@@ -459,6 +459,6 @@ bloquear('nfr23a',[2],[nfr23,nfr24]);
 bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
 bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
 bloquear('nfr30',[2],[nfr31,nfr32]);
-bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10],[nfr1a_label,nfr1a]);
+bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10,12],[nfr1a_label,nfr1a]);
 </script>
 @endpush

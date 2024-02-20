@@ -15,7 +15,8 @@
           </tr>
           <tr>
           <th>Carrera:</th><td > {{$Carrera}}  </td> 
-          <th>Plantel:</th><td colspan="{{$Telefonos->count() +2}}"> {{$Plantel}}</td> 
+          <th>Plantel:</th><td colspan="{{$Telefonos->count() +1}}"> {{$Plantel}}</td> 
+          <td> <a href="{{route('agregar_correo',[$Egresado->cuenta,$Egresado->carrera,$Encuesta->registro])}}">  <button class="btn btn-mb2" style="background-color:{{Auth::user()->color}} ; color:white; font-size:0.9vw"> <i class="fas fa-plus-circle"></i>&nbsp; Nuevo Correo  </button></a></td>
           <th>Sexo:</th> <td>{{$Egresado->sexo}}</td>
           <th>Bach::</th> <td> @if($Egresado->bach >= 20 && $Egresado->bach < 30)  ENP @elseif($Egresado->bach >= 30) CCH @endif </td>
           </tr>
