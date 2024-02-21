@@ -20,11 +20,7 @@ class LlamadasController extends Controller
         $Carrera= Carrera::where('clave_carrera',$Egresado->carrera)->where('clave_plantel',$Egresado->plantel)->first();
         
         $Encuesta=respuestas20::where('cuenta','=',$Egresado->cuenta)->first();
-        if($Encuesta){
-            $Encuesta_id=$Encuesta->registro;
-        }else{
-            $Encuesta_id=0;
-        }
+        
 
         $Telefonos=DB::table('telefonos')->where('cuenta','=',$Egresado->cuenta)
         ->leftJoin('codigos','codigos.code','=','telefonos.status')
@@ -37,7 +33,7 @@ class LlamadasController extends Controller
         $Codigos=DB::table('codigos')->where('code','>=',3)
         ->orderBy('color')->get();
  
-        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera','Codigos','Encuesta_id'));
+        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera','Codigos','Encuesta'));
 
     }
 }

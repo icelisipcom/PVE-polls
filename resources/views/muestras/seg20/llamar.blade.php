@@ -22,9 +22,10 @@
         </tr>
         <tr> <td>  </td>
      <td><a href="{{route('muestras20.show',[0,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i> Ir a muestra Plantel </button></a></td></tr>
-     @if($Egresado->status==10)
+     @if($Encuesta)
+     @if($Encuesta->status==10)
     <tr><td colspan="2"><a href="{{route('edit_20',[$Encuesta_id,'SEARCH'])}}"> <button class="btn  btn-lg btn-block" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fas fa-arrow" aria-hidden="true"> </i> &nbsp; Continuar encuesta Inconclusa</button></a>
-             </td></tr>@endif
+             </td></tr>@endif @endif
     </table>
   
    

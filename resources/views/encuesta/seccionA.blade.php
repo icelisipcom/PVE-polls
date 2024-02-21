@@ -193,6 +193,8 @@ Otra:<input type="text" class="texto" id="nar12otra" name="nar12otra"  maxlength
 <option value=58 @if($Encuesta->nar15==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
 <option value=33 @if($Encuesta->nar15==33) selected @endif >Labores del hogar </option>
 <option value=34 @if($Encuesta->nar15==34) selected @endif > Jubilado  </option>
+
+<option value=40 @if($Encuesta->nar15==40) selected @endif > Estudiante</option>
 <option value=35 @if($Encuesta->nar15==35) selected @endif >Finado  </option>
 <option value=36 @if($Encuesta->nar15==36) selected @endif >No trabajaba  </option>
 <option value=37 @if($Encuesta->nar15==37) selected @endif >No lo sabe  </option>
@@ -271,6 +273,8 @@ Otra:<input type="text" class="texto" id="nar13otra" name="nar13otra" maxlength=
    <option value=58 @if($Encuesta->nar16==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
    <option value=33 @if($Encuesta->nar16==33) selected @endif >Labores del hogar </option>
     <option value=34 @if($Encuesta->nar16==34) selected @endif > Jubilado  </option>
+    
+<option value=40 @if($Encuesta->nar16==40) selected @endif > Estudiante</option>
     <option value=35 @if($Encuesta->nar16==35) selected @endif >Finado  </option>
     <option value=36 @if($Encuesta->nar16==36) selected @endif >No trabajaba  </option>
     <option value=37 @if($Encuesta->nar16==37) selected @endif >No lo sabe  </option>
