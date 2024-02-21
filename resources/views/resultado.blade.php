@@ -65,8 +65,8 @@
                 <td>{{  $e->nombre}}   {{  $e->paterno}}  {{  $e->materno }}  </td>
                 <td> @if($e->aplica ){{$e->aplica}} @else INTERNET @endif </td>
                 <td>{{$e->fec_capt}}</td>
-                <td>{{$e->nbr3}}</td>
-                <td>{{$e->nbr2}}</td>
+                <td>{{$e->carrera}}</td>
+                <td>{{$e->plantel}}</td>
                 <td>@if($e->completed != 1) Inompleta @else Completa @endif</td>
                 <td>@if($e->completed != 1)  <a href="{{ route('edit_20',[ $e->registro,'SEARCH'])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
                                             <i class="fas fa-edit  "></i> Completar</button>

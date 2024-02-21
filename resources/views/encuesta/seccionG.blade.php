@@ -1031,7 +1031,8 @@ c).- Motivo por el que no lo practicó </h2>
 <br>
 <h2 class="reactivo"> ¿Comentario? </h2>
 <br>
-<textarea type="text" class="texto"   name="comentario" size="140"  id="comentario" rows="5" cols="50" value="{{$Comentario}}">
+<textarea type="text" class="texto"   name="comentario" size="140"  id="comentario" rows="5" cols="50">
+{{$Comentario}}
 </textarea>
   </td>
 </tr>

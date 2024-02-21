@@ -310,7 +310,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 </td>
 <td>
 <h2 class="reactivo">10a).- ¿Cuál? </h2>
- <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT value="{{$Encuesta->ner20txt}}" MAXLENGTH=40 >
+ <INPUT class="texto" ID="ner20txt" NAME="ner20txt" TYPE=TEXT value="{{$Encuesta->ner20txt}}" MAXLENGTH=100 >
 </td>
 <td>
 <h2 class="reactivo">10b).¿La ejerce?  </h2>

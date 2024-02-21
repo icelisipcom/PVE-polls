@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\respuestas2;
+use App\Models\respuestas20;
 use App\Models\respuestas3;
 use App\Models\respuestas14;
 use App\Models\Egresado;
@@ -18,7 +18,13 @@ class LlamadasController extends Controller
     public function llamar_20($id){
         $Egresado=Egresado::where('cuenta','=',$id)->where('muestra','=',3)->first();
         $Carrera= Carrera::where('clave_carrera',$Egresado->carrera)->where('clave_plantel',$Egresado->plantel)->first();
-  
+        
+        $Encuesta=respuestas20::where('cuenta','=',$Egresado->cuenta)->first();
+        if($Encuesta){
+            $Encuesta_id=$Encuesta->registro;
+        }else{
+            $Encuesta_id=0;
+        }
 
         $Telefonos=DB::table('telefonos')->where('cuenta','=',$Egresado->cuenta)
         ->leftJoin('codigos','codigos.code','=','telefonos.status')
@@ -31,7 +37,7 @@ class LlamadasController extends Controller
         $Codigos=DB::table('codigos')->where('code','>=',3)
         ->orderBy('color')->get();
  
-        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera','Codigos'));
+        return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera','Codigos','Encuesta_id'));
 
     }
 }

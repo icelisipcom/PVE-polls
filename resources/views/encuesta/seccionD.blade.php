@@ -416,10 +416,14 @@ bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12
 @if($Encuesta->ncr1==7)
 [ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,,ndr17a,ndr18,ndr19].forEach(ocultar);
 @endif
+
 funcion_ndr2();
 bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
 
 bloquear('ndr14',[0,1,3],[ndr15]);
+@if($Encuesta->ncr1>2)
+[ndr18,ndr19].forEach(ocultar);
+@endif
 </script>
 
 @endpush

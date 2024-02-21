@@ -93,18 +93,15 @@ public function show_20($carrera,$plantel){
     $Carrera= Carrera::where('clave_carrera',$carrera)->where('clave_plantel',$plantel)->first();
     $muestra=DB::table('egresados')->where('muestra','=','3')->where('egresados.carrera','=',$carrera)->where('plantel','=',$plantel)
       ->leftJoin('codigos','codigos.code','=','egresados.status')
-      ->leftjoin('respuestas20','respuestas20.cuenta','=','egresados.cuenta')
-      
-      ->select('egresados.*','codigos.color_rgb','codigos.description','respuestas20.registro as enc_id')
+      ->select('egresados.*','codigos.color_rgb','codigos.description')
       ->get();
 }
   else{
     $Carrera= Carrera::where('clave_plantel',$plantel)->first();
     $muestra=DB::table('egresados')->where('muestra','=','3')->where('egresados.plantel','=',$plantel)
       ->leftJoin('codigos','codigos.code','=','egresados.status')
-      ->leftjoin('respuestas20','respuestas20.cuenta','=','egresados.cuenta')
       ->join('carreras','carreras.clave_carrera','egresados.carrera')
-      ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera','respuestas20.registro as enc_id')
+      ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera',)
       ->get();
 
   }

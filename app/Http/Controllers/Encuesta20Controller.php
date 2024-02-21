@@ -77,6 +77,7 @@ public function edit($id,$section){
     $Comentario=''.Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     $Telefonos=Telefono::where('cuenta',$Egresado->cuenta)->get();       
     $Coment=Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
+    
     if($Coment){
 $Comentario=$Coment->comentario;
     }  else{

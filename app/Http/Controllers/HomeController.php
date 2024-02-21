@@ -137,9 +137,15 @@ class HomeController extends Controller
     public function resultado(Request $request){
         $encuestas20=DB::table('respuestas20')
         ->join('egresados','egresados.cuenta','=','respuestas20.cuenta')
-        ->select('respuestas20.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->leftJoin('carreras', function($join)
+  {
+      $join->on('carreras.clave_carrera', '=', 'respuestas20.nbr2');
+      $join->on('carreras.clave_plantel', '=', 'respuestas20.nbr3');                             
+  })
+        ->select('respuestas20.*','egresados.anio_egreso','carreras.carrera','carreras.plantel')
         ->where('egresados.anio_egreso','=',2020)
         ->where('respuestas20.cuenta','=',(int)$request->nc)
+        
         ->get(); 
         $encuestas19=DB::table('respuestas2')
         ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
@@ -157,8 +163,6 @@ class HomeController extends Controller
         ->whereNull('respuestas14.NGR11')
         ->first();       
         return view('resultado',compact('encuestas20','encuestas19','encuestas14','egresados','eg14'));
-
-    
     }
     public function resultado_fonetico(Request $request){
 

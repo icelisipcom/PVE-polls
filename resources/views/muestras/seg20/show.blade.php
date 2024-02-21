@@ -56,12 +56,9 @@
                <td>{{$e->llamadas}} </td>
                <td @if($e->description=='') class='focoso' @endif> {{$e->description}}</td>
                 <td> 
-              @if($e->status==10)
-              <a href="{{route('edit_20',[$e->enc_id,'SEARCH'])}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fas fa-arrow" aria-hidden="true"> </i> &nbsp; Continuar </button></a>
-             
-              @else    
+                
                 <a href="{{route('llamar_20',$e->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
-              @endif
+              
               </td>
             </tr>
             @endforeach
