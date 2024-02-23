@@ -9,7 +9,7 @@
             <th>Carrera</th>
             <th>Plantel</th>
             <th> </th>
-            <th></th>
+            <th> </th>
           </tr>
           </thead>
           <tbody>

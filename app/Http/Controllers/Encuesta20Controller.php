@@ -165,6 +165,7 @@ public function updateA(Request $request,$id){
     $Encuesta->update($request->except(['_token', '_method','btnradio']) );
     $Encuesta->save();
     $Encuesta->sec_a=0;
+    $this->validar_completa($Encuesta->registro);
     $validated = $request->validate($rules);
     $Encuesta->sec_a=1;
     $Encuesta->save();
@@ -172,12 +173,12 @@ public function updateA(Request $request,$id){
     return redirect()->route('edit_20',[$Encuesta->registro,'E']);
 }
 
-
     public function updateE(Request $request,$id){
         $Encuesta=respuestas20::where('registro',$id)->first();
         $Encuesta-> aplica  = Auth::user()->clave;
         $Encuesta->update($request->except(['_token', '_method']) );
         $Encuesta->sec_e=0;
+        $this->validar_completa($Encuesta->registro);
         $Encuesta->save();
         $rules=['ner1' => 'required',
                 'ner2' => 'required',
@@ -216,6 +217,7 @@ public function updateF(Request $request,$id){
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
     $Encuesta->sec_f=0;
+    $this->validar_completa($Encuesta->registro);
     $Encuesta->save();
     $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
@@ -275,6 +277,7 @@ public function updateC(Request $request,$id){
         $Encuesta->ncr6=$request->ncr6t;
     }
     $Encuesta->sec_c=0;
+    $this->validar_completa($Encuesta->registro);
     $Encuesta->save();
     $rules=['ncr1' => 'required',
     'ncr2' => 'required',
@@ -317,6 +320,7 @@ public function updateD(Request $request,$id){
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
     $Encuesta->sec_d=0;
+    $this->validar_completa($Encuesta->registro);
     $Encuesta->save();
     $rules=['ndr1' => 'required',
             'ndr2' => 'required',
@@ -350,6 +354,7 @@ public function updateG(Request $request,$id){
     $Encuesta-> aplica  = Auth::user()->clave;
     $Encuesta->update($request->except(['_token', '_method']) );
     $Encuesta->sec_g=0;
+    $this->validar_completa($Encuesta->registro);
     $Encuesta->save();
     $rules=['ngr4' => 'required',
             'ngr5' => 'required',
@@ -439,17 +444,26 @@ public function updateG(Request $request,$id){
     return redirect()->route('edit_20',[$Encuesta->registro,'G']);
     }
 
+    public function respaldar($registro){
+        $Encuesta=respuestas20::where('registro',$registro)->first();       
+        $Encuesta_respaldo = $Encuesta->replicate(); 
+        $Encuesta_respaldo->setTable('respuestas20_resp');
+        $Encuesta_respaldo->save();
+    }
+
     public function terminar($id){
         $Encuesta=respuestas20::where('registro',$id)->first();
-        
+        $this->respaldar($Encuesta->registro);
+        if($Encuesta->completed==1){
         $fileName = $Encuesta->cuenta.'.json';
         $fileStorePath = public_path('storage/json/'.$fileName);
         
         File::put($fileStorePath, json_encode($Encuesta));
         
-        
-    
-        return view('encuesta.saved',compact('Encuesta'));
+        return view('encuesta.saved',compact('Encuesta'));}
+        else{
+            return redirect()->route('muestras20.index');
+        }
         }
 
 

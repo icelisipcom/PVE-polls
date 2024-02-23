@@ -13,7 +13,7 @@
 <h2 class="reactivo">85.- ¿Comó fue su transición de la universidad al mercado laboral, en terminos de encontrar un trabajo relacionado con su campo profesional?    </h2>
 
  
-<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19])" >
+<select class="select" id="ndr1" name="ndr1" onchange="bloquear('ndr1',[6,7],[ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17 @if($Encuesta->ncr1<=2) ,ndr18,ndr19 @endif])" >
         <option value="" selected></option>
         <option value=1  @if($Encuesta->ndr1==1) selected @endif>Muy fácil</option>
         <option value=2  @if($Encuesta->ndr1==2) selected @endif>Fácil</option> 
@@ -409,22 +409,21 @@ function funcion_ndr2(){
 }
 
 
-bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
+bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
 funcion_ndr2();
-bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
+bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
 @if($Encuesta->ncr1==6)
-[ndr1,ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19].forEach(ocultar);
+[ndr1,ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19].forEach(ocultar);
 @endif
 @if($Encuesta->ncr1==7)
-[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,,ndr17a,ndr18,ndr19].forEach(ocultar);
+[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr18,ndr19].forEach(ocultar);
 @endif
 
 
-bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
+bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
 funcion_ndr2();
 bloquear('ndr14',[0,1,3],[ndr15]);
 @if($Encuesta->ncr1>2)
-console.log('script');
 [ndr18,ndr19].forEach(ocultar);
 @endif
 </script>

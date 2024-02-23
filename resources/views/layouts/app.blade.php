@@ -13,6 +13,9 @@
         th{
             background-color: {{ Auth::user()->color }};
             color: white;
+            position: sticky;
+    z-index: 1;
+    top:0;
         }
         .content-wrapper {
    

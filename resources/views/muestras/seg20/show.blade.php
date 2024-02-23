@@ -26,11 +26,10 @@
       </div>
      </div>
     </div>
-    <div class="col-6 col-sm-12 table-responsive">
-        <table class="table text-lg " id="myTable" style="table-layout:fixed;">
-          <thead>
-            <tr>
-            <th>Nombre</th>
+       <table class="table text-lg" id="myTable">
+          <thead >
+            <tr >
+            <th >Nombre</th>
             <th>Paterno </th>
             <th>Materno</th>
             <th>Num. Cuenta</th>
@@ -64,13 +63,37 @@
             @endforeach
           </tbody>
         </table>
-    </div>
-    <div id="xd">xd</div>
+        <div class='col'>
+        <table>
+          <thead> 
+            <tr> 
+              <th>Codigos</th>
+            </tr>         
+          </thead>
+          <tbody>
+            @foreach($Codigos as $c)
+            <tr>
+            <td style="background-color:{{$c->color_rgb}}"> {{$c->description}}</td>
+            </tr> @endforeach
+          </tbody>
+        </table>
+      </div>
+    
 </div>
 @stop
 
 @section('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
+
+<style>
+  thead tr:first-child th {
+    position: sticky;
+    z-index: 12;
+    top: 0;
+    background: white;
+}
+</style>
 @stop
 
 @push('js')
@@ -79,17 +102,17 @@
  
   console.log('script jalando ¿?');
   $(document).ready(function() {
-    $('#myTable').DataTable({paging: false,
-      sorting: [[5, 'desc'],[1, 'asc']]
+    $('#myTable').DataTable({
+      
+      sorting: [[5, 'desc'],[1, 'asc']],
+      fixedHeader: true,
+      paging: false,
+      responsive: true
     });
 } );
+
+document.getElementById('myTable').style.cssText += 'position: sticky; z-index: 1; top:0;';
  </script>
 
- <script>
- $('html, body').animate({
-scrollTop: $('#xd').offset().top
-}, 600, function(){
-
-});
- </script>
+ 
 @endpush

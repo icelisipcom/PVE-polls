@@ -35,10 +35,13 @@
           @if($Encuesta->completed==1)
           <a href="{{route('terminar',$Encuesta->registro)}}">
         <button   type="button"  style="background-color:{{Auth::user()->color}} ; color:white; ">
-<center><i class="fas fa-right-arrow fa-lg"></i>   Salir </center>
+<center><i class="fas fa-right-arrow fa-lg"></i>   Terminar :D </center>
   </button></a>
   @else
-  Encuesta de seguimiento 2020
+  <a href="{{route('terminar',$Encuesta->registro)}}">
+        <button   type="button"  style="background-color:{{Auth::user()->color}} ; color:white; ">
+<center><i class="fas fa-right-arrow fa-lg"></i>  Salir y respaldar como  inconclusa </center>
+  </button></a>
   @endif
         </td>
           </tr>

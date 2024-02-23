@@ -16,11 +16,11 @@
 <option selected  value="">Seleccione...</option>
 <option value=1 @if($Encuesta->ncr1==1) selected @endif>Sí (permanente)</option>
 <option value=2 @if($Encuesta->ncr1==2) selected @endif>Sí (eventual)</option>
-<option value=3 @if($Encuesta->ncr1==3) selected @endif>No (Sin buscar trabajo), (pase a la 85)</option>
-<option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 85)</option>
+<option value=3 @if($Encuesta->ncr1==3) selected @endif>No (Sin buscar trabajo), (pase a la 83)</option>
+<option value=4 @if($Encuesta->ncr1==4) selected @endif>No (En búsqueda de trabajo), (pase a la 83)</option>
 <option value=5 @if($Encuesta->ncr1==5) selected @endif>Residente (Médico) (conteste  la 62)</option>
-<option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, sin buscar (pase a la 85 )</option>
-<option value=8 @if($Encuesta->ncr1==8) selected @endif>Nunca ha trabajado, buscando (pase a la 85 )</option>
+<option value=6 @if($Encuesta->ncr1==6) selected @endif>Nunca ha trabajado, sin buscar (pase a la 83 )</option>
+<option value=8 @if($Encuesta->ncr1==8) selected @endif>Nunca ha trabajado, buscando (pase a la 83 )</option>
 <option value=7 @if($Encuesta->ncr1==7) selected @endif>Becario</option>
 </select>
 </td>
@@ -178,8 +178,7 @@
 
 <h2 class="reactivo">68.- ¿Cuál es su puesto? </h2>
 
-
- <INPUT type="text" class="texto" id="ncr7a" name="ncr7_a" value="{{$Encuesta->ncr7_a}}" style="width:60%"  maxlength="110"  >
+<textarea type="text" class="texto" id="ncr7a" name="ncr7_a" cols="30" rows="3">{{$Encuesta->ncr7_a}} </textarea>
 
     </td>
 </tr>
@@ -353,7 +352,7 @@ Especifique:</h2>
     
         </td>
 <td>
-<h2 class="reactivo"> 83.-¿Actualmente csuál es la razón principal por la que usted no está trabajando o 
+<h2 class="reactivo"> 83.-¿Actualmente cuál es la razón principal por la que usted no está trabajando o 
         ha dejado de trabajar? </h2>
      <select class="select" id="ncr24" name="ncr24" onchange="porque()">
      <option value=""> </option>
@@ -478,11 +477,11 @@ function seccionc2(){
       reactivosPorCerrar.forEach(visibilizar);
     break;
     case '3':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr2ext,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '4':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr2ext,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '5':
@@ -490,7 +489,7 @@ function seccionc2(){
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '6':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr2ext,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22,ncr23];
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '7':
@@ -498,7 +497,7 @@ function seccionc2(){
       reactivosPorCerrar.forEach(ocultar);
     break;
     case '8':
-      reactivosPorCerrar=[ncr2,ncr2a,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
+      reactivosPorCerrar=[ncr2,ncr2a,ncr2ext,ncr3,ncr4,ncr5,ncr4a,ncr6a,ncr6otra,ncr6a2,ncr7a,ncr7b,ncr8,ncr9,ncr10,ncr11,ncr12_a,ncr15,ncr16,ncr17,ncr18,ncr19,ncr20,ncr21_a,ncr22];
       reactivosPorCerrar.forEach(ocultar);
     break;
   }

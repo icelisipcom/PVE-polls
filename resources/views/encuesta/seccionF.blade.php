@@ -48,7 +48,6 @@
 <option value=0 ></option>
   </select>
   <p id='nfr1a_label'>Otra:</p><input type="text" class="texto"   id="nfr1a" name="nfr1a"  maxlength="50"  value="{{$Encuesta->nfr1a}}"> 
-
       </td>
 <td>
 <h2 class="reactivo">
@@ -60,7 +59,6 @@
  <option value=3 @if($Encuesta->nfr2==3) selected @endif>Sí, pero no fue  útil</option>
 <option value=4 @if($Encuesta->nfr2==4) selected @endif>No </option>
  </select>
-
      </td>
 <td>
 <h2 class="reactivo">
@@ -459,6 +457,6 @@ bloquear('nfr23a',[2],[nfr23,nfr24]);
 bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
 bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
 bloquear('nfr30',[2],[nfr31,nfr32]);
-bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10,12],[nfr1a_label,nfr1a]);
+bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10,12,0],[nfr1a_label,nfr1a]);
 </script>
 @endpush
