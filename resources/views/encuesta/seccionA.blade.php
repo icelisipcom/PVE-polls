@@ -55,7 +55,7 @@
 </select> </td>
 <td>
 <h2 class="reactivo">a).- ¿Cuántos?: </h2></div>
-<input class="texto" type="text" id="nar10" name="nar10" size="2" maxlength="2" @if(strlen($Encuesta->nar10)>1) value="{{$Encuesta->nar10}}" @else value="0" hidden @endif> 
+<input class="texto" type="text" id="nar10" name="nar10" size="2" maxlength="2" > 
 </center>
 </td>
 </tr>
@@ -497,6 +497,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 }
  
    bloquear('nar8',[1],[nar11,nar14,nar14otra]);
+   bloquear('nar9',[2],[nar10]);
    check_beca();
    escolaridad();
    escolaridadp();

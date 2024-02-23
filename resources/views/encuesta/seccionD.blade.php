@@ -399,6 +399,8 @@ function funcion_ndr2(){
     break;
     case '9': ocultar(ndr2_a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
     break;
+    case '0': ocultar(ndr2_a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
+    break;
     case '10': ocultar(ndr2_a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(ocultar);
     break;
     default: console.log('CASO DEFAULT');ocultar(ndr2_a);[ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a].forEach(visibilizar);
@@ -407,9 +409,9 @@ function funcion_ndr2(){
 }
 
 
-bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
+bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
 funcion_ndr2();
-bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
+bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
 @if($Encuesta->ncr1==6)
 [ndr1,ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19].forEach(ocultar);
 @endif
@@ -417,11 +419,12 @@ bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12
 [ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,,ndr17a,ndr18,ndr19].forEach(ocultar);
 @endif
 
-funcion_ndr2();
-bloquear('ndr1',[6,7],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
 
+bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19]);
+funcion_ndr2();
 bloquear('ndr14',[0,1,3],[ndr15]);
 @if($Encuesta->ncr1>2)
+console.log('script');
 [ndr18,ndr19].forEach(ocultar);
 @endif
 </script>

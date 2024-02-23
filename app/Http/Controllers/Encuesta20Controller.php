@@ -26,11 +26,10 @@ class Encuesta20Controller extends Controller
         $Correos=Correo::where('cuenta','=',$cuenta)->get();
         $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
         $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
-    
         return view('encuesta.seg20.actualizar_datos',compact('Egresado','Telefonos','Correos','Carrera','Plantel'));
     }
+
     public function comenzar($correo, $cuenta, $carrera){
-        
         $Correo=Correo::find($correo);
         $Egresado=Egresado::where('cuenta',$cuenta)->where('carrera',$carrera)->first();
         if($Correo->enviado==0){
@@ -40,10 +39,14 @@ class Encuesta20Controller extends Controller
            $process->run();
            if (!$process->isSuccessful()) {
                throw new ProcessFailedException($process);
+               $Correo->enviado=2;
+               $Correo->save();
+           }else{
+            $Correo->enviado=1;
+            $Correo->save();
            }
            $data = $process->getOutput();
-           $Correo->enviado=1;
-           $Correo->save();
+           
         }
            $Encuesta=respuestas20::where('cuenta','=',$cuenta)->where('nbr2','=',$carrera)->first();
            if($Encuesta){
@@ -416,7 +419,6 @@ public function updateG(Request $request,$id){
             'CONOCE' => 'required',
             'CUE_CRE' => 'required',
             'UTILIZA' => 'required'];
-    
     $validated = $request->validate($rules);
     $Encuesta->sec_g=1;
     $Encuesta->save();

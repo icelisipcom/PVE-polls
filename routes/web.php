@@ -106,7 +106,12 @@ Route::get('/switch', [App\Http\Controllers\ConfigController::class, 'switch_mod
 
 
 //Rutas para encuesta fast
-Route::get('/fast_show/{registro}/{reactivo}', [App\Http\Controllers\FastPollController::class, 'show'])->name('reporte.semanal');
+Route::get('/fast_show/{registro}/{reactivo}/{type}', [App\Http\Controllers\FastPollController::class, 'show'])->name('fast.show');
+Route::get('/fast_begin', [App\Http\Controllers\FastPollController::class, 'begin'])->name('fast.begin');
+Route::post('/fast_check_cuenta', [App\Http\Controllers\FastPollController::class, 'check_cuenta'])->name('fast.check');
+Route::post('/fast_check_store/{registro}/{reactivo}/{type}', [App\Http\Controllers\FastPollController::class, 'store'])->name('fast.store');
+
+Route::get('/fast/find_next/{registro}/{type}', [App\Http\Controllers\FastPollController::class, 'find_next'])->name('fast.find');
 
 
 });
