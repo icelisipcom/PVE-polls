@@ -26,7 +26,8 @@
       </div>
      </div>
     </div>
-       <table class="table text-lg" id="myTable">
+    <div class="table-div"   >
+    <table class="table text-lg muestra" id="myTable">
           <thead >
             <tr >
             <th >Nombre</th>
@@ -63,6 +64,7 @@
             @endforeach
           </tbody>
         </table>
+        </div>
         <div class='col'>
         <table>
           <thead> 
@@ -82,37 +84,65 @@
 </div>
 @stop
 
-@section('css')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-
+@push('css')
 
 <style>
-  thead tr:first-child th {
-    position: sticky;
-    z-index: 12;
-    top: 0;
-    background: white;
-}
+
+    @if(Auth::user()->dark_mode ==0) 
+  .table-div{
+    background-color: white;
+    color:black;
+     } 
+
+    .muestra{
+        th{
+            border: 1px solid;
+        }
+        td{
+            border: 0.05vw solid;
+            color:black;
+        }
+    }
+    @else 
+    .table-div{
+    background-color: black;
+    color:white;
+    }
+
+    .muestra{
+        th{
+            border: 1px solid;
+        }
+        td{
+            border: 0.05vw solid;
+            color:white;
+        }
+    }
+
+    @endif
+
+
+    
 </style>
-@stop
+@endpush
+
 
 @push('js')
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
-<script>
- 
-  console.log('script jalando ¿?');
-  $(document).ready(function() {
-    $('#myTable').DataTable({
-      
-      sorting: [[5, 'desc'],[1, 'asc']],
-      fixedHeader: true,
-      paging: false,
-      responsive: true
-    });
-} );
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js"></script>
+<script src="https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/4.0.0/js/dataTables.fixedHeader.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/4.0.0/js/fixedHeader.dataTables.js"></script>
 
-document.getElementById('myTable').style.cssText += 'position: sticky; z-index: 1; top:0;';
- </script>
+<script>
+  new DataTable('#myTable', {
+    fixedHeader: true,
+    paging: false,
+    responsive: true,
+    sorting: [[5, 'desc'],[1, 'asc']],
+});
+</script>
 
  
 @endpush

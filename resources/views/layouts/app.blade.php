@@ -9,6 +9,13 @@
     href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet"
     href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+    
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap.css">
+    <link rel="stylesheet"
+    href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.bootstrap.css">
     <style>
         th{
             background-color: {{ Auth::user()->color }};
@@ -46,19 +53,21 @@ overflow: auto;
 }
 </style>
 <style>
+ 
+ 
     .dataTables_filter {
   position: relative;
   background: transparent;
   color: {{ Auth::user()->color}};
 }
-
-.dataTables_filter input {
+.dataTables_filter input  {
+ 
   width: 10.9vw;
   height: 2.9vw;
   /* background: var(--primary); */
   border: 1px solid rgba(255, 255, 255, 0.937);
   border-radius: 5px;
-  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  box-shadow: 0 0 3px #0A0A0A, 0 10px 15px #ebebeb inset;
   text-indent: 10px;
   font-color: {{ Auth::user()->color}};
   font-size: 1.3vw;
@@ -67,7 +76,7 @@ overflow: auto;
 .dataTables_filter {
   aling: center;
   size: 40px;
-   color: {{ Auth::user()->color}};
+  color: {{ Auth::user()->color}} ;
 
 }
     .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -90,8 +99,10 @@ overflow: auto;
   color: white!important;
 }
 </style>
+
      @stack('css')
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
