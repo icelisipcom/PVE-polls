@@ -3,9 +3,17 @@
 <li class="nav-item">
     <a href="{{ route('home') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
-        <p>Dashboard</p>
+        <p>Dashboard </p>
     </a>
 </li>
+@if(Auth::user()->confidential==1)
+<li class="nav-item">
+    <a href="{{ route('stats') }}" class="nav-link {{ Request::is('stats') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-chart-bar"></i>
+        <p>Conteo</p>
+    </a>
+</li>
+@endif
 <li class="nav-item">
     <a href="{{ route('2019') }}" class="nav-link {{ Request::is('2019') ? 'active' : '' }}">
     <i class="nav-icon fas fa-paper-plane"></i>

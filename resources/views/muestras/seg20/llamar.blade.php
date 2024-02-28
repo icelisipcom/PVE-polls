@@ -103,7 +103,7 @@
     </div>    
     <div class='col'>
         <a href="{{route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera])}}">
-    <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-file"></i> Contestar Encuesta</button></a>
+    <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-file"></i> Actualizar datos de contacto</button></a>
     </div> 
     <div class='col'>
         <a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}">

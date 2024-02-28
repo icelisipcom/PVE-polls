@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\respuestas2;
+
+use App\Models\respuestas20;
 use App\Models\respuestas14;
 use App\Models\Carrera;
 use DB;
@@ -22,6 +24,22 @@ class HomeController extends Controller
     
     public function index()
     {
+        $nuevos_datos=DB::table('egresados')->where('muestra','=','3')->where('actualized','=','2024-02-16')
+        ->leftJoin('codigos','codigos.code','=','egresados.status')
+        ->leftJoin('carreras', function($join)
+  {
+      $join->on('carreras.clave_carrera', '=', 'egresados.carrera');
+      $join->on('carreras.clave_plantel', '=', 'egresados.plantel');                             
+  })
+        ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera','carreras.plantel as name_plantel')
+        ->get();
+
+        return view('home',compact('nuevos_datos'));
+    }
+
+
+    public function stats()
+    {
         $encuestas19=DB::table('respuestas2')
         ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')
         ->select('respuestas2.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
@@ -36,6 +54,7 @@ class HomeController extends Controller
                          })
         ->get();
         
+
         $requeridas=0;
         foreach($carreras as $c){
             $faltan=($c->requeridas_5 -$encuestas19->where('carrera','=',$c->clave_carrera)->where('plantel','=',$c->clave_plantel)->count());
@@ -54,39 +73,39 @@ class HomeController extends Controller
 
         $encuestas14=respuestas14::all();
         
+        $encuestas20=respuestas20::where('completed','=',1)->get();
         #Grafica de encuestadores
+        $moni20=$encuestas20->where('aplica', '=' ,'12')->count();
+        $ere20=$encuestas20->where('aplica', '=' ,'17')->count();
+        $cesar20=$encuestas20->where('aplica', '=' ,'15')->count();
+        $eli20=$encuestas20->where('aplica', '=' ,'22')->count();
+        $sandy20=$encuestas20->where('aplica', '=' ,'23')->count();
+
         $moni=$encuestas19->where('aplica', '=' ,'12')->count();
         $ere=$encuestas19->where('aplica', '=' ,'17')->count();
         $cesar=$encuestas19->where('aplica', '=' ,'15')->count();
         $eli=$encuestas19->where('aplica', '=' ,'22')->count();
-        $ivon=$encuestas19->where('aplica', '=' ,'21')->count();
+        $sandy=$encuestas19->where('aplica', '=' ,'23')->count();
 
         $moni14=respuestas14::where('aplica', '=' ,'12')->count();
         $ere14=respuestas14::where('aplica', '=' ,'17')->count();
         $cesar14=respuestas14::where('aplica', '=' ,'15')->count();
         $eli14=respuestas14::where('aplica', '=' ,'22')->count();
-        $ivon14=respuestas14::where('aplica', '=' ,'21')->count();
+        $sandy14=respuestas14::where('aplica', '=' ,'23')->count();
         
         $aplica_chart = LarapexChart::barChart()
         ->setTitle('Conteo por encuestador')
         ->setSubtitle('enc2019 vs enc2014 actualizacion')
-         ->addData('2019', [$moni, $ere,$cesar,$eli,$ivon])
-         ->addData('2014', [$moni14, $ere14,$cesar14,$eli14,$ivon14])
-         ->setColors(['#D1690E', '#EB572F'])
-         ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Ivonne']);
+         ->addData('2020', [$moni20, $ere20,$cesar20,$eli20,$sandy20])
+         ->addData('2019', [$moni, $ere,$cesar,$eli,$sandy])
+         ->addData('2014', [$moni14, $ere14,$cesar14,$eli14,$sandy14])
+         ->setColors(['#D1690E', '#EB572F','#f3b87c'])
+         ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Sandra']);
     
         
-        $nuevos_datos=DB::table('egresados')->where('muestra','=','3')->where('actualized','=','2024-02-16')
-        ->leftJoin('codigos','codigos.code','=','egresados.status')
-        ->leftJoin('carreras', function($join)
-  {
-      $join->on('carreras.clave_carrera', '=', 'egresados.carrera');
-      $join->on('carreras.clave_plantel', '=', 'egresados.plantel');                             
-  })
-        ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera','carreras.plantel as name_plantel')
-        ->get();
+        
 
-        return view('home',compact('encuestas19','carreras','chart','aplica_chart','nuevos_datos'));
+        return view('stats',compact('encuestas19','carreras','chart','aplica_chart'));
     }
 
     public function encuesta_2019(){

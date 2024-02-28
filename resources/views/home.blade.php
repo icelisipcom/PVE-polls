@@ -46,18 +46,6 @@
 </div>
 <br>
 </div>
-        {!! $chart->container() !!}
-        {!! $aplica_chart->container() !!}
-
-
-<script src="{{ $chart->cdn() }}"></script>
-{!! $chart->script() !!}
-
-
-    <script src="{{ $aplica_chart->cdn() }}"></script>
-   <div style='color: black'>
-    {!! $aplica_chart->script() !!}
-    </div>
 @endsection
 
 @section('css')

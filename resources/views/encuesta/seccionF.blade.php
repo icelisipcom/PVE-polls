@@ -60,6 +60,9 @@
 <option value=4 @if($Encuesta->nfr2==4) selected @endif>No </option>
  </select>
      </td>
+     <td></td>
+  </tr>
+  <tr>
 <td>
 <h2 class="reactivo">
 38.- Tomando en cuenta su experiencia al finalizar la licenciatura
@@ -71,9 +74,10 @@
   <option value=3 @if($Encuesta->nfr3==3) selected @endif>No, una totalmente diferente</option>
    </select>
 <br>
+</td><td>
 <h2 class="reactivo">
 39a).- ¿Por qué no la elegiría? </h2>
-  <select class="select" id="nfr4"  name="nfr4" @if($Encuesta->nfr3==1) hidden value=0 @endif > 
+  <select class="select" id="nfr4"  name="nfr4" onchange="bloquear('nfr4',[1,2,3,4,5,6,0],[nfr4_a])"> 
   <option selected="selected" value="">
   <option value=1 @if($Encuesta->nfr4==1) selected @endif>Esta carrera no fue mi primera opción</option>
   <option value=2 @if($Encuesta->nfr4==2) selected @endif>No ha podido encontrar trabajo en este campo</option>
@@ -82,10 +86,16 @@
   <option value=5 @if($Encuesta->nfr4==5) selected @endif>Un cambio en sus intereses</option>
   <option value=6 @if($Encuesta->nfr4==6) selected @endif>En la carrera no adquirió las habilidades prácticas  necesarias para el trabajo</option>
   <option value=7 @if($Encuesta->nfr4==7) selected @endif>Otra</option>
-  <option value=0 @if($Encuesta->nfr3==1)selected  @endif hidden></option>  
+  <option value=0 @if($Encuesta->nfr4==0)selected  @endif hidden></option>  
 </select>
   
     </td>
+    <td>
+      Otra (Especifíque):
+        <INPUT id="nfr4_a" name="nfr4_a" TYPE=TEXT  class="texto"  MAXLENGTH=80 value="{{$Encuesta->nfr4_a}}" >
+
+    </td>
+    <td></td>
 </tr>
 <tr>
 <td>
@@ -450,6 +460,8 @@ function titulado(){
 
 titulado();
 bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
+bloquear('nfr3',[1],[nfr4]);
+bloquear('nfr4',[1,2,3,4,5,6,0],[nfr4_a]);
 bloquear('nfr5',[1],[nfr5_a])
 bloquear('nfr6',[1],[nfr6_a])
 bloquear('nfr11',[2],[nfr11a]);
