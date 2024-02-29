@@ -103,7 +103,7 @@ class HomeController extends Controller
          ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Sandra']);
     
         $total20=$encuestas20->count();
-        $total14=$encuestas14->count();
+        $total14=respuestas14::whereNotNull('aplica')->count();
 
         return view('stats',compact('encuestas19','carreras','chart','aplica_chart','total20','total14'));
     }
