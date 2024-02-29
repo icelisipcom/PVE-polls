@@ -22,8 +22,19 @@
 <br>
 </div>
 <div style="color : black; background-color:rgba(250,250,250,0.57);">
-        
-        {!! $aplica_chart->container() !!}
+        <div class="col"> 
+            <div class="row"> 
+                <div class="col stat-card" >
+                    <div class="row"> Total encuestas 2020:  </div>
+                    <div class="row  data-card"> {{$total20}} </div>
+                </div>
+                <div class="col stat-card" >
+                    <div class="row"> Total encuestas 2014:  </div>
+                    <div class="row  data-card"> {{$total14}}  </div>
+                </div>
+            </div>
+            {!! $aplica_chart->container() !!}
+        </div>
 
 </div>
         
@@ -38,9 +49,33 @@
     </div>
 @endsection
 
-@section('css')
+@push('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-@stop
+<style>
+    .stat-card{
+        padding: 2.9vw;
+        background-color: #002B7A;
+        border-radius: 2.3vw 4.2vw;
+        margin: 2.3vw;
+        color:white;
+        font-size: 2.5vw;
+        width: 1px;
+
+    }
+    .data-card{
+        padding: 0.5vw;
+        background-color: #a67e0e;
+        border-radius: 1.3vw;
+        color:white;
+        margin: 0.5vw;
+        font-size: 5.1vw;
+        width:40%;
+        font-weight: bold;
+
+
+    }
+</style>
+@endpush
 
 @push('js')
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>

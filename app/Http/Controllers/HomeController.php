@@ -102,10 +102,10 @@ class HomeController extends Controller
          ->setColors(['#D1690E', '#EB572F','#f3b87c'])
          ->setXAxis(['Monica', 'Erendira', 'Cesar', 'Elizabeth', 'Sandra']);
     
-        
-        
+        $total20=$encuestas20->count();
+        $total14=$encuestas14->count();
 
-        return view('stats',compact('encuestas19','carreras','chart','aplica_chart'));
+        return view('stats',compact('encuestas19','carreras','chart','aplica_chart','total20','total14'));
     }
 
     public function encuesta_2019(){
