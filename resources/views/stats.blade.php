@@ -32,6 +32,9 @@
                     <div class="row"> Total encuestas 2014:  </div>
                     <div class="row  data-card"> {{$total14}}  </div>
                 </div>
+                <div class="col">
+
+                </div>
             </div>
             {!! $aplica_chart->container() !!}
         </div>
@@ -58,7 +61,7 @@
         border-radius: 2.3vw 4.2vw;
         margin: 2.3vw;
         color:white;
-        font-size: 2.5vw;
+        font-size: 2.0vw;
         width: 1px;
 
     }
@@ -67,10 +70,10 @@
         background-color: #a67e0e;
         border-radius: 1.3vw;
         color:white;
-        margin: 0.5vw;
-        font-size: 5.1vw;
-        width:40%;
-        font-weight: bold;
+        margin-right:10.4vw;
+        font-size: 4.6vw;
+        width:43%;
+        font-wight: bold;
 
 
     }

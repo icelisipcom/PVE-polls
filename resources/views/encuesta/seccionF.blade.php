@@ -200,7 +200,7 @@
 <td>
 <h2 class="reactivo">
 46a).- ¿Cuáles?</h2>
-<INPUT type="text" class="texto" id="nfr11a" name="nfr11a" maxlength="250" value="{{$Encuesta->nfr11a}}">
+<textarea  class="texto" id="nfr11a" name="nfr11a" MAXLENGTH=200 rows="4"  >{{$Encuesta->nfr11a}} </textarea>
 
       </td>
 <td>
