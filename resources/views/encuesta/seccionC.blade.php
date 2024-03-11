@@ -26,7 +26,8 @@
 </td>
  <td colspan="2">
  <h2 class="reactivo"> 62.- Nombre de la empresa o institución donde trabaja </h2>
- <INPUT type="text" class="texto" id="ncr2" name="ncr2" value="{{$Encuesta->ncr2}}" maxlength="220"  >
+ <textarea class="texto" id="ncr2" name="ncr2" cols="30" rows="2" maxlength="220"> {{$Encuesta->ncr2}}</textarea>
+
 
  </td>
  <td>
