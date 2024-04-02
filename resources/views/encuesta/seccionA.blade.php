@@ -55,7 +55,7 @@
 </select> </td>
 <td>
 <h2 class="reactivo">a).- ¿Cuántos?: </h2></div>
-<input class="texto" type="text" id="nar10" name="nar10" size="2" maxlength="2" > 
+<input class="texto" type="text" id="nar10" name="nar10" size="2" maxlength="2" value="{{$Encuesta->nar10}}" > 
 </center>
 </td>
 </tr>

@@ -259,7 +259,6 @@ discriminación?
  <option value=2 @if($Discriminacion->count()==0) selected @endif>No (Pase a la 52)</option>
   </select>
     </TD>
-
   <TD colspan="2"> 
   <h2 class="reactivo"> 
 51.-Especifíque:  </h2><div id="nfr23">
