@@ -293,7 +293,7 @@ Especifique:</h2>
 <h2 class="reactivo">78.- ¿Considera que el salario que percibe en su  trabajo es congruente con su preparación?
         </h2>
     
-       <select class="select" id="ncr18" name="ncr18">  
+    <select class="select" id="ncr18" name="ncr18">  
        <option selected="selected" value="">
        <option value=1 @if($Encuesta->ncr18==1) selected @endif>Totalmente de acuerdo</option>
        <option value=2 @if($Encuesta->ncr18==2) selected @endif>De acuerdo</option>
@@ -301,7 +301,7 @@ Especifique:</h2>
        <option value=4 @if($Encuesta->ncr18==4) selected @endif>En desacuerdo</option>
        <option value=5 @if($Encuesta->ncr18==5) selected @endif>Totalmente en desacuerdo</option>
        <option value=0  hidden></option>   
-</select>
+    </select>
     
            </td>
 <td>

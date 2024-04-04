@@ -7,6 +7,7 @@ use App\Http\Controllers\Encuesta20Controller;
 use App\Http\Controllers\CorreosController;
 use App\Http\Controllers\TelefonosController;
 
+use App\Http\Controllers\ReactivosController;
 use App\Http\Controllers\RecadosController;
 use App\Http\Controllers\EncuestasController;
 /*
@@ -29,6 +30,9 @@ Route::group(['middleware' => ['auth']], function()
 {   
 
 Route::resource('muestras', MuestrasController::class);
+Route::resource('reactivos', ReactivosController::class);
+Route::post('/reactivos_update/{id}', [App\Http\Controllers\ReactivosController::class, 'update'])->name('reactivos.update_re');
+
 Route::get('muestras14/index', [MuestrasController::class,'index_14'])->name('muestras14.index');
 Route::get('muestras14/show/{carrera}/{plantel}', [MuestrasController::class,'show_14'])->name('muestras14.show');
 

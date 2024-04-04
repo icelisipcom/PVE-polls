@@ -6,11 +6,19 @@
         <p>Dashboard </p>
     </a>
 </li>
-@if(Auth::user()->confidential==1)
+@if(Auth::user()->confidential>=2)
 <li class="nav-item">
     <a href="{{ route('stats') }}" class="nav-link {{ Request::is('stats') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chart-bar"></i>
         <p>Conteo</p>
+    </a>
+</li>
+@endif
+@if(Auth::user()->confidential>=1)
+<li class="nav-item">
+    <a href="{{ route('reactivos.index') }}" class="nav-link {{ Request::is('reactivos.index') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-question"></i>
+        <p>Reactivos</p>
     </a>
 </li>
 @endif
