@@ -6,23 +6,30 @@ use Illuminate\Http\Request;
 
 use App\Models\Reactivo;
 
+use App\Models\Option;
+
 class ReactivosController extends Controller
 {
   public function index(){
   $Reactivos=Reactivo::all();
   return view('admin.reactivos.index',compact('Reactivos'));
   }
+  
   public function edit( $id){
- $Reactivo=Reactivo::find($id);
-//  dd($Reactivo);
- return view('admin.reactivos.edit',compact('Reactivo'));
+   $Reactivo=Reactivo::find($id);
+   //  dd($Reactivo);
+   $Opciones=Option::where('reactivo',$Reactivo->clave)->get();
+    return view('admin.reactivos.edit',compact('Reactivo','Opciones'));
   }
+
   public function create(){
+    return view('admin.reactivos.create');
+  }
+
+  public function store(Request $request){
 
   }
-  public function store(){
 
-  }
   public function delete(){
 
   }

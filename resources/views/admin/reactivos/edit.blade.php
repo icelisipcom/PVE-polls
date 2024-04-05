@@ -11,7 +11,7 @@
         @csrf
         <div class="form-group">
             <label for="exampleInputEmail1">Seccion</label>
-            <input  style="width:50%" type="text" class=" myinput" name="section" value= "{{$Reactivo->section}}">
+            <input  style="width:50%" type="text" class="form-control myinput" name="section" value= "{{$Reactivo->section}}">
        </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Orden</label>
@@ -19,7 +19,7 @@
        </div>
        <div class="form-group">
             <label for="exampleInputEmail1">Clave</label>
-            <input  style="width:50%" type="text" class="form-control myinput" name="clave" value= "{{$Reactivo->clave}}">
+            <input  style="width:50%" type="text" class="form-control myinput" name="clave" value= "{{$Reactivo->clave}}" disabled>
        </div>
        <div class="form-group">
             <label for="exampleInputEmail1">Redaccion de la pregunta</label>
@@ -64,6 +64,27 @@
   <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Enviar</button>
  
   </form>
+@if($Opciones->count()>0)
+  <br>
+  <h1> Lista de Opciones</h1>
+  <table>
+<thead>
+    <tr>
+        <th>Clave</th>
+        <th>Opcion</th>
+        <th></th>
+    </tr>
+</thead>
+@foreach($Opciones as $o)
+<tr>
+    <td>{{$o->clave}} </td>
+    <td>{{$o->descripcion}} </td>
+    <td><a href="{{route('options.edit',$o->id)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">Editar </button></a></td>
+           
+</tr>
+@endforeach
+  </table>
+  @endif
    </center>
     </div>
 @endsection
@@ -71,6 +92,10 @@
 
 @push('css')
 <style>
+table{
+    font-size:2.1vw;
+}
+
     .selecter{
         color:black;
         background-color:white;
@@ -78,9 +103,9 @@
     }
 
     .myinput{
-        color:black;
+        color:black !important;
         background-color:white;
-        font-size:1.4vw;
+        font-size:1.4vw !important;
     }
 </style>
 @endpush

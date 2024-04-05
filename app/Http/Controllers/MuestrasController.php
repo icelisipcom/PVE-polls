@@ -51,7 +51,12 @@ public function index_20(){
   {
       $join->on('carreras.clave_carrera', '=', 'egresados.carrera');
       $join->on('carreras.clave_plantel', '=', 'egresados.plantel');                             
-  })->select('carreras.carrera','carreras.plantel','egresados.carrera as c','egresados.plantel as p')->get();
+  })->select('carreras.carrera','carreras.plantel','egresados.carrera as c','egresados.plantel as p','carreras.clave_carrera','carreras.clave_plantel')->get();
+  
+  foreach($carreras as $c){
+    $c->nencuestas=respuestas20::where('nbr2',$c->clave_carrera)->where('nbr3',$c->clave_plantel)->get()->count();
+  }
+  $carreras=collect($carreras);
   return view('muestras.seg20.index',compact('carreras'));
 
 }

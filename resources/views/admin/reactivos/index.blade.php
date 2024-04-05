@@ -2,6 +2,15 @@
 
 @section('content')
 <div class="container-fluid"  background="{{asset('img/Fondo2.jpg')}}">
+<div style="padding:2.6vw">
+            
+                @if(Auth::user()->confidential>=2)
+                <a href="{{ route('reactivos.create')}}">
+                  <button style="background-color:{{Auth::user()->color}} ; color:white; font-size:2.0vw; border-radius: 1.1vw">
+                    <i class="fas fa-plus-circle"></i>&nbsp; Nuevo</button>
+                </a>
+                @endif
+            </div>
 <div class="table-div">
         <table class="table text-xl tablex" id="myTable">
           <thead>
