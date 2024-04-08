@@ -20,6 +20,14 @@ class OpcionesController extends Controller
     $Opcion->descripcion=$request->description;
     $Opcion->save();
     $Reactivo=Reactivo::where('clave',$Opcion->reactivo)->first();
+    if($Reactivo){
     return redirect()->route('reactivos.edit',$Reactivo->id);
+   }
+    else{
+      
+    $Reactivo=Reactivo::where('archtype',$Opcion->reactivo)->first();
+      return redirect()->route('reactivos.edit',$Reactivo->id);
+   }
+    
    }
 }
