@@ -172,7 +172,15 @@ class HomeController extends Controller
         ->where('egresados.anio_egreso','=',2019)
         ->where('respuestas2.cuenta','=',(int)$request->nc)
         ->get(); 
-        $egresados=Egresado::where('cuenta',(int)$request->nc)->get();
+        $egresados=DB::table('egresados')
+        ->where('cuenta',(int)$request->nc)
+        ->leftJoin('carreras', function($join)
+        {
+            $join->on('carreras.clave_carrera', '=', 'egresados.carrera');
+            $join->on('carreras.clave_plantel', '=', 'egresados.plantel');                             
+        })
+        ->select('egresados.*','carreras.carrera as nombre_carrera','carreras.plantel as nombre_plantel')
+        ->get();
         $encuestas14=DB::table('respuestas14')
         ->where('respuestas14.cuenta','=',$request->nc)
         ->whereNotNull('respuestas14.NGR11')

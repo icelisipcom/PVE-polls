@@ -96,8 +96,8 @@
                 <td>{{$eg->nombre}}  {{  $eg->paterno}}  {{  $eg->materno }}   </td>
                 <td> {{$eg->cuenta}} </td>
                 <td> </td>
-                <td>{{$eg->carrera}}</td>     
-                <td>{{$eg->plantel}}</td> 
+                <td>{{$eg->nombre_carrera}}</td>     
+                <td>{{$eg->nombre_plantel}}</td> 
                 <td>@if($eg->muestra==3 && in_array( $eg->status,[null,0,3,4,5,6,7], true))
                 <a href="{{route('llamar_20',$eg->cuenta)}}"> <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> <i class="fa fa-phone" aria-hidden="true"> </i> &nbsp; LLAMAR </button></a>
                 @endif
