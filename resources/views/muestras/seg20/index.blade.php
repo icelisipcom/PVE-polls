@@ -8,7 +8,7 @@
             <tr>
             <th>Carrera</th>
             <th>Plantel</th>
-            <th></th>
+            <th>Realizadas </th>
             <th> </th>
             <th> </th>
           </tr>
