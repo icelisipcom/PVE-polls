@@ -863,10 +863,47 @@ b).-Motivo por el que no asistió a eventos artísticos</h2>
 
 <tr>
 
+<td>
+<h2 class="reactivo">
+127.-Fortalecer o incrementar sus valores como ciudadano</h2>
+<select class="select" id="ngr42"  name="ngr42" >
+<option selected="selected" value="">
+<option value=1 @if($Encuesta->ngr42==1) selected @endif >Totalmente de acuerdo</option>
+<option value=2 @if($Encuesta->ngr42==2) selected @endif >De acuerdo</option>
+<option value=3 @if($Encuesta->ngr42==3) selected @endif >Medianamente de acuerdo</option>
+<option value=4 @if($Encuesta->ngr42==4) selected @endif >En desacuerdo</option>
+<option value=5 @if($Encuesta->ngr42==5) selected @endif >Totalmente en desacuerdo</option>
+</select>
+</td>
+<td>
+<h2 class="reactivo">
+128.-Incrementar su concientización e interés por los problemas del medio ambiente</h2>
+<select class="select" id="ngr44"  name="ngr44" >
+<option selected="selected" value="">
+<option value=1 @if($Encuesta->ngr44==1) selected @endif >Totalmente de acuerdo</option>
+<option value=2 @if($Encuesta->ngr44==2) selected @endif >De acuerdo</option>
+<option value=3 @if($Encuesta->ngr44==3) selected @endif >Medianamente de acuerdo</option>
+<option value=4 @if($Encuesta->ngr44==4) selected @endif >En desacuerdo</option>
+<option value=5 @if($Encuesta->ngr44==5) selected @endif >Totalmente en desacuerdo</option>
+</select>
+</td>
+<td>
+<h2 class="reactivo">
+129.-Incrementar su interés por promover y participar en programas de beneficio social</h2>
+<select class="select" id="ngr43"  name="ngr43" >
+<option selected="selected" value="">
+<option value=1 @if($Encuesta->ngr43==1) selected @endif >Totalmente de acuerdo</option>
+<option value=2 @if($Encuesta->ngr43==2) selected @endif >De acuerdo</option>
+<option value=3 @if($Encuesta->ngr43==3) selected @endif >Medianamente de acuerdo</option>
+<option value=4 @if($Encuesta->ngr43==4) selected @endif >En desacuerdo</option>
+<option value=5 @if($Encuesta->ngr43==5) selected @endif >Totalmente en desacuerdo</option>
+</select>
+</td>
+
 
 <td colspan="2">
 <h2 class="reactivo">
-127.- ¿Practicó algún deporte dentro de la UNAM?</h2>
+130.- ¿Practicó algún deporte dentro de la UNAM?</h2>
 <select class="select" id="ngr40" name="ngr40"  onchange="deportes()">
 <option selected="selected" value="">
   <option value=11 @if($Encuesta->ngr40==11) selected @endif >Sí</option>
@@ -952,7 +989,7 @@ c).- Motivo por el que no lo practicó </h2>
 </td>
 <td >
 <h2 class="reactivo"> 
-128.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>
+131.- ¿Actualmente es miembro de alguna organización o asociación? - </h2>
 <select class="select" id="ngr45"  name="ngr45" onchange="bloquear('ngr45',[2],[ngr45_a,ngr45otra])">
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->ngr45==1) selected @endif >Sí</option>
@@ -962,7 +999,7 @@ c).- Motivo por el que no lo practicó </h2>
     <td>
 
     <h2 class="reactivo">
-128a).-¿Cuál?</h2>
+131a).-¿Cuál?</h2>
 <select class="select" id="ngr45_a" name="ngr45_a" onchange="bloquear('ngr45_a',[1,2,3,4,5,6],[ngr45otra])">
 <option  value="">
 <option value=4 @if($Encuesta->ngr45_a==4) selected @endif >Afiliado a un grupo religioso</option>
@@ -978,7 +1015,7 @@ c).- Motivo por el que no lo practicó </h2>
     <td>
 
    
-<h2 class="reactivo">128b).-Otra:  </h2>
+<h2 class="reactivo">131b).-Otra:  </h2>
 
 <INPUT  id="ngr45otra" name="ngr45otra" TYPE=TEXT  class="texto"  SIZE=60 MAXLENGTH=60 value="{{$Encuesta->ngr45otra}}">
 
@@ -989,7 +1026,7 @@ c).- Motivo por el que no lo practicó </h2>
 
 <td>
 <h2 class="reactivo"> 
-129.-¿Conoce usted la Credencial de Egresados y sus beneficios? </h2>
+132.-¿Conoce usted la Credencial de Egresados y sus beneficios? </h2>
 <select class="select" id="CONOCE"  name="CONOCE"  >
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->CONOCE==1) selected @endif >Sí</option>
@@ -998,7 +1035,7 @@ c).- Motivo por el que no lo practicó </h2>
     </td>
 <td>
 <h2 class="reactivo">
-130.-¿Ya cuenta con su credencial de Exalumnos?</h2>
+133.-¿Ya cuenta con su credencial de Exalumnos?</h2>
 <select class="select" id="CUE_CRE"  name="CUE_CRE"  onchange="bloquear('CUE_CRE',[2],[UTILIZA])">
 <option selected="selected" value="">
   <option value=1 @if($Encuesta->CUE_CRE==1) selected @endif >Sí</option>
@@ -1008,7 +1045,7 @@ c).- Motivo por el que no lo practicó </h2>
 
     </td>
     <td colspan="2">
-<h2 class="reactivo">131.-¿Ha utilizado los Beneficios que le otorga el Programa de Vinculación con los Egresados de la UNAM?  </h2>
+<h2 class="reactivo">134.-¿Ha utilizado los Beneficios que le otorga el Programa de Vinculación con los Egresados de la UNAM?  </h2>
 <select class="select" id="UTILIZA"  name="UTILIZA" >
 <option selected="selected" value="">
     <option value=1 @if($Encuesta->UTILIZA==1) selected @endif >Sí</option>
