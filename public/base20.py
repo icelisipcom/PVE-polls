@@ -26,4 +26,4 @@ cnx = mysql.connector.connect(user=DB_USERNAME,
                               use_pure=False)
 
 encuestas=pd.read_sql("""select * from respuestas20""",cnx)
-encuestas.to_excel('storage/reporte_individual_act2014.xlsx');
+encuestas.to_excel('storage/base20.xlsx');
