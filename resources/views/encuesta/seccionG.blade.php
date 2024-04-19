@@ -532,7 +532,6 @@ b).-
   <option value=0></option>
  </select>
 
-
     </td>
     </tr><tr>
 <td>
@@ -1047,11 +1046,11 @@ c).- Motivo por el que no lo practicó </h2>
     <td colspan="2">
 <h2 class="reactivo">134.-¿Ha utilizado los Beneficios que le otorga el Programa de Vinculación con los Egresados de la UNAM?  </h2>
 <select class="select" id="UTILIZA"  name="UTILIZA" >
-<option selected="selected" value="">
+    <option selected="selected" value="">
     <option value=1 @if($Encuesta->UTILIZA==1) selected @endif >Sí</option>
-<option value=2 @if($Encuesta->UTILIZA==2) selected @endif >No</option>
-<option value=0 hidden > </option>
-      </select>
+    <option value=2 @if($Encuesta->UTILIZA==2) selected @endif >No</option>
+    <option value=0 hidden > </option>
+  </select>
 
 
     </td>

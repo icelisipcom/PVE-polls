@@ -138,7 +138,12 @@
 <script>
   new DataTable('#myTable', {
     fixedHeader: true,
+    @if($carrera>0)
+
     paging: false,
+    @else
+    pageLength: 300,
+    @endif
     responsive: true,
     sorting: [[5, 'desc'],[1, 'asc']],
 });

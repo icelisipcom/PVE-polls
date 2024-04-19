@@ -106,11 +106,17 @@ public function show_20($carrera,$plantel){
 }
   else{
     $Carrera= Carrera::where('clave_plantel',$plantel)->first();
-    $muestra=DB::table('egresados')->where('muestra','=','3')->where('egresados.plantel','=',$plantel)
+    // $justCarreras= Carrera::unique('carrera');
+    // dd($justCarreras);
+    $muestra=DB::table('egresados')->where('egresados.muestra','=','3')->where('egresados.plantel','=',$plantel)
       ->leftJoin('codigos','codigos.code','=','egresados.status')
       ->join('carreras','carreras.clave_carrera','egresados.carrera')
-      ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera',)
-      ->get();
+      
+       ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera',)
+      ->get()
+      ->unique('cuenta');
+
+      // dd($muestra);
 
   }
   $Codigos=DB::table('codigos')->where('code','>=',3)
