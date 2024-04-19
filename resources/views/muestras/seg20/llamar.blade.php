@@ -28,92 +28,90 @@
              </td></tr>@endif @endif
     </table>
   
-   
-
         <h1 class="text-white-35" id="layer"> NUMEROS DE TELEFONO </h1>
  
    
     </div>
 
     <div class='col'>
-        @foreach($Telefonos as $telefono)
-        <div class="container">
-  
-  <button type="button" class="btn btn-info" id="{{'tel_button'.$telefono->id}}"data-toggle="collapse" style="background-color: {{$telefono->color_rgb}}"  data-target="{{'#demo'.$telefono->id}}">   <h1 class="text-white-35"> {{$telefono->telefono}}  </h1></button>
-  <div id="{{'demo'.$telefono->id}}" class="collapse" style="background-color: rgba(0,0,0,0.2)">
-  
-      
-<br><h1 class="text-white-40" id="layer"> RECADOS ANTERIORES </h1><br>
-@if($Recados->count()==0)
-<p> Aún no hay recados para mostrar </p>
-@else
+@foreach($Telefonos as $telefono)
+    <div class="container">
 
-<table class="table text-xl ">
-    <thead>
-        <tr>
-            <th>Recado</th>
-            <th>tipo</th>
-            <th>Fecha</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($Recados as $r)
-        @if($r->tel_id == $telefono->id)
-        <tr style="background-color: {{$r->color_rgb}};">
-            <td> {{$r->recado}} </td>
-            <td> {{$r->description}} </td>
-            <td> {{$r->fecha}} </td>
-            <td> 
-            <form method="POST" action="{{ route('recados.destroy', $r->id) }}">
-                            @csrf
-                            <input name="_method" type="hidden" value="DELETE">
-
-                            <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>BORRAR!</button>
-                        </form>  </td>
-        </tr>
-        @endif
-        @endforeach
-    </tbody>
-</table>
-@endif
-  <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data">
-        @csrf
+    <button type="button" class="btn btn-info" id="{{'tel_button'.$telefono->id}}"data-toggle="collapse" style="background-color: {{$telefono->color_rgb}}"  data-target="{{'#demo'.$telefono->id}}">   <h1 class="text-white-35"> {{$telefono->telefono}}  </h1></button>
+    <div id="{{'demo'.$telefono->id}}" class="collapse" style="background-color: rgba(0,0,0,0.2)">
     
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Deja un recado</label>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Selecciona un código de color</label>
-    <select name="code" id="{{'code'.$telefono->id}}" class="select" style="color: #E0E0E0; background-color: black;" onchange="codigo({{$telefono->id}})">
-        <option value=""> </option>
-        @foreach($Codigos as $code)
-        <option style="background-color: {{$code->color_rgb}}" value="{{$code->code}}" @if($telefono->status == $code->code) selected @endif>{{$code->description}}</option>
         
-        @endforeach
-       
-    </select>
-   </div>
-    <input  style="width:70%" type="text" name="recado" class="form-control texto" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe informacion util para localizar a este egresado" >
-  </div>
-  <br>
-  <div class='row'>
-    <div class='col'>
-    <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Marcar y guardar recado</button>
-    </div>    
-    <div class='col'>
-        <a href="{{route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera])}}">
-    <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-file"></i> Actualizar datos de contacto</button></a>
-    </div> 
-    <div class='col'>
-        <a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}">
-    <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-arrow-left"></i> Regresar a al muestra</button></a>
+    <br><h1 class="text-white-40" id="layer"> RECADOS ANTERIORES </h1><br>
+    @if($Recados->count()==0)
+    <p> Aún no hay recados para mostrar </p>
+    @else
+
+    <table class="table text-xl ">
+        <thead>
+            <tr>
+                <th>Recado</th>
+                <th>tipo</th>
+                <th>Fecha</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($Recados as $r)
+                @if($r->tel_id == $telefono->id)
+                <tr style="background-color: {{$r->color_rgb}};">
+                    <td> {{$r->recado}} </td>
+                    <td> {{$r->description}} </td>
+                    <td> {{$r->fecha}} </td>
+                    <td> 
+                    <form method="POST" action="{{ route('recados.destroy', $r->id) }}">
+                                    @csrf
+                                    <input name="_method" type="hidden" value="DELETE">
+
+                                    <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>BORRAR!</button>
+                                </form>  </td>
+                </tr>
+                @endif
+            @endforeach
+        </tbody>
+    </table>
+    @endif
+    <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data">
+            @csrf
+        
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Deja un recado</label>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Selecciona un código de color</label>
+        <select name="code" id="{{'code'.$telefono->id}}" class="select" style="color: #E0E0E0; background-color: black;" onchange="codigo({{$telefono->id}})">
+            <option value=""> </option>
+            @foreach($Codigos as $code)
+            <option style="background-color: {{$code->color_rgb}}" value="{{$code->code}}" @if($telefono->status == $code->code) selected @endif>{{$code->description}}</option>
+            
+            @endforeach
+        
+        </select>
     </div>
-  </div>
-  
-  </form></div>
-</div>
-        <br>
+        <input  style="width:70%" type="text" name="recado" class="form-control texto" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe informacion util para localizar a este egresado" >
+    </div>
+    <br>
+    <div class='row'>
+        <div class='col'>
+        <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Marcar y guardar recado</button>
+        </div>    
+        <div class='col'>
+            <a href="{{route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera])}}">
+        <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-file"></i> Actualizar datos de contacto</button></a>
+        </div> 
+        <div class='col'>
+            <a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}">
+        <button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-arrow-left"></i> Regresar a al muestra</button></a>
+        </div>
+    </div>
+    
+    </form></div>
+    </div>
+            <br>
         @endforeach
     </div>
 

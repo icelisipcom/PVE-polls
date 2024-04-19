@@ -1127,14 +1127,14 @@ function deportes(){
   bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
   bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
- ;
+  
   bloquear('ngr37',[12],[ngr37a]);
   artisticos();
   deportes();
   bloquear('comen',[2],[comentario]);
 
   bloquear('ngr45',[2],[ngr45otra,ngr45_a]);
-  bloquear('ngr45_a',[1,2,3,4,5,6],[ngr45otra]);
+  bloquear('ngr45_a',[1,2,3,4,5,6,0],[ngr45otra]);
   @if($Encuesta->ncr1>=3 && $Encuesta->ncr1<=5)
   ocultar(ngr5);
   @endif
