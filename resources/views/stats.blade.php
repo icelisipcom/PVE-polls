@@ -17,6 +17,10 @@
     <a href="{{ route('report','correos_inconclusas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas inconclusas
     </button></a>
+
+    <a href="{{ route('report','base20')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; ENCUESTAS 2020 BASE (al dia de hoy)
+    </button></a>
     </div>
 
 <br>
