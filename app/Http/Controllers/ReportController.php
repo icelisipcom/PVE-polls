@@ -35,7 +35,7 @@ class ReportController extends Controller
         $inicio->modify('+ '.$dias.' days');//avanzamos al lunes de la semana en cuestion
         $fin=new DateTime('01-01-2024');
         $fin->modify('+ '.($dias+5).' days'); //analogamente, avanzamos al viernes
-        $Cuentas= $encuestas20=respuestas20::whereDate('fec_capt','>=',$inicio)->whereDate('fec_capt','<=',$fin)->get();
+        $Cuentas= $encuestas20=respuestas20::whereDate('fec_capt','>=',$inicio)->whereDate('fec_capt','<=',$fin)->where('completed',1)->get();
         $Cuentas14= $encuestas14=respuestas14::whereDate('fec_capt','>=',$inicio)->whereDate('fec_capt','<=',$fin)->get();
         if($user >0 ){
             $Cuentas=$Cuentas->toQuery()->where('aplica',$user)->get(); 
@@ -67,16 +67,18 @@ class ReportController extends Controller
                 "contestadora" => $recados->where('status',9)->count(),
                 "no_contesta" => $recados->where('status',7)->count(),
                 "enc2014" => $encuestas14->count(),
-                "enc2020" => $encuestas20->count(),
-                "enc_inconclusas" => $recados->where('status',10)->count(),
+                "enc2020" => $encuestas20->where('completed',1)->count(),
+                "enc_inconclusas" =>  $encuestas20->where('completed',0)->count(),
                 "correos" => $recados->where('status',8)->count(),
-                "equivocados" => $recados->where('status',2)->count(),
+                "equivocados" => $recados->where('status',6)->count(),
                 "no_existe" => $recados->where('status',11)->count(),
                 "llamadas" => $recados->count(),
                 "internet" => $recados->where('status',3)->count(),
             ]);
         }
         $Dias=collect($Dias);
+
+        // dd($Dias);
         // dd($inicio->format('Y-m-d'),$Dias,$Dias->sum('recados'));
         // dd($Cuentas->unique('nbr3'));
         $Planteles=[];
