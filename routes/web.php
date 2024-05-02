@@ -40,7 +40,8 @@ Route::post('/opciones_update/{id}', [App\Http\Controllers\OpcionesController::c
 Route::get('muestras14/index', [MuestrasController::class,'index_14'])->name('muestras14.index');
 Route::get('muestras14/show/{carrera}/{plantel}', [MuestrasController::class,'show_14'])->name('muestras14.show');
 
-Route::get('muestras20/index', [MuestrasController::class,'index_20'])->name('muestras20.index');
+Route::get('muestras20/index/{id}', [MuestrasController::class,'index_20'])->name('muestras20.index');
+Route::get('muestras20/planteles/', [MuestrasController::class,'plantel_index'])->name('muestras20.plantel_index');
 Route::get('muestras20/show/{carrera}/{plantel}', [MuestrasController::class,'show_20'])->name('muestras20.show');
 Route::get('/encuestas/2020/llamar/{id}', [App\Http\Controllers\LlamadasController::class, 'llamar_20'])->name('llamar_20');
 Route::get('revision', [MuestrasController::class,'revision'])->name('revision');

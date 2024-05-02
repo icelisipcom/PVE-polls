@@ -46,12 +46,13 @@ $carreras=respuestas14::select('carrera','plantel')->distinct()->get();
 return view('muestras.act14.index',compact('carreras'));
 }
 
-public function index_20(){
+public function index_20($id){
   $carreras=Muestra::where('estudio_id','=','3')->leftJoin('carreras', function($join)
   {
       $join->on('carreras.clave_carrera', '=', 'muestras.carrera_id');
       $join->on('carreras.clave_plantel', '=', 'muestras.plantel_id');                             
   })
+  ->where('carreras.clave_plantel',$id)
   ->select('carreras.carrera','carreras.plantel','muestras.carrera_id as c','muestras.plantel_id as p','carreras.clave_carrera','carreras.clave_plantel','muestras.requeridas_5')->get();
   
   foreach($carreras as $c){
@@ -98,29 +99,22 @@ public function show_14($carrera,$plantel){
   return view('muestras.act14.show',compact('muestra'));
 }
 
+public function plantel_index(){
+  $Planteles=Carrera::distinct()->get(['plantel','clave_plantel']);
+  // dd($Planteles);
+  return view('muestras.seg20.plantel_index',compact('Planteles'));
+}
+
+
 public function show_20($carrera,$plantel){
-  if($carrera>0){
+
     $Carrera= Carrera::where('clave_carrera',$carrera)->where('clave_plantel',$plantel)->first();
     $muestra=DB::table('egresados')->where('muestra','=','3')->where('egresados.carrera','=',$carrera)->where('plantel','=',$plantel)
       ->leftJoin('codigos','codigos.code','=','egresados.status')
-      ->select('egresados.*','codigos.color_rgb','codigos.description')
+      ->select('egresados.*','codigos.color_rgb','codigos.description','codigos.order')
       ->get();
-}
-  else{
-    $Carrera= Carrera::where('clave_plantel',$plantel)->first();
-    // $justCarreras= Carrera::unique('carrera');
-    // dd($justCarreras);
-    $muestra=DB::table('egresados')->where('egresados.muestra','=','3')->where('egresados.plantel','=',$plantel)
-      ->leftJoin('codigos','codigos.code','=','egresados.status')
-      ->join('carreras','carreras.clave_carrera','egresados.carrera')
-      
-       ->select('egresados.*','codigos.color_rgb','codigos.description','carreras.carrera as name_carrera',)
-      ->get()
-      ->unique('cuenta');
 
-      // dd($muestra);
-
-  }
+  
   $Codigos=DB::table('codigos')->where('code','>=',3)
   ->orderBy('color')->get();
 

@@ -7,7 +7,7 @@
         <h1 class="text-white-50"> Estas son tus muestras:</h1>
     </div>
     <center >
-  <a href="{{route('muestras20.index')}}">
+  <a href="{{route('muestras20.plantel_index')}}">
     <button class='btn mybutton' >
        <br><br>ENCUESTA DE SEGUIMIENTO 2020 <br><br><br>
     </button></a>

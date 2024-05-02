@@ -17,7 +17,7 @@
           </thead>
           <tbody>
             @foreach($carreras as $c)
-            <tr style="background-color:rgba({{255*(1-$c->nencuestas/$c->requeridas_5)}},{{255*($c->nencuestas/$c->requeridas_5)}},50,0.2)">
+            <tr style="background-color:rgba({{255*(1-$c->nencuestas/$c->requeridas_5)}},{{255*($c->nencuestas/$c->requeridas_5)}},0,0.4)">
                 <td>{{$c->carrera}} </td>
                 <td>{{$c->plantel}} </td>
                 <td> {{$c->nencuestas}}</td>
