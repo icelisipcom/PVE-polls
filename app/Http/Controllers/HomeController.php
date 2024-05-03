@@ -104,8 +104,12 @@ class HomeController extends Controller
     
         $total20=$encuestas20->count();
         $total14=respuestas14::whereNotNull('aplica')->count();
-
-        return view('stats',compact('encuestas19','carreras','chart','aplica_chart','total20','total14'));
+        $Internet=respuestas20::where('completed','=',1)
+        ->where('aplica','=',111)->get()->count();
+        $Internet14=respuestas14::where('aplica',0)->count();
+        return view('stats',compact('encuestas19','carreras',
+        'chart','aplica_chart','total20','total14','Internet',
+         'Internet14'));
     }
 
     public function encuesta_2019(){

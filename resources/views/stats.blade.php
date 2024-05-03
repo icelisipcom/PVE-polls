@@ -18,6 +18,10 @@
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas inconclusas
     </button></a>
 
+    <a href="{{ route('report','correos_contestadas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas completas
+    </button></a>
+
     <a href="{{ route('report','base20')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; ENCUESTAS 2020 BASE (al dia de hoy)
     </button></a>
@@ -31,10 +35,12 @@
                 <div class="col stat-card" >
                     <div class="row"> Total encuestas 2020:  </div>
                     <div class="row  data-card"> {{$total20}} </div>
+                    por internet: {{$Internet}}
                 </div>
                 <div class="col stat-card" >
                     <div class="row"> Total encuestas 2014:  </div>
                     <div class="row  data-card"> {{$total14}}  </div>
+                    por internet: {{$Internet14}}
                 </div>
                 <div class="col">
 
@@ -66,7 +72,7 @@
         margin: 2.3vw;
         color:white;
         font-size: 2.0vw;
-        width: 1px;
+        width: auto;
 
     }
     .data-card{
@@ -76,7 +82,7 @@
         color:white;
         margin-right:10.4vw;
         font-size: 4.6vw;
-        width:43%;
+        width:60%;
         font-wight: bold;
 
 

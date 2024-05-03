@@ -66,8 +66,9 @@
     18.- En la UNAM</h2>
     <select class="select" id="ner3"  name="ner3" >
     <option value="" selected="selected"></option>
+    
+        <option value=2  @if($Encuesta->ner3==2) selected @endif>No</option>
         <option value=1  @if($Encuesta->ner3==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner3==2) selected @endif>No</option>
        <option value=0  hidden></option>   
 </select>
     </td>
@@ -77,8 +78,9 @@
     19.- En otra institución pública</h2>
     <select class="select" id="ner4" name="ner4" >
     <option value="" selected="selected"></option>
+    
+        <option value=2  @if($Encuesta->ner4==2) selected @endif>No</option>
         <option value=1  @if($Encuesta->ner4==1) selected @endif>Sí</option>
-       <option value=2  @if($Encuesta->ner4==2) selected @endif>No</option>
        <option value=0  hidden></option>   
 </select> 
 </td>
@@ -87,8 +89,8 @@
 20.- En otra institución privada</h2>
     <select class="select" id="ner5" name="ner5" >
       <option value="" selected="selected"></option>
-      <option value=1  @if($Encuesta->ner5==1) selected @endif>Sí</option>
       <option value=2  @if($Encuesta->ner5==2) selected @endif>No</option>
+      <option value=1  @if($Encuesta->ner5==1) selected @endif>Sí</option>
       <option value=0  hidden></option>   
 </select>  
 </td>
@@ -98,8 +100,8 @@
     21.-En la empresa o institución en la que trabaja</h2>
     <select class="select" id="ner6" name="ner6" >
     <option value="" selected="selected"></option>
-    <option value=1  @if($Encuesta->ner6==1) selected @endif>Sí</option>
     <option value=2  @if($Encuesta->ner6==2) selected @endif>No</option>
+    <option value=1  @if($Encuesta->ner6==1) selected @endif>Sí</option>
     <option value=0  hidden></option>   
 </select>
 </td>
@@ -110,8 +112,8 @@
     22.-En una asociación</h2>
     <select class="select" id="ner7" name="ner7" >
     <option value="" selected="selected"></option>
-    <option value=1  @if($Encuesta->ner7==1) selected @endif>Sí</option>
     <option value=2  @if($Encuesta->ner7==2) selected @endif>No</option>
+    <option value=1  @if($Encuesta->ner7==1) selected @endif>Sí</option>
     <option value=0  hidden></option>  
     <option value=0  hidden></option>   
 </select>
@@ -122,8 +124,8 @@
     23.-En Internet</h2>
     <select class="select" id="ner7int" name="ner7int" >
       <option value="" selected="selected"></option>
-      <option value=1  @if($Encuesta->ner7int==1) selected @endif>Sí</option>
       <option value=2  @if($Encuesta->ner7int==2) selected @endif>No</option>
+      <option value=1  @if($Encuesta->ner7int==1) selected @endif>Sí</option>
       <option value=0  hidden></option>   
 </select>
 </td>

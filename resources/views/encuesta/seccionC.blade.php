@@ -123,6 +123,9 @@
 <option value=18 @if($Encuesta->ncr4==18) selected @endif>Servicios de alojamiento temporal, de preparación de alimentos y bebidas (hotel, restaurant, bar) </option>
 <option value=8 @if($Encuesta->ncr4==8) selected @endif>Transporte, correos y almacenamiento</option>
 <option value=22 @if($Encuesta->ncr4==22) selected @endif>Telecomunicaciones </option>
+<option value=24 @if($Encuesta->ncr4==24) selected @endif>Servicios Personales </option>
+<option value=25 @if($Encuesta->ncr4==25) selected @endif>Servicios  de reparacion y mantenimiento </option>
+
 <option value=21 @if($Encuesta->ncr4==21) selected @endif>Otro (Especifíque)</option>
 <option value=0  hidden></option>   
 </select><br>
