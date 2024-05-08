@@ -462,7 +462,7 @@ public function updateG(Request $request,$id){
         
         return view('encuesta.saved',compact('Encuesta'));}
         else{
-            return redirect()->route('muestras20.index');
+            return redirect()->route('muestras20.index',$Encuesta->nbr3);
         }
         }
 

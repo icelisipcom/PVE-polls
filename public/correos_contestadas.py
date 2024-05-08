@@ -90,7 +90,7 @@ worksheet.write('J8','Correo 4',header_format)
 
 for i in range(0,len(egresados)):
     correos_eg=correos.loc[correos['cuenta']==egresados['cuenta'].values[i]]
-    print(egresados['cuenta'].values[i],len(correos_eg))
+    # print(egresados['cuenta'].values[i],len(correos_eg))
     worksheet.write('B'+str(i+9),egresados['nombre'].values[i],blue_content)
     worksheet.write('C'+str(i+9),egresados['paterno'].values[i],blue_content)
     worksheet.write('D'+str(i+9),egresados['materno'].values[i],blue_content)
