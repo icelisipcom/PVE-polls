@@ -79,6 +79,8 @@ public function edit($id,$section){
     $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
     $Comentario=''.Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     $Telefonos=Telefono::where('cuenta',$Egresado->cuenta)->get();       
+    $Correos=Correo::where('cuenta',$Egresado->cuenta)->get();     
+    
     $Coment=Comentario::where('cuenta','=',$Encuesta->cuenta)->first();
     
     if($Coment){
@@ -103,7 +105,7 @@ $Comentario=$Coment->comentario;
          
     }
     if($section=='SEARCH'){$section='A';}
-    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','nfr23_options','Discriminacion'));
+    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','Correos','nfr23_options','Discriminacion'));
 }
 
 function validar_completa($registro){

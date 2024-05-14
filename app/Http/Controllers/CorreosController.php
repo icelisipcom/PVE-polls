@@ -5,6 +5,8 @@ use App\Models\Egresado;
 use App\Models\Carrera;
 use App\Models\Correo;
 use Illuminate\Http\Request;
+use Symfony\Component\Process\Process; 
+use Symfony\Component\Process\Exception\ProcessFailedException; 
 
 class CorreosController extends Controller
 {
@@ -30,15 +32,15 @@ class CorreosController extends Controller
             }
         
     }
-    public function edit($id,$carrera){
+    public function edit($id,$carrera,$encuesta=0){
         $Correo=Correo::find($id);
         $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
         $Carrera=Carrera::where('clave_carrera','=',$Egresado->carrera)->first()->carrera;
         $Plantel=Carrera::where('clave_plantel','=',$Egresado->plantel)->first()->plantel;
      
-        return view('encuesta.seg20.editar_correo',compact('Egresado','Correo','Carrera','Plantel'));
+        return view('encuesta.seg20.editar_correo',compact('Egresado','Correo','Carrera','Plantel','encuesta'));
     }
-    public function update(Request $request ,$id,$carrera){
+    public function update(Request $request ,$id,$carrera,$encuesta=0){
         $Correo=Correo::find($id);
         $Egresado=Egresado::where('cuenta',$Correo->cuenta)->where('carrera',$carrera)->first();
         
@@ -46,6 +48,28 @@ class CorreosController extends Controller
         $Correo->status=$request->status;
         $Correo->enviado=0;
         $Correo->save();
-        return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);
-    }
+        if($encuesta ==0){
+            return redirect()->route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera]);}
+            else{
+                return redirect()->route('edit_20',[$encuesta,'SEARCH']);
+            }
+   }
+
+    public function direct_send($id){
+        $Correo=Correo::find($id);
+        $Egresado=Egresado::where('cuenta',$Correo->cuenta)->first();
+        $caminoalpoder=public_path();
+        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/aviso.py',$Egresado->nombre.$Egresado->paterno,$Correo->correo]);
+        $process->run();
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }else{
+            $Correo->enviado=1;
+            $Correo->save();
+        }
+        $data = $process->getOutput();
+
+        return redirect()->back();
+ 
+ }
 }

@@ -44,7 +44,7 @@ function hide_all(){
 <script>
     
  function bloquear(reactivo,options,reactivosPorCerrar){
-
+  window.warning=true;
 console.log('reactivo: '+reactivo)
 var val=document.getElementById(reactivo);
 console.log (val.value);
@@ -76,7 +76,7 @@ document.getElementById(item.id).value="";}
 </script>
 
 <script>
-var warning = true;
+var warning = false;
 window.onbeforeunload = function() { 
   if (warning) {
     return "You have made changes on this page that you have not yet confirmed. If you navigate away from this page you will lose your unsaved changes";

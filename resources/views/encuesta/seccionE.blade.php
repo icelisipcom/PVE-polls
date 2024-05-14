@@ -22,7 +22,7 @@
 <h2 class="reactivo">  
     16.- ¿Desde que egresó de la licenciatura ha realizado actividades formales de actualización en su campo profesional?
     (cursos, diplomados,seminarios, etc.)</h2>
-         <select class="select" id="ner1" name="ner1"  onchange="bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7_a])" > 
+         <select class="select" id="ner1" name="ner1"  onchange="ner8func()" > 
         <option  value="" selected></option>
        <option value=1  @if($Encuesta->ner1==1) selected @endif>Sí</option>
        <option value=2  @if($Encuesta->ner1==2) selected @endif>No (pase a la 25)</option>
@@ -65,8 +65,6 @@
     <h2 class="reactivo">  
     18.- En la UNAM</h2>
     <select class="select" id="ner3"  name="ner3" >
-    <option value="" selected="selected"></option>
-    
         <option value=2  @if($Encuesta->ner3==2) selected @endif>No</option>
         <option value=1  @if($Encuesta->ner3==1) selected @endif>Sí</option>
        <option value=0  hidden></option>   
@@ -77,8 +75,6 @@
 <h2 class="reactivo">  
     19.- En otra institución pública</h2>
     <select class="select" id="ner4" name="ner4" >
-    <option value="" selected="selected"></option>
-    
         <option value=2  @if($Encuesta->ner4==2) selected @endif>No</option>
         <option value=1  @if($Encuesta->ner4==1) selected @endif>Sí</option>
        <option value=0  hidden></option>   
@@ -88,7 +84,6 @@
 <h2 class="reactivo">  
 20.- En otra institución privada</h2>
     <select class="select" id="ner5" name="ner5" >
-      <option value="" selected="selected"></option>
       <option value=2  @if($Encuesta->ner5==2) selected @endif>No</option>
       <option value=1  @if($Encuesta->ner5==1) selected @endif>Sí</option>
       <option value=0  hidden></option>   
@@ -99,7 +94,6 @@
 <h2 class="reactivo">  
     21.-En la empresa o institución en la que trabaja</h2>
     <select class="select" id="ner6" name="ner6" >
-    <option value="" selected="selected"></option>
     <option value=2  @if($Encuesta->ner6==2) selected @endif>No</option>
     <option value=1  @if($Encuesta->ner6==1) selected @endif>Sí</option>
     <option value=0  hidden></option>   
@@ -111,7 +105,6 @@
 <h2 class="reactivo">  
     22.-En una asociación</h2>
     <select class="select" id="ner7" name="ner7" >
-    <option value="" selected="selected"></option>
     <option value=2  @if($Encuesta->ner7==2) selected @endif>No</option>
     <option value=1  @if($Encuesta->ner7==1) selected @endif>Sí</option>
     <option value=0  hidden></option>  
@@ -123,7 +116,6 @@
 <h2 class="reactivo">  
     23.-En Internet</h2>
     <select class="select" id="ner7int" name="ner7int" >
-      <option value="" selected="selected"></option>
       <option value=2  @if($Encuesta->ner7int==2) selected @endif>No</option>
       <option value=1  @if($Encuesta->ner7int==1) selected @endif>Sí</option>
       <option value=0  hidden></option>   
@@ -368,6 +360,17 @@
 @endif
 
 <script>
+
+    function ner8func(){
+        bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7_a])
+        var val=document.getElementById('ner1').value;
+        if(val ==1){
+            ['ner3','ner4','ner5','ner6','ner7','ner7int'].forEach((reactivo)=>{
+               console.log(reactivo);
+               document.getElementById(reactivo).value=2;
+            })
+        }
+    }
     console.log('bloquenado ando');
   bloquear('ner1',[2],[ner2,ner1a,ner3,ner4,ner5,ner6,ner7,ner7int,ner7_a]);
 
@@ -384,5 +387,7 @@
   bloquear('ner15',[0,1,2,3],[ner15ext]);
   bloquear('ner12',[0,1,2,3],[ner12ext]);
   @endif
+  var warning = false;
 </script>
+
 @endpush

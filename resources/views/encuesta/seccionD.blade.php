@@ -426,6 +426,7 @@ bloquear('ndr14',[0,1,3],[ndr15]);
 @if($Encuesta->ncr1>2)
 [ndr18,ndr19].forEach(ocultar);
 @endif
+var warning = false;
 </script>
 
 @endpush

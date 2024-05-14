@@ -1144,6 +1144,6 @@ function deportes(){
   @endif
 
   bloquear('CUE_CRE',[2],[UTILIZA]);
-  
+  var warning = false;
 </script>
 @endpush

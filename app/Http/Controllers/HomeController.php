@@ -241,6 +241,7 @@ class HomeController extends Controller
            return redirect()->route('aviso');
     
     }
+    
     public function enviar_invitacion(Request $request){
       
         if($request->anio==2014){

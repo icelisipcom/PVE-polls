@@ -64,8 +64,8 @@ Route::resource('encuestas', EncuestasController::class);
 Route::resource('correos', CorreosController::class);
 Route::get('/agregar_correo/{cuenta}/{carrera}/{encuesta?}', [App\Http\Controllers\CorreosController::class, 'create'])->name('agregar_correo');
 Route::post('/guardar_correo{cuenta}/{carrera}/{encuesta?}', [App\Http\Controllers\CorreosController::class, 'store'])->name('guardar_correo');
-Route::get('/editar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'edit'])->name('editar_correo');
-Route::post('/actualizar_correo/{id}/{carrera}', [App\Http\Controllers\CorreosController::class, 'update'])->name('actualizar_correo');
+Route::get('/editar_correo/{id}/{carrera}/{encuesta?}', [App\Http\Controllers\CorreosController::class, 'edit'])->name('editar_correo');
+Route::post('/actualizar_correo/{id}/{carrera}/{encuesta?}', [App\Http\Controllers\CorreosController::class, 'update'])->name('actualizar_correo');
 
 Route::get('/agregar_telefono/{cuenta}/{carrera}/{encuesta?}', [App\Http\Controllers\TelefonosController::class, 'create'])->name('agregar_telefono');
 Route::post('/guardar_telefono{cuenta}/{carrera}/{encuesta?}', [App\Http\Controllers\TelefonosController::class, 'store'])->name('guardar_telefono');
@@ -101,6 +101,8 @@ Route::post('/resultado', [App\Http\Controllers\HomeController::class, 'resultad
 Route::post('/resultado_fonetico', [App\Http\Controllers\HomeController::class, 'resultado_fonetico'])->name('resultado_fonetico');
 Route::get('/aviso', [App\Http\Controllers\HomeController::class, 'aviso'])->name('aviso');
 Route::post('/enviar_aviso', [App\Http\Controllers\HomeController::class, 'enviar_aviso'])->name('enviar_aviso');
+
+Route::get('direct_send/{id}', [App\Http\Controllers\CorreosController::class, 'direct_send'])->name('direct_send');
 
 Route::get('/invitacion', [App\Http\Controllers\HomeController::class, 'invitacion'])->name('invitacion');
 Route::post('/enviar_invitacion', [App\Http\Controllers\HomeController::class, 'enviar_invitacion'])->name('enviar_invitacion');

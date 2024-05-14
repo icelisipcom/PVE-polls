@@ -469,5 +469,6 @@ bloquear('nfr0',[2],[nfr1,nfr1a_label,nfr1a]);
 bloquear('nfr29',[0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16],[nfr29a]);
 bloquear('nfr30',[2],[nfr31,nfr32]);
 bloquear('nfr1',[1,2,3,4,5,6,7,8,9,10,12,0],[nfr1a_label,nfr1a]);
+var warning = false;
 </script>
 @endpush

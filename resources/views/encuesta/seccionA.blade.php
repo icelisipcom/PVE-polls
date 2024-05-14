@@ -76,6 +76,8 @@
  <option value=8 @if($Encuesta->nar11==8) selected @endif >Esc. Normal Superior</option>
  <option value=9 @if($Encuesta->nar11==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
  <option value=10 @if($Encuesta->nar11==10) selected @endif >Licenciatura</option>
+ <option value=14 @if($Encuesta->nar13==14) selected @endif >Licenciatura Trunca</option>
+      
  <option value=11 @if($Encuesta->nar11==11) selected @endif >Posgrado</option>
  <option value=12 @if($Encuesta->nar11==12) selected @endif >Lo desconoce</option>
  <option value=13  @if($Encuesta->nar11==13) selected @endif >Otro (Especifíque)</option>
@@ -147,6 +149,8 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
       <option value=8 @if($Encuesta->nar12==8) selected @endif >Esc. Normal Superior</option>
       <option value=9 @if($Encuesta->nar12==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
       <option value=10 @if($Encuesta->nar12==10) selected @endif >Licenciatura</option>
+      <option value=14 @if($Encuesta->nar13==14) selected @endif >Licenciatura Trunca</option>
+      
       <option value=11 @if($Encuesta->nar12==11) selected @endif >Posgrado</option>
       <option value=12 @if($Encuesta->nar12==12) selected @endif >Lo desconoce</option>
       <option value=13  @if($Encuesta->nar12==13) selected @endif >Otro (Especifíque)</option>
@@ -228,6 +232,7 @@ Otra:
        <option value=8 @if($Encuesta->nar13==8) selected @endif >Esc. Normal Superior</option>
        <option value=9 @if($Encuesta->nar13==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
        <option value=10 @if($Encuesta->nar13==10) selected @endif >Licenciatura</option>
+       <option value=14 @if($Encuesta->nar13==14) selected @endif >Licenciatura Trunca</option>
        <option value=11 @if($Encuesta->nar13==11) selected @endif >Posgrado</option>
        <option value=12 @if($Encuesta->nar13==12) selected @endif >Lo desconoce</option>
        <option value=13  @if($Encuesta->nar13==13) selected @endif >Otro (Especifíque)</option>
@@ -504,6 +509,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
    bloquear('nar14',[0,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar14otra]);
    bloquear('ner20',[1],[ner20a,ner20txt]);
    bloquear('nar15',[33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar15otra])
+   var warning = false;
 </script>
 
 

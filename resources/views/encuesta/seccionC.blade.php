@@ -552,6 +552,7 @@ bloquear('ncr11',[1,2],[ncr15]);
 @endif
 bloquear('ncr8',[2,0],[ncr9])
 porque();
+var warning = false;
 </script>
 
 @endpush
