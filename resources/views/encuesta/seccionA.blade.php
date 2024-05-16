@@ -64,7 +64,7 @@
 <td colspan="2">
     <h2 class="reactivo"> 3.- ¿Cuál es el último grado de estudios de su pareja?</h2>
  
- <select class="select" id="nar11" name="nar11"   onchange="bloquear('nar11',[1,2,3,4,5,6,7,8,9,10,11,12],[nar11a])"  >
+ <select class="select" id="nar11" name="nar11"   onchange="bloquear('nar11',[1,2,3,4,5,6,7,8,9,10,11,12,14],[nar11a])"  >
 <option value=""></option>
  <option value=1 @if($Encuesta->nar11==1) selected @endif >Sin instrucción</option>
  <option value=2 @if($Encuesta->nar11==2) selected @endif >Primaria</option;n>
@@ -478,11 +478,11 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 <script>
   function escolaridad(){
     bloquear('nar12',[1,2,3,4,5,6,7,8,9,12,13],[nrx])
-    bloquear('nar12',[1,2,3,4,5,6,7,8,9,10,11,12],[nar12otra])
+    bloquear('nar12',[1,2,3,4,5,6,7,8,9,10,11,12,14],[nar12otra])
   }
   function escolaridadp(){
     bloquear('nar13',[1,2,3,4,5,6,7,8,9,12,13],[nrxx])
-    bloquear('nar13',[1,2,3,4,5,6,7,8,9,10,11,12],[nar13otra])
+    bloquear('nar13',[1,2,3,4,5,6,7,8,9,10,11,12,14],[nar13otra])
   }
   function check_beca(){
   console.log('executing function beca');
