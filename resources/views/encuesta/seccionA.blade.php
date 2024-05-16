@@ -315,6 +315,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
    <option value=1 @if($Encuesta->ner20==1) selected @endif >No </option>
    <option value=2 @if($Encuesta->ner20==2) selected @endif >Si, la estoy cursando</option>
    <option value=3 @if($Encuesta->ner20==3) selected @endif >Si, ya la concluí</option>
+   <option value=4 @if($Encuesta->ner20==4) selected @endif >Si, Inconclusa</option>
  </select>
 </td>
 <td>

@@ -840,6 +840,7 @@ a).-¿Con qué frecuencia asistió a eventos artísticos?</h2>
 <option value=11 @if($Encuesta->ngr37_a==11) selected @endif >2 o 3 veces por semana</option>
 <option value=12 @if($Encuesta->ngr37_a==12) selected @endif >1 vez a la semana</option>
 <option value=13 @if($Encuesta->ngr37_a==13) selected @endif >1 vez al mes</option>
+<option value=14 @if($Encuesta->ngr37_a==14) selected @endif >Esporadicamente</option>
 <option value=0 hidden > </option>
       </select>
     </td>
