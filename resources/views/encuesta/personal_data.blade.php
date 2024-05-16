@@ -54,9 +54,7 @@
          </table>
   @push('css')
   <style>
-    .contact_data:hover{
-     font-size:1.5vw;
-    }
+    
     .customSwalBtn{
     padding:0.5vmax;
     margin:0.5vmax;
