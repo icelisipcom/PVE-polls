@@ -18,6 +18,10 @@
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas inconclusas
     </button></a>
 
+    <a href="{{ route('report','correos_muestra_sin_contestar')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
+    <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos muestra sin contestar
+    </button></a>
+
     <a href="{{ route('report','correos_contestadas')}}"  > <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white;">
     <i class="fas fa-file-excel"></i> &nbsp; &nbsp; Correos par encuestas completas
     </button></a>

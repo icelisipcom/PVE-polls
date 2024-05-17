@@ -390,7 +390,11 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
  
 
   <option value=3 @if($Encuesta->nar3a==3) selected @endif >Sí, de otro programa</option>
-  </select>   
+  </select>
+  
+  
+
+  
 </td>
 <td></td>
 <tr >
