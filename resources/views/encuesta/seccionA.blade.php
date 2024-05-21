@@ -76,7 +76,7 @@
  <option value=8 @if($Encuesta->nar11==8) selected @endif >Esc. Normal Superior</option>
  <option value=9 @if($Encuesta->nar11==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
  <option value=10 @if($Encuesta->nar11==10) selected @endif >Licenciatura</option>
- <option value=14 @if($Encuesta->nar13==14) selected @endif >Licenciatura Trunca</option>
+ <option value=14 @if($Encuesta->nar11==14) selected @endif >Licenciatura Trunca</option>
       
  <option value=11 @if($Encuesta->nar11==11) selected @endif >Posgrado</option>
  <option value=12 @if($Encuesta->nar11==12) selected @endif >Lo desconoce</option>
@@ -149,7 +149,7 @@ Otra:<input type="text" class="texto" id="nar14otra" name="nar14otra" size="80" 
       <option value=8 @if($Encuesta->nar12==8) selected @endif >Esc. Normal Superior</option>
       <option value=9 @if($Encuesta->nar12==9) selected @endif >Carrera técnica o com. después de bachillerato</option>
       <option value=10 @if($Encuesta->nar12==10) selected @endif >Licenciatura</option>
-      <option value=14 @if($Encuesta->nar13==14) selected @endif >Licenciatura Trunca</option>
+      <option value=14 @if($Encuesta->nar12==14) selected @endif >Licenciatura Trunca</option>
       
       <option value=11 @if($Encuesta->nar12==11) selected @endif >Posgrado</option>
       <option value=12 @if($Encuesta->nar12==12) selected @endif >Lo desconoce</option>
@@ -197,7 +197,6 @@ Otra:<input type="text" class="texto" id="nar12otra" name="nar12otra"  maxlength
 <option value=58 @if($Encuesta->nar15==58) selected @endif >Otros profesores (Artísticos, deportes, etc.)  </option>
 <option value=33 @if($Encuesta->nar15==33) selected @endif >Labores del hogar </option>
 <option value=34 @if($Encuesta->nar15==34) selected @endif > Jubilado  </option>
-
 <option value=40 @if($Encuesta->nar15==40) selected @endif > Estudiante</option>
 <option value=35 @if($Encuesta->nar15==35) selected @endif >Finado  </option>
 <option value=36 @if($Encuesta->nar15==36) selected @endif >No trabajaba  </option>
@@ -362,11 +361,10 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
  
  <select class="select" id="nar3a" name="nar3a"  onchange=check_beca() >
  
- <option value="" selected></option>
- <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
+  <option value="" selected></option>
+  <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
   <option value=2 @if($Encuesta->nar3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
   <option value=6 @if($Encuesta->nar3a==6) selected @endif > Beca de Excelencia Bécalos</option>
-  
   <option value=5 @if($Encuesta->nar3a==5) selected @endif > Beca de Manutencion</option>
   <option value=7 @if($Encuesta->nar3a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
   <option value=8 @if($Encuesta->nar3a==8) selected @endif > Programa de Apoyo Nutricional </option>
@@ -376,11 +374,12 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   <option value=15 @if($Encuesta->nar3a==15) selected @endif >Universitarios SI </option>
   <option value=16 @if($Encuesta->nar3a==16) selected @endif >Permanecia Escolar EDOMEX </option>
   <option value=12 @if($Encuesta->nar3a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
- 
   <option value=19 @if($Encuesta->nar3a==19) selected @endif > Beca de Manutención Extraordinaria </option>
   <option value=20 @if($Encuesta->nar3a==20) selected @endif > Becas de Idiomas</option>
   <option value=21 @if($Encuesta->nar3a==21) selected @endif > Becas STUNAM</option>
   <option value=22 @if($Encuesta->nar3a==22) selected @endif > Becas AAPAUNAM</option>
+  <option value=23 @if($Encuesta->nar3a==23) selected @endif > PUIC (Diversidad Cultural)</option>
+ 
  
  
   <option value=13 @if($Encuesta->nar3a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
