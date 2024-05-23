@@ -27,6 +27,8 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 Auth::routes();
+Route::get('/hashing/{arg}', [App\Http\Controllers\Auth\RegisterController::class, 'hashea'])->name('hashea');
+
 Route::group(['middleware' => ['auth']], function()
 {   
 

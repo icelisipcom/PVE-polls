@@ -238,7 +238,7 @@
 <td>
 <h2 class="reactivo"> 73.- ¿En que médida está relacionado su trabajo actual con su profesión? </h2> 
 
-<select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15])" >
+<select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15,ncr16])" >
   <option selected="selected" value="">
   <option value=1 @if($Encuesta->ncr11==1) selected @endif>Muy relacionado</option>
   <option value=2 @if($Encuesta->ncr11==2) selected @endif>Medianamente relacionado</option> 
@@ -258,8 +258,8 @@ Especifique:</h2>
 
 <select class="select" id="ncr15" name="ncr15"  >
 <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr15==1) selected @endif>Sí</OPTION>
-    <option value=2 @if($Encuesta->ncr15==2) selected @endif>No</OPTION> 
+    <option value=1 @if($Encuesta->ncr15==1) selected @endif>Sí</option>
+    <option value=2 @if($Encuesta->ncr15==2) selected @endif>No</option> 
     <option value=0  hidden></option>   
 </select>
 
@@ -267,8 +267,8 @@ Especifique:</h2>
 <td>
 <h2 class="reactivo"> 76.- ¿Cómo considera que lo preparó el estudio de la carrera para el desempeño de su trabajo actual? </h2>
     
-    <select class="select" id="ncr16" name="ncr16"   > 
-           <option selected="selected" value="">
+    <select class="select" id="ncr16" name="ncr16"> 
+          <option selected="selected" value="">
           <option value=1 @if($Encuesta->ncr16==1) selected @endif>Muy Bien</option>
           <option value=2 @if($Encuesta->ncr16==2) selected @endif>Bien</option>
           <option value=3 @if($Encuesta->ncr16==3) selected @endif>Medianamente</option>
