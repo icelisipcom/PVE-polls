@@ -238,7 +238,7 @@
 <td>
 <h2 class="reactivo"> 73.- ¿En que médida está relacionado su trabajo actual con su profesión? </h2> 
 
-<select class="select" id="ncr11" name="ncr11"   onchange="bloquear('ncr11',[1,2],[ncr15,ncr16])" >
+<select class="select" id="ncr11" name="ncr11"   onchange="func_ncr11()" >
   <option selected="selected" value="">
   <option value=1 @if($Encuesta->ncr11==1) selected @endif>Muy relacionado</option>
   <option value=2 @if($Encuesta->ncr11==2) selected @endif>Medianamente relacionado</option> 
@@ -536,6 +536,10 @@ function porque(){
   }
 }
 
+function func_ncr11(){
+  bloquear('ncr11',[1,2],[ncr15]);
+  bloquear('ncr11',[3],[ncr16]);
+}
 // inicializar 
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
 autoempleo();
@@ -547,6 +551,7 @@ bloquear('ncr4',[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[nc
 bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])
 bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23])
 autoempleo();
+func_ncr11();
 @if($Encuesta->ncr1==1 |$Encuesta->ncr1==2)
 bloquear('ncr11',[1,2],[ncr15]);
 @endif
