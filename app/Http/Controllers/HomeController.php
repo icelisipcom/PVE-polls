@@ -199,7 +199,12 @@ class HomeController extends Controller
 
         $encuestas20=DB::table('respuestas20')
         ->join('egresados','egresados.cuenta','=','respuestas20.cuenta')
-        ->select('respuestas20.*','egresados.anio_egreso','egresados.carrera','egresados.plantel')
+        ->leftJoin('carreras', function($join)
+  {
+      $join->on('carreras.clave_carrera', '=', 'respuestas20.nbr2');
+      $join->on('carreras.clave_plantel', '=', 'respuestas20.nbr3');                             
+  })
+        ->select('respuestas20.*','egresados.anio_egreso','carreras.carrera','carreras.plantel')
         ->where('egresados.anio_egreso','=',2020)
         ->where('respuestas20.nombre','like','%'.mb_strtoupper($request->name, 'UTF-8').'%')
         ->get(); 
