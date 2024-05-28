@@ -537,8 +537,8 @@ function porque(){
 }
 
 function func_ncr11(){
-  bloquear('ncr11',[1,2],[ncr15]);
-  bloquear('ncr11',[3],[ncr16]);
+  bloquear('ncr11',[1,2,0],[ncr15]);
+  bloquear('ncr11',[3,0],[ncr16]);
 }
 // inicializar 
 bloquear('ncr4',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23],[ncr4a])
