@@ -170,6 +170,8 @@
 <option selected="selected" value="">
 <option value=2 @if($Encuesta->ncr6==2) selected @endif>Propietario</option>
     <option value=3 @if($Encuesta->ncr6==3) selected @endif>Profesional independiente</option>
+    
+    <option value=6 @if($Encuesta->ncr6==6) selected @endif>Trabajador independiente (no ejerce) </option>
     <option value=0  hidden></option>   
 </select>
 <br>

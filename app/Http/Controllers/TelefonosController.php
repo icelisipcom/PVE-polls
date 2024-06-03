@@ -39,7 +39,7 @@ class TelefonosController extends Controller
         
         $Telefono->telefono=$request->telefono;
         $Telefono->descripcion=$request->description;
-        $Telefono->status=0;
+        // $Telefono->status=0;
         $Telefono->save();
 
         if($encuesta ==0){

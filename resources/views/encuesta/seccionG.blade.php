@@ -56,6 +56,7 @@
     <option value=2 @if($Encuesta->ngr6==2) selected @endif>Sí, en la UNAM </option>
     <option value=3 @if($Encuesta->ngr6==3) selected @endif>Sí, en instituciones externas (distinta) a la UNAM </option>
     <option value=4 @if($Encuesta->ngr6==4) selected @endif>Sí, por autoaprendizaje </option>
+    <option value=5 @if($Encuesta->ngr6==5) selected @endif>Ya contaba con el </option>
    </select>
 
        </td>
@@ -278,6 +279,7 @@ g).-Hoja de cálculo</h2>
 <option value=2 @if($Encuesta->ngr8==2) selected @endif>Sí, en la UNAM </option>
 <option value=3 @if($Encuesta->ngr8==3) selected @endif>Sí, en instituciones externas (distinta) a la UNAM </option>
 <option value=4 @if($Encuesta->ngr8==4) selected @endif>Sí, por autoaprendizaje </option>
+<option value=5 @if($Encuesta->ngr8==5) selected @endif>Ya contaba con el </option>
 </select>
 
  </td>

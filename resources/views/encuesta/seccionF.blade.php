@@ -363,10 +363,14 @@ discriminación?
 <td>
 <h2 class="reactivo">
 57.- ¿Ya realizó el servicio social?</h2>
- <select class="select" id="nfr30" name="nfr30"  onchange="bloquear('nfr30',[2],[nfr31,nfr32])">
+ <select class="select" id="nfr30" name="nfr30"  onchange="bloquear('nfr30',[2,4],[nfr31,nfr32])">
   <option selected="selected" value="">
   <option value=1 @if($Encuesta->nfr30==1) selected @endif>Sí</option>
   <option value=2 @if($Encuesta->nfr30==2) selected @endif>No</option>
+  
+  <option value=3 @if($Encuesta->nfr30==3) selected @endif>Articulo 91</option>
+  
+  <option value=4 @if($Encuesta->nfr30==4) selected @endif>Articulo 52</option>
 </select>
 
     </td>
