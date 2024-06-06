@@ -56,13 +56,13 @@ public function index_20($id){
   ->select('carreras.carrera','carreras.plantel','muestras.carrera_id as c','muestras.plantel_id as p','carreras.clave_carrera','carreras.clave_plantel','muestras.requeridas_5')->get();
   
   foreach($carreras as $c){
-    $c->nencuestas=respuestas20::where('nbr2',$c->clave_carrera)
-    ->where('nbr3',$c->clave_plantel)
+    $c->nencuestas=respuestas20::where('nbr2',$c->c)
+    ->where('nbr3',$c->p)
     ->where('completed',1)
     ->get()->count();
 
   }
-  $carreras=collect($carreras);
+  // $carreras=collect($carreras);
   return view('muestras.seg20.index',compact('carreras'));
 
 }
