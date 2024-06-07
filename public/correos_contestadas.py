@@ -83,10 +83,11 @@ worksheet.write('C8','Paterno',header_format)
 worksheet.write('D8','Materno',header_format)
 worksheet.write('E8','Numero de cuenta',header_format)
 worksheet.write('F8','Fecha en que realizó',header_format)
-worksheet.write('G8','Correo 1',header_format)
-worksheet.write('H8','Correo 2',header_format)
-worksheet.write('I8','Correo 3',header_format)
-worksheet.write('J8','Correo 4',header_format)
+worksheet.write('G8','mode de aplicacion',header_format)
+worksheet.write('H8','Correo 1',header_format)
+worksheet.write('I8','Correo 2',header_format)
+worksheet.write('J8','Correo 3',header_format)
+worksheet.write('K8','Correo 4',header_format)
 
 for i in range(0,len(egresados)):
     correos_eg=correos.loc[correos['cuenta']==egresados['cuenta'].values[i]]
@@ -96,8 +97,14 @@ for i in range(0,len(egresados)):
     worksheet.write('D'+str(i+9),egresados['materno'].values[i],blue_content)
     worksheet.write('E'+str(i+9),egresados['cuenta'].values[i],blue_content)
     worksheet.write('F'+str(i+9),str(egresados['updated_at'].values[i])[0:10],blue_content)
+    if(egresados['status'].values[i]==1):
+        aplica='TELEFONICA'
+    else:
+        aplica='INTERNET'
+    worksheet.write('G'+str(i+9),aplica,blue_content)
+    
     for j in range(len(correos_eg)):
-        worksheet.write(i+8,6+j,correos_eg['correo'].values[j],blue_content)
+        worksheet.write(i+8,7+j,correos_eg['correo'].values[j],blue_content)
     
    
 
