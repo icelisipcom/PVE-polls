@@ -50,7 +50,7 @@
 <h2 class="reactivo"> 
 106).- ¿Incrementó y/o adquirió habilidades para la computación durante sus estudios de licenciatura?
 </h2>
-<select class="select" id="ngr6" name="ngr6"   onchange="bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g])">
+<select class="select" id="ngr6" name="ngr6"   onchange="bloquear('ngr6',[1,5],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g])">
     <option selected="selected" value="">
     <option value=1 @if($Encuesta->ngr6==1) selected @endif>No</option>
     <option value=2 @if($Encuesta->ngr6==2) selected @endif>Sí, en la UNAM </option>
@@ -273,7 +273,7 @@ g).-Hoja de cálculo</h2>
 <td>
 <h2 class="reactivo"> 
 109.-¿Adquirió o mejoró el dominio del idioma inglés? </h2>
-<select class="select" id="ngr8"  name="ngr8"  onchange="bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d])">
+<select class="select" id="ngr8"  name="ngr8"  onchange="bloquear('ngr8',[1,5],[ngr9a,ngr9b,ngr9c,ngr9d])">
 <option value="" selected="selected"></option>
 <option value=1 @if($Encuesta->ngr8==1) selected @endif>No</option>
 <option value=2 @if($Encuesta->ngr8==2) selected @endif>Sí, en la UNAM </option>
@@ -1127,8 +1127,8 @@ function deportes(){
   bloquear('ngr40',[11,13],[ngr40_b]);
   bloquear('ngr40_a',[11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,0],[ngr40otro]);
 }
-  bloquear('ngr6',[1],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
-  bloquear('ngr8',[1],[ngr9a,ngr9b,ngr9c,ngr9d]);
+  bloquear('ngr6',[1,5],[ngr6a,ngr6b,ngr6c,ngr6d,ngr6e,ngr6f,ngr6g]);
+  bloquear('ngr8',[1,5],[ngr9a,ngr9b,ngr9c,ngr9d]);
   bloquear('ngr11a',[11],[ngr11f,ngr11,ngr11b,ngr11c,ngr11d]);
   bloquear('ngr40',[12],[ngr40_a,ngr40a]);
   
