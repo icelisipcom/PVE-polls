@@ -480,9 +480,9 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
   function check_beca(){
   console.log('executing function beca');
   nar2a=document.getElementById("nar2a").value;
-  nar3a=document.getElementById("nar3a").value;
+  nar3a=document.getElementById("binbeca").value;
   console.log(nar3a);
-  if(nar2a==1 && nar3a==1){
+  if(nar2a==1 && nar3a==2){
    console.log('hay que cerrar la beca xd');
    ocultar(document.getElementById("nar4a"));
    ocultar(document.getElementById("nar5a"));
@@ -498,7 +498,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
    bloquear('nar8',[1],[nar11,nar14,nar14otra]);
    bloquear('nar9',[2],[nar10]);
    bloquear('binbeca',[2],[becasdiv]);
-   //  check_beca();
+   check_beca();
    escolaridad();
    escolaridadp();
    bloquear('nar14',[0,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar14otra]);
