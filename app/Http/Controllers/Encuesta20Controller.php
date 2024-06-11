@@ -88,8 +88,15 @@ $Comentario=$Coment->comentario;
     }  else{
         $Comentario='';
     }
-    $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
+    $Discriminacion=DB::table('multiple_option_answers')
+    ->where('encuesta_id','=',$Encuesta->registro)
+    ->where('reactivo','nfr23')->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
+    $Becas=DB::table('multiple_option_answers')
+    ->where('encuesta_id','=',$Encuesta->registro)
+    ->where('reactivo','nar3a')->get();
+    $Becas_options=DB::table('options')->where('reactivo','=','nar3a')->get();
+    
     // dd($Comentario);
     if($section=='SEARCH'){
      
@@ -105,7 +112,7 @@ $Comentario=$Coment->comentario;
          
     }
     if($section=='SEARCH'){$section='A';}
-    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','Correos','nfr23_options','Discriminacion'));
+    return view('encuesta.seccion'.$section,compact('Encuesta','Egresado','Carrera','Plantel','Comentario','Telefonos','Correos','nfr23_options','Discriminacion','Becas','Becas_options'));
 }
 
 function validar_completa($registro){
@@ -126,6 +133,30 @@ $Egresado->save();
 public function updateA(Request $request,$id){
     $Encuesta=respuestas20::where('registro',$id)->first();
     $Egresado=Egresado::where('cuenta',$Encuesta->cuenta)->where('carrera',$Encuesta->nbr2)->first();
+    $Encuesta-> aplica  = Auth::user()->clave;
+    $Encuesta->update($request->except(['_token', '_method']) );
+    $Encuesta->sec_a=0;
+    $this->validar_completa($Encuesta->registro);
+    $Encuesta->save();
+    $Becas=DB::table('multiple_option_answers')->where('encuesta_id','=',$Encuesta->registro)->get();
+    $Becas_options=DB::table('options')->where('reactivo','=','nar3a')->get();
+    DB::table('multiple_option_answers')->where('encuesta_id',$Encuesta->registro)->where('reactivo','nar3a')->delete();
+    foreach($Becas_options as $o){
+        $field_presenter = 'opcion'.$o->clave;
+        if($request->$field_presenter){
+            $arr=[
+               "encuesta_id"=>$Encuesta->registro,
+                "clave_opcion"=>$o->clave,
+                "reactivo"=>'nar3a',
+            ];
+            DB::table('multiple_option_answers')->insert($arr);
+		
+        }
+
+    }
+   
+   
+   
     $rules=[
         'fec_capt' => 'required',
        'nar8' => 'required',
@@ -151,7 +182,6 @@ public function updateA(Request $request,$id){
        'ner20a' => 'required',
        'nar1' => 'required',
        'nar2a' => 'required',
-       'nar3a' => 'required',
        'nar4a' => 'required',
        'nar5a' => 'required',
     ];
@@ -221,17 +251,18 @@ public function updateF(Request $request,$id){
     $Encuesta->sec_f=0;
     $this->validar_completa($Encuesta->registro);
     $Encuesta->save();
-    $Discriminacion=DB::table('discriminacion')->where('encuesta_id','=',$Encuesta->registro)->get();
+    $Discriminacion=DB::table('multiple_option_answers')->where('encuesta_id','=',$Encuesta->registro)->get();
     $nfr23_options=DB::table('options')->where('reactivo','=','nfr23')->get();
-    DB::table('discriminacion')->where('encuesta_id',$Encuesta->registro)->delete();
+    DB::table('multiple_option_answers')->where('encuesta_id',$Encuesta->registro)->where('reactivo','nfr23')->delete();
     foreach($nfr23_options as $o){
         $field_presenter = 'opcion'.$o->clave;
         if($request->$field_presenter){
             $arr=[
                "encuesta_id"=>$Encuesta->registro,
-                "tipo"=>$o->clave,
+                "clave_opcion"=>$o->clave,
+                "reactivo"=>'nfr23',
             ];
-            DB::table('discriminacion')->insert($arr);
+            DB::table('multiple_option_answers')->insert($arr);
 		
         }
 

@@ -358,47 +358,37 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 <td>
  
 <h2 class="reactivo">13).- ¿Durante sus estudios de licenciatura tuvo alguna beca?   </h2>
- 
- <select class="select" id="nar3a" name="nar3a"  onchange=check_beca() >
- 
-  <option value="" selected></option>
-  <option value=1 @if($Encuesta->nar3a==1) selected @endif >No</option>
-  <option value=2 @if($Encuesta->nar3a==2) selected @endif >Sí, del Programa de Fundación UNAM</option>
-  <option value=6 @if($Encuesta->nar3a==6) selected @endif > Beca de Excelencia Bécalos</option>
-  <option value=5 @if($Encuesta->nar3a==5) selected @endif > Beca de Manutencion</option>
-  <option value=7 @if($Encuesta->nar3a==7) selected @endif > Beca para Alumnos Deportistas de Equipos Representativos de la UNAM</option>
-  <option value=8 @if($Encuesta->nar3a==8) selected @endif > Programa de Apoyo Nutricional </option>
-  <option value=9 @if($Encuesta->nar3a==9) selected @endif > Beca de Apoyo a Grupos Vulnerables Provenientes de Zonas Marginadas del País 2020 </option>
-  <option value=10 @if($Encuesta->nar3a==10) selected @endif > Beca para Disminuir el Bajo Rendimiento Académico</option>
-  <option value=11 @if($Encuesta->nar3a==11) selected @endif > Beca de Fortalecimiento y Beca de Alta Exigencia Académica</option>
-  <option value=15 @if($Encuesta->nar3a==15) selected @endif >Universitarios SI </option>
-  <option value=16 @if($Encuesta->nar3a==16) selected @endif >Permanecia Escolar EDOMEX </option>
-  <option value=12 @if($Encuesta->nar3a==12) selected @endif > Beca de Fortalecimiento Académico para las Mujeres Universitarias</option>
-  <option value=19 @if($Encuesta->nar3a==19) selected @endif > Beca de Manutención Extraordinaria </option>
-  <option value=20 @if($Encuesta->nar3a==20) selected @endif > Becas de Idiomas</option>
-  <option value=21 @if($Encuesta->nar3a==21) selected @endif > Becas STUNAM</option>
-  <option value=22 @if($Encuesta->nar3a==22) selected @endif > Becas AAPAUNAM</option>
-  <option value=23 @if($Encuesta->nar3a==23) selected @endif > PUIC (Diversidad Cultural)</option>
- 
- 
- 
-  <option value=13 @if($Encuesta->nar3a==13) selected @endif >Beca Egresados Alto Rendimiento (TITULACION) </option>
-  <option value=14 @if($Encuesta->nar3a==14) selected @endif >Beca Especialidad (TITULACION) </option>
-  <option value=17 @if($Encuesta->nar3a==17) selected @endif >Titulacion Proyectos Investigación(TITULACION) </option>
-  <option value=18 @if($Encuesta->nar3a==18) selected @endif >Titulacion Egresados Extemporaneos (TITULACION) </option>
- 
 
-  <option value=3 @if($Encuesta->nar3a==3) selected @endif >Sí, de otro programa</option>
+<select class="select" id="binbeca" name="binbeca"   onchange="bloquear('binbeca',[2],[becasdiv])">
+<option selected="selected" value="">
+ <option value=1 @if($Becas->count()>0) selected @endif>Sí (Especifíque)</option>
+ <option value=2 @if($Becas->count()==0) selected @endif>No (Pase a la 15)</option>
   </select>
-  
-  
+
 
   
 </td>
-<td></td>
+<td>
+
+</td>
 <tr >
-<td colspan="4"> 
-    <h2 class="reactivo">  </h2>
+  <td ></td>
+<td colspan="3"> 
+<h2 class="reactivo">13a).- ¿Cúal?   </h2>
+  <div id="becasdiv" >
+@foreach($Becas_options  as $o)
+<table>
+  <tr>
+    <td><input type="checkbox" name="opcion{{$o->clave}}" @if($Becas->where('clave_opcion','=',$o->clave)->count()>0) checked @endif/>
+    
+  </td>
+    <td><label for="scales">{{$o->descripcion}}</label></td>
+  </tr>
+</table>
+
+  <br>
+@endforeach
+</div>
  </td>
 </tr>
 <tr>
@@ -507,7 +497,8 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
  
    bloquear('nar8',[1],[nar11,nar14,nar14otra]);
    bloquear('nar9',[2],[nar10]);
-   check_beca();
+   bloquear('binbeca',[2],[becasdiv]);
+   //  check_beca();
    escolaridad();
    escolaridadp();
    bloquear('nar14',[0,33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar14otra]);
