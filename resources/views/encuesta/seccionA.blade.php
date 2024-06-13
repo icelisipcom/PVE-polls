@@ -347,7 +347,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
 <td>
 <h2 class="reactivo">12).-¿Durante sus estudios de bachillerato tuvo alguna beca?    </h2>
   
-  <select class="select" id="nar2a" name="nar2a"  onchange=check_beca()   >
+  <select class="select" id="nar2a" name="nar2a"  onchange='check_beca()'   >
   <option value="" selected></option>
   
   <option value=1 @if($Encuesta->nar2a==1) selected @endif >No</option>
@@ -359,7 +359,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
  
 <h2 class="reactivo">13).- ¿Durante sus estudios de licenciatura tuvo alguna beca?   </h2>
 
-<select class="select" id="binbeca" name="binbeca"   onchange="bloquear('binbeca',[2],[becasdiv])">
+<select class="select" id="binbeca" name="binbeca"   onchange="check_beca()">
 <option selected="selected" value="">
  <option value=1 @if($Becas->count()>0) selected @endif>Sí (Especifíque)</option>
  <option value=2 @if($Becas->count()==0) selected @endif>No (Pase a la 15)</option>
@@ -478,6 +478,7 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
     bloquear('nar13',[1,2,3,4,5,6,7,8,9,10,11,12,14],[nar13otra])
   }
   function check_beca(){
+    bloquear('binbeca',[2],[becasdiv]);
   console.log('executing function beca');
   nar2a=document.getElementById("nar2a").value;
   nar3a=document.getElementById("binbeca").value;
