@@ -102,13 +102,11 @@ class RecadosController extends Controller
              $flag=1;
              foreach( $Telefonos as $r){ if($r->status != 6&&$r->status != 11){$flag=0;}}
              if($flag==1){
-                $Egresado->status=6; 
+                $Egresado->status=$request->code; 
+                $Egresado->save(); 
               }
        
-           }else{
-            $Egresado->status=$request->code;    
            }
-           $Egresado->save();
     }
       
       //verificar si todos los telefonos no existen (egresado ilocalizable)

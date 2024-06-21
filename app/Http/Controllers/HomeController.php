@@ -112,6 +112,11 @@ class HomeController extends Controller
          'Internet14'));
     }
 
+    public function links()
+    {
+        return view('links');
+    } 
+
     public function encuesta_2019(){
         $encuestas19=DB::table('respuestas2')
         ->join('egresados','egresados.cuenta','=','respuestas2.cuenta')

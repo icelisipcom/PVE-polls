@@ -23,6 +23,12 @@
 </li>
 @endif
 <li class="nav-item">
+    <a href="{{ route('links') }}" class="nav-link {{ Request::is('links') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-link"></i>
+        <p>Links</p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ route('2019') }}" class="nav-link {{ Request::is('2019') ? 'active' : '' }}">
     <i class="nav-icon fas fa-paper-plane"></i>
         <p>2019 progreso </p>

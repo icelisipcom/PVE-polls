@@ -92,6 +92,7 @@ Route::get('/encuestas_2020/edit/{id}/{section}', [App\Http\Controllers\Encuesta
 Route::get('/encuestas/verify/{id}', [App\Http\Controllers\EncuestasController::class, 'verificar'])->name('encuestas.verificar');
 Route::get('/stats', [App\Http\Controllers\HomeController::class, 'stats'])->name('stats');
 
+Route::get('/links', [App\Http\Controllers\HomeController::class, 'links'])->name('links');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/2014_act', [App\Http\Controllers\HomeController::class, '2014_act'])->name('2014_act');

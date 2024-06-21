@@ -16,6 +16,9 @@
             <td>   
                 <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
                 <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
+               
+                <h1 class="text-white-35" style="font-color: white">Status: {{$Codigos->where('code',$Egresado->status)->first()->description}}  </h1> 
+           
             </td>
             <td><a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i> Ir a muestra Carrera </button></a>
     </td>
@@ -75,7 +78,7 @@
         </tbody>
     </table>
     @endif
-    <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data">
+    <form action="/encuestas/2020/marcar/{{$telefono->id}}/{{$Egresado->id}}" method="POST" enctype="multipart/form-data" id="myform{{$telefono->id}}">
             @csrf
         
 
@@ -97,7 +100,7 @@
     <br>
     <div class='row'>
         <div class='col'>
-        <button type="submit" style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Marcar y guardar recado</button>
+        <button type="button" onclick='check_form({{$telefono->id}})' style="color:rgb({{Auth::user()->color}})" class="btn btn-primary btn-lg">  <i class="fas fa-paper-plane"></i> Marcar y guardar recado</button>
         </div>    
         <div class='col'>
             <a href="{{route('encuesta20.act_data',[$Egresado->cuenta,$Egresado->carrera])}}">
@@ -133,7 +136,7 @@ function change_color(color,tel_id){
     document.getElementById('tel_button'+tel_id).style.backgroundColor=color;
     document.getElementById('pildora').style.color='white';
     document.getElementById('layer').style.color=color;
-    document.getElementById('info').style.color=color;
+    // document.getElementById('info').style.color=color;
 }
 function codigo(tel_id){
     id_codigo='code'+(tel_id);
@@ -179,5 +182,24 @@ function codigo(tel_id){
           });
       });
   
+</script>
+
+<script>
+    function check_form(tel_id){
+        val= document.getElementById('code'+tel_id);
+        console.log(val,parseInt(val));
+        if(parseInt(val.value)>0){
+            document.getElementById('myform'+tel_id).submit();
+        }else{
+            swal({
+              title: `Por favor selecciona un Código`,
+              text: "no detectamos que hallas seleccionado un codigo, si lo hicisté por favo selecciona otro y vuelve a seleccionar el mismo",
+              icon: "warning",
+              buttons: false,
+          })
+        }
+        // 
+
+    }
 </script>
 @endpush
