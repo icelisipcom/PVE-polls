@@ -106,6 +106,10 @@ class RecadosController extends Controller
                 $Egresado->save(); 
               }
        
+           }else{
+            
+            $Egresado->status=$request->code; 
+            $Egresado->save(); 
            }
     }
       
