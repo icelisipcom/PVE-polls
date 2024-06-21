@@ -17,7 +17,7 @@
                 <h1 class="text-white-35" style="font-color: white">{{$Carrera->carrera}}  </h1> 
                 <h1 class="text-white-35" style="font-color: white">{{$Carrera->plantel}}  </h1> 
                
-                <h1 class="text-white-35" style="font-color: white">Status: {{$Codigos->where('code',$Egresado->status)->first()->description}}  </h1> 
+                <h1 class="text-white-35" style="font-color: white">Status: {{$Codigos_all->where('code',$Egresado->status)->first()->description}}  </h1> 
            
             </td>
             <td><a href="{{route('muestras20.show',[$Egresado->carrera,$Egresado->plantel])}}"><button type="button" style="color:rgb({{Auth::user()->color}})" class="btn btn-success btn-lg">  <i class="fas fa-table"></i> Ir a muestra Carrera </button></a>

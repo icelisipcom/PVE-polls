@@ -31,9 +31,10 @@ class LlamadasController extends Controller
         ->select('recados.*','codigos.color_rgb','codigos.description')
         ->get();
         $Codigos=DB::table('codigos')
-        // ->where('code','>=',3)->orWhere('code','=',0)
+        ->where('code','>=',3)
         ->orderBy('color')->get();
- 
+        $Codigos_all=DB::table('codigos')
+        ->orderBy('color')->get();
         return view('muestras.seg20.llamar',compact('Egresado','Telefonos','Recados','Carrera','Codigos','Encuesta'));
 
     }
