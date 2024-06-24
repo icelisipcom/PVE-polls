@@ -130,6 +130,9 @@ public function revision(){
   ->where('completed',1)
   //->where('aplica',Auth::user()->clave) 
   ->get();
+  if(Auth::user()->confidential<2){
+    $Encuestas=$Encuestas->where('aplica',Auth::user()->clave);
+  }
   return view('muestras.seg20.revision',compact('Encuestas'));
 }
 
