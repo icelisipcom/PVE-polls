@@ -117,8 +117,6 @@ public function show_20($carrera,$plantel){
   
   $Codigos=DB::table('codigos')->where('code','>=',3)
   ->orderBy('color')->get();
-
-  
   return view('muestras.seg20.show',compact('muestra','Carrera','Codigos','carrera'));
 }
 public function revision(){
@@ -129,6 +127,7 @@ public function revision(){
   })
   ->leftjoin('users','users.clave','=','respuestas20.aplica')
   ->select('respuestas20.*','carreras.carrera','carreras.plantel','users.name')
+  ->where('completed',1)
   //->where('aplica',Auth::user()->clave) 
   ->get();
   return view('muestras.seg20.revision',compact('Encuestas'));

@@ -156,7 +156,7 @@
 
 <select class="select" id="ncr6a2"  name="ncr6" onchange="autoempleo()">
     <option selected="selected" value="">
-    <option value=1 @if($Encuesta->ncr6<=3 && $Encuesta->ncr6>=1) selected @endif >Autoempleo</option>
+    <option value=1 @if(in_array($Encuesta->ncr6,array(2,3,6))) selected @endif >Autoempleo</option>
     <option value=4 @if($Encuesta->ncr6==4) selected @endif>Empleado </option>
     <option value=5 @if($Encuesta->ncr6==5) selected @endif>Otro (Especifíque)</option>
     <option value=0  hidden></option>   

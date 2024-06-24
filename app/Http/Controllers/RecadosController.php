@@ -121,7 +121,18 @@ class RecadosController extends Controller
       }
 
       public function destroy($id){
-      Recado::destroy($id);
-      return back();
+        $Recado=Recado::find($id);
+        // dd($Recado);
+        $Egresado=Egresado::where('cuenta',$Recado->cuenta)->first();
+        $Telefono=Telefono::find($Recado->tel_id);
+        Recado::destroy($id);
+        $Recados=Recado::where('cuenta','=',$Egresado->cuenta)->get();
+        $Egresado->llamadas=$Recados->count();
+        $Egresado->status=$Recados->sortBy('created_at')->reverse()->first()->status;
+        $Telefono->status=$Recados->where('tel_id',$Telefono->id)->sortBy('created_at')->reverse()->first()->status;
+        //verificar los no existe unu
+        $Egresado->save();
+        $Telefono->save();
+        return back();
       }
 }
