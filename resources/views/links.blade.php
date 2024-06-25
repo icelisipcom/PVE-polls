@@ -11,7 +11,7 @@
    
 <div style="color : black; background-color:rgba(250,250,250,0.57); font-size:1.5vw">
         <div class="col" style="padding:7.5vw;"> 
-            <div class="row"> 
+            <div class="row link-card"> 
                 <div class="col">
                  Actualizacion 2014 internet
                 </div>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <br>
-            <div class="row"> 
+            <div class="row link-card"> 
                 <div class="col">
                  Actualizacion 2014 Telefonica
                 </div>
@@ -29,12 +29,30 @@
                 </div>
             </div>
             <br>
-            <div class="row"> 
+            <div class="row link-card"> 
                 <div class="col">
                  Página del seguimiento
                 </div>
                 <div class="col">
                  <a href="https://www.pveaju.unam.mx/encuesta/01/seguimiento2024/">https://www.pveaju.unam.mx/encuesta/01/seguimiento2024/</a>
+                </div>
+            </div>
+
+            <a href="https://encuestas.pveaju.unam.mx/encuesta_generacion/2020">
+            <div class="row link-card" > 
+                <div class="col title">
+                 Encuesta por Internet Gen 2020
+                </div>
+                <div class="col link">
+                 https://encuestas.pveaju.unam.mx/encuesta_generacion/2020
+                </div>
+            </div></a>
+            <div class="row link-card"> 
+                <div class="col">
+                 Encuesta por Internet Todas la carreras y generaciones
+                </div>
+                <div class="col">
+                 <a href="https://encuestas.pveaju.unam.mx/encuesta_generacion/general">https://encuestas.pveaju.unam.mx/encuesta_generacion/general</a>
                 </div>
             </div>
         </div>
@@ -48,26 +66,24 @@
 @push('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
 <style>
-    .stat-card{
-        padding: 2.9vw;
+    .link-card{
+        padding: 2.9vw; 
         background-color: #002B7A;
         border-radius: 2.3vw 4.2vw;
+        border-color: white;
         margin: 2.3vw;
         color:white;
         font-size: 2.0vw;
         width: auto;
-
     }
-    .data-card{
+    .link-card:hover {
+	background-color: #05307f;
+	transform: translateY(-3px);
+	transition: 0.2s all ease;
+}
+    .link{
         padding: 0.5vw;
-        background-color: #a67e0e;
-        border-radius: 1.3vw;
-        color:white;
-        margin-right:10.4vw;
-        font-size: 4.6vw;
-        width:60%;
-        font-wight: bold;
-
+        color:#FAFAFA;
 
     }
 </style>
