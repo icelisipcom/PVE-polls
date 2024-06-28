@@ -567,4 +567,10 @@ console.log('marcandooo rojo');
   @endforeach
 
 </script>
+
+@if(in_array($Encuesta->ncr1,array(5,7)))
+<script>
+  document.getElementById('ncr16').value={{$Encuesta->ncr16}};
+</script>
+@endif
 @endpush
