@@ -41,10 +41,10 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
 <style>
 
-    @if(Auth::user()->dark_mode ==0) 
-  .table-div{
-    background-color: white;
-    color:black;
+  @if(Auth::user()->dark_mode ==0) 
+    .table-div{
+      background-color: white;
+      color:black;
      } 
 
     .muestra{
@@ -75,7 +75,6 @@
     @endif
 
 
-    
 </style>
 @endpush
 

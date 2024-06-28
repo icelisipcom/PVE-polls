@@ -357,6 +357,8 @@ public function updateD(Request $request,$id){
     $Encuesta->save();
     $rules=['ndr1' => 'required',
             'ndr2' => 'required',
+            
+            'ndr2_a' => 'required',
             'ndr3' => 'required',
             'ndr8' => 'required',
             'ndr4' => 'required',

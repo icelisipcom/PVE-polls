@@ -3,6 +3,7 @@
 @section('content')
 <h1 > COMPLETAR ENCUESTA </h1>
 <div  id='datos'>  @include('encuesta.personal_data') </div>
+
 <div style="padding:1.2vw;">
 <form action="{{ url('encuestas/2020/D_update/'. $Encuesta->registro) }}" method="POST" enctype="multipart/form-data" id='forma_sagrada' name='forma'>
 @csrf
@@ -48,6 +49,8 @@
 <option value=14  @if($Encuesta->ndr2==14) selected @endif>Ofrecimiento directo (especifíque)</option>
 <option value=16  @if($Encuesta->ndr2==16) selected @endif>Anuncio</option>
 <option value=17  @if($Encuesta->ndr2==17) selected @endif>Convocatoria o Examen de selecci&oacuten</option>
+<option value=18  @if($Encuesta->ndr2==18) selected @endif>Ya trabajaba ahí antes de la Lic.</option>
+
 <option value=15  @if($Encuesta->ndr2==15) selected @endif>Otra forma (especifíque)</option>
 <option value=0  hidden></option>   
 </select>
@@ -363,14 +366,7 @@
   console.log("'"+item.name+"' => 'required',");
 }
 </script>
-<script>
-console.log('marcandooo rojo');
- @foreach ($errors->all() as $error)
-                document.getElementById( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}").style="border: 0.3vw  solid red";
-                console.log( "{{str_replace(' ', '_',str_replace('The ','',str_replace(' field is required.', '', $error))) }}");
-  @endforeach
 
-</script>
 @if($errors->any())
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
@@ -415,9 +411,6 @@ bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr
 @if($Encuesta->ncr1==6||$Encuesta->ncr1==8)
 [ndr1,ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr17a,ndr18,ndr19].forEach(ocultar);
 @endif
-@if($Encuesta->ncr1==7)
-[ndr1,ndr2,ndr2_a,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr18,ndr19].forEach(ocultar);
-@endif
 
 
 bloquear('ndr1',[6,7,0],[ndr2,ndr3,ndr8,ndr4,ndr9,ndr5,ndr10,ndr6,ndr11,ndr7,ndr12,ndr12a,ndr12b,ndr12c,ndr13a,ndr14,ndr15,ndr16,ndr17,ndr18,ndr19]);
@@ -429,4 +422,12 @@ bloquear('ndr14',[0,1,3],[ndr15]);
 var warning = false;
 </script>
 
+<script>
+console.log('marcandooo rojo sec D ');
+ @foreach ($errors->getMessages() as $key => $message)
+                document.getElementsByName( "{{$key}}")[0].style="border: 0.3vw  solid red";
+                console.log( "{{$key}}");
+  @endforeach
+
+</script>
 @endpush
