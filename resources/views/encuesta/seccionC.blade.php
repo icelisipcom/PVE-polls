@@ -546,9 +546,16 @@ bloquear('ncr8',[0,2],[ncr9]);
 porque();
 bloquear('ncr22',[2,0],[ncr24,ncr24a,ncr24porque,ncr23])
 seccionc2();
+
+console.log('FIN DE FUNCION NCR1-------------------------');
 bloquear('ncr4',[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,23,24],[ncr4a])
 bloquear('ncr2a',[0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],[ncr2ext])
-bloquear('ncr22',[2,0],[ncr24,ncr24a,ncr24porque,ncr23])
+@if($Encuesta->ncr1==3 |$Encuesta->ncr1==4)
+bloquear('ncr22',[2],[ncr24,ncr24a,ncr24porque,ncr23]);
+@else
+bloquear('ncr22',[2,0],[ncr24,ncr24a,ncr24porque,ncr23]);
+
+@endif
 autoempleo();
 func_ncr11();
 @if($Encuesta->ncr1==1 |$Encuesta->ncr1==2)
