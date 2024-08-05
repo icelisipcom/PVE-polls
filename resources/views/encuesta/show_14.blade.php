@@ -130,7 +130,7 @@ Otra:<input type="text" class="texto"   id="nar11a" name="nar11a" size="50" maxl
   
 <h2 class="reactivo">7.-Ocupación de su esposo(a)</h2>
 
-<select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[1,2,3,4,5,6,7,8,9,10,11,12],[nar14otra])"  >
+<select class="select" id="nar14" name="nar14"  onchange="bloquear('nar14',[19,20,23,24,27,30,31,32,26,36,37,44,28,25,41,21,35,34,33,22,29,16,39,17,18],[nar14otra])"  >
        <option value="" ></option>
 <option value=28 @if($Encuesta->NAR14==28) selected @endif >Artesanos y obrero</option>
 <option value=25 @if($Encuesta->NAR14==25) selected @endif >Comerciante, empleado en comercios y agente de ventas</option>
