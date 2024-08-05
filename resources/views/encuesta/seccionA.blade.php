@@ -178,7 +178,7 @@ Otra:<input type="text" class="texto" id="nar12otra" name="nar12otra"  maxlength
 <td colspan="2">
 <h2 class="reactivo">6.- ¿Cúal era la ocupación de su madre? </h2>   
 
-<select class="select" id="nar15" name="nar15"  onchange="bloquear('nar15',[33,34,35,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar15otra])" >
+<select class="select" id="nar15" name="nar15"  onchange="bloquear('nar15',[33,34,35,40,36,37,45,46,47,48,49,50,51,52,53,54,55,56,57,58],[nar15otra])" >
 <option value="" ></option>
 
 <option value=45 @if($Encuesta->nar15==45) selected @endif >1 Funcionarios Directores y Jefes   </option>
