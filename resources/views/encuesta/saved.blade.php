@@ -30,9 +30,6 @@
 <a href="{{route('muestras20.show',[$Encuesta->nbr2,$Encuesta->nbr3])}}"><button type="button"style="background-color:{{Auth::user()->color}} ; color:white; display: flex;">  <i class="fas fa-arrow-left"></i> Regresar a la muestra</button></a>
   
   @endif
-
-
-
    </center>
     </div>
 @endsection

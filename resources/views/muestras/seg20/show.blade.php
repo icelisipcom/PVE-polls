@@ -146,6 +146,7 @@
     @endif
     responsive: true,
     sorting: [[6, 'asc'],[1, 'asc']],
+    
 });
 </script>
 

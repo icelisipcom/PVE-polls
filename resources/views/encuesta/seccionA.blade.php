@@ -493,7 +493,6 @@ Otra:<input  type="text" class="texto" ID="nar16otra" name="nar16otra" size="30"
    visibilizar(document.getElementById("nar4a"));
    visibilizar(document.getElementById("nar5a"));}
   }
-  
 }
  
    bloquear('nar8',[1],[nar11,nar14,nar14otra]);
