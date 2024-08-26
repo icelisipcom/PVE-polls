@@ -55,6 +55,15 @@ public function index_20($id){
   ->where('carreras.clave_plantel',$id)
   ->select('carreras.carrera','carreras.plantel','muestras.carrera_id as c','muestras.plantel_id as p','carreras.clave_carrera','carreras.clave_plantel','muestras.requeridas_5')->get();
   
+  if($id==0){
+    $carreras=Muestra::where('estudio_id','=','3')->leftJoin('carreras', function($join)
+  {
+      $join->on('carreras.clave_carrera', '=', 'muestras.carrera_id');
+      $join->on('carreras.clave_plantel', '=', 'muestras.plantel_id');                             
+  })
+  ->select('carreras.carrera','carreras.plantel','muestras.carrera_id as c','muestras.plantel_id as p','carreras.clave_carrera','carreras.clave_plantel','muestras.requeridas_5')->get();
+  
+  }
   foreach($carreras as $c){
     $c->nencuestas=respuestas20::where('nbr2',$c->c)
     ->where('nbr3',$c->p)
