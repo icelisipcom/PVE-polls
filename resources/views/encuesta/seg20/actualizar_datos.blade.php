@@ -77,14 +77,14 @@
                 </a>
               </td>
               <td>
-                <a href="{{route('comenzar_encuesta_2020',[$c->id,$Egresado->cuenta,$Egresado->carrera])}}"> <!-- Definir ruta para selección y envio de encuesta -->
+                <a href="{{route('comenzar_encuesta_2020',[$c->id,$Egresado->cuenta,$Egresado->carrera])}}"> 
                   <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> 
                     <i class="fas fa-paper-plane" aria-hidden="true"> </i> &nbsp; ENVIAR AVISO <br> Y ENCUESTAR
                   </button>
                 </a>
               </td>
               <td>
-                <a href="{{route('home',[$c->id,$Egresado->cuenta,$Egresado->carrera])}}">
+                <a href="{{route('enviar_encuesta',[$c->id,$Egresado->id])}}"> <!-- Definir ruta para selección y envio de encuesta -->
                   <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> 
                     <i class="fas fa-paper-plane" aria-hidden="true"> </i> &nbsp; ENVIAR ENCUESTA  <br> POR CORREO
                   </button>

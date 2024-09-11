@@ -8,6 +8,7 @@ use App\Models\respuestas2;
 use App\Models\respuestas20;
 use App\Models\respuestas14;
 use App\Models\Carrera;
+use App\Models\Correo;
 use DB;
 use App\Models\User;
 use App\Models\Estudio;
@@ -267,6 +268,18 @@ class HomeController extends Controller
         }
         $data = $process->getOutput();
         return redirect()->route('aviso');
- }
+    }
+    public function enviar_encuesta($id_correo, $id_egresado){
+        $Egresado=Egresado::find($id_egresado);   
+        $Correo=Correo::find($id_correo);
+        $Carrera = DB::table('carreras')
+        ->where('clave_carrera', '=', $Egresado->carrera)
+        ->where('clave_plantel', '=', $Egresado->plantel)
+        ->first();  
+
+        
+        
+        return view('invitacion.encuesta_por_correo',compact('Egresado','Correo','Carrera'));
+    }
 }
 
