@@ -254,20 +254,35 @@ class HomeController extends Controller
     }
     
     public function enviar_invitacion(Request $request){
-      
+        //if($request->anio==2014){
+        //    $link="https://www.pveu.unam.mx/encuesta/01/act_14/encuesta_actualizacion.php";
+        //}else{
+        //    $link="https://www.pveu.unam.mx/encuesta/01/global/exalumno2.html";
+        //}
         if($request->anio==2014){
-            $link="https://www.pveu.unam.mx/encuesta/01/act_14/encuesta_actualizacion.php";
+            $link="https://www.pveaju.unam.mx/encuesta/01/act_14/tel_act1_6.php";
         }else{
-            $link="https://www.pveu.unam.mx/encuesta/01/global/exalumno2.html";
+            $link="https://encuestas.pveaju.unam.mx/encuesta_generacion/2020";
         }
         $caminoalpoder=public_path();
-        $process = new Process([env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',$request->nombre,$request->correo,$request->cuenta,$request->carrera,$request->plantel,$link]);
+        $process = new Process([
+            env('PY_COMAND'),$caminoalpoder.'/invitacion14.py',
+            $request->nombre,
+            $request->correo,
+            $request->cuenta,
+            $request->carrera,
+            $request->plantel,
+            $link]);
         $process->run();
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
         $data = $process->getOutput();
-        return redirect()->route('aviso');
+        //return redirect()->route('aviso');
+        return redirect()->route('encuesta20.act_data', [
+            $request->cuenta, 
+            $request->carrera
+        ]);
     }
     public function enviar_encuesta($id_correo, $id_egresado){
         $Egresado=Egresado::find($id_egresado);   
@@ -276,9 +291,6 @@ class HomeController extends Controller
         ->where('clave_carrera', '=', $Egresado->carrera)
         ->where('clave_plantel', '=', $Egresado->plantel)
         ->first();  
-
-        
-        
         return view('invitacion.encuesta_por_correo',compact('Egresado','Correo','Carrera'));
     }
 }

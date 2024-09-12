@@ -58,7 +58,7 @@
               <th>Num. Cuenta</th>
               <th style="width:30%; word-wrap: break-word">Correo</th>
               <th>status</th>
-              <th> </th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
@@ -77,16 +77,16 @@
                 </a>
               </td>
               <td>
-                <a href="{{route('comenzar_encuesta_2020',[$c->id,$Egresado->cuenta,$Egresado->carrera])}}"> 
-                  <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> 
-                    <i class="fas fa-paper-plane" aria-hidden="true"> </i> &nbsp; ENVIAR AVISO <br> Y ENCUESTAR
+                <a href="{{route('enviar_encuesta',[$c->id,$Egresado->id])}}"> <!-- Definir ruta para selección y envio de encuesta -->
+                  <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw; align:center;"> 
+                    <i class="fa-solid fa-newspaper" aria-hidden="true"> </i> &nbsp; ENVIAR ENCUESTA <br>{{$Egresado->anio_egreso}} POR CORREO
                   </button>
                 </a>
               </td>
               <td>
-                <a href="{{route('enviar_encuesta',[$c->id,$Egresado->id])}}"> <!-- Definir ruta para selección y envio de encuesta -->
+                <a href="{{route('comenzar_encuesta_2020',[$c->id,$Egresado->cuenta,$Egresado->carrera])}}"> 
                   <button class="btn" style="background-color:{{Auth::user()->color}} ; color:white; margin: 0.1vw"> 
-                    <i class="fas fa-paper-plane" aria-hidden="true"> </i> &nbsp; ENVIAR ENCUESTA  <br> POR CORREO
+                    <i class="fas fa-paper-plane" aria-hidden="true"> </i> &nbsp; ENVIAR AVISO <br> Y ENCUESTAR
                   </button>
                 </a>
               </td>
