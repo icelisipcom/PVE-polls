@@ -123,7 +123,6 @@ public function show_20($carrera,$plantel){
       ->select('egresados.*','codigos.color_rgb','codigos.description','codigos.order')
       ->get();
 
-  
   $Codigos=DB::table('codigos')->where('code','>=',3)
   ->orderBy('color')->get();
   return view('muestras.seg20.show',compact('muestra','Carrera','Codigos','carrera'));
